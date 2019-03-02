@@ -10,3 +10,6 @@
 [submodule "layers/meta-resin"]
 	path = layers/meta-resin
 	url = https://github.com/resin-os/meta-resin.git
+[submodule "layers/meta-rust"]
+	path = layers/meta-rust
+	url = https://github.com/meta-rust/meta-rust.git
