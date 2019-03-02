@@ -19,3 +19,7 @@
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://git.yoctoproject.org/git/poky
+[submodule "layers/meta-fsl-bsp-release"]
+	path = layers/meta-fsl-bsp-release
+	url = https://source.codeaurora.org/external/imx/meta-fsl-bsp-release
+	branch = imx-morty
