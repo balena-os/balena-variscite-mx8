@@ -13,3 +13,6 @@
 [submodule "layers/meta-rust"]
 	path = layers/meta-rust
 	url = https://github.com/meta-rust/meta-rust.git
+[submodule "layers/meta-variscite-imx"]
+	path = layers/meta-variscite-imx
+	url = https://github.com/varigit/meta-variscite-imx.git
