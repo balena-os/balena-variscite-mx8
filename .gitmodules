@@ -4,3 +4,6 @@
 [submodule "layers/meta-freescale"]
 	path = layers/meta-freescale
 	url = git://git.yoctoproject.org/meta-freescale
+[submodule "layers/meta-openembedded"]
+	path = layers/meta-openembedded
+	url = git://github.com/openembedded/meta-openembedded
