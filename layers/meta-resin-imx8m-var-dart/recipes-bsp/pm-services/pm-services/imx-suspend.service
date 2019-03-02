@@ -1,0 +1,14 @@
+[Unit]
+Description=Shuts down WiFi before system suspend
+Before=suspend.target
+Before=hibernate.target
+Before=hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/etc/pm/sleep.d/*-wifi.sh suspend'
+
+[Install]
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target

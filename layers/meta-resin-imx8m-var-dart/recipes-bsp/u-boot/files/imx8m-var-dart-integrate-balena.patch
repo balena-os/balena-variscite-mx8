@@ -1,0 +1,86 @@
+From bf34d3e4f8a259ef022508979dd8d2f309616deb Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 1 Mar 2019 16:57:15 +0100
+Subject: [PATCH] Integrate with Balena u-boot environment
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@resin.io>
+---
+ configs/imx8m_var_dart_defconfig |  7 +++++++
+ include/configs/imx8m_var_dart.h | 21 +++++++++++++++------
+ 2 files changed, 22 insertions(+), 6 deletions(-)
+
+diff --git a/configs/imx8m_var_dart_defconfig b/configs/imx8m_var_dart_defconfig
+index f4d858c..4e4ff5a 100644
+--- a/configs/imx8m_var_dart_defconfig
++++ b/configs/imx8m_var_dart_defconfig
+@@ -63,3 +63,10 @@ CONFIG_USB_GADGET_MANUFACTURER="FSL"
+ CONFIG_USB_GADGET_VENDOR_NUM=0x0525
+ CONFIG_USB_GADGET_PRODUCT_NUM=0xa4a5
+ CONFIG_SDP_LOADADDR=0x40400000
++CONFIG_CMD_IMPORTENV=y
++CONFIG_PARTITION_UUIDS=y
++CONFIG_CMD_PART=y
++CONFIG_CMD_SETEXPR=y
++CONFIG_CMD_EXT2=y
++CONFIG_CMD_EXT4=y
++CONFIG_CMD_FAT=y
+diff --git a/include/configs/imx8m_var_dart.h b/include/configs/imx8m_var_dart.h
+index a604daa..c7fe6ff 100644
+--- a/include/configs/imx8m_var_dart.h
++++ b/include/configs/imx8m_var_dart.h
+@@ -73,7 +73,6 @@
+ #define CONFIG_OF_BOARD_SETUP
+ 
+ #undef CONFIG_CMD_EXPORTENV
+-#undef CONFIG_CMD_IMPORTENV
+ #undef CONFIG_CMD_IMLS
+ 
+ #undef CONFIG_CMD_CRC32
+@@ -133,13 +132,13 @@
+ 	"mmcroot=" CONFIG_MMCROOT " rootfstype=ext4 rootwait rw\0" \
+ 	"mmcautodetect=yes\0" \
+ 	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
+-	"mmcargs=setenv bootargs console=${console} root=${mmcroot} video=${video}\0 " \
+-	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${script};\0" \
++	"mmcargs=setenv bootargs console=${console}  video=${video} ${resin_kernel_root} rootwait rw\0 " \
++	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
+ 	"bootscript=echo Running bootscript from mmc ...; " \
+ 		"source\0" \
+-	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${bootdir}/${image};" \
++	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${image};" \
+ 		"unzip ${img_addr} ${loadaddr}\0" \
+-	"loadfdt=load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${bootdir}/${fdt_file}\0" \
++	"loadfdt=load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}\0" \
+ 	"mmcboot=echo Booting from mmc ...; " \
+ 		"run mmcargs; " \
+ 		"run optargs; " \
+@@ -181,6 +180,15 @@
+ 	"splashdisable=setenv splashfile; setenv splashimage\0"
+ 
+ #define CONFIG_BOOTCOMMAND \
++	   "setenv resin_kernel_load_addr ${loadaddr};" \
++	   "run resin_set_kernel_root;" \
++	   "setenv mmcdev ${resin_dev_index};" \
++	   "setenv mmcbootpart ${resin_boot_part};" \
++	   "if test ${mmcdev} = 0; then " \
++		"setenv fdt_file fsl-imx8mq-var-dart-emmc-wifi-hdmi.dtb; " \
++	   "else " \
++	   	"setenv fdt_file fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb; " \
++	   "fi; " \
+ 	   "mmc dev ${mmcdev}; if mmc rescan; then " \
+ 		   "if run loadbootscript; then " \
+ 			   "run bootscript; " \
+@@ -205,7 +213,8 @@
+ 
+ #define CONFIG_ENV_OVERWRITE
+ #define CONFIG_ENV_OFFSET               (64 * SZ_64K)
+-#define CONFIG_ENV_SIZE			0x1000
++/* 8K needed to include Balena env */
++#define CONFIG_ENV_SIZE			0x2000
+ #define CONFIG_SYS_MMC_ENV_DEV		1   /* USDHC2 */
+ #define CONFIG_MMCROOT			"/dev/mmcblk1p1"  /* USDHC2 */
+ 
+-- 
+2.7.4
+
