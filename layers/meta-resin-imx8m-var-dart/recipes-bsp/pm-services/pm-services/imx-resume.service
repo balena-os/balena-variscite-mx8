@@ -1,0 +1,15 @@
+[Unit]
+Description=Restarts WIFI & BT after system resume
+After=suspend.target
+After=hibernate.target
+After=hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c '/etc/pm/sleep.d/*-wifi.sh resume'
+ExecStartPost=/bin/sh -c 'sleep 5s && systemctl restart variscite-bt.service'
+
+[Install]
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target

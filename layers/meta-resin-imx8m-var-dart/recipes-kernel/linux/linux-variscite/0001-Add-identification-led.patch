@@ -1,0 +1,30 @@
+From 7c8d4878ed0d8f92318ec92ca1bada78515b0310 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 1 Mar 2019 17:09:15 +0100
+Subject: [PATCH] imx8m-var-dart-common.dtsi: Add LED2 as identification led
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@resin.io>
+---
+ arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi b/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi
+index a1e514a..cef660b 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi
+@@ -154,6 +154,11 @@
+ 			gpios = <&gpio4 17 GPIO_ACTIVE_HIGH>;
+ 			linux,default-trigger = "mmc0";
+ 		};
++
++		led2 {
++			label = "led2";
++			gpios = <&gpio4 14 GPIO_ACTIVE_HIGH>;
++		};
+ 	};
+ };
+ 
+-- 
+2.7.4
+

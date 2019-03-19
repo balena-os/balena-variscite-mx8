@@ -1,0 +1,15 @@
+
+  _____           _        _____   ____  
+ |  __ \         (_)      /  _  \ / ___| 
+ | |__) |___  ___ _ _ __  | | | || (___  
+ |  _  // _ \/ __| | '_ \ | | | | \___ \ 
+ | | \ \  __/\__ \ | | | || |_| |  ___) |
+ |_|  \_\___||___/_|_| |_|\_____/ |____/ 
+                                         
+ ---------------------------------------- 
+
+Resin specific images available:
+	resin-image-flasher
+
+Variscite DART-MX8M (EXPERIMENTAL)       : $ MACHINE=imx8m-var-dart bitbake resin-image-flasher
+

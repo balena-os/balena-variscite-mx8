@@ -1,0 +1,56 @@
+From a7f9eb956dfde0c034add66e40360b4979fca2f0 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Thu, 14 Mar 2019 09:42:34 +0100
+Subject: [PATCH] fsl-imx8mq-var-dart-common.dtsi: Add spidev support
+
+Upstream-Status: Inappropriate [configuration]
+
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ .../boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi     | 14 ++++++++++++--
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi b/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi
+index cef660b..a224575 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-imx8mq-var-dart-common.dtsi
+@@ -458,6 +458,7 @@
+ 				MX8MQ_IOMUXC_ECSPI1_MOSI_ECSPI1_MOSI		0x11
+ 				MX8MQ_IOMUXC_ECSPI1_MISO_ECSPI1_MISO		0x11
+ 				MX8MQ_IOMUXC_ECSPI1_SS0_GPIO5_IO9		0x11
++				MX8MQ_IOMUXC_GPIO1_IO12_GPIO1_IO12              0x11
+ 			>;
+ 		};
+ 
+@@ -1035,10 +1036,13 @@
+ };
+ 
+ &ecspi1 {
++	#address-cells = <1>;
++	#size-cells = <0>;
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_ecspi1>;
+-	cs-gpios = <&gpio5 9 0>;
+-	fsl,spi-num-chipselects = <1>;
++	cs-gpios = <&gpio5 9 0>,
++		   <&gpio1 12 0>;
++	fsl,spi-num-chipselects = <2>;
+ 	status = "okay";
+ 
+ 	/* Resistive touch controller */
+@@ -1065,6 +1069,12 @@
+ 		wakeup-source;
+ 		status = "disabled";
+ 	};
++
++	spidev@1 {
++		compatible = "spidev";
++		spi-max-frequency = <12000000>;
++		reg = <1>;
++	};
+ };
+ 
+ &pwm1 {
+-- 
+2.7.4
+
