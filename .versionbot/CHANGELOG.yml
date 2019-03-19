@@ -1,1 +1,30 @@
-[]
+- commits:
+    - subject: 'conf/samples: Added conf samples files'
+      hash: 762fd22c600768aa80f1f7a559dcff7fb4669674
+      body: ''
+      footer:
+        Changelog-entry: 'conf/samples: Added conf samples files'
+        changelog-entry: 'conf/samples: Added conf samples files'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: Added imx8m-var-dart coffee file
+      hash: 74b015288d641cca53ad5d87b758272ee1bc0682
+      body: ''
+      footer:
+        Changelog-entry: Added imx8m-var-dart coffee file
+        changelog-entry: Added imx8m-var-dart coffee file
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: Added license file
+      hash: 627cf3c0d21446ff4ae7f9c38c4d254129cc078d
+      body: ''
+      footer:
+        Changelog-entry: Added license file
+        changelog-entry: Added license file
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.31.1+rev1
+  date: 2019-03-19T08:16:40.824Z
