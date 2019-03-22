@@ -1,4 +1,76 @@
 - commits:
+    - subject: Update meta-resin from v2.31.3 to v2.31.5
+      hash: 2984e5a9f50ad15490ab52de81888d5b55668a15
+      body: |
+        Update meta-resin from 2.31.3 to 2.31.5
+      footer:
+        Changelog-entry: Update meta-resin from v2.31.3 to v2.31.5
+        changelog-entry: Update meta-resin from v2.31.3 to v2.31.5
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: Update resin-supervisor to v9.11.3
+              hash: 7ad04ea5594fc1cf5f378b9cab3c75b2ee6f0e6e
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update resin-supervisor to v9.11.3
+                changelog-entry: Update resin-supervisor to v9.11.3
+                Signed-off-by: Andrei Gherzan <andrei@balena.io>
+                signed-off-by: Andrei Gherzan <andrei@balena.io>
+              author: Andrei Gherzan
+          version: meta-resin-2.31.5
+          date: 2019-03-21T14:43:57.016Z
+        - commits:
+            - subject: 'resin-supervisor: Recreate on start if config has changed'
+              hash: 20032211302d25300c09310e169cafa01375e35e
+              body: >
+                Fix the ordering of the conditional check when starting the
+                supervisor container;
+
+                only check that the values being passed into the environment
+                match the ones held
+
+                in the config IF the container already exists.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Rich Bayliss <rich@balena.io>
+                signed-off-by: Rich Bayliss <rich@balena.io>
+              author: Rich Bayliss
+          version: meta-resin-2.31.4
+          date: 2019-03-20T23:25:52.136Z
+    - subject: Update meta-resin from v2.31.2 to v2.31.3
+      hash: 08c767a1d2737fbe82700a0ceabd96c8f95cefd7
+      body: |
+        Update meta-resin from 2.31.2 to 2.31.3
+      footer:
+        Changelog-entry: Update meta-resin from v2.31.2 to v2.31.3
+        changelog-entry: Update meta-resin from v2.31.2 to v2.31.3
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested:
+        - commits:
+            - subject: Update resin-supervisor to v9.11.2
+              hash: abb864096b5b473893aa7011a685ed8df97a28ee
+              body: ''
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Update resin-supervisor to v9.11.2
+                changelog-entry: Update resin-supervisor to v9.11.2
+                Signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+                signed-off-by: Pablo Carranza Velez <pablo@balena.io>
+              author: Pablo Carranza Velez
+          version: meta-resin-2.31.3
+          date: 2019-03-20T20:18:02.522Z
+  version: 2.31.5+rev1
+  date: 2019-03-22T09:21:28.351Z
+- commits:
     - subject: Update meta-resin from v2.31.1 to v2.31.2
       hash: bb6da935b184fb696cabd65fd43580e5ae7cdc7e
       body: |
