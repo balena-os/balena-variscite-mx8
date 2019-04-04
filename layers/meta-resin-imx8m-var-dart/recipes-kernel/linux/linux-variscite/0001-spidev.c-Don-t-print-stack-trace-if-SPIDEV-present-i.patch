@@ -1,0 +1,37 @@
+From 1e5cfaa1668f6395783b251160d5237e9ba3e611 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Thu, 4 Apr 2019 13:52:11 +0200
+Subject: [PATCH] spidev.c: Don't print stack trace if SPIDEV present in dt
+
+Currently an entire memory map and stack trace is printed
+if spidev is found in device tree
+Print only one log, not an entire memory map
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ drivers/spi/spidev.c | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/spi/spidev.c b/drivers/spi/spidev.c
+index cda1071..a23a679 100644
+--- a/drivers/spi/spidev.c
++++ b/drivers/spi/spidev.c
+@@ -726,8 +726,12 @@ static int spidev_probe(struct spi_device *spi)
+ 	 */
+ 	if (spi->dev.of_node && !of_match_device(spidev_dt_ids, &spi->dev)) {
+ 		dev_err(&spi->dev, "buggy DT: spidev listed directly in DT\n");
+-		WARN_ON(spi->dev.of_node &&
+-			!of_match_device(spidev_dt_ids, &spi->dev));
++		/*
++		 * Printing above warning is enough, we don't need
++		 * an entire stack trace and memory map
++		 */
++		// WARN_ON(spi->dev.of_node &&
++		//	!of_match_device(spidev_dt_ids, &spi->dev));
+ 	}
+ 
+ 	spidev_probe_acpi(spi);
+-- 
+2.7.4
+
