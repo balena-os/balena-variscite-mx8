@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.31.5+rev2
+## (2019-04-04)
+
+* resin-info.bbappend: Display BalenaOS ASCII logo [Alexandru Costache]
+
 # v2.31.5+rev1
 ## (2019-03-22)
 
