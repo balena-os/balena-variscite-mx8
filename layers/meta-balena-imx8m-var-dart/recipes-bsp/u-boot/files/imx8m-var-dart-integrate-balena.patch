@@ -43,7 +43,7 @@ index a604daa..c7fe6ff 100644
  	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
 -	"mmcargs=setenv bootargs console=${console} root=${mmcroot} video=${video}\0 " \
 -	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${script};\0" \
-+	"mmcargs=setenv bootargs console=${console}  video=${video} ${resin_kernel_root} rootwait rw\0 " \
++	"mmcargs=setenv bootargs console=${console}  video=${video} ${resin_kernel_root} rootwait rw ${os_cmdline}\0 " \
 +	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
@@ -60,7 +60,7 @@ index a604daa..c7fe6ff 100644
  
  #define CONFIG_BOOTCOMMAND \
 +	   "setenv resin_kernel_load_addr ${loadaddr};" \
-+	   "run resin_set_kernel_root;" \
++	   "run resin_set_kernel_root; run set_os_cmdline;" \
 +	   "setenv mmcdev ${resin_dev_index};" \
 +	   "setenv mmcbootpart ${resin_boot_part};" \
 +	   "if test ${mmcdev} = 0; then " \

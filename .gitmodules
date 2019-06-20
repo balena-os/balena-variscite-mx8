@@ -7,9 +7,9 @@
 [submodule "layers/meta-openembedded"]
 	path = layers/meta-openembedded
 	url = git://github.com/openembedded/meta-openembedded
-[submodule "layers/meta-resin"]
-	path = layers/meta-resin
-	url = https://github.com/resin-os/meta-resin.git
+[submodule "layers/meta-balena"]
+	path = layers/meta-balena
+	url = https://github.com/balena-os/meta-balena.git
 [submodule "layers/meta-rust"]
 	path = layers/meta-rust
 	url = https://github.com/meta-rust/meta-rust.git
@@ -18,7 +18,7 @@
 	url = https://github.com/varigit/meta-variscite-imx.git
 [submodule "layers/poky"]
 	path = layers/poky
-	url = https://git.yoctoproject.org/git/poky
+	url = https://github.com/balena-os/poky
 [submodule "layers/meta-fsl-bsp-release"]
 	path = layers/meta-fsl-bsp-release
 	url = https://source.codeaurora.org/external/imx/meta-fsl-bsp-release
