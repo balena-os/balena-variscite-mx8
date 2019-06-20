@@ -1,6 +1,16 @@
 Change log
 -----------
 
+# v2.38.0+rev1
+## (2019-06-17)
+
+* Update rust to 1.33 [Alexandru Costache]
+* Update repo.yml to be able to trigger VersionBot with `meta-balena` [Alexandru Costache]
+* Update the balena-yocto-scripts submodule to v1.2.0 [Alexandru Costache]
+* Update meta-balena from v2.31.5 to v2.38.0 [Alexandru Costache]
+* Rename meta-resin to meta-balena in repository [Alexandru Costache]
+* Change the poky submodule to our github mirror [Alexandru Costache]
+
 # v2.31.5+rev2
 ## (2019-04-04)
 

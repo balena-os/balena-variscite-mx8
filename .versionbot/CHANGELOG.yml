@@ -1,4 +1,64 @@
 - commits:
+    - subject: Update rust to 1.33
+      hash: 49f7f565efb19b95992d05789835b84b4727f60c
+      body: ''
+      footer:
+        Changelog-entry: Update rust to 1.33
+        changelog-entry: Update rust to 1.33
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: Update repo.yml to be able to trigger VersionBot with `meta-balena`
+      hash: 2de0c17074087288c7147c4d6e74ae1ad7debdf2
+      body: ''
+      footer:
+        Changelog-entry: Update repo.yml to be able to trigger VersionBot with `meta-balena`
+        changelog-entry: Update repo.yml to be able to trigger VersionBot with `meta-balena`
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: Update the balena-yocto-scripts submodule to v1.2.0
+      hash: 93e9d9033ad12ae9b3bd35847c57f99cd068ca54
+      body: ''
+      footer:
+        Changelog-entry: Update the balena-yocto-scripts submodule to v1.2.0
+        changelog-entry: Update the balena-yocto-scripts submodule to v1.2.0
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: Update meta-balena from v2.31.5 to v2.38.0
+      hash: ac9e826b4628e1bc4eb9082c95806b3963c9de07
+      body: ''
+      footer:
+        Changelog-entry: Update meta-balena from v2.31.5 to v2.38.0
+        changelog-entry: Update meta-balena from v2.31.5 to v2.38.0
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+    - subject: Rename meta-resin to meta-balena in repository
+      hash: 3b0395283bada4e00c76b00aabbb46e78187f0a9
+      body: ''
+      footer:
+        Changelog-entry: Rename meta-resin to meta-balena in repository
+        changelog-entry: Rename meta-resin to meta-balena in repository
+        Signed-off-by: Alexandru Costache <alexandru@balena.io
+        signed-off-by: Alexandru Costache <alexandru@balena.io
+      author: Alexandru Costache
+    - subject: Change the poky submodule to our github mirror
+      hash: 28fdf0fe2d0ec6627150a232916dd6d18d8e8845
+      body: |
+        We do this change because we noticed frequent timeouts
+        in different parts of our build infrastructure when pulling
+        the poky repository from https://git.yoctoproject.org/git/poky
+      footer:
+        Changelog-entry: Change the poky submodule to our github mirror
+        changelog-entry: Change the poky submodule to our github mirror
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.38.0+rev1
+  date: 2019-06-17T13:32:56.939Z
+- commits:
     - subject: 'resin-info.bbappend: Display BalenaOS ASCII logo'
       hash: 1a0cf5b5c66d4392704f05b11b70cba380fa31dc
       body: ''
