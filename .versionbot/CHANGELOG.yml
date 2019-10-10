@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update the meta-balena submodule from v2.43.0 to v2.44.0
+      hash: 9979e3a6086aa640ac047727b53dbc764e598a8c
+      body: ''
+      footer:
+        Changelog-entry: Update the meta-balena submodule from v2.43.0 to v2.44.0
+        changelog-entry: Update the meta-balena submodule from v2.43.0 to v2.44.0
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.44.0+rev1
+  date: 2019-10-10T08:09:24.421Z
+- commits:
     - subject: Update the meta-balena submodule from v2.38.3 to v2.43.0
       hash: c608a46ce6545df14122b2df23b55cf742578d6d
       body: ''
