@@ -1,4 +1,18 @@
 - commits:
+    - subject: Change the state to 'released' in the coffee file
+      hash: 31ea58883f1b8111fd9a73110a2bee16969099a3
+      body: |
+        Change the state field to 'released'
+        instead of 'experimental'
+      footer:
+        Changelog-entry: Change the state to 'released' in the coffee file
+        changelog-entry: Change the state to 'released' in the coffee file
+        Signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+        signed-off-by: Vicentiu Galanopulo <vicentiu@balena.io>
+      author: Vicentiu Galanopulo
+  version: 2.44.0+rev4
+  date: 2020-01-15T16:03:28.423Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.5.2
       hash: 62e8562509bc9fe958a45e5ed0e706c93f9ddd09
       body: ''
