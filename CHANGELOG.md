@@ -1,6 +1,84 @@
 Change log
 -----------
 
+# v2.47.0+rev1
+## (2020-02-11)
+
+* Update balena-yocto-scripts to v1.5.4 [Florin Sarbu]
+
+<details>
+<summary> Update meta-balena from v2.44.0 to v2.47.0 [Florin Sarbu] </summary>
+
+> ## meta-balena-2.47.0
+> ### (2020-01-29)
+> 
+> * Update usb-modeswitch-data to version 20191128 [Florin Sarbu]
+> * Update usb-modeswitch to version 2.5.2 [Florin Sarbu]
+> * Update to ModemManager v1.12.4 [Florin Sarbu]
+> * Update libmbim to version 1.22.0 [Florin Sarbu]
+> * Update libqmi to version 1.24.4 [Florin Sarbu]
+> * Add periodic vacuuming of journald log files [Alex Gonzalez]
+> * No user impact. Increase limit for maximum initramfs size from 12MB to 32MB. This helps reduce unnecessary overrides in integration layers. [Zubair Lutfullah Kakakhel]
+> * Match licenses with license files. [Alex Gonzalez]
+> * Enable sixaxis support in bluez5 [Alexis Svinartchouk]
+> * Addressing review comments [Gareth Davies]
+> * Update config.json documentation [Gareth Davies]
+> * Increase DNS clients timeout to 15 seconds [Alex Gonzalez]
+> * Fix supervisor nested changelogs [Zubair Lutfullah Kakakhel]
+> * Enable memory overcommit [Alex Gonzalez]
+> * Add uinput kernel module [Florin Sarbu]
+> * Make sure to add in rootfs the wifi firmware for wl18xx [Florin Sarbu]
+> * Add supported USB WiFi dongle [Vicentiu Galanopulo]
+
+> ## meta-balena-2.46.2
+> ### (2020-01-17)
+> 
+> * Americanize the README.md [Matthew McGinn]
+
+> ## meta-balena-2.46.1
+> ### (2020-01-01)
+> 
+> * Disable by default the option to stop u-boot autoboot by pressing CTRL+C in all OS versions [Florin Sarbu]
+> * Increase NTP polling time to around 4.5 hours. [Alex Gonzalez]
+> * Disable the option to stop u-boot autoboot by pressing CTRL+C in production OS version [Florin Sarbu]
+
+> ## meta-balena-2.46.0
+> ### (2019-12-23)
+> 
+> * Update to ModemManager v1.12.2 [Zahari Petkov]
+> * Update libmbim to version 1.20.2 [Zahari Petkov]
+> * Update libqmi to version 1.24.2 [Zahari Petkov]
+> * Update balena-supervisor to v10.6.27 [Cameron Diver]
+> * Tweak how the flasher asserts that internal media is valid for being installed balena OS on [Florin Sarbu]
+> * Remove networkmanager stale temporary files at startup [Alex Gonzalez]
+> * networkmanager: Rework patches to remove fuzzing [Alex Gonzalez]
+> * Update openvpn to v2.4.7 [Will Boyce]
+> * Enable kernel configs for USB_SERIAL, USB_SERIAL_PL2303 and HFS for all devices [Zubair Lutfullah Kakakhel]
+> * image-resin.bbclass: Mark do_populate_lic_deploy with nostamp [Zubair Lutfullah Kakakhel]
+> * Namespace the hello-world healthcheck image [Zubair Lutfullah Kakakhel]
+> * Update balena-supervisor to v10.6.17 [Cameron Diver]
+> * Update balena-supervisor to v10.6.13 [Cameron Diver]
+> * Update CODEOWNERS [Zubair Lutfullah Kakakhel]
+
+> ## meta-balena-2.45.1
+> ### (2019-11-21)
+> 
+> * Fix for a race condition where occasionally the supervisor might not be able to come up during boot. Also can be caused by using io.balena.features.balena-socket and app container restart always policy. Affects meta-balena 2.44.0 and 2.45.0. To be fixed in 2.44.1 and 2.46.0 [Zubair Lutfullah Kakakhel]
+> * Rename resin to balena where possible [Pagan Gazzard]
+> * Add leading new line for PACKAGE_INSTALL variable [Vicentiu Galanopulo]
+> * Set `net.ipv4.ip_local_port_range` to recommended range (49152-65535) [Will Boyce]
+> * No user impact, subtle fix in rollback version checks [Zubair Lutfullah Kakakhel]
+
+> ## meta-balena-2.45.0
+> ### (2019-10-30)
+> 
+> * Increase persistent journal size to 32M [Will Boyce]
+> * Move persistent logs from state to data partition [Will Boyce]
+> * Add wpa-supplicant recipe and update to v2.9 [Will Boyce]
+> * Improve robustness by making variou services restart if they stop for some reason [Zubair Lutfullah Kakakhel]
+> * Build net/dummy as module [Alexandru Costache]
+</details>
+
 # v2.44.0+rev7
 ## (2020-02-11)
 
