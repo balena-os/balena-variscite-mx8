@@ -1,4 +1,20 @@
 - commits:
+    - subject: Cleanup unnecessary use of IMAGE_ROOTFS_MAXSIZE
+      hash: 0e52471a026b5f18b24a9bdf38d8d9de3ff323b7
+      body: |
+        Since 2.47.0, IMAGE_ROOTFS_MAXSIZE is now 32M
+        in meta-balena-common
+
+        See https://github.com/balena-os/meta-balena/pull/1813 for more detail.
+      footer:
+        Changelog-entry: Cleanup unnecessary use of IMAGE_ROOTFS_MAXSIZE
+        changelog-entry: Cleanup unnecessary use of IMAGE_ROOTFS_MAXSIZE
+        Signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+        signed-off-by: Zubair Lutfullah Kakakhel <zubair@balena.io>
+      author: Zubair Lutfullah Kakakhel
+  version: 2.44.0+rev6
+  date: 2020-02-04T12:37:46.592Z
+- commits:
     - subject: >-
         Remove the usb-modeswitch patch that fixes crashes on 64 bits
         architectures

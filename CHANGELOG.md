@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.44.0+rev6
+## (2020-02-04)
+
+* Cleanup unnecessary use of IMAGE_ROOTFS_MAXSIZE [Zubair Lutfullah Kakakhel]
+
 # v2.44.0+rev5
 ## (2020-01-22)
 
