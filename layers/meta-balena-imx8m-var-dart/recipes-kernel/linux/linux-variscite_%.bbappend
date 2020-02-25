@@ -30,3 +30,7 @@ SRC_URI_append = " \
 	file://0005-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
 	file://0006-NFLX-2019-001-Resour-Consump-Low-MSS.patch \
 "
+
+SRC_URI_append_imx8mm-var-dart = " \
+	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch \
+"
