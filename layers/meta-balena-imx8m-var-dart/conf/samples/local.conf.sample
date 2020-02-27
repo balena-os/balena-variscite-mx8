@@ -1,5 +1,6 @@
 # Supported machines
 #MACHINE ?= "imx8m-var-dart"
+#MACHINE ?= "imx8mm-var-dart"
 
 # We use the overlayfs docker storage driver for the imx8m-var-dart machine
 BALENA_STORAGE = "overlay2"
