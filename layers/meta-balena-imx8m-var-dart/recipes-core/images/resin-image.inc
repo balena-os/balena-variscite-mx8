@@ -48,10 +48,11 @@ MACHINE_EXTRA_RDEPENDS += " \
                            brcm-patchram-plus \
                            kernel-modules \
                            pm-utils \
+                           bluez5 \
                            firmware-imx-vpu-imx8 \
                            firmware-imx-sdma \
-			   kernel-module-imx-gpu-viv \
-                           "
+                           kernel-module-imx-gpu-viv \
+"
 
 IMAGE_INSTALL_append = " \
 	kernel-image-initramfs \
