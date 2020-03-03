@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.47.1+rev2
+## (2020-02-28)
+
+* conf/layer: Fix imx8mm-var-dart BT issues [Alexandru Costache]
+
 # v2.47.1+rev1
 ## (2020-02-25)
 

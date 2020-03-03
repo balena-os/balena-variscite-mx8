@@ -1,4 +1,22 @@
 - commits:
+    - subject: 'conf/layer: Fix imx8mm-var-dart BT issues'
+      hash: bcf20e4e0d21a96c74ab736877b9b9fd5cc7cd96
+      body: |
+        brcm_patchram_plus communication with the
+        BT chip encountered issues and stalled
+        at some point due to agetty using
+        ttymxc3. This was caused by a commit
+        in upstream BSP layer that re-used the same
+        machine for the imx8mm-var-som.
+      footer:
+        Changelog-entry: 'conf/layer: Fix imx8mm-var-dart BT issues'
+        changelog-entry: 'conf/layer: Fix imx8mm-var-dart BT issues'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.47.1+rev2
+  date: 2020-02-28T08:29:56.163Z
+- commits:
     - subject: Update meta-balena from v2.47.0 to v2.47.1
       hash: dd24153e1edf0783a496acd5345f91ac4d2bc786
       body: |
