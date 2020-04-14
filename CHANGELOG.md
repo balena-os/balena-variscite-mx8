@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.48.0+rev2
+## (2020-04-14)
+
+* imx8mm-var-dart-plt: Remove unnecessary step from coffee file [Alexandru Costache]
+
 # v2.48.0+rev1
 ## (2020-04-13)
 

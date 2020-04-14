@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'imx8mm-var-dart-plt: Remove unnecessary step from coffee file'
+      hash: 269ccf64086c914624d545de754814067ab70e08
+      body: |
+        This step is no longer necessary as now board
+        is flashed only if the boot switch is the EXT position.
+      footer:
+        Changelog-entry: 'imx8mm-var-dart-plt: Remove unnecessary step from coffee file'
+        changelog-entry: 'imx8mm-var-dart-plt: Remove unnecessary step from coffee file'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.48.0+rev2
+  date: 2020-04-14T11:34:27.160Z
+- commits:
     - subject: Do not use wireless-regdb-static until we move to kernel >= 4.15
       hash: 624d9aba14c0a7824bc4a73bcd71997f42b2c164
       body: |
