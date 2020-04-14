@@ -1,7 +1,7 @@
 deviceTypesCommon = require '@resin.io/device-types/common'
 { networkOptions, commonImg, instructions } = deviceTypesCommon
  
-IMX8M_VAR_DART_FLASH = 'Set the SW7 BOOT SELECT switch to EXT. Insert SD CARD. Keep HOME key pressed and then power up the <%= TYPE_NAME %>.'
+IMX8M_VAR_DART_FLASH = 'Set the SW7 BOOT SELECT switch to EXT. Insert SD CARD and then power up the <%= TYPE_NAME %>.'
 IMX8M_VAR_DART_POST_FLASH = 'Set the SW7 BOOT SELECT switch to INT.'
  
 postProvisioningInstructions = [
