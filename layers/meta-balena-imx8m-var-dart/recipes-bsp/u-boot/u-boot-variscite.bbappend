@@ -9,5 +9,10 @@ SRC_URI_append_imx8m-var-dart = " \
 "
 
 SRC_URI_append_imx8mm-var-dart = " \
-        file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
+	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
+"
+
+SRC_URI_append_imx8mm-var-dart-plt = " \
+	file://0001-Add-support-for-querying-boot-switch-position.patch \
+	file://0002-bootcmd-Flash-only-if-bootswitch-in-EXT-position.patch \
 "
