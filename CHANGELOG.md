@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.48.0+rev3
+## (2020-04-17)
+
+* imx8mm-var-dart-plt: Update with custom icon [Alexandru Costache]
+
 # v2.48.0+rev2
 ## (2020-04-14)
 

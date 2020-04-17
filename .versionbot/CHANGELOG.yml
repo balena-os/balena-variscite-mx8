@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'imx8mm-var-dart-plt: Update with custom icon'
+      hash: cd174021fab23f495d5f1b98a0e9a50bffc7b9d6
+      body: |
+        This icon is provided by Balena design team
+      footer:
+        Changelog-entry: 'imx8mm-var-dart-plt: Update with custom icon'
+        changelog-entry: 'imx8mm-var-dart-plt: Update with custom icon'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.48.0+rev3
+  date: 2020-04-17T17:00:10.980Z
+- commits:
     - subject: 'imx8mm-var-dart-plt: Remove unnecessary step from coffee file'
       hash: 269ccf64086c914624d545de754814067ab70e08
       body: |
