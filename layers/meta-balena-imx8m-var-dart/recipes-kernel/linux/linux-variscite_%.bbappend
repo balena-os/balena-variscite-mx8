@@ -33,3 +33,7 @@ SRC_URI_append = " \
 SRC_URI_append_imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch \
 "
+
+SRC_URI_append_imx8mm-var-dart-nrt = " \
+	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
+"
