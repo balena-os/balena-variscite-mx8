@@ -1,4 +1,16 @@
 - commits:
+    - subject: Set private to false in .coffee files for the public device types
+      hash: 19ff5b55b8fcc1bf21679fc91abc822849aab001
+      body: ''
+      footer:
+        Changelog-entry: Set private to false in .coffee files for the public device types
+        changelog-entry: Set private to false in .coffee files for the public device types
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Florin Sarbu
+  version: 2.48.0+rev3
+  date: 2020-05-12T11:20:30.011Z
+- commits:
     - subject: 'imx8mm-var-dart-plt: Remove unnecessary step from coffee file'
       hash: 269ccf64086c914624d545de754814067ab70e08
       body: |
