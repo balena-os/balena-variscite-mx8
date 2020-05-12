@@ -1,0 +1,49 @@
+From 218e9e3a2ee2bddf8728e5841b3c7fd8acf10778 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Tue, 12 May 2020 10:39:58 +0200
+Subject: [PATCH] imx8mm-var-dart-nrt: Enable M4, run from TCM
+
+Enable the M4 core, set firmware binary name,
+set the DTB and let the binary reside in the TCM
+(as it came by default).
+
+Also, we stay on default DTB for now, as the M4 dtb:
+- disables ecspi1 (no spidev)
+- reserves DDR memory for the M4
+- sets up rpmsg for M4
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index 74173ba9b8..292f5023db 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -116,9 +116,9 @@
+ 	"mmcautodetect=yes\0" \
+ 	"mmcpart=1\0" \
+ 	"m4_addr=0x7e0000\0" \
+-	"m4_bin=hello_world.bin\0" \
+-	"use_m4=no\0" \
+-	"loadm4bin=load mmc ${mmcdev}:${mmcpart} ${m4_addr} ${bootdir}/${m4_bin}\0" \
++	"m4_bin=m4_fw.bin\0" \
++	"use_m4=yes\0" \
++	"loadm4bin=load mmc ${mmcdev}:${resin_boot_part} ${m4_addr} ${m4_bin}\0" \
+ 	"runm4bin=" \
+ 		"if test ${m4_addr} = 0x7e0000; then " \
+ 			"echo Booting M4 from TCM; " \
+@@ -144,7 +144,7 @@
+ 					"setenv fdt_file fsl-imx8mm-var-som.dtb; " \
+ 				"fi;" \
+ 			"else " \
+-				"setenv fdt_file fsl-imx8mm-var-dart.dtb;" \
++				"setenv fdt_file fsl-imx8mm-var-dart.dtb;" \
+ 			"fi; " \
+ 		"fi; \0" \
+ 	"loadfdt=run findfdt; " \
+-- 
+2.17.1
+
