@@ -1,4 +1,16 @@
 - commits:
+    - subject: 'imx8mm-var-dart-nrt: Add coffee file'
+      hash: 249ac7a3f9528863c1c7d2fa837dfd8e86700cd5
+      body: ''
+      footer:
+        Changelog-entry: 'imx8mm-var-dart-nrt: Add coffee file'
+        changelog-entry: 'imx8mm-var-dart-nrt: Add coffee file'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.48.0+rev3
+  date: 2020-05-12T15:35:56.305Z
+- commits:
     - subject: 'imx8mm-var-dart-plt: Remove unnecessary step from coffee file'
       hash: 269ccf64086c914624d545de754814067ab70e08
       body: |

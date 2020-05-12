@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.48.0+rev3
+## (2020-05-12)
+
+* imx8mm-var-dart-nrt: Add coffee file [Alexandru Costache]
+
 # v2.48.0+rev2
 ## (2020-04-14)
 
