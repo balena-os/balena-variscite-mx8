@@ -14,10 +14,11 @@ RESIN_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
-# Leave aside 0001-vivante-gpu-revert-to-6.2.4.p1-driver.patch
-# for the plain imx8m until we can test if it's still needed
-# with the new 4.14.98 kernel
+# For plain imx8m-var-dart we'll stay at kernel 4.14.78
+# because there's no ubuntu release for 4.14.98, and
+# we want to preserve compatiblity for GPU access from container
 SRC_URI_append_imx8m-var-dart = " \
+        file://0001-vivante-gpu-revert-to-6.2.4.p1-driver.patch \
 	file://0001-Add-identification-led.patch \
 	file://0001-fsl-imx8mq-var-dart-common.dtsi-Add-spidev-support.patch \
 "
