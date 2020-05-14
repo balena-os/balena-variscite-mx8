@@ -1,14 +1,16 @@
-From e76f9dddb3436f1665df820272b5751a288faa86 Mon Sep 17 00:00:00 2001
+From 311fe7eecd5ce0152ddc19e9c00eb2b938dd2c20 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Tue, 25 Feb 2020 13:48:17 +0100
 Subject: [PATCH] dart-mx8mm: Integrate with Balena u-boot environment
+
+And also switch back to loading kernel 4.14.78 dtbs
 
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@resin.io>
 ---
  configs/imx8mq_var_dart_defconfig |  8 ++++++++
- include/configs/imx8mq_var_dart.h | 21 ++++++++++++---------
- 2 files changed, 20 insertions(+), 9 deletions(-)
+ include/configs/imx8mq_var_dart.h | 23 +++++++++++++----------
+ 2 files changed, 21 insertions(+), 10 deletions(-)
 
 diff --git a/configs/imx8mq_var_dart_defconfig b/configs/imx8mq_var_dart_defconfig
 index 669b3119e4..09ae220d32 100644
@@ -27,7 +29,7 @@ index 669b3119e4..09ae220d32 100644
 +CONFIG_CMD_EXT4=y
 +CONFIG_CMD_FAT=y
 diff --git a/include/configs/imx8mq_var_dart.h b/include/configs/imx8mq_var_dart.h
-index b05aba204c..6cce7bb95d 100644
+index b05aba204c..c719fac8c9 100644
 --- a/include/configs/imx8mq_var_dart.h
 +++ b/include/configs/imx8mq_var_dart.h
 @@ -67,8 +67,6 @@
@@ -50,25 +52,27 @@ index b05aba204c..6cce7bb95d 100644
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
 -	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${bootdir}/${image};" \
-+	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${image};" \
++	"loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
  		"unzip ${img_addr} ${loadaddr}\0" \
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
-@@ -154,14 +152,14 @@
+@@ -153,15 +151,15 @@
+ 		"fi;\0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
- 			"if gpio input 12; then " \
+-			"if gpio input 12; then " \
 -				"setenv fdt_file fsl-imx8mq-var-dart-cb12.dtb; " \
-+				"setenv fdt_file fsl-imx8mq-var-dart-wifi-hdmi-cb12.dtb; " \
++			"if test ${mmcdev} = 0; then " \
++				"setenv fdt_file fsl-imx8mq-var-dart-emmc-wifi-hdmi.dtb; " \
  			"else " \
 -				"setenv fdt_file fsl-imx8mq-var-dart.dtb;" \
-+				"setenv fdt_file fsl-imx8mq-var-dart-wifi-hdmi.dtb;" \
++				"setenv fdt_file fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb;" \
  			"fi; " \
  		"fi; \0" \
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
 -		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${bootdir}/${fdt_file}\0" \
-+		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}\0" \
++		"load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}\0" \
  	"mmcboot=echo Booting from mmc ...; " \
  		"run mmcargs; " \
  		"run optargs; " \
