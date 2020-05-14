@@ -6,6 +6,10 @@ SRCREV_FORMAT = "linux-firmware"
 
 SRCREV_brcm = "7080491e10b82661ca4a67237fdb361190775d2f"
 BRANCH_brcm = "7.0.0.142"
+
+SRCREV_brcm_imx8m-var-dart = "7bce9b69b51ffd967176c1597feed79305927370"
+BRANCH_brcm_imx8m-var-dart = "6.0.0.121"
+
 SRC_URI_append = " \
            git://github.com/varigit/bcm_4343w_fw.git;protocol=git;branch=${BRANCH_brcm};destsuffix=brcm;name=brcm \
 "
