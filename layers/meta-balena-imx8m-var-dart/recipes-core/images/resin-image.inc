@@ -1,12 +1,11 @@
 RESIN_BOOT_PARTITION_FILES_imx8m-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-sd-lvds.dtb:/fsl-imx8mq-var-dart-sd-lvds.dtb \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-sd-hdmi.dtb:/fsl-imx8mq-var-dart-sd-hdmi.dtb \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-sd-lvds-hdmi.dtb:/fsl-imx8mq-var-dart-sd-lvds-hdmi.dtb \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-wifi-lvds.dtb:/fsl-imx8mq-var-dart-wifi-lvds.dtb \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-wifi-hdmi.dtb:/fsl-imx8mq-var-dart-wifi-hdmi.dtb \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-wifi-lvds-hdmi.dtb:/fsl-imx8mq-var-dart-wifi-lvds-hdmi.dtb \
-    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-wifi-hdmi-cb12.dtb:/fsl-imx8mq-var-dart-wifi-hdmi-cb12.dtb \
+    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-sd-emmc-lvds.dtb:/fsl-imx8mq-var-dart-sd-emmc-lvds.dtb \
+    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb:/fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb \
+    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-sd-emmc-dual-display.dtb:/fsl-imx8mq-var-dart-sd-emmc-dual-display.dtb \
+    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-emmc-wifi-lvds.dtb:/fsl-imx8mq-var-dart-emmc-wifi-lvds.dtb \
+    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-emmc-wifi-hdmi.dtb:/fsl-imx8mq-var-dart-emmc-wifi-hdmi.dtb \
+    ${KERNEL_IMAGETYPE}-fsl-imx8mq-var-dart-emmc-wifi-dual-display.dtb:/fsl-imx8mq-var-dart-emmc-wifi-dual-display.dtb \
 "
 
 RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart = " \

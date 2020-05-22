@@ -53,7 +53,7 @@ index 2ca74ef416..0ac8b21078 100644
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
 -	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${bootdir}/${image};" \
-+	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${image};" \
++	"loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
  		"unzip ${img_addr} ${loadaddr}\0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
@@ -62,7 +62,7 @@ index 2ca74ef416..0ac8b21078 100644
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
 -		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${bootdir}/${fdt_file}\0" \
-+		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${fdt_file}\0" \
++		"load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}\0" \
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
  			"setenv cma_size cma=320M; " \
