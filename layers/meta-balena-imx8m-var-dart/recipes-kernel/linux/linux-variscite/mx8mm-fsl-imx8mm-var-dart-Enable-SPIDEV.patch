@@ -1,32 +1,28 @@
-From abc518a0d488181a76e8daf7b049d5a8031b655e Mon Sep 17 00:00:00 2001
+From 2248eb0f3bf5a093b2c7fdd2e72a0e9e92c0b3f0 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 25 Feb 2020 10:15:08 +0100
+Date: Thu, 18 Jun 2020 16:51:33 +0200
 Subject: [PATCH] Enable SPIDEV
 
 Upstream-Status: Inappropriate [configuration]
-Signed-off-by: Alexandru Costache <alexandru@balena.io>
+Signed-off-by: Alexandru Costache <alexandru@balena.io
 ---
- .../dts/freescale/fsl-imx8mm-var-dart.dts     | 38 +++++--------------
- 1 file changed, 10 insertions(+), 28 deletions(-)
+ .../dts/freescale/fsl-imx8mm-var-dart.dts     | 34 +++++--------------
+ 1 file changed, 9 insertions(+), 25 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
-index f20698941cda..e364863cd6b5 100644
+index 9bfdeff39d2e..02c6291af9bd 100644
 --- a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
 +++ b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
-@@ -1053,40 +1053,16 @@
+@@ -1061,6 +1061,8 @@
  };
  
  &ecspi1 {
-+	#address-cells = <1>;
-+	#size-cells = <0>;
++        #address-cells = <1>;
++        #size-cells = <0>;
  	pinctrl-names = "default";
  	pinctrl-0 = <&pinctrl_ecspi1>;
--	cs-gpios = <&gpio5  9 GPIO_ACTIVE_HIGH>,
--		   <&gpio1 12 GPIO_ACTIVE_HIGH>;
--	fsl,spi-num-chipselects = <2>;
-+	cs-gpios =  <&gpio1 12 0>;
-+	fsl,spi-num-chipselects = <1>;
- 	/delete-property/ dmas;
+ 	cs-gpios = <&gpio5  9 GPIO_ACTIVE_HIGH>,
+@@ -1070,31 +1072,6 @@
  	/delete-property/ dma-names;
  	status = "okay";
  
@@ -58,16 +54,17 @@ index f20698941cda..e364863cd6b5 100644
  	can0: can@1 {
  		compatible = "microchip,mcp2517fd";
  		reg = <1>;
-@@ -1098,6 +1074,12 @@
+@@ -1106,6 +1083,13 @@
  		spi-max-frequency = <20000000>;
  		status = "okay";
  	};
 +
 +	spidev@0 {
-+               compatible = "spidev";
-+               spi-max-frequency = <12000000>;
-+               reg = <0>;
-+        };
++		compatible = "spidev";
++		spi-max-frequency = <12000000>;
++		reg = <0>;
++         };
++
  };
  
  &flexspi {
