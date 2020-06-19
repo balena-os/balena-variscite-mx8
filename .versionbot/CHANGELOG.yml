@@ -1,4 +1,22 @@
 - commits:
+    - subject: Switch to DDR for the M4 load address on the imx8mm-var-dart-nrt machine
+      hash: 71d0b920e53d06e39a32361111d5689357cd83c3
+      body: |
+        Also, switch to m4 dtb which reserves rpmsg
+        area.
+      footer:
+        Changelog-entry: >-
+          Switch to DDR for the M4 load address on the imx8mm-var-dart-nrt
+          machine
+        changelog-entry: >-
+          Switch to DDR for the M4 load address on the imx8mm-var-dart-nrt
+          machine
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+  version: 2.51.1+rev2
+  date: 2020-06-19T07:40:26.703Z
+- commits:
     - subject: 'linux-variscite: Add GPIO5_IO9 as ecspi chipselect'
       hash: 09dc32a8c3485c2fc0e4668febc1c38b709a0704
       body: |

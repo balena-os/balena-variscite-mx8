@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.51.1+rev2
+## (2020-06-19)
+
+* Switch to DDR for the M4 load address on the imx8mm-var-dart-nrt machine [Alexandru Costache]
+
 # v2.51.1+rev1
 ## (2020-06-18)
 
