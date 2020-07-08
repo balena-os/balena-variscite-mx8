@@ -37,4 +37,10 @@ SRC_URI_append_imx8mm-var-dart = " \
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
+	file://patch-4.14.93-rt53.patch \
+"
+
+RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
+RESIN_CONFIGS[preempt_rt] = " \
+    CONFIG_PREEMPT_RT_FULL=y \
 "
