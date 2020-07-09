@@ -18,5 +18,5 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
-	file://mx8mm-nrt-Enable-M4-run-from-DDR.patch \
+	file://mx8mm-nrt-Enable-M4-run-from-TCM.patch \
 "
