@@ -1,4 +1,24 @@
 - commits:
+    - subject: >-
+        Revert "u-boot: Switch to DDR for the M4 load address" so that customer
+        can use spi
+      hash: b090c88a7cd6744421dad5350e9c11d27daac63f
+      body: |
+        This reverts commit 71d0b920e53d06e39a32361111d5689357cd83c3.
+
+        Customer realised that they won't be able to use spi when using the m4
+        dtb even though we were clear about this.
+      footer:
+        Changelog-entry: >-
+          Revert "u-boot: Switch to DDR for the M4 load address" so that
+          customer can use spi
+        changelog-entry: >-
+          Revert "u-boot: Switch to DDR for the M4 load address" so that
+          customer can use spi
+      author: Florin Sarbu
+  version: 2.51.8+rev2
+  date: 2020-07-09T11:14:59.365Z
+- commits:
     - subject: Add the real-time kernel patch for imx8mm-var-dart-nrt
       hash: 5886338794b9cec7c47b806173c68bd7e531be16
       body: |

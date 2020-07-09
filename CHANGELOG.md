@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.51.8+rev2
+## (2020-07-09)
+
+* Revert "u-boot: Switch to DDR for the M4 load address" so that customer can use spi [Florin Sarbu]
+
 # v2.51.8+rev1
 ## (2020-07-08)
 
