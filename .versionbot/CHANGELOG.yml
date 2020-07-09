@@ -1,4 +1,18 @@
 - commits:
+    - subject: Disable CQE for imx8mm-var-dart-nrt
+      hash: 9141e58665643cc7ca41188873731094dc56e5bf
+      body: |
+        We have observed CQE presents some stability issues on
+        imx8mm-var-dart-nrt so let's disable CQE for this board.
+      footer:
+        Changelog-entry: Disable CQE for imx8mm-var-dart-nrt
+        changelog-entry: Disable CQE for imx8mm-var-dart-nrt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+  version: 2.51.8+rev3
+  date: 2020-07-09T11:41:20.069Z
+- commits:
     - subject: >-
         Revert "u-boot: Switch to DDR for the M4 load address" so that customer
         can use spi
