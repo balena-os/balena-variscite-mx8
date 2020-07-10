@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.51.8+rev4
+## (2020-07-10)
+
+* Correctly disable CQE for imx8mm-var-dart-nrt [Florin Sarbu]
+
 # v2.51.8+rev3
 ## (2020-07-09)
 

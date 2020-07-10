@@ -1,4 +1,22 @@
 - commits:
+    - subject: Correctly disable CQE for imx8mm-var-dart-nrt
+      hash: 66c4524067d17c08bdbb7f1801b782fb47f9d9fe
+      body: |
+        The previous patch to disable CQE was faulty because it was missing the
+        changes to take into account the no-cqe device tree property. We now
+        just disable CQE directly from the mmc subsystem. This also
+        has the advantage that we disable CQE regardless of what device tree we
+        may be using.
+      footer:
+        Changelog-entry: Correctly disable CQE for imx8mm-var-dart-nrt
+        changelog-entry: Correctly disable CQE for imx8mm-var-dart-nrt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.51.8+rev4
+  date: 2020-07-10T04:45:23.539Z
+- commits:
     - subject: Disable CQE for imx8mm-var-dart-nrt
       hash: 9141e58665643cc7ca41188873731094dc56e5bf
       body: |
