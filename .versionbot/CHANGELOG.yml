@@ -1,4 +1,18 @@
 - commits:
+    - subject: Disable GPU for imx8mm-var-dart-nrt as requested by customer
+      hash: aaf22482ef7c7fba19bcfaf074ee6ca8753d6147
+      body: |
+        This was requested by customer
+      footer:
+        Changelog-entry: Disable GPU for imx8mm-var-dart-nrt as requested by customer
+        changelog-entry: Disable GPU for imx8mm-var-dart-nrt as requested by customer
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.51.8+rev5
+  date: 2020-07-10T05:42:11.119Z
+- commits:
     - subject: Correctly disable CQE for imx8mm-var-dart-nrt
       hash: 66c4524067d17c08bdbb7f1801b782fb47f9d9fe
       body: |

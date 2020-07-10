@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.51.8+rev5
+## (2020-07-10)
+
+* Disable GPU for imx8mm-var-dart-nrt as requested by customer [Florin Sarbu]
+
 # v2.51.8+rev4
 ## (2020-07-10)
 
