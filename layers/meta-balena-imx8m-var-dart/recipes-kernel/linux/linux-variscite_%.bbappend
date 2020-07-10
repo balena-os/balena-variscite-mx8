@@ -38,7 +38,7 @@ SRC_URI_append_imx8mm-var-dart = " \
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
 	file://patch-4.14.93-rt53.patch \
-	file://0007-arm64-dts-fsl-imx8mm-var-dart-Disable-CQE-for-the-eM.patch \
+	file://0007-mmc-core-Disable-CQE.patch \
 "
 
 RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
