@@ -1,0 +1,47 @@
+From c7841f1d2237dcd4a65f5dff6f63c3b9d914b282 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Fri, 10 Jul 2020 06:24:05 +0200
+Subject: [PATCH] mmc: core: Disable CQE
+
+On the customer board we get a lot of
+
+mmc2: running CQE recovery
+
+So let's disable CQE for now.
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
+---
+ drivers/mmc/core/mmc.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/drivers/mmc/core/mmc.c b/drivers/mmc/core/mmc.c
+index 98819a0..b6234e5 100644
+--- a/drivers/mmc/core/mmc.c
++++ b/drivers/mmc/core/mmc.c
+@@ -1797,6 +1797,13 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+ 	 */
+ 	card->ext_csd.cmdq_en = false;
+ 	if (card->ext_csd.cmdq_support && host->caps2 & MMC_CAP2_CQE) {
++
++/*
++ * We get a lot of
++ * mmc2: running CQE recovery
++ * so let's just disable CQE for now
++ */
++#if 0
+ 		err = mmc_cmdq_enable(card);
+ 		if (err && err != -EBADMSG)
+ 			goto free_card;
+@@ -1807,6 +1814,8 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+ 			card->ext_csd.cmdq_depth = 0;
+ 			err = 0;
+ 		}
++#endif
++	pr_info("%s: CMDQ support disabled in kernel\n", mmc_hostname(host));
+ 	}
+ 	/*
+ 	 * In some cases (e.g. RPMB or mmc_test), the Command Queue must be
+-- 
+2.7.4
+
