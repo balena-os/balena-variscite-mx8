@@ -29,6 +29,8 @@ IMAGE_INSTALL_append = " \
 					kernel-module-imx-gpu-viv \
 "
 
+IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
+
 # Flash signed bootloader to raw image
 IMAGE_CMD_resinos-img_append_imx8m-var-dart () {
     dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_evk of=${RESIN_RAW_IMG} conv=notrunc seek=33 bs=1K
