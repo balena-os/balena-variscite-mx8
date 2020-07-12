@@ -1,4 +1,17 @@
 - commits:
+    - subject: Switch to kernel version 4.19.35 for imx8mm-var-dart-nrt
+      hash: 3ccfde69bb955fb39fbf5eee52fc82f1f5af89a1
+      body: ''
+      footer:
+        Changelog-entry: Switch to kernel version 4.19.35 for imx8mm-var-dart-nrt
+        changelog-entry: Switch to kernel version 4.19.35 for imx8mm-var-dart-nrt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.52.5+rev2
+  date: 2020-07-12T17:57:11.085Z
+- commits:
     - subject: Update meta-balena from v2.52.4 to v2.52.5
       hash: ca78bf807bb8300a037f95d081d9caf9e1791444
       body: |

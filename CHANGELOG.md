@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.52.5+rev2
+## (2020-07-12)
+
+* Switch to kernel version 4.19.35 for imx8mm-var-dart-nrt [Florin Sarbu]
+
 # v2.52.5+rev1
 ## (2020-07-10)
 
