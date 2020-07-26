@@ -15,6 +15,7 @@ SRC_URI_append_imx8mm-var-dart = " \
 SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0001-Add-support-for-querying-boot-switch-position.patch \
 	file://0002-bootcmd-Flash-only-if-bootswitch-in-EXT-position.patch \
+	file://imx8mm-var-dart-Enable-I2C.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
