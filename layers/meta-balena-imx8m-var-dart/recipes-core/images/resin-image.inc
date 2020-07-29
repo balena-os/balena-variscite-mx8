@@ -27,6 +27,7 @@ IMAGE_INSTALL_append = " \
 					firmware-imx-vpu-imx8 \
 					firmware-imx-sdma \
 					kernel-module-imx-gpu-viv \
+					i2c-tools \
 "
 
 IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
