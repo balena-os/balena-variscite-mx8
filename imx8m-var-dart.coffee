@@ -40,7 +40,7 @@ module.exports =
                 machine: 'imx8m-var-dart'
                 image: 'resin-image-flasher'
                 fstype: 'resinos-img'
-                version: 'yocto-sumo'
+                version: 'yocto-warrior'
                 deployArtifact: 'resin-image-flasher-imx8m-var-dart.resinos-img'
                 compressed: true
 
