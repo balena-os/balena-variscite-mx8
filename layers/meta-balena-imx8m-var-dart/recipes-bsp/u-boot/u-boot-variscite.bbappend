@@ -4,6 +4,10 @@ inherit resin-u-boot
 
 FILESEXTRAPATHS_append := ":${THISDIR}/files"
 
+# meta-balena patch does not apply cleanly, so we refactor it
+SRC_URI_remove = " file://resin-specific-env-integration-kconfig.patch "
+SRC_URI_append = " file://local-resin-specific-env-integration-kconfig.patch "
+
 SRC_URI_append_imx8m-var-dart = " \
 	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch \ 
 "

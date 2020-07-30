@@ -1,7 +1,7 @@
-From 975ec736e89ea6c916be9b018addda06354444d0 Mon Sep 17 00:00:00 2001
+From bf8100365ac066408f400315f643e1023f50608f Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Mon, 30 Mar 2020 18:14:54 +0200
-Subject: [PATCH 1/2] Add support for querying boot switch position
+Date: Wed, 29 Jul 2020 22:27:31 +0200
+Subject: [PATCH] Add support for querying boot switch position
 
 The imx8mm-var-dart has a boot switch that we can use
 to determine if we need to boot flasher rootfs or not.
@@ -10,18 +10,18 @@ This patch adds support for querying it from
 the u-boot environment.
 
 Upstream-status: Inappropriate [configuration]
-Signed-off-by: Alexandru Costache <alexandru@balena.io>
+Signed-off-by: Alexandru Costache <alexandru@balena.io
 ---
- .../imx8mm_var_dart/imx8mm_var_dart.c         | 32 +++++++++++++++++++
+ .../imx8mm_var_dart/imx8mm_var_dart.c         | 33 +++++++++++++++++++
  cmd/Kconfig                                   |  5 +++
  cmd/Makefile                                  |  1 +
  cmd/bootswitch.c                              | 26 +++++++++++++++
  configs/imx8mm_var_dart_defconfig             |  1 +
- 5 files changed, 65 insertions(+)
+ 5 files changed, 66 insertions(+)
  create mode 100644 cmd/bootswitch.c
 
 diff --git a/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c b/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c
-index 8b314d97d5..516c9a65d8 100644
+index a99aace78a..fbf8c5949b 100644
 --- a/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c
 +++ b/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c
 @@ -26,6 +26,17 @@ extern int var_setup_mac(struct var_eeprom *eeprom);
@@ -35,53 +35,54 @@ index 8b314d97d5..516c9a65d8 100644
 +#define BOOT_SWITCH_INT   IMX_GPIO_NR(4, 17)
 +
 +static iomux_v3_cfg_t const boot_switch_pads[] = {
-+	IMX8MM_PAD_SAI1_TXD2_GPIO4_IO14 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
-+	IMX8MM_PAD_SAI1_TXD5_GPIO4_IO17 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
++       IMX8MM_PAD_SAI1_TXD2_GPIO4_IO14 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
++       IMX8MM_PAD_SAI1_TXD5_GPIO4_IO17 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
 +};
 +
  static iomux_v3_cfg_t const uart1_pads[] = {
  	IMX8MM_PAD_UART1_RXD_UART1_RX | MUX_PAD_CTRL(UART_PAD_CTRL),
  	IMX8MM_PAD_UART1_TXD_UART1_TX | MUX_PAD_CTRL(UART_PAD_CTRL),
-@@ -196,6 +207,26 @@ static void setup_usb(void)
+@@ -225,6 +236,26 @@ static void setup_usb(void)
  }
  #endif
  
 +int is_boot_switch(const char *position)
 +{
-+	if (!strncmp(position, "INT", 3) && gpio_get_value(BOOT_SWITCH_INT)) {
-+		return 1;
-+	} else if (!strncmp(position, "EXT", 3) && gpio_get_value(BOOT_SWITCH_EXT)) {
-+		return 1;
-+	}
++       if (!strncmp(position, "INT", 3) && gpio_get_value(BOOT_SWITCH_INT)) {
++               return 1;
++       } else if (!strncmp(position, "EXT", 3) && gpio_get_value(BOOT_SWITCH_EXT)) {
++               return 1;
++       }
 +
-+	return 0;
++       return 0;
 +}
 +
 +static void setup_bootswitch_gpios(void)
 +{
-+	imx_iomux_v3_setup_multiple_pads(boot_switch_pads, ARRAY_SIZE(boot_switch_pads));
-+	gpio_request(BOOT_SWITCH_INT, "BOOT_INT");
-+	gpio_direction_input(BOOT_SWITCH_INT);
-+	gpio_request(BOOT_SWITCH_EXT, "BOOT_EXT");
-+	gpio_direction_input(BOOT_SWITCH_EXT);
++       imx_iomux_v3_setup_multiple_pads(boot_switch_pads, ARRAY_SIZE(boot_switch_pads));
++       gpio_request(BOOT_SWITCH_INT, "BOOT_INT");
++       gpio_direction_input(BOOT_SWITCH_INT);
++       gpio_request(BOOT_SWITCH_EXT, "BOOT_EXT");
++       gpio_direction_input(BOOT_SWITCH_EXT);
 +}
 +
  int board_init(void)
  {
  #ifdef CONFIG_FEC_MXC
-@@ -206,6 +237,7 @@ int board_init(void)
+@@ -235,6 +266,8 @@ int board_init(void)
  	setup_usb();
  #endif
  
 +	setup_bootswitch_gpios();
++
  	return 0;
  }
  
 diff --git a/cmd/Kconfig b/cmd/Kconfig
-index 16748e1f8b..8f40ea5c4a 100644
+index 9518136575..018a36881c 100644
 --- a/cmd/Kconfig
 +++ b/cmd/Kconfig
-@@ -1106,6 +1106,11 @@ endmenu
+@@ -1347,6 +1347,11 @@ endif
  
  menu "Misc commands"
  
@@ -94,20 +95,20 @@ index 16748e1f8b..8f40ea5c4a 100644
  	bool "Enable 'bmp' command"
  	depends on LCD || DM_VIDEO || VIDEO
 diff --git a/cmd/Makefile b/cmd/Makefile
-index 295f4e944b..11e93f5dc0 100644
+index 9646585052..37bcb8ff17 100644
 --- a/cmd/Makefile
 +++ b/cmd/Makefile
-@@ -144,6 +144,7 @@ obj-$(CONFIG_CMD_ZFS) += zfs.o
+@@ -162,6 +162,7 @@ obj-$(CONFIG_CMD_ZFS) += zfs.o
  obj-$(CONFIG_CMD_DFU) += dfu.o
  obj-$(CONFIG_CMD_GPT) += gpt.o
  obj-$(CONFIG_CMD_ETHSW) += ethsw.o
 +obj-$(CONFIG_CMD_BOOTSWITCH_POS) += bootswitch.o
+ obj-$(CONFIG_CMD_AXI) += axi.o
  
  # Power
- obj-$(CONFIG_CMD_PMIC) += pmic.o
 diff --git a/cmd/bootswitch.c b/cmd/bootswitch.c
 new file mode 100644
-index 0000000000..91818034d7
+index 0000000000..8e0c66809f
 --- /dev/null
 +++ b/cmd/bootswitch.c
 @@ -0,0 +1,26 @@
@@ -125,12 +126,12 @@ index 0000000000..91818034d7
 +
 +static int do_bootswitchpos(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 +{
-+	if (argc < 2) {
-+		printf(USAGE);
-+		return 1;
-+	}
++       if (argc < 2) {
++               printf(USAGE);
++               return 1;
++       }
 +
-+	return !is_boot_switch(argv[1]);
++       return !is_boot_switch(argv[1]);
 +}
 +
 +U_BOOT_CMD(bootswitchpos, 2, 1, do_bootswitchpos, "", "")
@@ -138,10 +139,10 @@ index 0000000000..91818034d7
 +#endif
 +#endif
 diff --git a/configs/imx8mm_var_dart_defconfig b/configs/imx8mm_var_dart_defconfig
-index 3abfd63406..7d2b6c6107 100644
+index 4542b2635a..c6cdd2d439 100644
 --- a/configs/imx8mm_var_dart_defconfig
 +++ b/configs/imx8mm_var_dart_defconfig
-@@ -66,3 +66,4 @@ CONFIG_CMD_EXT2=y
+@@ -68,3 +68,4 @@ CONFIG_CMD_EXT2=y
  CONFIG_CMD_EXT4=y
  CONFIG_CMD_FAT=y
  CONFIG_CMD_EXPORTENV=y
