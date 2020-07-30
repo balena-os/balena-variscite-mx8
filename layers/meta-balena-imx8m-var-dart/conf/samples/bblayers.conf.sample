@@ -17,6 +17,7 @@ BBLAYERS ?= " \
     ${TOPDIR}/../layers/meta-variscite-imx \
     ${TOPDIR}/../layers/meta-balena/meta-balena-common \
     ${TOPDIR}/../layers/meta-balena/meta-balena-warrior \
+    ${TOPDIR}/../layers/meta-laird-cp \
     ${TOPDIR}/../layers/meta-balena-imx8m-var-dart \
     ${TOPDIR}/../layers/meta-rust \
-    "
+"
