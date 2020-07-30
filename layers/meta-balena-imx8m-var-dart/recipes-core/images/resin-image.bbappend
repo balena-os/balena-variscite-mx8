@@ -5,5 +5,5 @@ RESIN_BOOT_PARTITION_FILES_append_imx8m-var-dart = " \
 "
 
 RESIN_BOOT_PARTITION_FILES_append_imx8mm-var-dart = " \
-    imx-boot-${MACHINE}-sd.bin:/imx-boot-sd.bin \
+    imx-boot-${MACHINE}-sd.bin-flash_lpddr4_ddr4_evk:/imx-boot-sd.bin \
 "
