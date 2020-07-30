@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.9+rev2
+## (2020-07-29)
+
+* u-boot: Enable i2c4 bus and start led 1 [Alexandru Costache]
+
 # v2.53.9+rev1
 ## (2020-07-24)
 
