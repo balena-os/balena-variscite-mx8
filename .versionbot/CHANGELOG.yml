@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'u-boot: Fix build on warrior'
+      hash: 75f6da54f5e49715b42e806e644c20ec1fc8da85
+      body: ''
+      footer:
+        Changelog-entry: 'u-boot: Fix build on warrior'
+        changelog-entry: 'u-boot: Fix build on warrior'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.53.9+rev3
+  date: 2020-07-30T09:36:56.626Z
+- commits:
     - subject: 'u-boot: Enable i2c4 bus and start led 1'
       hash: e7af41e65fd9aa36c9e8f434c6273c6e1b39fbe5
       body: ''

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.9+rev3
+## (2020-07-30)
+
+* u-boot: Fix build on warrior [Alexandru Costache]
+
 # v2.53.9+rev2
 ## (2020-07-29)
 
