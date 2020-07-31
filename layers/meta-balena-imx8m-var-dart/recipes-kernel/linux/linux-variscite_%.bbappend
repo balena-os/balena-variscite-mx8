@@ -14,6 +14,13 @@ RESIN_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
+RESIN_CONFIGS_append_imx8mm-var-dart-plt = " laird"
+RESIN_CONFIGS[laird] = " \
+		CONFIG_CFG80211=n \
+		CONFIG_MAC80211=n \
+		CONFIG_BT=n \
+"
+
 # For plain imx8m-var-dart we'll stay at kernel 4.14.78
 # because there's no ubuntu release for 4.14.98, and
 # we want to preserve compatiblity for GPU access from container
@@ -32,6 +39,10 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
 	file://0009-Port-RT-changes-4.19.31-rt18.patch \
+"
+
+SRC_URI_append_imx8mm-var-dart-plt = " \
+	file://0007-mmc-core-Disable-CQE.patch \
 "
 
 RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
