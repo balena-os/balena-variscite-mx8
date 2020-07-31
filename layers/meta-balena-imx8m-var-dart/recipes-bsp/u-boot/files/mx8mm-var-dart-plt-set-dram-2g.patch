@@ -1,0 +1,32 @@
+From 7a0d64c1098b9dab526bf533ccf1820cd9b1990d Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 31 Jul 2020 15:46:00 +0200
+Subject: [PATCH] imx8mm-var-dart: Switch default dram size to 2G
+
+When using CONFIG_DM_I2C to be able to interact
+with i2c devices, early reading of the som eeprom
+fails and only 512MB RAM is reported. Set DRAM
+to 2G as this is the actual size.
+
+Upstream-status: Inappropriate[configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index b16969d60d..7e3827759a 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -246,7 +246,7 @@
+ 
+ #define CONFIG_SYS_SDRAM_BASE		0x40000000
+ #define PHYS_SDRAM			0x40000000
+-#define DEFAULT_DRAM_SIZE_MB		512
++#define DEFAULT_DRAM_SIZE_MB		2048
+ 
+ #define CONFIG_SYS_MEMTEST_START	PHYS_SDRAM
+ #define CONFIG_SYS_MEMTEST_END		(CONFIG_SYS_MEMTEST_START + (256 * SZ_1M))
+-- 
+2.17.1
+
