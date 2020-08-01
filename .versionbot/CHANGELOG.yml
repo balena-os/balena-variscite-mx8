@@ -1,4 +1,17 @@
 - commits:
+    - subject: Install driver and firmwares for st60 module
+      hash: 2f95f7c5f91fc5533b88f28e02a2d12125c74b42
+      body: ''
+      footer:
+        Changelog-entry: Install driver and firmwares for st60 module
+        changelog-entry: Install driver and firmwares for st60 module
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.53.9+rev4
+  date: 2020-08-01T10:04:37.430Z
+- commits:
     - subject: 'u-boot: Fix build on warrior'
       hash: 75f6da54f5e49715b42e806e644c20ec1fc8da85
       body: ''

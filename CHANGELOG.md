@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.9+rev4
+## (2020-08-01)
+
+* Install driver and firmwares for st60 module [Alexandru Costache]
+
 # v2.53.9+rev3
 ## (2020-07-30)
 
