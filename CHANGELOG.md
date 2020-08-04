@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.11+rev2
+## (2020-08-04)
+
+* meta-laird-cp: Switch to 8.0.0 release [Alexandru Costache]
+
 # v2.53.11+rev1
 ## (2020-08-03)
 

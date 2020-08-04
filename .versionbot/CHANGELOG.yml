@@ -1,4 +1,22 @@
 - commits:
+    - subject: 'meta-laird-cp: Switch to 8.0.0 release'
+      hash: 566e79421c826245f55a4188e57f49db89f82def
+      body: |
+        Further investigation showed that the connectivity
+        issues were actually caused by meta-fsl-bsp-release,
+        which was updated to warrior. We addressed the issue
+        in meta-balena, so we can switch back to the newest
+        release.
+      footer:
+        Changelog-entry: 'meta-laird-cp: Switch to 8.0.0 release'
+        changelog-entry: 'meta-laird-cp: Switch to 8.0.0 release'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.53.11+rev2
+  date: 2020-08-04T13:59:45.286Z
+- commits:
     - subject: Update meta-balena from v2.53.9 to v2.53.11
       hash: a5be34896776d74df0819a443005bf9c302089ea
       body: |
