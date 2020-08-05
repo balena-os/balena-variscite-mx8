@@ -47,7 +47,7 @@ index 2ca74ef416..0ac8b21078 100644
 -	"mmcargs=setenv bootargs console=${console} " \
 -		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size}\0 " \
 -	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${script};\0" \
-+	"mmcargs=setenv bootargs console=${console}  video=${video} ${resin_kernel_root} rootwait rw ${os_cmdline} " \
++	"mmcargs=setenv bootargs console=${console} ${resin_kernel_root} rootwait rw ${os_cmdline} " \
 +		" ${cma_size}\0 " \
 +	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
