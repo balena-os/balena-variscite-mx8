@@ -1,4 +1,23 @@
 - commits:
+    - subject: Remove video kernel cmdline param for imx8mm-var-dart based boards
+      hash: 99e9f3ee1a96da31a51b0ab6d0355209797a75bd
+      body: >
+        This was added as extra but it causes boot hang for the nrt board on
+        which
+
+        we disabled the gpu. So let's just disable it and follow the original
+
+        mmcargs settings.
+      footer:
+        Changelog-entry: Remove video kernel cmdline param for imx8mm-var-dart based boards
+        changelog-entry: Remove video kernel cmdline param for imx8mm-var-dart based boards
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.53.12+rev2
+  date: 2020-08-05T14:35:24.413Z
+- commits:
     - subject: Update meta-balena from v2.53.11 to v2.53.12
       hash: 16c6799b659fb29249971cf10488d2f02c27bd45
       body: |

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.12+rev2
+## (2020-08-05)
+
+* Remove video kernel cmdline param for imx8mm-var-dart based boards [Florin Sarbu]
+
 # v2.53.12+rev1
 ## (2020-08-05)
 
