@@ -1,4 +1,39 @@
 - commits:
+    - subject: Update meta-balena from v2.53.11 to v2.53.12
+      hash: 16c6799b659fb29249971cf10488d2f02c27bd45
+      body: |
+        Update meta-balena from 2.53.11 to 2.53.12
+      footer:
+        Changelog-entry: Update meta-balena from v2.53.11 to v2.53.12
+        changelog-entry: Update meta-balena from v2.53.11 to v2.53.12
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested:
+        - commits:
+            - subject: 'systemd: Set net.ipv4.conf.all.rp_filter in balena-os-sysctl'
+              hash: a0573b7df13292aff6c7670246ed780342593376
+              body: >
+                The warrior branch does not backport this configuration
+
+                like the older branches do. Let's move this setting in the
+
+                balena-os-sysctl file to avoid issues where some device
+                integration
+
+                layers set the rp_filter mode to strict and break connectivity.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.53.12
+          date: 2020-08-04T14:01:14.955Z
+  version: 2.53.12+rev1
+  date: 2020-08-05T11:14:15.179Z
+- commits:
     - subject: 'meta-laird-cp: Switch to 8.0.0 release'
       hash: 566e79421c826245f55a4188e57f49db89f82def
       body: |
