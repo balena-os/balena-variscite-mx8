@@ -28,3 +28,5 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://mx8mm-nrt-Enable-M4-run-from-TCM.patch \
 "
+
+OS_KERNEL_CMDLINE_remove_imx8mm-var-dart-nrt = "console=null"
