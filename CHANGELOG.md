@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.53.12+rev3
+## (2020-08-06)
+
+* Remove console=null kernel cmdline param for imx8mm-var-dart-nrt [Florin Sarbu]
+
 # v2.53.12+rev2
 ## (2020-08-05)
 

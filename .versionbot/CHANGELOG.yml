@@ -1,4 +1,19 @@
 - commits:
+    - subject: Remove console=null kernel cmdline param for imx8mm-var-dart-nrt
+      hash: 35f4cf78b4d1427402735f7e16fb1bd2c4ef9c49
+      body: |
+        Using this kernel cmdline param the board will freeze at booting when
+        initializing the drm.
+      footer:
+        Changelog-entry: Remove console=null kernel cmdline param for imx8mm-var-dart-nrt
+        changelog-entry: Remove console=null kernel cmdline param for imx8mm-var-dart-nrt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.53.12+rev3
+  date: 2020-08-06T11:45:00.450Z
+- commits:
     - subject: Remove video kernel cmdline param for imx8mm-var-dart based boards
       hash: 99e9f3ee1a96da31a51b0ab6d0355209797a75bd
       body: >
