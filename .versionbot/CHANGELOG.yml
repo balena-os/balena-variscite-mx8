@@ -1,4 +1,21 @@
 - commits:
+    - subject: 'conf/samples: Don''t use laird layer'
+      hash: c4eb2ade611852019f8558090dc5be8f22f99594
+      body: |
+        We don't remove it from the git modules
+        just yet, will remove it after a few updates,
+        when we'll know for sure that it won't be used
+        anymore.
+      footer:
+        Changelog-entry: 'conf/samples: Don''t use laird layer'
+        changelog-entry: 'conf/samples: Don''t use laird layer'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.56.0+rev2
+  date: 2020-09-08T15:01:24.075Z
+- commits:
     - subject: Update meta-balena from v2.54.2 to v2.56.0
       hash: 1749c8fdceb178a2b60944a1ad93f0b89796354a
       body: |

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev2
+## (2020-09-08)
+
+* conf/samples: Don't use laird layer [Alexandru Costache]
+
 # v2.56.0+rev1
 ## (2020-09-07)
 
