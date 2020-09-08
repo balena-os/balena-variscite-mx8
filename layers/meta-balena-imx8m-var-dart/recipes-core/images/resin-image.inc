@@ -31,10 +31,6 @@ IMAGE_INSTALL_append = " \
 "
 
 IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
-IMAGE_INSTALL_append_imx8mm-var-dart-plt = "\
-	sterling-backports-laird \
-	sterling60-firmware-pcie-usb \
-"
 
 # Flash signed bootloader to raw image
 IMAGE_CMD_resinos-img_append_imx8m-var-dart () {
