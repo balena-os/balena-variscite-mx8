@@ -1,0 +1,48 @@
+From d3d9100eeadb17c96e1715c127ebc54bb35b0b83 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 4 Sep 2020 15:35:22 +0200
+Subject: [PATCH] Add Lp5562 definitions
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ .../boot/dts/freescale/fsl-imx8mm-var-dart.dts     | 23 ++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
+index d3561a2..716503c 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
+@@ -807,6 +807,29 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_i2c4>;
+ 	status = "okay";
++
++	lp5562@30 {
++		compatible = "ti,lp5562";
++		reg = <0x30>;
++
++		chan0 {
++			chan-name = "R1";
++			led-cur = /bits/ 8 <0x20>;
++			max-cur = /bits/ 8 <0x60>;
++		};
++
++		chan1 {
++			chan-name = "G1";
++			led-cur = /bits/ 8 <0x20>;
++			max-cur = /bits/ 8 <0x60>;
++		};
++
++		chan2 {
++			chan-name = "B1";
++			led-cur = /bits/ 8 <0x20>;
++			max-cur = /bits/ 8 <0x60>;
++		};
++	};
+ };
+ 
+ &csi1_bridge {
+-- 
+2.7.4
+
