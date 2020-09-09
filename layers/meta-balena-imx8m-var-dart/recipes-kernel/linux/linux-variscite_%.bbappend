@@ -14,13 +14,6 @@ RESIN_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
-RESIN_CONFIGS_append_imx8mm-var-dart-plt = " laird"
-RESIN_CONFIGS[laird] = " \
-		CONFIG_CFG80211=n \
-		CONFIG_MAC80211=n \
-		CONFIG_BT=n \
-"
-
 # For plain imx8m-var-dart we'll stay at kernel 4.14.78
 # because there's no ubuntu release for 4.14.98, and
 # we want to preserve compatiblity for GPU access from container
