@@ -16,6 +16,10 @@ do_install () {
    install -d ${D}/${systemd_unitdir}/system
    install -m 644 ${WORKDIR}/imx-suspend.service ${D}/${systemd_unitdir}/system/imx-suspend.service
    install -m 644 ${WORKDIR}/imx-resume.service  ${D}/${systemd_unitdir}/system/imx-resume.service
+   install -d ${D}/etc/modprobe.d/
+   echo "blacklist lp5562-leds" >  ${D}/etc/modprobe.d/blacklist.conf
 }
 
 SYSTEMD_SERVICE_${PN} = "imx-suspend.service imx-resume.service"
+
+FILES_${PN} += " /etc/modprobe.d/blacklist.conf"
