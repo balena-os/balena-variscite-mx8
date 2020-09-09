@@ -1,0 +1,50 @@
+From 2c4ae43c9206105991eb41d190b700f1e2a042ca Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 9 Sep 2020 06:41:31 +0200
+Subject: [PATCH] imx8mm-var-dart-plt: Add LED to dts
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ arch/arm/dts/fsl-imx8mm-var-dart.dts | 25 +++++++++++++++++++++++++
+ 1 file changed, 25 insertions(+)
+
+diff --git a/arch/arm/dts/fsl-imx8mm-var-dart.dts b/arch/arm/dts/fsl-imx8mm-var-dart.dts
+index e4e9525..32d5f16 100644
+--- a/arch/arm/dts/fsl-imx8mm-var-dart.dts
++++ b/arch/arm/dts/fsl-imx8mm-var-dart.dts
+@@ -395,6 +395,31 @@
+         pinctrl-names = "default";
+         pinctrl-0 = <&pinctrl_i2c4>;
+         status = "okay";
++
++        leds0: lp5562@30 {
++                compatible = "ti,lp5562-leds";
++                #address-cells = <1>;
++                #size-cells = <0>;
++                reg = <0x30>;
++
++                blue@0 {
++                        reg = <0x2>;
++                        label = "blue";
++                        ti,led_current = <0xC8>; /* 20ma */
++                };
++
++                green@1 {
++                        reg = <0x3>;
++                        label = "green";
++                        ti,led_current = <0xC8>; /* 20ma */
++                };
++
++                red@2 {
++                        reg = <0x4>;
++                        label = "red";
++                        ti,led_current = <0xC8>; /* 20ma */
++                };
++        };
+ };
+ 
+ 
+-- 
+2.7.4
+
