@@ -1,4 +1,21 @@
 - commits:
+    - subject: 'linux-variscite: Remove laird configs'
+      hash: 5a28c6807e9d2b6221e22b824f41a75efc3a62a5
+      body: |
+        These were removed as necessay for the laird
+        module. Now that's not being used anymore,
+        we need to add them back for on-board
+        wifi an bt.
+      footer:
+        Changelog-entry: 'linux-variscite: Remove laird configs'
+        changelog-entry: 'linux-variscite: Remove laird configs'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.56.0+rev3
+  date: 2020-09-09T09:11:19.394Z
+- commits:
     - subject: 'conf/samples: Don''t use laird layer'
       hash: c4eb2ade611852019f8558090dc5be8f22f99594
       body: |
