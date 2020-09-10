@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev4
+## (2020-09-10)
+
+* imx8mm-var-dart-plt: Update flashing instructions [Alexandru Costache]
+
 # v2.56.0+rev3
 ## (2020-09-09)
 

@@ -1,4 +1,18 @@
 - commits:
+    - subject: 'imx8mm-var-dart-plt: Update flashing instructions'
+      hash: 169d3f5209e65b26034903ab2e295853de2f92a1
+      body: |
+        For the new hardware type
+      footer:
+        Changelog-entry: 'imx8mm-var-dart-plt: Update flashing instructions'
+        changelog-entry: 'imx8mm-var-dart-plt: Update flashing instructions'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.56.0+rev4
+  date: 2020-09-10T08:34:44.540Z
+- commits:
     - subject: 'linux-variscite: Remove laird configs'
       hash: 5a28c6807e9d2b6221e22b824f41a75efc3a62a5
       body: |
