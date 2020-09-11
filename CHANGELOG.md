@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev5
+## (2020-09-11)
+
+* conf/machine: Use 4.14.98 var1 kernel for PLT [Alexandru Costache]
+
 # v2.56.0+rev4
 ## (2020-09-10)
 

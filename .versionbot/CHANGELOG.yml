@@ -1,4 +1,23 @@
 - commits:
+    - subject: 'conf/machine: Use 4.14.98 var1 kernel for PLT'
+      hash: 2c221056f726e55e94d11d7ea6335ae21dd96846
+      body: |
+        Addresses the following error:
+
+        Atheros 8031 ethernet 30be0000.ethernet-1:00:
+          MasterSlave resolution failed,
+          maybe conflicting manual settings?
+        fec 30be0000.ethernet eth0: Link is Down
+      footer:
+        Changelog-entry: 'conf/machine: Use 4.14.98 var1 kernel for PLT'
+        changelog-entry: 'conf/machine: Use 4.14.98 var1 kernel for PLT'
+        Signed-off-by: Alexndru Costache <alexndru@balena.io>
+        signed-off-by: Alexndru Costache <alexndru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.56.0+rev5
+  date: 2020-09-11T08:13:33.716Z
+- commits:
     - subject: 'imx8mm-var-dart-plt: Update flashing instructions'
       hash: 169d3f5209e65b26034903ab2e295853de2f92a1
       body: |
