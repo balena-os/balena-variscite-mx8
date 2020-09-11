@@ -1,0 +1,80 @@
+From 62e1da3b0417e3e89d77de54913093c29b6da531 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Fri, 11 Sep 2020 08:56:44 +0200
+Subject: [PATCH] Revert "MLK-16023-01 net: phy: at803x: cleared the txc/rxc
+ clk delay enable bits"
+
+This reverts commit a637a7914bfa1f75917b0b835fe4fb65b7a18d2c.
+---
+ drivers/net/phy/at803x.c | 36 ++++++++----------------------------
+ 1 file changed, 8 insertions(+), 28 deletions(-)
+
+diff --git a/drivers/net/phy/at803x.c b/drivers/net/phy/at803x.c
+index 63cad73..20dc798 100644
+--- a/drivers/net/phy/at803x.c
++++ b/drivers/net/phy/at803x.c
+@@ -125,26 +125,16 @@ static int at803x_debug_reg_mask(struct phy_device *phydev, u16 reg,
+ 	return phy_write(phydev, AT803X_DEBUG_DATA, val);
+ }
+ 
+-static inline int at803x_set_rx_delay(struct phy_device *phydev,
+-				      bool is_enabled)
++static inline int at803x_enable_rx_delay(struct phy_device *phydev)
+ {
+-	if (is_enabled)
+-		return at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_0, 0,
+-						AT803X_DEBUG_RX_CLK_DLY_EN);
+-	else
+-		return at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_0,
+-						AT803X_DEBUG_RX_CLK_DLY_EN, 0);
++	return at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_0, 0,
++					AT803X_DEBUG_RX_CLK_DLY_EN);
+ }
+ 
+-static inline int at803x_set_tx_delay(struct phy_device *phydev,
+-				      bool is_enabled)
++static inline int at803x_enable_tx_delay(struct phy_device *phydev)
+ {
+-	if (is_enabled)
+-		return at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_5, 0,
+-						AT803X_DEBUG_TX_CLK_DLY_EN);
+-	else
+-		return at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_5,
+-						AT803X_DEBUG_TX_CLK_DLY_EN, 0);
++	return at803x_debug_reg_mask(phydev, AT803X_DEBUG_REG_5, 0,
++					AT803X_DEBUG_TX_CLK_DLY_EN);
+ }
+ 
+ static inline int at803x_set_vddio_1p8v(struct phy_device *phydev)
+@@ -323,26 +313,16 @@ static int at803x_config_init(struct phy_device *phydev)
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	/* Firstly clear the default status in HW reset or
+-	 * the bits set by bootloader.
+-	 */
+-	ret = at803x_set_rx_delay(phydev, false);
+-	if (ret < 0)
+-		return ret;
+-	ret = at803x_set_tx_delay(phydev, false);
+-	if (ret < 0)
+-		return ret;
+-
+ 	if (phydev->interface == PHY_INTERFACE_MODE_RGMII_RXID ||
+ 			phydev->interface == PHY_INTERFACE_MODE_RGMII_ID) {
+-		ret = at803x_set_rx_delay(phydev, true);
++		ret = at803x_enable_rx_delay(phydev);
+ 		if (ret < 0)
+ 			return ret;
+ 	}
+ 
+ 	if (phydev->interface == PHY_INTERFACE_MODE_RGMII_TXID ||
+ 			phydev->interface == PHY_INTERFACE_MODE_RGMII_ID) {
+-		ret = at803x_set_tx_delay(phydev, true);
++		ret = at803x_enable_tx_delay(phydev);
+ 		if (ret < 0)
+ 			return ret;
+ 	}
+-- 
+2.7.4
+
