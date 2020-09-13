@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev6
+## (2020-09-13)
+
+* linux-variscite: Add lp5562 [Alexandru Costache]
+
 # v2.56.0+rev5
 ## (2020-09-11)
 

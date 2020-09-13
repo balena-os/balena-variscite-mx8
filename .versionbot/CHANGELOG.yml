@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'linux-variscite: Add lp5562'
+      hash: f9f8e21dcb6590dfb5c330fb2cf866b60717efc6
+      body: ''
+      footer:
+        Changelog-entry: 'linux-variscite: Add lp5562'
+        changelog-entry: 'linux-variscite: Add lp5562'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.56.0+rev6
+  date: 2020-09-13T07:57:11.151Z
+- commits:
     - subject: Update to kernel 5.4.3 for imx8mm-var-dart-plt
       hash: eb638009b392a95c45cf27932d58498a271887c2
       body: |
