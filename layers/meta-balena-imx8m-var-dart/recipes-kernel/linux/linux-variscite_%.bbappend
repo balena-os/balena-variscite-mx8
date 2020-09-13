@@ -27,6 +27,9 @@ SRC_URI_append_imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch \
 "
 
+# we disable the SPI patch until the customer tells us otherwise
+SRC_URI_remove_imx8mm-var-dart-plt = "file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch"
+
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
 	file://0007-mmc-core-Disable-CQE.patch \

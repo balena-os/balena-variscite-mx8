@@ -14,6 +14,11 @@ RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     fsl-imx8mm-var-dart-m4.dtb:/fsl-imx8mm-var-dart-m4.dtb \
 "
 
+RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
+    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
+    imx8mm-var-dart.dtb: \
+"
+
 IMAGE_INSTALL_append = " \
                                         imx-boot \
                                         linux-firmware-bcm4339 \
@@ -31,6 +36,7 @@ IMAGE_INSTALL_append = " \
 "
 
 IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
+IMAGE_INSTALL_remove_imx8mm-var-dart-plt = "kernel-module-imx-gpu-viv"
 
 # Flash signed bootloader to raw image
 IMAGE_CMD_resinos-img_append_imx8m-var-dart () {
