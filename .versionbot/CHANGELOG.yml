@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update to kernel 5.4.3 for imx8mm-var-dart-plt
+      hash: eb638009b392a95c45cf27932d58498a271887c2
+      body: |
+        We upgrade to kernel 5.4.3 for the imx8mm-var-dart-plt machine in order
+        to fix the following ethernet issues with kernels 4.14.98 and 4.19.35
+        when using Gigabit:
+
+        Atheros 8031 ethernet 30be0000.ethernet-1:00:
+        Master/Slave resolution failed, maybe conflicting manual settings?
+        fec 30be0000.ethernet eth0: Link is Down
+
+        After the above messages, the link would never be taken up again so
+        networking is borked.
+
+        This recipe is taken from the meta-variscite-imx BSP layer, branch
+        zeus-imx-5.4.3-var01 at revision
+        592f010764736bbf98053b6300f67c71052f3a3f
+      footer:
+        Changelog-entry: Update to kernel 5.4.3 for imx8mm-var-dart-plt
+        changelog-entry: Update to kernel 5.4.3 for imx8mm-var-dart-plt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.56.0+rev5
+  date: 2020-09-11T21:07:47.060Z
+- commits:
     - subject: 'imx8mm-var-dart-plt: Update flashing instructions'
       hash: 169d3f5209e65b26034903ab2e295853de2f92a1
       body: |

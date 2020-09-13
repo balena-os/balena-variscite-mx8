@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev5
+## (2020-09-11)
+
+* Update to kernel 5.4.3 for imx8mm-var-dart-plt [Florin Sarbu]
+
 # v2.56.0+rev4
 ## (2020-09-10)
 
