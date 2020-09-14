@@ -39,6 +39,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0007-mmc-core-Disable-CQE.patch \
+	file://0001-rest.patch \
 "
 
 RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
