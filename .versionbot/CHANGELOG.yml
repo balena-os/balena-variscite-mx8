@@ -1,4 +1,19 @@
 - commits:
+    - subject: Disable gigabit for imx8mm-var-dart-plt
+      hash: 5e5f00eab3a41c7b2e10acf3ae782eeea564ce0e
+      body: |
+        We disable gigabit and let it fallback to 100Mbps because currently on
+        gigabit the link would go down at random times and networking is dead.
+      footer:
+        Changelog-entry: Disable gigabit for imx8mm-var-dart-plt
+        changelog-entry: Disable gigabit for imx8mm-var-dart-plt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.56.0+rev6
+  date: 2020-09-14T14:38:54.341Z
+- commits:
     - subject: Update to kernel 5.4.3 for imx8mm-var-dart-plt
       hash: eb638009b392a95c45cf27932d58498a271887c2
       body: |

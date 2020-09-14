@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev6
+## (2020-09-14)
+
+* Disable gigabit for imx8mm-var-dart-plt [Florin Sarbu]
+
 # v2.56.0+rev5
 ## (2020-09-11)
 
