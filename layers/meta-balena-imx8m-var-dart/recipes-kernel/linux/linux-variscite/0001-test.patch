@@ -1,0 +1,26 @@
+From 0295fef092c7230a197d7f840b8574a1e2f85041 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Mon, 14 Sep 2020 10:31:37 +0200
+Subject: [PATCH] test
+
+Signed-off-by: Florin Sarbu <florin@balena.io>
+---
+ drivers/net/ethernet/freescale/fec_main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/net/ethernet/freescale/fec_main.c b/drivers/net/ethernet/freescale/fec_main.c
+index d5127e2..9bcef17 100644
+--- a/drivers/net/ethernet/freescale/fec_main.c
++++ b/drivers/net/ethernet/freescale/fec_main.c
+@@ -967,7 +967,7 @@ fec_restart(struct net_device *ndev)
+ 	if (fep->quirks & FEC_QUIRK_HAS_AVB) {
+ 		writel(0, fep->hwp + FEC_ECNTRL);
+ 	} else {
+-		writel(1, fep->hwp + FEC_ECNTRL);
++//		writel(1, fep->hwp + FEC_ECNTRL);
+ 		udelay(10);
+ 	}
+ 
+-- 
+2.7.4
+
