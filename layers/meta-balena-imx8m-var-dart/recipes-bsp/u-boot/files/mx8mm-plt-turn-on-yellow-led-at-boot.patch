@@ -10,10 +10,10 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 10 insertions(+), 1 deletion(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index fa03028f8b..b16969d60d 100644
+index a307ea8..29db2b2 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -112,6 +112,15 @@
+@@ -115,6 +115,15 @@
  	"mmcautodetect=yes\0" \
  	"mmcpart=1\0" \
  	"m4_addr=0x7e0000\0" \
@@ -28,16 +28,16 @@ index fa03028f8b..b16969d60d 100644
 +	"start_led=run select_i2c_bus_3; run led_enable; run light_yellow;\0" \
  	"m4_bin=hello_world.bin\0" \
  	"use_m4=no\0" \
- 	"loadm4bin=load mmc ${mmcdev}:${mmcpart} ${m4_addr} ${bootdir}/${m4_bin}\0" \
-@@ -199,7 +208,7 @@
- 	   "run ramsize_check; " \
-            "if bootswitchpos EXT; then setenv resin_flasher_skip 0; else setenv resin_flasher_skip 1; fi; "\
-            "setenv resin_kernel_load_addr ${loadaddr};" \
--           "run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
-+           "run resin_set_kernel_root; run start_led; run set_os_cmdline; gpio set 137; " \
-            "setenv mmcdev ${resin_dev_index};" \
-            "setenv mmcbootpart ${resin_boot_part};" \
- 	   "mmc dev ${mmcdev}; if mmc rescan; then " \
+ 	"loadm4bin=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${m4_bin}; " \
+@@ -197,7 +206,7 @@
+ 	"run ramsize_check; " \
+ 	"if bootswitchpos EXT; then setenv resin_flasher_skip 0; else setenv resin_flasher_skip 1; fi; " \
+ 	"setenv resin_kernel_load_addr ${loadaddr};" \
+-	"run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
++	"run resin_set_kernel_root; run start_led; run set_os_cmdline; gpio set 137; " \
+ 	"setenv mmcdev ${resin_dev_index};" \
+ 	"setenv mmcbootpart ${resin_boot_part};" \
+ 	"mmc dev ${mmcdev}; "\
 -- 
-2.17.1
+2.7.4
 
