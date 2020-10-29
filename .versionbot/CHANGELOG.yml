@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update the BSP layer to zeus-imx-5.4.3-var01
+      hash: 3a18d63bc54b9919647f881cacb3b6f1a409bb21
+      body: |
+        We update the BSP so that we have newer u-boot
+      footer:
+        Changelog-entry: Update the BSP layer to zeus-imx-5.4.3-var01
+        changelog-entry: Update the BSP layer to zeus-imx-5.4.3-var01
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.56.0+rev7
+  date: 2020-10-29T21:08:51.275Z
+- commits:
     - subject: Disable gigabit for imx8mm-var-dart-plt
       hash: 5e5f00eab3a41c7b2e10acf3ae782eeea564ce0e
       body: |

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.56.0+rev7
+## (2020-10-29)
+
+* Update the BSP layer to zeus-imx-5.4.3-var01 [Florin Sarbu]
+
 # v2.56.0+rev6
 ## (2020-09-14)
 
