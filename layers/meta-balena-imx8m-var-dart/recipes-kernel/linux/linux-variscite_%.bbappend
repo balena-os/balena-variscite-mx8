@@ -34,7 +34,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
-	file://0009-Port-RT-changes-4.19.31-rt18.patch \
+	file://0009-Port-RT-changes-5.4.3-rt1.patch \	
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
