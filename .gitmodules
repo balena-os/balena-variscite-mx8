@@ -25,4 +25,4 @@
 	branch = imx-morty
 [submodule "layers/meta-laird-cp"]
 	path = layers/meta-laird-cp
-	url = git@github.com:LairdCP/meta-laird-cp.git
+	url = https://github.com/LairdCP/meta-laird-cp.git
