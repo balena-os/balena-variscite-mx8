@@ -10,13 +10,8 @@ RESIN_BOOT_PARTITION_FILES_imx8m-var-dart = " \
 
 RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    fsl-imx8mm-var-dart.dtb:/fsl-imx8mm-var-dart.dtb \
-    fsl-imx8mm-var-dart-m4.dtb:/fsl-imx8mm-var-dart-m4.dtb \
-"
-
-RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
-    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
     imx8mm-var-dart.dtb: \
+    imx8mm-var-dart-m4.dtb: \
 "
 
 IMAGE_INSTALL_append = " \
