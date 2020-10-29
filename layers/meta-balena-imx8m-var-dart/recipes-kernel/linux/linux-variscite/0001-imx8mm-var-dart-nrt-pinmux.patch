@@ -9,16 +9,16 @@ revision from May 6.
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- .../dts/freescale/fsl-imx8mm-var-dart.dts     | 22 +++++++++++++------
+ arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts | 22 +++++++++++++++-------
  1 file changed, 15 insertions(+), 7 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
-index e364863cd6b5..505d69c38ffd 100644
---- a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
-@@ -183,9 +183,23 @@
- 
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
+index 822fcaf..6ba962f 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
+@@ -171,9 +171,23 @@
  &iomuxc {
+ 
  	pinctrl-names = "default";
 +	pinctrl-0 = <&pinctrl_gpios>;
  
@@ -37,9 +37,9 @@ index e364863cd6b5..505d69c38ffd 100644
 +			>;
 +		};
 +
- 		pinctrl_csi1: csi1grp {
+ 		pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
  			fsl,pins = <
- 				MX8MM_IOMUXC_SAI1_RXD6_GPIO4_IO8		0x19
+ 				MX8MM_IOMUXC_SD2_RESET_B_GPIO2_IO19		0xc1
 @@ -195,8 +209,6 @@
  
  		pinctrl_fec1: fec1grp {
@@ -55,9 +55,9 @@ index e364863cd6b5..505d69c38ffd 100644
  				MX8MM_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
 -				MX8MM_IOMUXC_ENET_TX_CTL_ENET1_RGMII_TX_CTL	0x1f
  				MX8MM_IOMUXC_GPIO1_IO09_GPIO1_IO9		0x19
- 				MX8MM_IOMUXC_GPIO1_IO07_GPIO1_IO7		0x41
  			>;
-@@ -271,8 +282,6 @@
+ 		};
+@@ -318,8 +329,6 @@
  				MX8MM_IOMUXC_SAI3_RXC_SAI3_RX_BCLK		0xd6
  				MX8MM_IOMUXC_SAI3_RXD_SAI3_RX_DATA0		0xd6
  				MX8MM_IOMUXC_SAI3_TXFS_SAI3_TX_SYNC		0xd6
@@ -66,7 +66,7 @@ index e364863cd6b5..505d69c38ffd 100644
  				MX8MM_IOMUXC_SAI3_MCLK_SAI3_MCLK		0xd6
  			>;
  		};
-@@ -292,7 +301,6 @@
+@@ -339,7 +348,6 @@
  		pinctrl_spdif1: spdif1grp {
  			fsl,pins = <
  				MX8MM_IOMUXC_SPDIF_TX_SPDIF1_OUT		0xd6
@@ -74,15 +74,15 @@ index e364863cd6b5..505d69c38ffd 100644
  			>;
  		};
  
-@@ -893,7 +901,7 @@
+@@ -924,7 +932,7 @@
  	phy-reset-gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
  	phy-reset-duration = <10>;
- 	fsl,magic-packet;
+ 	phy-reset-on-resume;
 -	status = "okay";
 +	status = "disabled";
  
  	mdio {
  		#address-cells = <1>;
 -- 
-2.17.1
+2.7.4
 
