@@ -1,23 +1,32 @@
-From 757f676c41d266f5ed22f5307c7e07498a45dd86 Mon Sep 17 00:00:00 2001
+From 748280740ee708cb81009e6e706983b9a0504e61 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Fri, 21 Feb 2020 17:38:08 +0100
+Date: Fri, 13 Nov 2020 09:18:03 +0100
 Subject: [PATCH] dart-mx8mm: Integrate with Balena u-boot environment
 
 Upstream-Status: Inappropriate [configuration]
-Signed-off-by: Alexandru Costache <alexandru@resin.io>
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- configs/imx8mm_var_dart_defconfig |  8 ++++++++
- include/configs/imx8mm_var_dart.h | 18 ++++++++++--------
- 2 files changed, 18 insertions(+), 8 deletions(-)
+ configs/imx8mm_var_dart_defconfig | 10 +++++++++-
+ include/configs/imx8mm_var_dart.h | 12 ++++++++----
+ 2 files changed, 17 insertions(+), 5 deletions(-)
 
 diff --git a/configs/imx8mm_var_dart_defconfig b/configs/imx8mm_var_dart_defconfig
-index 61cc386..18faa8d 100644
+index 7adfa26926..8285ebd1d0 100644
 --- a/configs/imx8mm_var_dart_defconfig
 +++ b/configs/imx8mm_var_dart_defconfig
-@@ -61,3 +61,11 @@ CONFIG_USB_GADGET_PRODUCT_NUM=0xa4a5
+@@ -10,7 +10,7 @@ CONFIG_SYS_I2C_MXC_I2C1=y
+ CONFIG_SYS_I2C_MXC_I2C2=y
+ CONFIG_SYS_I2C_MXC_I2C3=y
+ CONFIG_SYS_I2C_MXC_I2C4=y
+-CONFIG_ENV_SIZE=0x1000
++CONFIG_ENV_SIZE=0x3000
+ CONFIG_ENV_OFFSET=0x400000
+ CONFIG_DM_GPIO=y
+ CONFIG_TARGET_IMX8MM_VAR_DART=y
+@@ -109,3 +109,11 @@ CONFIG_USB_GADGET_PRODUCT_NUM=0xa4a5
  CONFIG_CI_UDC=y
  CONFIG_SDP_LOADADDR=0x40400000
- # CONFIG_EFI_LOADER is not set
+ CONFIG_OF_LIBFDT_OVERLAY=y
 +CONFIG_CMD_IMPORTENV=y
 +CONFIG_PARTITION_UUIDS=y
 +CONFIG_CMD_PART=y
@@ -27,27 +36,16 @@ index 61cc386..18faa8d 100644
 +CONFIG_CMD_FAT=y
 +CONFIG_CMD_EXPORTENV=y
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index e15f63d..86424e4 100644
+index 4ba7eb8980..92bd57bf73 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -70,8 +70,6 @@
- #define CONFIG_BOARD_EARLY_INIT_F
- #define CONFIG_BOARD_LATE_INIT
- 
--#undef CONFIG_CMD_EXPORTENV
--#undef CONFIG_CMD_IMPORTENV
- #undef CONFIG_CMD_IMLS
- 
- #undef CONFIG_CMD_CRC32
-@@ -130,12 +128,12 @@
- 		"fi; " \
+@@ -93,11 +93,11 @@
  		"bootaux ${m4_addr};\0" \
  	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
--	"mmcargs=setenv bootargs console=${console} " \
+ 	"mmcargs=setenv bootargs console=${console} " \
 -		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size}\0 " \
 -	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${script};\0" \
-+	"mmcargs=setenv bootargs console=${console} ${resin_kernel_root} rootwait rw ${os_cmdline} " \
-+        	" ${cma_size}\0 " \
++		"${resin_kernel_root} rootwait rw ${cma_size} ${os_cmdline}\0 " \
 +	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
@@ -56,7 +54,7 @@ index e15f63d..86424e4 100644
  		"unzip ${img_addr} ${loadaddr}\0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
-@@ -151,7 +149,7 @@
+@@ -113,7 +113,7 @@
  		"fi; \0" \
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
@@ -65,7 +63,7 @@ index e15f63d..86424e4 100644
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
  			"setenv cma_size cma=320M; " \
-@@ -197,6 +195,10 @@
+@@ -158,6 +158,10 @@
  
  #define CONFIG_BOOTCOMMAND \
  	"run ramsize_check; " \
@@ -76,15 +74,6 @@ index e15f63d..86424e4 100644
  	"mmc dev ${mmcdev}; "\
  	"if mmc rescan; then " \
  		"if test ${use_m4} = yes && run loadm4bin; then " \
-@@ -229,7 +231,7 @@
- 
- #define CONFIG_ENV_OVERWRITE
- #define CONFIG_ENV_OFFSET		(64 * SZ_64K)
--#define CONFIG_ENV_SIZE			0x1000
-+#define CONFIG_ENV_SIZE			0x3000
- #define CONFIG_SYS_MMC_ENV_DEV		1   /* USDHC2 */
- 
- /* Size of malloc() pool */
 -- 
-2.7.4
+2.17.1
 
