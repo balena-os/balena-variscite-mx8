@@ -1,4 +1,20 @@
 - commits:
+    - subject: 'layer.conf: Revert force layer compat to warrior'
+      hash: da1eabbd5ac34af9c482aca2fcef3de95dce0511
+      body: |
+        This reverts commit c9cba5d. We leave the kernel
+        5.4.3 for PLT  because the realtime patch causes
+        boot to stall on the 5.4.3 version.
+      footer:
+        Changelog-entry: 'layer.conf: Revert force layer compat to warrior'
+        changelog-entry: 'layer.conf: Revert force layer compat to warrior'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.60.1+rev2
+  date: 2020-11-20T17:31:05.405Z
+- commits:
     - subject: Update meta-balena from v2.56.0 to v2.60.1
       hash: 23e19a7ee9930e3c0584d30561020cf54ac000c4
       body: |

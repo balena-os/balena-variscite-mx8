@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.60.1+rev2
+## (2020-11-20)
+
+* layer.conf: Revert force layer compat to warrior [Alexandru Costache]
+
 # v2.60.1+rev1
 ## (2020-11-16)
 
