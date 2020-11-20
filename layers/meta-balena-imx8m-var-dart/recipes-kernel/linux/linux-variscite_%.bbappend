@@ -39,9 +39,15 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0007-mmc-core-Disable-CQE.patch \
+	file://0001-Add-Lp5562-definitions.patch \
 "
 
 RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
 RESIN_CONFIGS[preempt_rt] = " \
     CONFIG_PREEMPT_RT_FULL=y \
+"
+
+RESIN_CONFIGS_append_imx8mm-var-dart-plt = " lp5562"
+RESIN_CONFIGS[lp5562] = " \
+    CONFIG_LEDS_LP5562=y \
 "
