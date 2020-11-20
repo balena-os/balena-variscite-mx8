@@ -1,0 +1,44 @@
+From 14ef17ea6d84a372f76c6862c2c104ed37b3a855 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Mon, 14 Sep 2020 15:18:07 +0200
+Subject: [PATCH] Disable gigabit temporarily since we have witnessed
+issues with the plt board:
+
+[Mon Sep 14 08:58:31 2020] fec 30be0000.ethernet eth0: registered PHC device 0
+fec 30be0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+fec 30be0000.ethernet eth0: Link is Down
+fec 30be0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+fec 30be0000.ethernet eth0: Link is Down
+fec 30be0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+fec 30be0000.ethernet eth0: Link is Down
+fec 30be0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+fec 30be0000.ethernet eth0: Link is Down
+fec 30be0000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+fec 30be0000.ethernet eth0: Link is Down
+
+And the link remains down.
+
+Until we figure out why this happens, let's just disable gigabit and we'll revisit this issue.
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
+---
+ drivers/net/ethernet/freescale/fec_main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/net/ethernet/freescale/fec_main.c b/drivers/net/ethernet/freescale/fec_main.c
+index d5127e2..1631d30 100644
+--- a/drivers/net/ethernet/freescale/fec_main.c
++++ b/drivers/net/ethernet/freescale/fec_main.c
+@@ -131,7 +131,7 @@ static struct platform_device_id fec_devtype[] = {
+ 				FEC_QUIRK_HAS_COALESCE,
+ 	}, {
+ 		.name = "imx8mq-fec",
+-		.driver_data = FEC_QUIRK_ENET_MAC | FEC_QUIRK_HAS_GBIT |
++		.driver_data = FEC_QUIRK_ENET_MAC |
+ 				FEC_QUIRK_HAS_BUFDESC_EX | FEC_QUIRK_HAS_CSUM |
+ 				FEC_QUIRK_HAS_VLAN | FEC_QUIRK_HAS_AVB |
+ 				FEC_QUIRK_ERR007885 | FEC_QUIRK_BUG_CAPTURE |
+-- 
+2.7.4
+

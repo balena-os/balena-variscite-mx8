@@ -8,14 +8,14 @@ This was requested by customer
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
 ---
- arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts | 2 +-
+ arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
-index 6ba962f..c28d302 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
-@@ -1060,7 +1060,7 @@
+diff --git a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
+index 02c6291..0386ca2 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-imx8mm-var-dart.dts
+@@ -1016,7 +1016,7 @@
  };
  
  &gpu {
