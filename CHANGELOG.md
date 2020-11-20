@@ -1,6 +1,91 @@
 Change log
 -----------
 
+# v2.60.1+rev1
+## (2020-11-16)
+
+
+<details>
+<summary> Update meta-balena from v2.56.0 to v2.60.1 [Alexandru Costache] </summary>
+
+> ## meta-balena-2.60.1
+> ### (2020-10-30)
+> 
+> * chrony: set the source UDP port for NTP requests to 123 [Mark Corbin]
+> 
+> ## meta-balena-2.60.0
+> ### (2020-10-29)
+> 
+> * chrony: don't restore time from drift file or RTC [Mark Corbin]
+> * systemd/timeinit: add fake.hwclock to maintain system time over reboots [Mark Corbin]
+> * resin-mounts: add bind mount service for /etc/fake-hwclock [Mark Corbin]
+> 
+> ## meta-balena-2.59.0
+> ### (2020-10-27)
+> 
+> * Add host extensions support [Alex Gonzalez]
+> * packagegroup-resin: Add hostapp extensions update script [Alex Gonzalez]
+> * hostapp-extensions-update: Add host extensions update script [Alex Gonzalez]
+> * resin-vars: Parse the HOSTEXT_IMAGES variable from config.json [Alex Gonzalez]
+> * docker-disk: Add the host extension images to the data partition [Alex Gonzalez]
+> * docker-disk: Generalize hostapp platform variable [Alex Gonzalez]
+> * initrdscripts: Busybox switch_root does not support -c argument [Alex Gonzalez]
+> * resin-filesystem-expand: Omit fs check and resize if partition is mounted [Alex Gonzalez]
+> * initrdscripts: Expand the resin-data filesystem [Alex Gonzalez]
+> * initrdscripts: Add resin-data to fs UUID generation [Alex Gonzalez]
+> * resin-data.mount: Remove default dependencies [Alex Gonzalez]
+> * packagegroup-resin: Add independent mobynit package to image [Alex Gonzalez]
+> * balena-engine: Do not build mobynit [Alex Gonzalez]
+> * mobynit: Fix source directory [Alex Gonzalez]
+> * mobynit: Separate recipe from balena-engine [Alex Gonzalez]
+> 
+> ## meta-balena-2.58.6
+> ### (2020-10-15)
+> 
+> * readme: DCHP -> DHCP [Matthew McGinn]
+> 
+> ## meta-balena-2.58.5
+> ### (2020-10-13)
+> 
+> * bootfiles: blacklist proper grub configuration backend [Matthew McGinn]
+> 
+> ## meta-balena-2.58.4
+> ### (2020-10-05)
+> 
+> * docker-disk: Allow expanding data filesystem on 2TB disks [Alexandru Costache]
+> 
+> ## meta-balena-2.58.3
+> ### (2020-09-18)
+> 
+> * Blacklist supervisor configuration backend files during HUP [Alex Gonzalez]
+> 
+> ## meta-balena-2.58.2
+> ### (2020-09-17)
+> 
+> * hooks: fix up improperly named variable [Matthew McGinn]
+> 
+> ## meta-balena-2.58.1
+> ### (2020-09-15)
+> 
+> * Wait for the root device to come up when necessary [Michal Toman]
+> 
+> ## meta-balena-2.58.0
+> ### (2020-09-05)
+> 
+> * Respect balenaRootCA system-wide [Michal Toman]
+> 
+> ## meta-balena-2.57.1
+> ### (2020-09-04)
+> 
+> * os-helpers-logging: Log to stderr rather than stdout [Michal Toman]
+> 
+> ## meta-balena-2.57.0
+> ### (2020-09-04)
+> 
+> * Update libmbim to 1.24.2, libqmi to 1.26.0, modemmanager to 1.14.2 [Vicentiu Galanopulo]
+> 
+</details>
+
 # v2.56.0+rev7
 ## (2020-10-29)
 
