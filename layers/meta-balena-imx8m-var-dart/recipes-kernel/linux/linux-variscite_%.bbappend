@@ -6,6 +6,9 @@ inherit kernel-resin
 # error caused by SRCPV
 LOCALVERSION = ""
 
+# Disable commit SHA in kernel version string
+SCMVERSION="n"
+
 # sdma driver tries to load the firmware
 # from initramfs causing bt to fail on plain mx8,
 # doesn't harm having it as module on all variants
