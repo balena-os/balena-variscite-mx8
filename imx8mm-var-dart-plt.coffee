@@ -16,7 +16,6 @@ module.exports =
         name: 'Variscite DART-MX8M Mini PLT'
         arch: 'aarch64'
         state: 'new'
-        private: false
  
         stateInstructions:
                 postProvisioning: postProvisioningInstructions
