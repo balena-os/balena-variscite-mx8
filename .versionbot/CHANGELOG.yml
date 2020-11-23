@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update balena-yocto-scripts to v1.9.0
+      hash: fe42808cf0229e5ffc9bf8ae7d8d53acb3dbc419
+      body: ''
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to v1.9.0
+        changelog-entry: Update balena-yocto-scripts to v1.9.0
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.60.1+rev3
+  date: 2020-11-23T08:12:23.816Z
+- commits:
     - subject: 'layer.conf: Revert force layer compat to warrior'
       hash: da1eabbd5ac34af9c482aca2fcef3de95dce0511
       body: |
