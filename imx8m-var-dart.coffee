@@ -17,7 +17,6 @@ module.exports =
         name: 'Variscite DART-MX8M'
         arch: 'aarch64'
         state: 'released'
-        private: false
 
         stateInstructions:
                 postProvisioning: postProvisioningInstructions
