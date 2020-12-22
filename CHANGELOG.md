@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.60.1+rev4
+## (2020-11-23)
+
+* linux-variscite: Disable commit SHA in version string [Alexandru Costache]
+
 # v2.60.1+rev3
 ## (2020-11-23)
 

@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'linux-variscite: Disable commit SHA in version string'
+      hash: f9eabadf7506eaafa3c28d3e2da2182506e40c35
+      body: |
+        Disable commit SHA in version string to avoid
+        version magic mismatch for modules.
+      footer:
+        Changelog-entry: 'linux-variscite: Disable commit SHA in version string'
+        changelog-entry: 'linux-variscite: Disable commit SHA in version string'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.60.1+rev4
+  date: 2020-11-23T13:31:19.390Z
+- commits:
     - subject: Update balena-yocto-scripts to v1.9.0
       hash: fe42808cf0229e5ffc9bf8ae7d8d53acb3dbc419
       body: ''
