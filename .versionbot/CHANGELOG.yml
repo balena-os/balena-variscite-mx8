@@ -1,4 +1,27 @@
 - commits:
+    - subject: Update meta-balena from v2.60.1 to v2.69.1
+      hash: 8d8e6e5e78d8da9e9912186502bae51fbed4175d
+      body: ''
+      footer:
+        Changelog-entry: Update meta-balena from v2.60.1 to v2.69.1
+        changelog-entry: Update meta-balena from v2.60.1 to v2.69.1
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: Update balena-yocto-scripts to v1.9.4
+      hash: d824260c9eac02bbfb2febef10dbc506a956399c
+      body: ''
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to v1.9.4
+        changelog-entry: Update balena-yocto-scripts to v1.9.4
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.69.1+rev1
+  date: 2021-02-25T16:12:17.994Z
+- commits:
     - subject: 'linux-variscite: Disable commit SHA in version string'
       hash: f9eabadf7506eaafa3c28d3e2da2182506e40c35
       body: |
