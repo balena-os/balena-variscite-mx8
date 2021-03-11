@@ -12,8 +12,8 @@ SCMVERSION="n"
 # sdma driver tries to load the firmware
 # from initramfs causing bt to fail on plain mx8,
 # doesn't harm having it as module on all variants
-RESIN_CONFIGS_append = " imx-sdma"
-RESIN_CONFIGS[imx-sdma] = " \
+BALENA_CONFIGS_append = " imx-sdma"
+BALENA_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
@@ -45,7 +45,7 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0001-disable-gigabit.patch \
 "
 
-RESIN_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
-RESIN_CONFIGS[preempt_rt] = " \
+BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
+BALENA_CONFIGS[preempt_rt] = " \
     CONFIG_PREEMPT_RT_FULL=y \
 "
