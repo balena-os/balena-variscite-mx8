@@ -37,10 +37,10 @@ module.exports =
 
         yocto:
                 machine: 'imx8m-var-dart'
-                image: 'resin-image-flasher'
-                fstype: 'resinos-img'
+                image: 'balena-image-flasher'
+                fstype: 'balenaos-img'
                 version: 'yocto-warrior'
-                deployArtifact: 'resin-image-flasher-imx8m-var-dart.resinos-img'
+                deployArtifact: 'balena-image-flasher-imx8m-var-dart.balenaos-img'
                 compressed: true
 
         options: [ networkOptions.group ]

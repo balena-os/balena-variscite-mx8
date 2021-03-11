@@ -1,4 +1,4 @@
-RESIN_BOOT_PARTITION_FILES_imx8m-var-dart = " \
+BALENA_BOOT_PARTITION_FILES_imx8m-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
     fsl-imx8mq-var-dart-sd-emmc-lvds.dtb:/fsl-imx8mq-var-dart-sd-emmc-lvds.dtb \
     fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb:/fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb \
@@ -8,13 +8,13 @@ RESIN_BOOT_PARTITION_FILES_imx8m-var-dart = " \
     fsl-imx8mq-var-dart-emmc-wifi-dual-display.dtb:/fsl-imx8mq-var-dart-emmc-wifi-dual-display.dtb \
 "
 
-RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
+BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
     fsl-imx8mm-var-dart.dtb:/fsl-imx8mm-var-dart.dtb \
     fsl-imx8mm-var-dart-m4.dtb:/fsl-imx8mm-var-dart-m4.dtb \
 "
 
-RESIN_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
+BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
     imx8mm-var-dart.dtb: \
 "
@@ -39,13 +39,13 @@ IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
 IMAGE_INSTALL_remove_imx8mm-var-dart-plt = "kernel-module-imx-gpu-viv"
 
 # Flash signed bootloader to raw image
-IMAGE_CMD_resinos-img_append_imx8m-var-dart () {
-    dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_evk of=${RESIN_RAW_IMG} conv=notrunc seek=33 bs=1K
+IMAGE_CMD_balenaos-img_append_imx8m-var-dart () {
+    dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_evk of=${BALENA_RAW_IMG} conv=notrunc seek=33 bs=1K
 }
 
 # Flash signed bootloader to raw image
-IMAGE_CMD_resinos-img_append_imx8mm-var-dart () {
-    dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_lpddr4_ddr4_evk of=${RESIN_RAW_IMG} conv=notrunc seek=33 bs=1K
+IMAGE_CMD_balenaos-img_append_imx8mm-var-dart () {
+    dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_lpddr4_ddr4_evk of=${BALENA_RAW_IMG} conv=notrunc seek=33 bs=1K
 }
 
 
