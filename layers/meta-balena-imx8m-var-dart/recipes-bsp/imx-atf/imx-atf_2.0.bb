@@ -1,5 +1,9 @@
 # Copyright 2017-2018 NXP
 
+# NOTE: We use this recipe solely for the imx8m-var-dart,
+# to avoid boot freeze. This was taken from the BSP as
+# of BalenaOS 2.50 for imx8m-var-dart
+
 DESCRIPTION = "i.MX ARM Trusted Firmware"
 SECTION = "BSP"
 LICENSE = "BSD-3-Clause"

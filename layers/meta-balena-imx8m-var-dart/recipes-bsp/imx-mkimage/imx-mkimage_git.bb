@@ -1,6 +1,10 @@
 # Copyright (C) 2016 Freescale Semiconductor
 # Copyright 2017 NXP
 
+# NOTE: This recipe is used only for the
+# imx8m-var-dart, which is pinned to
+# kernel version 4.14.78
+
 IMX_MKIMAGE_SRC_imx8m-var-dart ?= "git://source.codeaurora.org/external/imx/imx-mkimage.git;protocol=https"
 SRCBRANCH_imx8m-var-dart = "imx_4.14.98_2.0.0_ga"
 SRC_URI = "${IMX_MKIMAGE_SRC};branch=${SRCBRANCH}"

@@ -1,5 +1,9 @@
 # Copyright 2017-2018 NXP
 
+# NOTE: This recipe is used only for the
+# imx8m-var-dart, which is pinned to
+# kernel version 4.14.78
+
 DESCRIPTION = "Generate Boot Loader for i.MX8 device"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
