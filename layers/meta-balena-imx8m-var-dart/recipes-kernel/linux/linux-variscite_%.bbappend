@@ -43,6 +43,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0001-disable-gigabit.patch \
+	file://imx8mm-var-dart-plt-Switch-usb1-dr_mode-to-host.patch \
 "
 
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
