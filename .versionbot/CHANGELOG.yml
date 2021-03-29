@@ -1,4 +1,17 @@
 - commits:
+    - subject: Switch to kernel version 5.4.70 for imx8mm-var-dart-plt
+      hash: 0f1fdde30fbc96e400c560a5157d1f719c86b5ed
+      body: ''
+      footer:
+        Changelog-entry: Switch to kernel version 5.4.70 for imx8mm-var-dart-plt
+        changelog-entry: Switch to kernel version 5.4.70 for imx8mm-var-dart-plt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.73.1+rev2
+  date: 2021-03-29T14:40:29.189Z
+- commits:
     - subject: Update meta-balena from v2.72.0 to v2.73.1
       hash: da3c0d6d25c15e66061692b73091df23ec73afd0
       body: |

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.73.1+rev2
+## (2021-03-29)
+
+* Switch to kernel version 5.4.70 for imx8mm-var-dart-plt [Florin Sarbu]
+
 # v2.73.1+rev1
 ## (2021-03-17)
 
