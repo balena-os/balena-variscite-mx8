@@ -1,6 +1,6 @@
 # Copyright (C) 2013-2016 Freescale Semiconductor
 # Copyright 2017 NXP
-# Copyright 2018-2019 Variscite Ltd.
+# Copyright 2018-2020 Variscite Ltd.
 # Released under the MIT license (see COPYING.MIT for the terms)
 
 SUMMARY = "Linux kernel provided and supported by Variscite"
@@ -15,9 +15,10 @@ DEPENDS += "lzop-native bc-native"
 
 DEFAULT_PREFERENCE = "1"
 
-SRCBRANCH = "lf-5.4.y_var01"
+SRCBRANCH = "imx_5.4.70_2.3.0_var01"
 
 LOCALVERSION_imx6ul-var-dart = "-imx6ul"
+LOCALVERSION_imx8mp-var-dart = "-imx8mp"
 LOCALVERSION_imx8mq-var-dart = "-imx8mq"
 LOCALVERSION_imx8mm-var-dart = "-imx8mm"
 LOCALVERSION_imx8mn-var-som = "-imx8mn"
@@ -26,6 +27,7 @@ LOCALVERSION_imx8qm-var-som = "-imx8qm"
 
 KERNEL_DEFCONFIG_mx6 = "${S}/arch/arm/configs/imx_v7_var_defconfig"
 KERNEL_DEFCONFIG_mx8 = "${S}/arch/arm64/configs/imx8_var_defconfig"
+KERNEL_DEFCONFIG_imx8mq-var-dart = "${S}/arch/arm64/configs/imx8mq_var_dart_defconfig"
 DEFAULT_DTB_imx8mq-var-dart = "sd-lvds"
 DEFAULT_DTB_imx8qxp-var-som = "sd"
 DEFAULT_DTB_imx8qm-var-som = "lvds"
@@ -35,7 +37,7 @@ DEFAULT_DTB_PREFIX_imx8qm-var-som = "imx8qm-var-som"
 
 KERNEL_SRC ?= "git://github.com/varigit/linux-imx;protocol=git"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH}"
-SRCREV = "9447bf00ed072e00e1c8e05a54ba74a5a244eae6"
+SRCREV = "bfedd9879e135a8ac854a4a7ea53fda3a9897506"
 
 S = "${WORKDIR}/git"
 
