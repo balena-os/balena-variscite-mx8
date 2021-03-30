@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.73.1+rev2
+## (2021-03-30)
+
+* Disable PCIe for the new imx8mm-var-dart-plt revision to boot correctly [Florin Sarbu]
+
 # v2.73.1+rev1
 ## (2021-03-17)
 

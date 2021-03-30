@@ -1,4 +1,23 @@
 - commits:
+    - subject: Disable PCIe for the new imx8mm-var-dart-plt revision to boot correctly
+      hash: 8e99bfa80b7c91220711d8b45c5029bad36f9db4
+      body: |
+        The hw vendor suggests we disable PCIe to have the new
+        imx8mm-var-dart-plt revision boot correctly.
+      footer:
+        Changelog-entry: >-
+          Disable PCIe for the new imx8mm-var-dart-plt revision to boot
+          correctly
+        changelog-entry: >-
+          Disable PCIe for the new imx8mm-var-dart-plt revision to boot
+          correctly
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.73.1+rev2
+  date: 2021-03-30T08:20:53.068Z
+- commits:
     - subject: Update meta-balena from v2.72.0 to v2.73.1
       hash: da3c0d6d25c15e66061692b73091df23ec73afd0
       body: |
