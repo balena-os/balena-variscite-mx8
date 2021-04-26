@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.73.1+rev3
+## (2021-04-26)
+
+* Disable ADS7846 touchscreen controller for imx8mm-var-dart-plt [Florin Sarbu]
+
 # v2.73.1+rev2
 ## (2021-03-30)
 

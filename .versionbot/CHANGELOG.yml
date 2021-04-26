@@ -1,4 +1,19 @@
 - commits:
+    - subject: Disable ADS7846 touchscreen controller for imx8mm-var-dart-plt
+      hash: e427e8ed1e51af6202902e64c56ac70884777ff6
+      body: |
+        Touchscreen won't be used on the imx8mm-var-dart-plt board so let's
+        disable it so that we also free up gpio-3.
+      footer:
+        Changelog-entry: Disable ADS7846 touchscreen controller for imx8mm-var-dart-plt
+        changelog-entry: Disable ADS7846 touchscreen controller for imx8mm-var-dart-plt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.73.1+rev3
+  date: 2021-04-26T11:18:59.122Z
+- commits:
     - subject: Disable PCIe for the new imx8mm-var-dart-plt revision to boot correctly
       hash: 8e99bfa80b7c91220711d8b45c5029bad36f9db4
       body: |
