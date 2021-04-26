@@ -51,3 +51,8 @@ BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
 BALENA_CONFIGS[preempt_rt] = " \
     CONFIG_PREEMPT_RT_FULL=y \
 "
+
+BALENA_CONFIGS_append_imx8mm-var-dart-plt = " disable_ads7846"
+BALENA_CONFIGS[disable_ads7846] = " \
+    CONFIG_TOUCHSCREEN_ADS7846=n \
+"
