@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'linux-variscite: Updates for new nrt hw pinmuxes'
+      hash: 2b0714d9783234f227276f5a568f843e9ae03496
+      body: |
+        User wants to use GPIO5_IO01, let's remove the wm8904 node
+        which modified this.
+      footer:
+        Changelog-entry: 'linux-variscite: Updates for new nrt hw pinmuxes'
+        changelog-entry: 'linux-variscite: Updates for new nrt hw pinmuxes'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.75.0+rev3
+  date: 2021-05-06T10:42:27.806Z
+- commits:
     - subject: Remove gigabit disabling kernel patch for imx8mm-var-dart-plt
       hash: 065b0eb146f869c54a8b5801d6b5315640602756
       body: |

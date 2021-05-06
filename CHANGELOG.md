@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.75.0+rev3
+## (2021-05-06)
+
+* linux-variscite: Updates for new nrt hw pinmuxes [Alexandru Costache]
+
 # v2.75.0+rev2
 ## (2021-05-06)
 
