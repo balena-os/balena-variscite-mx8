@@ -1,4 +1,39 @@
 - commits:
+    - subject: Remove gigabit disabling kernel patch for imx8mm-var-dart-plt
+      hash: 065b0eb146f869c54a8b5801d6b5315640602756
+      body: |
+        Based on the git commit comments of
+        489ff5e1db34f1072f0e7e4c02ab78742f6f36b4 let's remove the gigabit
+        disabling patch.
+      footer:
+        Changelog-entry: Remove gigabit disabling kernel patch for imx8mm-var-dart-plt
+        changelog-entry: Remove gigabit disabling kernel patch for imx8mm-var-dart-plt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: >-
+        Enable spidev for imx8mm-var-dart-plt and remove the ads7846 touchpanel
+        from the device tree
+      hash: c2cb7b170905ed1ded50a5d81d566da264101191
+      body: |
+        We rework the spidev enabling patch for the 5.4.3 kernel version that is
+        used by imx8mm-var-dart-plt and we properly remove the ads7846
+        touchpanel from the device tree.
+      footer:
+        Changelog-entry: >-
+          Enable spidev for imx8mm-var-dart-plt and remove the ads7846
+          touchpanel from the device tree
+        changelog-entry: >-
+          Enable spidev for imx8mm-var-dart-plt and remove the ads7846
+          touchpanel from the device tree
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 2.75.0+rev2
+  date: 2021-05-06T08:31:57.799Z
+- commits:
     - subject: Update meta-balena from v2.73.1 to v2.75.0
       hash: 8ce2daebf90856e4c1f868d2867d50f4661cb2bc
       body: |

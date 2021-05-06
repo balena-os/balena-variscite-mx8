@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2.75.0+rev2
+## (2021-05-06)
+
+* Remove gigabit disabling kernel patch for imx8mm-var-dart-plt [Florin Sarbu]
+* Enable spidev for imx8mm-var-dart-plt and remove the ads7846 touchpanel from the device tree [Florin Sarbu]
+
 # v2.75.0+rev1
 ## (2021-05-05)
 
