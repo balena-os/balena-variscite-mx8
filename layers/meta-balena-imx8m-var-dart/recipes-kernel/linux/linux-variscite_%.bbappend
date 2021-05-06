@@ -43,17 +43,12 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0007-mmc-core-Disable-CQE.patch \
-	file://0001-disable-gigabit.patch \
 	file://imx8mm-var-dart-plt-Switch-usb1-dr_mode-to-host.patch \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
+	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.3.patch \
 "
 
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
 BALENA_CONFIGS[preempt_rt] = " \
     CONFIG_PREEMPT_RT_FULL=y \
-"
-
-BALENA_CONFIGS_append_imx8mm-var-dart-plt = " disable_ads7846"
-BALENA_CONFIGS[disable_ads7846] = " \
-    CONFIG_TOUCHSCREEN_ADS7846=n \
 "
