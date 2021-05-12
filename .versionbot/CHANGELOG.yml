@@ -1,4 +1,20 @@
 - commits:
+    - subject: update git submodules to use https
+      hash: 8ebd4a4ce3634a3c748405fc0533c2b050c23725
+      body: |
+        versionbot does not support ssh
+      footer:
+        Changelog-entry: update git submodules to use https
+        changelog-entry: update git submodules to use https
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.78.0+rev2
+  date: 2021-05-12T17:12:28.002Z
+- commits:
     - subject: Rename resin-supervisor to balena-supervisor
       hash: e3fe0b0489cc5eacaaff4032b5334b14ebd93b60
       body: ''

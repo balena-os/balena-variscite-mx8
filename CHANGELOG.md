@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.78.0+rev2
+## (2021-05-12)
+
+* update git submodules to use https [Alex Gonzalez]
+
 # v2.78.0+rev1
 ## (2021-05-11)
 
