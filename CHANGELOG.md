@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.78.0+rev3
+## (2021-05-17)
+
+* imx8mm-var-dart-nrt: Add LP55231 driver and dt entry [Alexandru Costache]
+
 # v2.78.0+rev2
 ## (2021-05-12)
 

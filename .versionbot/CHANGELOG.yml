@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'imx8mm-var-dart-nrt: Add LP55231 driver and dt entry'
+      hash: d5acfb96c5590427caabe5686c86b56fb01f632f
+      body: ''
+      footer:
+        Changelog-entry: 'imx8mm-var-dart-nrt: Add LP55231 driver and dt entry'
+        changelog-entry: 'imx8mm-var-dart-nrt: Add LP55231 driver and dt entry'
+        Signed-off-by: Alexanru Costache <alexandru@balena.io>
+        signed-off-by: Alexanru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.78.0+rev3
+  date: 2021-05-17T10:06:17.861Z
+- commits:
     - subject: update git submodules to use https
       hash: 8ebd4a4ce3634a3c748405fc0533c2b050c23725
       body: |
