@@ -64,6 +64,6 @@ CONF_VERSION = "1"
 HOSTTOOLS_remove = "cc"
 
 # Allow use of host docker from recipes
-HOSTTOOLS += "docker iptables"
+HOSTTOOLS += "docker iptables newuidmap newgidmap ip ps"
 
 ACCEPT_FSL_EULA = "1"
