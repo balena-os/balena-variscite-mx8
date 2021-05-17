@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.78.0+rev4
+## (2021-05-17)
+
+* linux-variscite: Switch lp55231 address and bus [Alexandru Costache]
+
 # v2.78.0+rev3
 ## (2021-05-17)
 
