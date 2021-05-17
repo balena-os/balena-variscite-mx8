@@ -15,7 +15,7 @@ module.exports =
         slug: 'imx8mm-var-dart-plt'
         name: 'Variscite DART-MX8M Mini PLT'
         arch: 'aarch64'
-        state: 'new'
+        state: 'released'
  
         stateInstructions:
                 postProvisioning: postProvisioningInstructions
