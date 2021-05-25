@@ -10,8 +10,9 @@ BALENA_BOOT_PARTITION_FILES_imx8m-var-dart = " \
 
 BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    fsl-imx8mm-var-dart.dtb:/fsl-imx8mm-var-dart.dtb \
-    fsl-imx8mm-var-dart-m4.dtb:/fsl-imx8mm-var-dart-m4.dtb \
+    imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
+    imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
+    imx8mm-var-dart-dt8mcustomboard-m4.dtb:/imx8mm-var-dart-dt8mcustomboard-m4.dtb \
 "
 
 BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
@@ -28,9 +29,7 @@ IMAGE_INSTALL_append = " \
                                         bluez5 \
 					pm-utils \
 					pm-services \
-					firmware-imx \
 					firmware-imx-vpu-imx8 \
-					firmware-imx-sdma \
 					kernel-module-imx-gpu-viv \
 					i2c-tools \
 "
@@ -48,7 +47,6 @@ IMAGE_CMD_balenaos-img_append_imx8mm-var-dart () {
     dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_lpddr4_ddr4_evk of=${BALENA_RAW_IMG} conv=notrunc seek=33 bs=1K
 }
 
-
 MACHINE_EXTRA_RDEPENDS += " \
                            linux-firmware-bcm4339 \
 			   linux-firmware \
@@ -58,7 +56,7 @@ MACHINE_EXTRA_RDEPENDS += " \
                            pm-utils \
                            bluez5 \
                            firmware-imx-vpu-imx8 \
-                           firmware-imx-sdma \
+                           firmware-imx \
                            kernel-module-imx-gpu-viv \
 "
 
