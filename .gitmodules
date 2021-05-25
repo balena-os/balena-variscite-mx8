@@ -28,4 +28,4 @@
 	url = https://github.com/LairdCP/meta-laird-cp.git
 [submodule "layers/meta-variscite-fslc"]
 	path = layers/meta-variscite-fslc
-	url = git@github.com:varigit/meta-variscite-fslc.git
+	url = https://github.com/varigit/meta-variscite-fslc.git
