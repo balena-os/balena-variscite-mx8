@@ -16,7 +16,7 @@ DEPENDS += "lzop-native bc-native"
 DEFAULT_PREFERENCE = "1"
 
 SRCBRANCH = "imx_4.14.78_1.0.0_ga_var01"
-
+PV="4.14.78"
 LOCALVERSION = "-${SRCBRANCH}"
 KERNEL_DEFCONFIG = "${S}/arch/arm64/configs/imx8_var_defconfig"
 DEFAULT_DTB = "sd-emmc-lvds"
