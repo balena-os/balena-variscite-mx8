@@ -9,6 +9,8 @@ with focus on i.MX Family SOMs. It includes support for many IPs such as GPU, VP
 
 require recipes-kernel/linux/linux-imx.inc
 
+FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
+
 DEPENDS += "lzop-native bc-native"
 
 DEFAULT_PREFERENCE = "1"

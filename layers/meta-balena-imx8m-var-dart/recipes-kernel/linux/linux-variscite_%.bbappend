@@ -1,4 +1,5 @@
 FILESEXTRAPATHS_append := ":${THISDIR}/${PN}"
+FILESEXTRAPATHS_append := ":${THISDIR}/${PN}-5.4.85"
 
 inherit kernel-resin
 
@@ -27,11 +28,11 @@ SRC_URI_append_imx8m-var-dart = " \
 "
 
 SRC_URI_append_imx8mm-var-dart = " \
-	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch \
+	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch \
 "
 
-# we disable the SPI patch until the customer tells us otherwise
-SRC_URI_remove_imx8mm-var-dart-plt = "file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV.patch"
+# nrt uses the 4.x kernel with realtime patches
+SRC_URI_remove_imx8mm-var-dart-nrt = "file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch"
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
@@ -48,6 +49,9 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.3.patch \
 "
+
+# already applies te 5.4.3 spidev patch
+SRC_URI_remove_imx8mm-var-dart-plt = "file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch"
 
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
 BALENA_CONFIGS[preempt_rt] = " \
