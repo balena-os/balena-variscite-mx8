@@ -13,11 +13,9 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
 DEPENDS += "lzop-native bc-native"
 
-DEFAULT_PREFERENCE = "1"
-
 SRCBRANCH = "lf-5.4.y_var01"
-PV="5.4.3"
-
+LINUX_VERSION = "5.4.3"
+PV = "5.4.3"
 LOCALVERSION_imx6ul-var-dart = "-imx6ul"
 LOCALVERSION_imx8mq-var-dart = "-imx8mq"
 LOCALVERSION_imx8mm-var-dart = "-imx8mm"
@@ -27,6 +25,7 @@ LOCALVERSION_imx8qm-var-som = "-imx8qm"
 
 KERNEL_DEFCONFIG_mx6 = "${S}/arch/arm/configs/imx_v7_var_defconfig"
 KERNEL_DEFCONFIG_mx8 = "${S}/arch/arm64/configs/imx8_var_defconfig"
+KBUILD_DEFCONFIG_mx8= "imx8_var_defconfig"
 DEFAULT_DTB_imx8mq-var-dart = "sd-lvds"
 DEFAULT_DTB_imx8qxp-var-som = "sd"
 DEFAULT_DTB_imx8qm-var-som = "lvds"
@@ -44,6 +43,7 @@ addtask copy_defconfig after do_patch before do_preconfigure
 do_copy_defconfig () {
     cp ${KERNEL_DEFCONFIG} ${WORKDIR}/defconfig
 }
+
 
 pkg_postinst_kernel-devicetree_append () {
    rm -f $D/boot/devicetree-*

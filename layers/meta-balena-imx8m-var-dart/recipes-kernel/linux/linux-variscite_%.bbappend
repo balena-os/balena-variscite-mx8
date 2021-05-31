@@ -18,14 +18,8 @@ BALENA_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
-# For plain imx8m-var-dart we'll stay at kernel 4.14.78
-# because there's no ubuntu release for 4.14.98, and
-# we want to preserve compatiblity for GPU access from container
-SRC_URI_append_imx8m-var-dart = " \
-        file://0001-vivante-gpu-revert-to-6.2.4.p1-driver.patch \
-	file://0001-Add-identification-led.patch \
-	file://0001-fsl-imx8mq-var-dart-common.dtsi-Add-spidev-support.patch \
-"
+## TODO: Rebase identification led for mx8m
+#file://0001-Add-identification-led.patch 
 
 SRC_URI_append_imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch \
