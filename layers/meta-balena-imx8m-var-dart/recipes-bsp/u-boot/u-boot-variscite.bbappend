@@ -28,5 +28,11 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://mx8mm-var-dart-plt-set-dram-2g.patch \
 "
 
+# The device-tree on NRT still has the old name
+# that doesn't include "customboard-legacy"
+SRC_URI_append_imx8mm-var-dart-nrt = " \
+	file://0003-imx8mm-var-dart-plt-Switch-dtb-name-for-kernel-5.4.3.patch \
+"
+
 OS_KERNEL_CMDLINE_remove_imx8mm-var-dart-nrt = "console=null"
 
