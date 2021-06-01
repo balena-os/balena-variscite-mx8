@@ -1,7 +1,7 @@
-From 6a355cad49b86800c15d88f0be84afa62ff338d3 Mon Sep 17 00:00:00 2001
+From 7ded15e9b60f0e5a994d992b39aeab5df8c5c05f Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 31 Mar 2020 12:24:53 +0200
-Subject: [PATCH 2/2] bootcmd: Flash only if bootswitch in EXT position
+Date: Tue, 1 Jun 2021 12:57:33 +0200
+Subject: [PATCH] bootcmd: Flash only if bootswitch in EXT position
 
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
@@ -10,17 +10,17 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 1 insertion(+)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index 5ee15af645..14a26452da 100644
+index b00e8ba245..12c67ee303 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -197,6 +197,7 @@
+@@ -170,6 +170,7 @@
  
  #define CONFIG_BOOTCOMMAND \
- 	   "run ramsize_check; " \
-+           "if bootswitchpos EXT; then setenv resin_flasher_skip 0; else setenv resin_flasher_skip 1; fi; "\
-            "setenv resin_kernel_load_addr ${loadaddr};" \
-            "run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
-            "setenv mmcdev ${resin_dev_index};" \
+ 	"run ramsize_check; " \
++	"if bootswitchpos EXT; then setenv resin_flasher_skip 0; else setenv resin_flasher_skip 1; fi; "\
+         "setenv resin_kernel_load_addr ${loadaddr};" \
+         "run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
+         "setenv mmcdev ${resin_dev_index};" \
 -- 
 2.17.1
 

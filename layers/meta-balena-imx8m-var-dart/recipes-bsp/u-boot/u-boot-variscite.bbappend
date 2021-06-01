@@ -10,10 +10,9 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 SRC_URI_remove = " file://resin-specific-env-integration-kconfig.patch "
 SRC_URI_append = " file://local-resin-specific-env-integration-kconfig.patch "
 
-## TODO: Rework mx8m integration
-#SRC_URI_append_imx8m-var-dart = " 
-#	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch 
-#"
+SRC_URI_append_imx8m-var-dart = " \
+	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch \
+"
 
 SRC_URI_append_imx8mm-var-dart = " \
 	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
@@ -29,16 +28,5 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://mx8mm-var-dart-plt-set-dram-2g.patch \
 "
 
-SRC_URI_append_imx8mm-var-dart-nrt = " \
-	file://mx8mm-nrt-Enable-M4-run-from-TCM.patch \
-"
-
 OS_KERNEL_CMDLINE_remove_imx8mm-var-dart-nrt = "console=null"
-
-# NOTE: The 2018.03 version is used only for the
-# imx8m-var-dart, which is pinned to
-# kernel version 4.14.78. This version deploys mkimage_uboot
-do_deploy_append_imx8m-var-dart() {
-    install -m 0777 ${B}/${config}/tools/mkimage  ${DEPLOYDIR}/${BOOT_TOOLS}/mkimage_uboot
-}
 
