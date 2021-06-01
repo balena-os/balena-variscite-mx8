@@ -1,47 +1,49 @@
-From c74a9c4a90a82a50f4af2d4ef411331e64b3a463 Mon Sep 17 00:00:00 2001
+From 4dee682d91ddb482aa1ec3d5582387bca15ead26 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 29 Jul 2020 15:21:42 +0200
+Date: Tue, 1 Jun 2021 13:14:20 +0200
 Subject: [PATCH] Enable i2c4 in uboot
+
+We used to add the pinctrl for i2c4grp
+since it wasn't present in the fsl-imx8mm-var-dart.dts
+file. However, the dtb name has changed in upstream so
+we now ensure the same configuration is being applied
+to the new dts.
 
 Upstream-status: Inappropriate[configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- arch/arm/dts/fsl-imx8mm-var-dart.dts | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ arch/arm/dts/imx8mm-var-dart-customboard.dts | 11 -----------
+ 1 file changed, 11 deletions(-)
 
-diff --git a/arch/arm/dts/fsl-imx8mm-var-dart.dts b/arch/arm/dts/fsl-imx8mm-var-dart.dts
-index 2a469122d3..f78058a40c 100644
---- a/arch/arm/dts/fsl-imx8mm-var-dart.dts
-+++ b/arch/arm/dts/fsl-imx8mm-var-dart.dts
-@@ -98,6 +98,13 @@
- 			>;
- 		};
+diff --git a/arch/arm/dts/imx8mm-var-dart-customboard.dts b/arch/arm/dts/imx8mm-var-dart-customboard.dts
+index c0a6012676..e3377e1d83 100644
+--- a/arch/arm/dts/imx8mm-var-dart-customboard.dts
++++ b/arch/arm/dts/imx8mm-var-dart-customboard.dts
+@@ -60,14 +60,6 @@
+ 		>;
+ 	};
  
-+                pinctrl_i2c4: i2c4grp {
-+                        fsl,pins = <
-+                                MX8MM_IOMUXC_I2C4_SCL_I2C4_SCL                  0x400001c3
-+                                MX8MM_IOMUXC_I2C4_SDA_I2C4_SDA                  0x400001c3
-+                        >;
-+                };
-+
- 		pinctrl_pmic: pmicirq {
- 			fsl,pins = <
- 				MX8MM_IOMUXC_SD1_DATA6_GPIO2_IO8		0x41
-@@ -378,6 +385,14 @@
+-	pinctrl_i2c4_gpio: i2c4grp-gpio {
+-		fsl,pins = <
+-			MX8MM_IOMUXC_I2C4_SCL_GPIO5_IO20		0x1c3
+-			MX8MM_IOMUXC_I2C4_SDA_GPIO5_IO21		0x1c3
+-		>;
+-	};
+-
+-
+ 	pinctrl_reg_usdhc2_vmmc: regulator-usdhc2 {
+ 		fsl,pins = <
+ 			MX8MM_IOMUXC_SD2_RESET_B_GPIO2_IO19		0x41
+@@ -132,9 +124,6 @@
+ 	clock-frequency = <100000>;
+ 	pinctrl-names = "default", "gpio";
+ 	pinctrl-0 = <&pinctrl_i2c4>;
+-	pinctrl-1 = <&pinctrl_i2c4_gpio>;
+-	scl-gpios = <&gpio5 20 GPIO_ACTIVE_HIGH>;
+-	sda-gpios = <&gpio5 21 GPIO_ACTIVE_HIGH>;
  	status = "okay";
  };
  
-+&i2c4 {
-+        clock-frequency = <100000>;
-+        pinctrl-names = "default";
-+        pinctrl-0 = <&pinctrl_i2c4>;
-+        status = "okay";
-+};
-+
-+
- &fec1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_fec1>;
 -- 
 2.17.1
 
