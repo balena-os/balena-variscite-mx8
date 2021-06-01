@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'imx8mm-var-dart: Switch state to released'
+      hash: f2ddcb5e4339cdfe257522829e1eae3d312dd3da
+      body: |
+        These devices were released for some time now
+        so let's update their status in the dashboard.
+      footer:
+        Changelog-entry: 'imx8mm-var-dart: Switch state to released'
+        changelog-entry: 'imx8mm-var-dart: Switch state to released'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.78.0+rev5
+  date: 2021-06-01T18:26:30.795Z
+- commits:
     - subject: 'linux-variscite: Switch lp55231 address and bus'
       hash: b1ae5ac07e06c52c88ce786815ccd1d47329a4eb
       body: |

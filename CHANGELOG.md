@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.78.0+rev5
+## (2021-06-01)
+
+* imx8mm-var-dart: Switch state to released [Alexandru Costache]
+
 # v2.78.0+rev4
 ## (2021-05-17)
 
