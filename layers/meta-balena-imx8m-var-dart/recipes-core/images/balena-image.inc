@@ -53,17 +53,19 @@ BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
 "
 
 IMAGE_INSTALL_append = " \
-                                        imx-boot \
-                                        linux-firmware-bcm4339 \
-                                        bcm43xx-utils \
-                                        brcm-patchram-plus \
-                                        kernel-modules \
-                                        bluez5 \
-					pm-utils \
-					pm-services \
-					firmware-imx-vpu-imx8 \
-					kernel-module-imx-gpu-viv \
-					i2c-tools \
+	imx-boot \
+	bcm43xx-utils \
+	brcm-patchram-plus \
+	kernel-modules \
+	bluez5 \
+	pm-utils \
+	pm-services \
+	firmware-imx-vpu-imx8 \
+	kernel-module-imx-gpu-viv \
+	i2c-tools \
+	kernel-image-initramfs \
+	kernel-devicetree \
+	firmware-imx-sdma-imx7d \
 "
 
 IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
@@ -92,11 +94,6 @@ MACHINE_EXTRA_RDEPENDS += " \
                            kernel-module-imx-gpu-viv \
 			   kernel-image-initramfs \
 			   kernel-devicetree \
-"
-
-IMAGE_INSTALL_append = " \
-	kernel-image-initramfs \
-        kernel-devicetree \
 "
 
 # Fixes error: packages already installed
