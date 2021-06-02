@@ -1,4 +1,17 @@
 - commits:
+    - subject: 'u-boot-variscite: Start NRT led in u-boot'
+      hash: ab780aecc078ae4128d45a77e6f4e1065532cbb1
+      body: ''
+      footer:
+        Changelog-entry: 'u-boot-variscite: Start NRT led in u-boot'
+        changelog-entry: 'u-boot-variscite: Start NRT led in u-boot'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.78.0+rev5
+  date: 2021-06-02T13:57:57.883Z
+- commits:
     - subject: 'linux-variscite: Switch lp55231 address and bus'
       hash: b1ae5ac07e06c52c88ce786815ccd1d47329a4eb
       body: |

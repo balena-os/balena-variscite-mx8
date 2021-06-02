@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.78.0+rev5
+## (2021-06-02)
+
+* u-boot-variscite: Start NRT led in u-boot [Alexandru Costache]
+
 # v2.78.0+rev4
 ## (2021-05-17)
 
