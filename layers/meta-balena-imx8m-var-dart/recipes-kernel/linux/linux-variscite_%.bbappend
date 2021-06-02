@@ -39,7 +39,6 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
 	file://0009-Port-RT-changes-4.19.31-rt18.patch \
 	file://0010-fsl-imx8mm-var-dart-Update-pinmux-for-NRT-board.patch \
-	file://0011-imx8mm-var-dart-nrt-Add-LP55231-to-the-device-tree.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
@@ -52,9 +51,4 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
 BALENA_CONFIGS[preempt_rt] = " \
     CONFIG_PREEMPT_RT_FULL=y \
-"
-
-BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " lp55231"
-BALENA_CONFIGS[lp55231] = " \
-    CONFIG_LEDS_LP5523=m \
 "
