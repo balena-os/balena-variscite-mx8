@@ -1,34 +1,36 @@
-From e19e38dbfa0112581206c6d2de61ae9c75b8e393 Mon Sep 17 00:00:00 2001
+From 6b1d8bd3af997ce42cb4de469b4ccf2cdb50fad6 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Wed, 2 Jun 2021 14:31:42 +0200
 Subject: [PATCH] imx8mm-var-dart-nrt: Add led start routine for NRT
 
-The gpio and i2c commands are provided in New OS for C 1.1 pdf
+The gpio and i2c commands are provided in New OS for C 1 6-3-21 pdf
 
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- include/configs/imx8mm_var_dart.h | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ include/configs/imx8mm_var_dart.h | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index bf61e8e6ad..575c13eb60 100644
+index bf61e8e6ad..af9fdd1cc0 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -114,6 +114,12 @@
+@@ -114,6 +114,14 @@
  	"m4_addr=0x7e0000\0" \
  	"m4_bin=m4_fw.bin\0" \
  	"use_m4=yes\0" \
 +	"led_ctrl=0x32\0" \
++	"nrt_led_addrs1=0x1C 0x16 0x17 0x1D 0x18 0x19;\0" \
++	"nrt_led_addrs2=0x26 0x27 0x2C 0x28 0x29 0x2D;\0" \
 +	"nrt_led_init=gpio set 11; gpio set 70; i2c dev 2;\0" \
 +	"nrt_led_start=i2c mw ${led_ctrl} 0x0 0x40; i2c mw ${led_ctrl} 0x36 0x5B; " \
-+		"i2c mw ${led_ctrl} 0x1C 0xFF; i2c mw ${led_ctrl} 0x16 0xFF; i2c mw ${led_ctrl} 0x17 0xFF; " \
-+		"i2c mw ${led_ctrl} 0x1D 0xFF; i2c mw ${led_ctrl} 0x18 0xFF; i2c mw ${led_ctrl} 0x19 0xFF; \0" \
++		"for reg_addr in ${nrt_led_addrs1}; do i2c mw ${led_ctrl} ${reg_addr} 0xFF; done; " \
++		"for reg_addr in ${nrt_led_addrs2}; do i2c mw ${led_ctrl} ${reg_addr} 0x0B; done;\0" \
 +	"start_led=run nrt_led_init; run nrt_led_start;\0" \
  	"loadm4bin=load mmc ${mmcdev}:${resin_boot_part} ${m4_addr} ${m4_bin}\0" \
  	"runm4bin=" \
  		"if test ${m4_addr} = 0x7e0000; then " \
-@@ -198,7 +204,7 @@
+@@ -198,7 +206,7 @@
  #define CONFIG_BOOTCOMMAND \
  	   "run ramsize_check; " \
             "setenv resin_kernel_load_addr ${loadaddr};" \
