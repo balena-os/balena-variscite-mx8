@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'u-boot: Add i2c commands for led current'
+      hash: d1d1247175210142c9edf0ca363454245b7dffbb
+      body: |
+        The values for the registers and sequence
+        are provided by the user of the NRT board.
+      footer:
+        Changelog-entry: 'u-boot: Add i2c commands for led current'
+        changelog-entry: 'u-boot: Add i2c commands for led current'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.79.7+rev2
+  date: 2021-06-07T11:33:50.608Z
+- commits:
     - subject: Update meta-balena from v2.78.0 to v2.79.7
       hash: fbe63064e0fe19293853687fef088f419fd90f60
       body: |
