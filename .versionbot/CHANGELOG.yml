@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'u-boot-variscite: Set led current first'
+      hash: 49c013a769f981a4d110bf7fde9d93e15553f5c1
+      body: |
+        User asked to switch the sequence for the leds
+        to set the current first.
+      footer:
+        Changelog-entry: 'u-boot-variscite: Set led current first'
+        changelog-entry: 'u-boot-variscite: Set led current first'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.80.0+rev2
+  date: 2021-06-10T13:02:52.517Z
+- commits:
     - subject: Update meta-balena from v2.79.7 to v2.80.0
       hash: 42d293a2d7566883344807ab95392eacea85ed7e
       body: |

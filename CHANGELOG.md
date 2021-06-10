@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.80.0+rev2
+## (2021-06-10)
+
+* u-boot-variscite: Set led current first [Alexandru Costache]
+
 # v2.80.0+rev1
 ## (2021-06-08)
 
