@@ -24,8 +24,8 @@ index bf61e8e6ad..af9fdd1cc0 100644
 +	"nrt_led_addrs2=0x26 0x27 0x2C 0x28 0x29 0x2D;\0" \
 +	"nrt_led_init=gpio set 11; gpio set 70; i2c dev 2;\0" \
 +	"nrt_led_start=i2c mw ${led_ctrl} 0x0 0x40; i2c mw ${led_ctrl} 0x36 0x5B; " \
-+		"for reg_addr in ${nrt_led_addrs1}; do i2c mw ${led_ctrl} ${reg_addr} 0xFF; done; " \
-+		"for reg_addr in ${nrt_led_addrs2}; do i2c mw ${led_ctrl} ${reg_addr} 0x0B; done;\0" \
++		"for reg_addr in ${nrt_led_addrs2}; do i2c mw ${led_ctrl} ${reg_addr} 0x0B; done; " \
++		"for reg_addr in ${nrt_led_addrs1}; do i2c mw ${led_ctrl} ${reg_addr} 0xFF; done;\0" \
 +	"start_led=run nrt_led_init; run nrt_led_start;\0" \
  	"loadm4bin=load mmc ${mmcdev}:${resin_boot_part} ${m4_addr} ${m4_bin}\0" \
  	"runm4bin=" \
