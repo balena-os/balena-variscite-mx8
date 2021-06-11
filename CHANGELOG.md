@@ -1,6 +1,30 @@
 Change log
 -----------
 
+# v2.80.3+rev1
+## (2021-06-11)
+
+
+<details>
+<summary> Update meta-balena from v2.80.0 to v2.80.3 [Alexandru Costache] </summary>
+
+> ## meta-balena-2.80.3
+> ### (2021-06-10)
+> 
+> * Add oneshot service to migrate supervisor state config [Kyle Harding]
+> 
+> ## meta-balena-2.80.2
+> ### (2021-06-09)
+> 
+> * update-balena-supervisor: Refactor script to ensure target version is ran [Alexandru Costache]
+> 
+> ## meta-balena-2.80.1
+> ### (2021-06-07)
+> 
+> * bluez5: Disable PnP Device Information service [Zahari Petkov]
+> 
+</details>
+
 # v2.80.0+rev2
 ## (2021-06-10)
 

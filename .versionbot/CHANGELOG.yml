@@ -1,4 +1,84 @@
 - commits:
+    - subject: Update meta-balena from v2.80.0 to v2.80.3
+      hash: f0bebc4f1d83e5de6087edbabc3cad2a76942ffc
+      body: |
+        Update meta-balena from 2.80.0 to 2.80.3
+      footer:
+        Changelog-entry: Update meta-balena from v2.80.0 to v2.80.3
+        changelog-entry: Update meta-balena from v2.80.0 to v2.80.3
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested:
+        - commits:
+            - subject: Add oneshot service to migrate supervisor state config
+              hash: d965d23fe60db6254eaabd81a0d48b5718e01a3a
+              body: >
+                The hostapp-update hooks would run before the supervisor update
+                step
+
+                when using balenahup via the dashboard. This resulted in the
+                balena
+
+                supervisor state conf file being out-of-date.
+
+
+                This commit removes the hostapp-update hook and instead uses a
+
+                oneshot service to ensure the conf is migrated if it does not
+                exist
+
+                in the new path before starting the supervisor.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.80.3
+          date: 2021-06-10T13:47:28.925Z
+        - commits:
+            - subject: >-
+                update-balena-supervisor: Refactor script to ensure target
+                version is ran
+              hash: 0433c666bf4756df30312f0d59ad8a8b94b062ab
+              body: |
+                This is a rebase of PR 2180 by Miguel,
+                which improves stability for the
+                supervisor update.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.80.2
+          date: 2021-06-09T09:54:10.830Z
+        - commits:
+            - subject: 'bluez5: Disable PnP Device Information service'
+              hash: afb3dc0441e9ed0f2f9a08de5dd2a9cc75f09ac3
+              body: >
+                This reverts to the behavior before v5.56 as it interferes with
+                user defined
+
+                Device Information profiles.
+
+
+                For more information: https://github.com/bluez/bluez/issues/101
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Zahari Petkov <zahari@balena.io>
+                signed-off-by: Zahari Petkov <zahari@balena.io>
+              author: Zahari Petkov
+              nested: []
+          version: meta-balena-2.80.1
+          date: 2021-06-07T12:35:18.823Z
+  version: 2.80.3+rev1
+  date: 2021-06-11T09:17:08.365Z
+- commits:
     - subject: 'u-boot-variscite: Set led current first'
       hash: 49c013a769f981a4d110bf7fde9d93e15553f5c1
       body: |
