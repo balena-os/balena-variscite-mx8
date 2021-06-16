@@ -17,8 +17,8 @@ index bf61e8e6ad..af9fdd1cc0 100644
 +++ b/include/configs/imx8mm_var_dart.h
 @@ -114,6 +114,14 @@
  	"m4_addr=0x7e0000\0" \
- 	"m4_bin=m4_fw.bin\0" \
- 	"use_m4=yes\0" \
+ 	"m4_bin=hello_world.bin\0" \
+ 	"use_m4=no\0" \
 +	"led_ctrl=0x32\0" \
 +	"nrt_led_addrs1=0x1C 0x16 0x17 0x1D 0x18 0x19;\0" \
 +	"nrt_led_addrs2=0x26 0x27 0x2C 0x28 0x29 0x2D;\0" \
@@ -27,7 +27,7 @@ index bf61e8e6ad..af9fdd1cc0 100644
 +		"for reg_addr in ${nrt_led_addrs2}; do i2c mw ${led_ctrl} ${reg_addr} 0x0B; done; " \
 +		"for reg_addr in ${nrt_led_addrs1}; do i2c mw ${led_ctrl} ${reg_addr} 0xFF; done;\0" \
 +	"start_led=run nrt_led_init; run nrt_led_start;\0" \
- 	"loadm4bin=load mmc ${mmcdev}:${resin_boot_part} ${m4_addr} ${m4_bin}\0" \
+ 	"loadm4bin=load mmc ${mmcdev}:${mmcpart} ${m4_addr} ${bootdir}/${m4_bin}\0" \
  	"runm4bin=" \
  		"if test ${m4_addr} = 0x7e0000; then " \
 @@ -198,7 +206,7 @@
