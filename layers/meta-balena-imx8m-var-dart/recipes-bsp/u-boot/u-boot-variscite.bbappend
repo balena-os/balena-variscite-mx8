@@ -37,10 +37,11 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
-	file://mx8mm-nrt-Enable-M4-run-from-TCM.patch \
 	file://imx8mm-var-dart-nrt-Enable-I2C-in-console.patch \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
 "
+
+SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
 
 OS_KERNEL_CMDLINE_remove_imx8mm-var-dart-nrt = "console=null"
 
