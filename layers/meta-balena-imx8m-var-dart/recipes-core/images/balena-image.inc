@@ -49,7 +49,8 @@ BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-nrt = " \
 
 BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    imx8mm-var-dart.dtb: \
+    imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
+    imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
 "
 
 IMAGE_INSTALL_append = " \
