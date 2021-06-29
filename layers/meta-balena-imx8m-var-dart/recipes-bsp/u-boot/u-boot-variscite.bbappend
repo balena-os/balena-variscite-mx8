@@ -36,7 +36,8 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
 
 # The device-tree on NRT still has the old name
-# that doesn't include "customboard-legacy"
+# that doesn't include "customboard-legacy". This is available
+# for all custom hw since they use kernel versions older than 5.4.85
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0003-imx8mm-var-dart-plt-Switch-dtb-name-for-kernel-5.4.3.patch \
 "

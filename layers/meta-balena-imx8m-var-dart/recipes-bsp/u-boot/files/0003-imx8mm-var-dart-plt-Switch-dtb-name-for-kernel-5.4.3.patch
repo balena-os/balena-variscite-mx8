@@ -1,10 +1,14 @@
-From 7d786fc7ebe6110fa33099d7c38839eb02b71d85 Mon Sep 17 00:00:00 2001
+From 9180cc22b99c5da120c979e347397eb91c718ee4 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 1 Jun 2021 13:02:37 +0200
+Date: Tue, 29 Jun 2021 14:16:24 +0200
 Subject: [PATCH] imx8mm-var-dart-plt: Switch dtb name for kernel 5.4.3
 
 We have switched to kernel 5.4.3 which uses a different dtb name so
 let's use the new name here.
+
+PLT board uses kernel 5.4.3 and the NRT one uses 4.19 with
+RT patches. Starting with kernel 5.4.85 the dtb names were changed
+to account for the old and new devkits.
 
 Upstream-status: Inappropriate[configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
@@ -13,10 +17,10 @@ Signed-off-by: Florin Sarbu <florin@balena.io>
  1 file changed, 1 insertion(+), 5 deletions(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index 12c67ee303..138cfadba0 100644
+index 15da1ec940..2c1efc1b50 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -116,11 +116,7 @@
+@@ -124,11 +124,7 @@
  					"setenv fdt_file imx8mm-var-som-symphony.dtb; " \
  				"fi; " \
  			"else " \
