@@ -40,7 +40,7 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://imx8mm-var-dart-plt-Switch-usb1-dr_mode-to-host.patch \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
-	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.3.patch \
+	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch \
 "
 
 # already applies te 5.4.3 spidev patch
