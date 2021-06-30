@@ -16,7 +16,6 @@ SRC_URI_append_imx8m-var-dart = " \
 
 SRC_URI_append_imx8mm-var-dart = " \
 	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
-	file://Use-old-device-tree-on-altboot.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
@@ -32,10 +31,6 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-nrt-Enable-I2C-in-console.patch \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
-"
-
-SRC_URI_remove_imx8mm-var-dart-nrt = " \
-	file://Use-old-device-tree-on-altboot.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
