@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'imx8mm-var-dart: Switch state to released'
+      hash: 0efe0c9e2cc163835fadea8add1d9c11e5453c75
+      body: |
+        These devices were released for some time now
+        so let's update their status in the dashboard.
+      footer:
+        Changelog-entry: 'imx8mm-var-dart: Switch state to released'
+        changelog-entry: 'imx8mm-var-dart: Switch state to released'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.80.5+rev2
+  date: 2021-06-30T11:06:37.679Z
+- commits:
     - subject: Update meta-balena from v2.80.3 to v2.80.5
       hash: 5622abc0ba17e76f16232b9b19f18c6555312fa3
       body: |
