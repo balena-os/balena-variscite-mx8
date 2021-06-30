@@ -1,0 +1,33 @@
+From 03a7177b86816210d538eb09f200888b3fbad4a6 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 30 Jun 2021 10:07:17 +0200
+Subject: [PATCH] Use old device tree on altboot
+
+Variscite renamed device trees starting with
+the kernel 5.4.85 release, let's load the old
+device tree name in case of a rollback.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index 0b323ac844..0589d0d134 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -133,8 +133,8 @@
+ 			"fi; " \
+ 		"fi; \0" \
+ 	"loadfdt=run findfdt; " \
+-		"echo fdt_file=${fdt_file}; " \
+-		"load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}\0" \
++		"echo fdt_file=${fdt_file}; setenv old_fdt imx8mm-var-dart.dtb; " \
++		"if load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; then echo Loaded ${fdt_file}; else load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${old_fdt}; echo Old DT!; fi;\0" \
+ 	"ramsize_check="\
+ 		"if test $sdram_size -le 512; then " \
+ 			"setenv cma_size cma=320M; " \
+-- 
+2.17.1
+

@@ -1,0 +1,32 @@
+From f3e0945cd065e9e39ce804106e4e06063a856697 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 30 Jun 2021 10:12:25 +0200
+Subject: [PATCH] plt: Always load the legacy dtb
+
+We enabled dm for i2c leds and this causes the
+eeprom that contains the hw revision to not get
+loaded correctly, but we know the hw variant for
+this device type so let's always load the legacy dtb.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index 0589d0d134..6ff154e4e6 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -128,7 +128,7 @@
+ 				"if test $carrier_rev = legacy; then " \
+ 					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+ 				"else " \
+-					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+ 				"fi; " \
+ 			"fi; " \
+ 		"fi; \0" \
+-- 
+2.17.1
+
