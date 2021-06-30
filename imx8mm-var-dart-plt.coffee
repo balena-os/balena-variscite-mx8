@@ -15,7 +15,7 @@ module.exports =
         slug: 'imx8mm-var-dart-plt'
         name: 'Variscite DART-MX8M Mini PLT'
         arch: 'aarch64'
-        state: 'new'
+        state: 'released'
  
         stateInstructions:
                 postProvisioning: postProvisioningInstructions
@@ -38,7 +38,7 @@ module.exports =
                 machine: 'imx8mm-var-dart-plt'
                 image: 'balena-image-flasher'
                 fstype: 'balenaos-img'
-                version: 'yocto-warrior'
+                version: 'yocto-dunfell'
                 deployArtifact: 'balena-image-flasher-imx8mm-var-dart-plt.balenaos-img'
                 compressed: true
 

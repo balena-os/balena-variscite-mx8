@@ -1,38 +1,72 @@
 BALENA_BOOT_PARTITION_FILES_imx8m-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    fsl-imx8mq-var-dart-sd-emmc-lvds.dtb:/fsl-imx8mq-var-dart-sd-emmc-lvds.dtb \
-    fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb:/fsl-imx8mq-var-dart-sd-emmc-hdmi.dtb \
-    fsl-imx8mq-var-dart-sd-emmc-dual-display.dtb:/fsl-imx8mq-var-dart-sd-emmc-dual-display.dtb \
-    fsl-imx8mq-var-dart-emmc-wifi-lvds.dtb:/fsl-imx8mq-var-dart-emmc-wifi-lvds.dtb \
-    fsl-imx8mq-var-dart-emmc-wifi-hdmi.dtb:/fsl-imx8mq-var-dart-emmc-wifi-hdmi.dtb \
-    fsl-imx8mq-var-dart-emmc-wifi-dual-display.dtb:/fsl-imx8mq-var-dart-emmc-wifi-dual-display.dtb \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-sd-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-sd-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds-dp.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-m4-sd-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-m4-sd-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-m4-sd-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-m4-wifi-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-m4-wifi-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-m4-wifi-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-sd-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-sd-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-sd-lvds-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-wifi-hdmi.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-wifi-lvds.dtb:/ \
+        imx8mq-var-dart-dt8mcustomboard-wifi-lvds-hdmi.dtb:/ \
 "
 
 BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    fsl-imx8mm-var-dart.dtb:/fsl-imx8mm-var-dart.dtb \
-    fsl-imx8mm-var-dart-m4.dtb:/fsl-imx8mm-var-dart-m4.dtb \
+    imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
+    imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
+    imx8mm-var-dart-dt8mcustomboard-m4.dtb:/imx8mm-var-dart-dt8mcustomboard-m4.dtb \
+"
+
+BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-nrt = " \
+    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
+    fsl-imx8mm-var-dart-m4.dtb:/ \
+    fsl-imx8mm-var-dart.dtb:/ \
 "
 
 BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
     ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    imx8mm-var-dart.dtb: \
+    imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
+    imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
 "
 
 IMAGE_INSTALL_append = " \
-                                        imx-boot \
-                                        linux-firmware-bcm4339 \
-                                        bcm43xx-utils \
-                                        brcm-patchram-plus \
-                                        kernel-modules \
-                                        bluez5 \
-					pm-utils \
-					pm-services \
-					firmware-imx \
-					firmware-imx-vpu-imx8 \
-					firmware-imx-sdma \
-					kernel-module-imx-gpu-viv \
-					i2c-tools \
+	imx-boot \
+	bcm43xx-utils \
+	brcm-patchram-plus \
+	kernel-modules \
+	bluez5 \
+	pm-utils \
+	pm-services \
+	firmware-imx-vpu-imx8 \
+	kernel-module-imx-gpu-viv \
+	i2c-tools \
+	kernel-image-initramfs \
+	kernel-devicetree \
+	firmware-imx-sdma-imx7d \
 "
 
 IMAGE_INSTALL_remove_imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
@@ -48,7 +82,6 @@ IMAGE_CMD_balenaos-img_append_imx8mm-var-dart () {
     dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_lpddr4_ddr4_evk of=${BALENA_RAW_IMG} conv=notrunc seek=33 bs=1K
 }
 
-
 MACHINE_EXTRA_RDEPENDS += " \
                            linux-firmware-bcm4339 \
 			   linux-firmware \
@@ -58,13 +91,10 @@ MACHINE_EXTRA_RDEPENDS += " \
                            pm-utils \
                            bluez5 \
                            firmware-imx-vpu-imx8 \
-                           firmware-imx-sdma \
+                           firmware-imx \
                            kernel-module-imx-gpu-viv \
-"
-
-IMAGE_INSTALL_append = " \
-	kernel-image-initramfs \
-        kernel-devicetree \
+			   kernel-image-initramfs \
+			   kernel-devicetree \
 "
 
 # Fixes error: packages already installed

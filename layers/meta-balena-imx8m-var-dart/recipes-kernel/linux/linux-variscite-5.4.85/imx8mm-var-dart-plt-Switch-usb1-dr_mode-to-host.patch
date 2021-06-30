@@ -1,6 +1,6 @@
-From b8e2be4d29a7d63207ea4a53408fa4b055c2ccda Mon Sep 17 00:00:00 2001
+From 5ee967e803a9548cb80d83ca9cc26e607a080848 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Thu, 25 Feb 2021 15:28:48 +0100
+Date: Tue, 29 Jun 2021 16:49:33 +0200
 Subject: [PATCH] imx8mm-var-dart: Switch usb1 dr_mode to host
 
 This is needed for usb devices to work correctly.
@@ -12,14 +12,14 @@ resets continuously and there are many errors.
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts | 2 +-
+ .../boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts      | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
-index 2d7739f40bc5..22b82a10f235 100644
---- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
-+++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dts
-@@ -971,7 +971,7 @@
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
+index 1615d2ec6ebf..b96ed3848379 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
+@@ -334,7 +334,7 @@
  };
  
  &usbotg1 {
@@ -27,7 +27,7 @@ index 2d7739f40bc5..22b82a10f235 100644
 +	dr_mode = "host";
  	picophy,pre-emp-curr-control = <3>;
  	picophy,dc-vol-level-adjust = <7>;
- 	status = "okay";
+ 	extcon = <&extcon_usb1>;
 -- 
 2.17.1
 

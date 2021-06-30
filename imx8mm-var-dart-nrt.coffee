@@ -16,7 +16,7 @@ module.exports =
         slug: 'imx8mm-var-dart-nrt'
         name: 'Variscite DART-MX8M Mini NRT'
         arch: 'aarch64'
-        state: 'new'
+        state: 'released'
  
         stateInstructions:
                 postProvisioning: postProvisioningInstructions
@@ -39,7 +39,7 @@ module.exports =
                 machine: 'imx8mm-var-dart-nrt'
                 image: 'balena-image-flasher'
                 fstype: 'balenaos-img'
-                version: 'yocto-warrior'
+                version: 'yocto-dunfell'
                 deployArtifact: 'balena-image-flasher-imx8mm-var-dart-nrt.balenaos-img'
                 compressed: true
 

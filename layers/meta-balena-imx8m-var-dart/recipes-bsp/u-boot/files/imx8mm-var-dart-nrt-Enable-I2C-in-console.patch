@@ -1,6 +1,6 @@
-From 8450749d26cc82cc05be98a04bcddb39926f9ced Mon Sep 17 00:00:00 2001
+From b37c06d2aed7179e9e025d5a65248d5453a75aa9 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 2 Jun 2021 12:18:03 +0200
+Date: Tue, 29 Jun 2021 14:07:35 +0200
 Subject: [PATCH] imx8mm-var-dart-nrt: Enable I2C in console
 
 Activate driver model for drivers to have i2c commands
@@ -14,23 +14,23 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  2 files changed, 9 insertions(+), 1 deletion(-)
 
 diff --git a/configs/imx8mm_var_dart_defconfig b/configs/imx8mm_var_dart_defconfig
-index 4542b2635a..f79f9221c8 100644
+index 5043f6ad2e..71b434fa1e 100644
 --- a/configs/imx8mm_var_dart_defconfig
 +++ b/configs/imx8mm_var_dart_defconfig
-@@ -68,3 +68,4 @@ CONFIG_CMD_EXT2=y
- CONFIG_CMD_EXT4=y
+@@ -118,3 +118,4 @@ CONFIG_CMD_EXT4=y
  CONFIG_CMD_FAT=y
  CONFIG_CMD_EXPORTENV=y
+ CONFIG_PARTITION_UUIDS=y
 +CONFIG_DM_I2C=y
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index c55bf81717..bf61e8e6ad 100644
+index 530e5557b4..c8f6ac299e 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -236,7 +236,14 @@
+@@ -212,7 +212,14 @@
  
- #define CONFIG_SYS_SDRAM_BASE		0x40000000
- #define PHYS_SDRAM			0x40000000
--#define DEFAULT_DRAM_SIZE_MB		512
+ #define CONFIG_SYS_SDRAM_BASE           0x40000000
+ #define PHYS_SDRAM                      0x40000000
+-#define DEFAULT_SDRAM_SIZE		(512 * SZ_1M) /* 512MB Minimum DDR4, see get_dram_size */
 +
 +/* The NRT module has 1G RAM, however, enabling
 + * DM_I2C necessary for using leds in u-boot interferes
@@ -38,10 +38,10 @@ index c55bf81717..bf61e8e6ad 100644
 + * reads the RAM size from the eeprom on i2c bus 0.
 + * Set the default size to the known value of 1GB.
 + */
-+#define DEFAULT_DRAM_SIZE_MB		1024
++#define DEFAULT_SDRAM_SIZE		(1024 * SZ_1M) /* 512MB Minimum DDR4, see get_dram_size */
+ #define VAR_EEPROM_DRAM_START          (CONFIG_SYS_MEMTEST_START + \
+ 					(DEFAULT_SDRAM_SIZE >> 1))
  
- #define CONFIG_SYS_MEMTEST_START	PHYS_SDRAM
- #define CONFIG_SYS_MEMTEST_END		(CONFIG_SYS_MEMTEST_START + (256 * SZ_1M))
 -- 
 2.17.1
 

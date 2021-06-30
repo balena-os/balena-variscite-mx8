@@ -13,10 +13,9 @@ BBLAYERS ?= " \
     ${TOPDIR}/../layers/meta-openembedded/meta-networking \
     ${TOPDIR}/../layers/meta-openembedded/meta-python \
     ${TOPDIR}/../layers/meta-freescale \
-    ${TOPDIR}/../layers/meta-fsl-bsp-release/imx/meta-bsp \
-    ${TOPDIR}/../layers/meta-variscite-imx \
+    ${TOPDIR}/../layers/meta-variscite-fslc \
     ${TOPDIR}/../layers/meta-balena/meta-balena-common \
-    ${TOPDIR}/../layers/meta-balena/meta-balena-warrior \
+    ${TOPDIR}/../layers/meta-balena/meta-balena-dunfell \
     ${TOPDIR}/../layers/meta-balena-imx8m-var-dart \
     ${TOPDIR}/../layers/meta-rust \
 "
