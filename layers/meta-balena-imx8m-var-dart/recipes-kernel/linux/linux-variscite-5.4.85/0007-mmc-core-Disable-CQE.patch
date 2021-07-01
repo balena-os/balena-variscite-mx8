@@ -1,6 +1,6 @@
-From c7841f1d2237dcd4a65f5dff6f63c3b9d914b282 Mon Sep 17 00:00:00 2001
-From: Florin Sarbu <florin@balena.io>
-Date: Fri, 10 Jul 2020 06:24:05 +0200
+From d45f80bcf706f4a13734135be020a21d8b174777 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Thu, 1 Jul 2021 11:21:35 +0200
 Subject: [PATCH] mmc: core: Disable CQE
 
 On the customer board we get a lot of
@@ -12,18 +12,17 @@ So let's disable CQE for now.
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
 ---
- drivers/mmc/core/mmc.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/mmc/core/mmc.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/drivers/mmc/core/mmc.c b/drivers/mmc/core/mmc.c
-index 98819a0..b6234e5 100644
+index de14b5845f52..0c54c77c1589 100644
 --- a/drivers/mmc/core/mmc.c
 +++ b/drivers/mmc/core/mmc.c
-@@ -1797,6 +1797,13 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+@@ -1833,6 +1833,12 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
  	 */
  	card->ext_csd.cmdq_en = false;
  	if (card->ext_csd.cmdq_support && host->caps2 & MMC_CAP2_CQE) {
-+
 +/*
 + * We get a lot of
 + * mmc2: running CQE recovery
@@ -33,7 +32,7 @@ index 98819a0..b6234e5 100644
  		err = mmc_cmdq_enable(card);
  		if (err && err != -EBADMSG)
  			goto free_card;
-@@ -1807,6 +1814,8 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+@@ -1843,6 +1849,8 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
  			card->ext_csd.cmdq_depth = 0;
  			err = 0;
  		}
@@ -43,5 +42,5 @@ index 98819a0..b6234e5 100644
  	/*
  	 * In some cases (e.g. RPMB or mmc_test), the Command Queue must be
 -- 
-2.7.4
+2.17.1
 

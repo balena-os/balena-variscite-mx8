@@ -41,18 +41,6 @@ BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     imx8mm-var-dart-dt8mcustomboard-m4.dtb:/imx8mm-var-dart-dt8mcustomboard-m4.dtb \
 "
 
-BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-nrt = " \
-    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    fsl-imx8mm-var-dart-m4.dtb:/ \
-    fsl-imx8mm-var-dart.dtb:/ \
-"
-
-BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart-plt = " \
-    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
-    imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
-    imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
-"
-
 IMAGE_INSTALL_append = " \
 	imx-boot \
 	bcm43xx-utils \

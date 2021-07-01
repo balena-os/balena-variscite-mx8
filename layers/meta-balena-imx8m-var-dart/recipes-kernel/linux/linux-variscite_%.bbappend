@@ -25,15 +25,14 @@ SRC_URI_append_imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch \
 "
 
-# nrt uses the 4.x kernel with realtime patches
-SRC_URI_remove_imx8mm-var-dart-nrt = "file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch"
-
+# RT patch patch-5.4.82-rt46.patch taken from
+# https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/5.4/older/
 SRC_URI_append_imx8mm-var-dart-nrt = " \
-	file://0001-imx8mm-var-dart-nrt-pinmux.patch \
+	file://patch-5.4.82-rt46.patch \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
-	file://0009-Port-RT-changes-4.19.31-rt18.patch \
-	file://0010-fsl-imx8mm-var-dart-Update-pinmux-for-NRT-board.patch \
+	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-85.patch \
+	file://fsl-imx8mm-var-dart-nrt-pinmux-legacy-nrt.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
@@ -48,5 +47,7 @@ SRC_URI_remove_imx8mm-var-dart-plt = "file://mx8mm-fsl-imx8mm-var-dart-Enable-SP
 
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " preempt_rt"
 BALENA_CONFIGS[preempt_rt] = " \
-    CONFIG_PREEMPT_RT_FULL=y \
+    CONFIG_ARCH_SUPPORTS_RT=y \
+    CONFIG_EXPERT=y \
+    CONFIG_PREEMPT_RT=y \
 "
