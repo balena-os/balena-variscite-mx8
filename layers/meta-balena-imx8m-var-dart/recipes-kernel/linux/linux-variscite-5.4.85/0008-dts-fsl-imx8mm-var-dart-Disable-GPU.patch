@@ -1,0 +1,29 @@
+From 9f51565596b548c0d8fa977d480c4386a4518dd3 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Thu, 1 Jul 2021 11:23:59 +0200
+Subject: [PATCH] dts: fsl-imx8mm-var-dart: Disable GPU
+
+This was requested by customer
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
+---
+ arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
+index c30bedd70d6b..67065e8a4580 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
+@@ -73,7 +73,7 @@
+ };
+ 
+ &gpu {
+-	status = "okay";
++	status = "disabled";
+ };
+ 
+ &iomuxc {
+-- 
+2.17.1
+
