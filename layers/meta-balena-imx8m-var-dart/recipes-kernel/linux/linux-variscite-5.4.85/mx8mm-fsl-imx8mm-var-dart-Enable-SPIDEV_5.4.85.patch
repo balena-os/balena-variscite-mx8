@@ -59,7 +59,7 @@ index 1615d2ec6ebf..8cd62c676b78 100644
  	};
  
 +       spidev@0 {
-+               compatible = "spidev";
++               compatible = "var,spidev";
 +               spi-max-frequency = <12000000>;
 +               reg = <0>;
 +       };
