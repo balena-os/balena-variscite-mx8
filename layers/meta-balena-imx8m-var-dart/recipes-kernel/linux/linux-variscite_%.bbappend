@@ -23,6 +23,7 @@ BALENA_CONFIGS[imx-sdma] = " \
 
 SRC_URI_append_imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.85.patch \
+	file://0001-imx8mm-test-avoid-pci-hang-no-oscillator.patch \
 "
 
 # RT patch patch-5.4.82-rt46.patch taken from
