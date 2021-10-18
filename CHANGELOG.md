@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.82.10+rev2
+## (2021-10-17)
+
+* linux-variscite: Fix hang if no pcie oscillator present on carrier board [Alexandru Costache]
+
 # v2.82.10+rev1
 ## (2021-08-13)
 

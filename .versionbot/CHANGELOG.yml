@@ -1,4 +1,21 @@
 - commits:
+    - subject: 'linux-variscite: Fix hang if no pcie oscillator present on carrier board'
+      hash: 71052a2b3e52b9d5cdc9899f2053b5cfe7cdb5cf
+      body: ''
+      footer:
+        Changelog-entry: >-
+          linux-variscite: Fix hang if no pcie oscillator present on carrier
+          board
+        changelog-entry: >-
+          linux-variscite: Fix hang if no pcie oscillator present on carrier
+          board
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.82.10+rev2
+  date: 2021-10-17T19:03:06.889Z
+- commits:
     - subject: Update meta-balena from v2.80.5 to v2.82.10
       hash: 62973c9887e68c89633818be2bdaa6902286a2d0
       body: |
