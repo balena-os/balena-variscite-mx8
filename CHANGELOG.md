@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.88.4+rev1
+## (2021-12-08)
+
+* main: Test VB check [Alexandru Costache]
+
 # v2.88.4
 ## (2021-12-07)
 

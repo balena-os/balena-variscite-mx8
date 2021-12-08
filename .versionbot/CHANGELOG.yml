@@ -1,4 +1,19 @@
 - commits:
+    - subject: 'main: Test VB check'
+      hash: 4610d955858cce74f27a545ffb1be0c38bfa8e60
+      body: |
+        Empty commit (PR) to test VB check
+        Do not merge this.
+      footer:
+        Changelog-entry: 'main: Test VB check'
+        changelog-entry: 'main: Test VB check'
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.88.4+rev1
+  date: 2021-12-08T09:21:17.588Z
+- commits:
     - subject: Update meta-balena from v2.85.2 to v2.88.4
       hash: c73f337d8007caf91ffafbf23ebd8fe33d9862bd
       body: |
