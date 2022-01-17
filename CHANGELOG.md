@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.88.4+rev4
+## (2022-01-17)
+
+
+<details>
+<summary> Update balena-yocto-scripts to v1.16.3 [Alex Gonzalez] </summary>
+
+> ## balena-yocto-scripts-1.16.3
+> ### (2022-01-17)
+> 
+> * balena-deploy-block: Check for existing tag only in specific hostapp [Alex Gonzalez]
+> 
+</details>
+
 # v2.88.4+rev3
 ## (2022-01-15)
 
