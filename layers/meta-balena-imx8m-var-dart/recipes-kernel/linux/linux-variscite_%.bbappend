@@ -35,7 +35,8 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-85.patch \
 	file://fsl-imx8mm-var-dart-nrt-pinmux-legacy-nrt.patch \
 	file://imx8mm-var-dart-nrt-Add-LP55231-to-the-device-tree.patch \
-        file://imx8mm-var-dart-plt-Disable-PCIe.patch \
+	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
+	file://0001-lp55xx-Add-support-for-default-startup-brightness-fr.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
