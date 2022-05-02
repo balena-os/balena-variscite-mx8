@@ -1,0 +1,65 @@
+From 07981a4c920f8b83f5cd3f31dd1d7f8c37632c2e Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Tue, 26 Apr 2022 13:52:14 +0200
+Subject: [PATCH] lp55xx: Add support for default startup brightness from dtb
+
+JF ticket https://jel.ly.fish/support-thread-1-0-0-front-cnv-ceqsqz1
+requests for all d1-d8 of the LP55231 chip to be set from OS
+startup to brightness = 255 and current = 10;
+
+U-boot sets these values already but the led is turned off
+as soon as the kernel driver is loaded. Turning it back on
+once the container application starts is too late and adding
+a systemd service would also cause a significant delay. Also,
+setting the desired values from an udev rule would trigrer a
+short flashing red color, which is noticeable.
+
+We thus add support for using a default brightness from the
+device-tree, and adapt it and the led_current to the requested
+values provided by the customer in the above ticket.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ drivers/leds/leds-lp55xx-common.c         | 5 +++++
+ include/linux/platform_data/leds-lp55xx.h | 1 +
+ 2 files changed, 6 insertions(+)
+
+diff --git a/drivers/leds/leds-lp55xx-common.c b/drivers/leds/leds-lp55xx-common.c
+index 44ced02b49f9..98fb83f99931 100644
+--- a/drivers/leds/leds-lp55xx-common.c
++++ b/drivers/leds/leds-lp55xx-common.c
+@@ -485,6 +485,9 @@ int lp55xx_register_leds(struct lp55xx_led *led, struct lp55xx_chip *chip)
+ 		/* setting led current at each channel */
+ 		if (cfg->set_led_current)
+ 			cfg->set_led_current(each, led_current);
++
++                each->brightness = pdata->led_config[i].default_brightness;
++                cfg->brightness_fn(each);
+ 	}
+ 
+ 	return 0;
+@@ -570,6 +573,8 @@ struct lp55xx_platform_data *lp55xx_of_populate_pdata(struct device *dev,
+ 		of_property_read_string(child, "chan-name", &cfg[i].name);
+ 		of_property_read_u8(child, "led-cur", &cfg[i].led_current);
+ 		of_property_read_u8(child, "max-cur", &cfg[i].max_current);
++		if (of_property_read_u8(child, "default-brightness", &cfg[i].default_brightness))
++			cfg[i].default_brightness = 0;
+ 		cfg[i].default_trigger =
+ 			of_get_property(child, "linux,default-trigger", NULL);
+ 
+diff --git a/include/linux/platform_data/leds-lp55xx.h b/include/linux/platform_data/leds-lp55xx.h
+index 96a787100fda..60af2a771937 100644
+--- a/include/linux/platform_data/leds-lp55xx.h
++++ b/include/linux/platform_data/leds-lp55xx.h
+@@ -23,6 +23,7 @@ struct lp55xx_led_config {
+ 	u8 chan_nr;
+ 	u8 led_current; /* mA x10, 0 if led is not connected */
+ 	u8 max_current;
++	u8 default_brightness;
+ };
+ 
+ struct lp55xx_predef_pattern {
+-- 
+2.17.1
+

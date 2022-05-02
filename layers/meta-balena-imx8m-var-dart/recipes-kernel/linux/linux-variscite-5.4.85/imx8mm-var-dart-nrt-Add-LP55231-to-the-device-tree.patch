@@ -1,4 +1,4 @@
-From 30863ed7eff0a99683e65798df58ec5600f647a0 Mon Sep 17 00:00:00 2001
+From 929207868ca6fbe246f342e3913e353775007f0d Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Thu, 12 Aug 2021 12:49:18 +0200
 Subject: [PATCH] imx8mm-var-dart-nrt: Add LP55231 to the device tree
@@ -6,71 +6,84 @@ Subject: [PATCH] imx8mm-var-dart-nrt: Add LP55231 to the device tree
 Use address 0x32 and I2C3 (bus 2) as per the updated
 request from the user.
 
+Set default brightness to 255 and default led current
+to 10 at module load, as requrested by the customer in
+https://jel.ly.fish/support-thread-1-0-0-front-cnv-ceqsqz1
+
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- .../boot/dts/freescale/imx8mm-var-dart.dtsi   | 55 +++++++++++++++++++
- 1 file changed, 55 insertions(+)
+ .../boot/dts/freescale/imx8mm-var-dart.dtsi   | 64 +++++++++++++++++++
+ 1 file changed, 64 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
-index 67065e8a4580..0cae1b83e294 100644
+index 67065e8a4580..34761c282734 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
-@@ -514,6 +514,61 @@
+@@ -514,6 +514,70 @@
  	scl-gpios = <&gpio5 18 GPIO_ACTIVE_HIGH>;
  	sda-gpios = <&gpio5 19 GPIO_ACTIVE_HIGH>;
  	status = "okay";
 +
 +	lp55231@32 {
-+	        compatible = "ti,lp55231";
-+        	reg = <0x32>;
-+	        clock-mode = /bits/ 8 <1>;
++		compatible = "ti,lp55231";
++		reg = <0x32>;
++		clock-mode = /bits/ 8 <1>;
 +
-+	        chan0 {
-+        	        chan-name = "d1";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan1 {
-+        	        chan-name = "d2";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan2 {
-+        	        chan-name = "d3";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan3 {
-+        	        chan-name = "d4";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan4 {
-+        	        chan-name = "d5";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan5 {
-+        	        chan-name = "d6";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan6 {
-+        	        chan-name = "d7";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
-+	        chan7 {
-+        	        chan-name = "d8";
-+	                led-cur = /bits/ 8 <0xfa>;
-+        	        max-cur = /bits/ 8 <0xff>;
-+	        };
-+	        chan8 {
-+        	        chan-name = "d9";
-+                	led-cur = /bits/ 8 <0xfa>;
-+	                max-cur = /bits/ 8 <0xff>;
-+        	};
++		chan0 {
++			chan-name = "d1";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan1 {
++			chan-name = "d2";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan2 {
++			chan-name = "d3";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan3 {
++			chan-name = "d4";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan4 {
++			chan-name = "d5";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan5 {
++			chan-name = "d6";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan6 {
++			chan-name = "d7";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan7 {
++			chan-name = "d8";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
++		chan8 {
++			chan-name = "d9";
++			led-cur = /bits/ 8 <0x0a>;
++			max-cur = /bits/ 8 <0xff>;
++			default-brightness = /bits/ 8 <0xff>;
++		};
 +	};
 +
 +
