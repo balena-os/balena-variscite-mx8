@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update meta-balena from v2.95.15 to b2.98.11
+      hash: 8512f44135501fdbbfe9199d2e302770e03646ce
+      body: |
+        Update meta-balena from 2.95.15 to 2.98.11
+      footer:
+        Changelog-entry: Update meta-balena from v2.95.15 to b2.98.11
+        changelog-entry: Update meta-balena from v2.95.15 to b2.98.11
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.11
+  title: "'NRT: Add support for default LP55231 brightness configuration at startup'"
+  date: 2022-05-02T14:15:12.050Z
+- commits:
     - subject: Update layers/meta-balena to 831819bead130a779bfa204b7d1df483486f0eaf
       hash: d661604a416e8670b7244f609f132943b40eecd0
       body: Update layers/meta-balena
