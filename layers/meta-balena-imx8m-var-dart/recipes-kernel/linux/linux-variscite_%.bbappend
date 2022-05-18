@@ -34,7 +34,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-Apply-kernel-5.4.143-rt64.patch \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
-	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-85.patch \
+	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-142.patch \
 	file://fsl-imx8mm-var-dart-nrt-pinmux-legacy-nrt.patch \
 	file://imx8mm-var-dart-nrt-Add-LP55231-to-the-device-tree.patch \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
