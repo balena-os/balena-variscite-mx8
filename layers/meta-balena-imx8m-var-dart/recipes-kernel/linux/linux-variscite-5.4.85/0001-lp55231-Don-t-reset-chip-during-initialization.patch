@@ -1,0 +1,34 @@
+From f5206a577a44e6962c67f2b347b615ad0c339039 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 16 May 2022 18:23:03 +0200
+Subject: [PATCH] lp55231: Don't reset chip during initialization
+
+To avoid flicker on the devices that use u-boot
+to power the LED during boot.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ drivers/leds/leds-lp55xx-common.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/leds/leds-lp55xx-common.c b/drivers/leds/leds-lp55xx-common.c
+index 98fb83f99931..0ccad5a33073 100644
+--- a/drivers/leds/leds-lp55xx-common.c
++++ b/drivers/leds/leds-lp55xx-common.c
+@@ -410,7 +410,11 @@ int lp55xx_init_device(struct lp55xx_chip *chip)
+ 		usleep_range(1000, 2000); /* 500us abs min. */
+ 	}
+ 
+-	lp55xx_reset_device(chip);
++	/* Don't reset the chip to avoid flicker, the LED has already been
++	 * powered by u-boot.
++	 *
++	 * lp55xx_reset_device(chip);
++	 */
+ 
+ 	/*
+ 	 * Exact value is not available. 10 - 20ms
+-- 
+2.17.1
+
