@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update meta-balena from v2.98.11 to v2.98.12
+      hash: 2ebf470c9376ec1992cd035c0ab95e7f5de0b90d
+      body: |
+        Update meta-balena from 2.98.11 to 2.98.12
+      footer:
+        Changelog-entry: Update meta-balena from v2.98.11 to v2.98.12
+        changelog-entry: Update meta-balena from v2.98.11 to v2.98.12
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.12
+  title: "'layers/meta-balena: Update to v2.98.12'"
+  date: 2022-05-18T15:24:15.357Z
+- commits:
     - subject: "linux-variscite: Don't reset LP55231 chip during driver load"
       hash: b6959594e232badeec0d0dfc559029250b7469bd
       body: |
