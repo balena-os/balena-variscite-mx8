@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.98.11+rev1
+## (2022-05-18)
+
+* linux-variscite: Don't reset LP55231 chip during driver load [Alexandru Costache]
+
 # v2.98.11
 ## (2022-05-02)
 

@@ -1,4 +1,20 @@
 - commits:
+    - subject: "linux-variscite: Don't reset LP55231 chip during driver load"
+      hash: b6959594e232badeec0d0dfc559029250b7469bd
+      body: |
+        Do so to avoid flicker, as the led has already been
+        started by u-boot. This is specific to the NRT board.
+      footer:
+        Changelog-entry: "linux-variscite: Don't reset LP55231 chip during driver load"
+        changelog-entry: "linux-variscite: Don't reset LP55231 chip during driver load"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.11+rev1
+  title: "'LP55231 - dont reset chip during startup'"
+  date: 2022-05-18T10:50:45.629Z
+- commits:
     - subject: Update meta-balena from v2.95.15 to b2.98.11
       hash: 8512f44135501fdbbfe9199d2e302770e03646ce
       body: |
