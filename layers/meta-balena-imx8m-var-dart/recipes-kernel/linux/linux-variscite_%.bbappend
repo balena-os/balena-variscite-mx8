@@ -37,6 +37,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-nrt-Add-LP55231-to-the-device-tree.patch \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
 	file://0001-lp55xx-Add-support-for-default-startup-brightness-fr.patch \
+	file://0001-lp55231-Don-t-reset-chip-during-initialization.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
