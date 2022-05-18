@@ -3,6 +3,8 @@ FILESEXTRAPATHS_append := ":${THISDIR}/${PN}-5.4.85"
 
 inherit kernel-resin
 
+PV="5.4.142"
+
 # This fixes invalid package name
 # error caused by SRCPV
 LOCALVERSION = ""
