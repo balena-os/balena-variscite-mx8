@@ -1,4 +1,18 @@
 - commits:
+    - subject: "linux-variscite: Use latest BSP provided revision"
+      hash: d6f86067200f7a9556d1cf026e6a9e1e4be8fd49
+      body: ""
+      footer:
+        Changelog-entry: "linux-variscite: Use latest BSP provided revision"
+        changelog-entry: "linux-variscite: Use latest BSP provided revision"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.12+rev1
+  title: "'BSP update for ethernet phy on imx8mm-var-dart v1.3 (PLT)'"
+  date: 2022-05-18T16:23:42.454Z
+- commits:
     - subject: Update meta-balena from v2.98.11 to v2.98.12
       hash: 2ebf470c9376ec1992cd035c0ab95e7f5de0b90d
       body: |

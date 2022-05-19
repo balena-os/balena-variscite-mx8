@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.98.12+rev1
+## (2022-05-18)
+
+* linux-variscite: Use latest BSP provided revision [Alexandru Costache]
+
 # v2.98.12
 ## (2022-05-18)
 
