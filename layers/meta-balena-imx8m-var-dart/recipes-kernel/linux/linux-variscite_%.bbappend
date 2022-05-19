@@ -3,6 +3,8 @@ FILESEXTRAPATHS_append := ":${THISDIR}/${PN}-5.4.85"
 
 inherit kernel-resin
 
+PV="5.4.142"
+
 # This fixes invalid package name
 # error caused by SRCPV
 LOCALVERSION = ""
@@ -29,10 +31,10 @@ SRC_URI_append_imx8mm-var-dart = " \
 # RT patch patch-5.4.82-rt46.patch taken from
 # https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/5.4/older/
 SRC_URI_append_imx8mm-var-dart-nrt = " \
-	file://patch-5.4.82-rt46.patch \
+	file://0001-Apply-kernel-5.4.143-rt64.patch \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
-	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-85.patch \
+	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-142.patch \
 	file://fsl-imx8mm-var-dart-nrt-pinmux-legacy-nrt.patch \
 	file://imx8mm-var-dart-nrt-Add-LP55231-to-the-device-tree.patch \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
