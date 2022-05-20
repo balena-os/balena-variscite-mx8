@@ -24,9 +24,8 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://imx8mm-var-dart-Enable-I2C.patch \
 	file://mx8mm-plt-enable-i2c4-uboot.patch \
 	file://mx8mm-plt-turn-on-yellow-led-at-boot.patch \
-	file://mx8mm-var-dart-plt-set-dram-2g.patch \
-	file://plt-Always-load-the-legacy-dtb.patch \
-	file://Use-old-device-tree-on-altboot.patch \
+	file://plt-Always-load-the-legacy-dtb.patch 
+	file://Use-old-device-tree-on-altboot.patch 
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
