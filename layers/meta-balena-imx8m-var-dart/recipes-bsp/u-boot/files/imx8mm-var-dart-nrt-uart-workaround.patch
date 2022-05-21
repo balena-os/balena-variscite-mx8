@@ -24,13 +24,13 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 7 insertions(+)
 
 diff --git a/configs/imx8mm_var_dart_defconfig b/configs/imx8mm_var_dart_defconfig
-index f79f9221c8..0e3dec9d15 100644
+index 5043f6ad2e..2cf4f0e37b 100644
 --- a/configs/imx8mm_var_dart_defconfig
 +++ b/configs/imx8mm_var_dart_defconfig
-@@ -69,3 +69,10 @@ CONFIG_CMD_EXT4=y
+@@ -118,3 +118,10 @@ CONFIG_CMD_EXT4=y
  CONFIG_CMD_FAT=y
  CONFIG_CMD_EXPORTENV=y
- CONFIG_DM_I2C=y
+ CONFIG_PARTITION_UUIDS=y
 +CONFIG_BOOTDELAY=-2
 +CONFIG_DISABLE_CONSOLE=y
 +CONFIG_SILENT_CONSOLE=y

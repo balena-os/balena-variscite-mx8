@@ -21,16 +21,12 @@ SRC_URI_append_imx8mm-var-dart = " \
 SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://0001-Add-support-for-querying-boot-switch-position.patch \
 	file://0002-bootcmd-Flash-only-if-bootswitch-in-EXT-position.patch \
-	file://imx8mm-var-dart-Enable-I2C.patch \
-	file://mx8mm-plt-enable-i2c4-uboot.patch \
 	file://mx8mm-plt-turn-on-yellow-led-at-boot.patch \
-	file://mx8mm-var-dart-plt-set-dram-2g.patch \
 	file://plt-Always-load-the-legacy-dtb.patch \
 	file://Use-old-device-tree-on-altboot.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
-	file://imx8mm-var-dart-nrt-Enable-I2C-in-console.patch \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
 	file://plt-Always-load-the-legacy-dtb.patch \
 "
