@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.98.12+rev2
+## (2022-05-21)
+
+* u-boot-variscite: remove hardcoded dram size [Alexandru Costache]
+
 # v2.98.12+rev1
 ## (2022-05-18)
 

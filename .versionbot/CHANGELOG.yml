@@ -1,4 +1,20 @@
 - commits:
+    - subject: "u-boot-variscite: remove hardcoded dram size"
+      hash: aef5dedb239842076dc9027c591a75fcc5a3c6f8
+      body: |
+        SOM eeprom reading now works fine with CONFIG_DM_I2C,
+        so we can remove this now.
+      footer:
+        Changelog-entry: "u-boot-variscite: remove hardcoded dram size"
+        changelog-entry: "u-boot-variscite: remove hardcoded dram size"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.12+rev2
+  title: "'u-boot-variscite: remove hardcoded dram size'"
+  date: 2022-05-21T08:35:32.123Z
+- commits:
     - subject: "linux-variscite: Use latest BSP provided revision"
       hash: d6f86067200f7a9556d1cf026e6a9e1e4be8fd49
       body: ""
