@@ -22,3 +22,6 @@
 [submodule "layers/meta-variscite-fslc"]
 	path = layers/meta-variscite-fslc
 	url = https://github.com/varigit/meta-variscite-fslc.git
+[submodule "contracts"]
+	path = contracts
+	url = https://github.com/balena-io/contracts.git
