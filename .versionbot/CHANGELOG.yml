@@ -1,4 +1,26 @@
 - commits:
+    - subject: "u-boot: Use old imx-boot on imx8mm-var-dart-plt during rollback"
+      hash: a694a9561dff299bca360e7f3c58abfa1d9a77d4
+      body: |
+        We need to use the corresponding imx-boot binary during
+        rollback-altboot if the kernel and device-tree  are
+        older than the current 5.4.24 imx-boot, otherwise the old kernel will
+        hang when booted with a newer imx-boot.
+
+        We thus write the old version of imx-boot during rollback-altboot
+        if the device-tree name in the old rootfs does not correspond to
+        the latest upstream naming scheme.
+      footer:
+        Changelog-entry: "u-boot: Use old imx-boot on imx8mm-var-dart-plt during rollback"
+        changelog-entry: "u-boot: Use old imx-boot on imx8mm-var-dart-plt during rollback"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.12+rev4
+  title: "'u-boot: Use old imx-boot on imx8mm-var-dart-plt during rollback'"
+  date: 2022-05-21T22:01:07.493Z
+- commits:
     - subject: Add contracts submodule
       hash: f0472ab9b79abb24b164d343df2587f1d15c860d
       body: |
