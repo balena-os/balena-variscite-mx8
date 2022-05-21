@@ -1,4 +1,19 @@
 - commits:
+    - subject: Add contracts submodule
+      hash: f0472ab9b79abb24b164d343df2587f1d15c860d
+      body: |
+        This is used to build and deploy an OS contract to the fleet.
+      footer:
+        Changelog-entry: Add contracts submodule
+        changelog-entry: Add contracts submodule
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.98.12+rev3
+  title: "'Add contracts submodule'"
+  date: 2022-05-21T13:47:17.238Z
+- commits:
     - subject: "u-boot-variscite: remove hardcoded dram size"
       hash: aef5dedb239842076dc9027c591a75fcc5a3c6f8
       body: |
