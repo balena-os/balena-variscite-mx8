@@ -1,4 +1,22 @@
 - commits:
+    - subject: Add build and deploy workflow
+      hash: dadbc877992293fd6a8b462c50cbd99615b82214
+      body: >
+        This workflow will launch a Jenkins build and draft deploy job when a
+        new
+
+        tag is made.
+      footer:
+        Changelog-entry: Add build and deploy workflow
+        changelog-entry: Add build and deploy workflow
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.98.12+rev5
+  title: "'workflows: Add build and deploy on release tag workflow'"
+  date: 2022-06-08T08:23:40.717Z
+- commits:
     - subject: "u-boot: Use old imx-boot on imx8mm-var-dart-plt during rollback"
       hash: a694a9561dff299bca360e7f3c58abfa1d9a77d4
       body: |
