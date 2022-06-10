@@ -31,6 +31,10 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://plt-Always-load-the-legacy-dtb.patch \
 "
 
+SRC_URI_append_imx8mm-var-dart = " \
+	file://0009-imx8mm_var_dart-Use-custom_fdt_file-if-defined.patch \
+"
+
 SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
 
 OS_KERNEL_CMDLINE_remove_imx8mm-var-dart-nrt = "console=null"
