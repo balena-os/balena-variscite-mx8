@@ -12,6 +12,7 @@ SRC_URI_append = " file://local-resin-specific-env-integration-kconfig.patch "
 
 SRC_URI_append_imx8m-var-dart = " \
 	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch \
+	file://imx8m_var_dart-Use-custom_fdt_file-if-defined.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart = " \
