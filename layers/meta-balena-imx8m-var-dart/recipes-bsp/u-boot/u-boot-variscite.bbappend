@@ -17,6 +17,11 @@ SRC_URI_append_imx8m-var-dart = " \
 
 SRC_URI_append_imx8mm-var-dart = " \
 	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
+	file://0009-imx8mm_var_dart-Use-custom_fdt_file-if-defined.patch \
+"
+
+SRC_URI_remove_imx8mm-var-dart-plt = " \
+        file://0009-imx8mm_var_dart-Use-custom_fdt_file-if-defined.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
@@ -25,15 +30,12 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://mx8mm-plt-turn-on-yellow-led-at-boot.patch \
 	file://plt-Always-load-the-legacy-dtb.patch \
 	file://Use-old-device-tree-on-altboot.patch \
+	file://0009-mx8mm_var_dart-plt-Use-custom_fdt_file-if-defined.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
-	file://plt-Always-load-the-legacy-dtb.patch \
-"
-
-SRC_URI_append_imx8mm-var-dart = " \
-	file://0009-imx8mm_var_dart-Use-custom_fdt_file-if-defined.patch \
+	file://nrt-Always-load-the-legacy-dtb.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
