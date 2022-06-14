@@ -1,0 +1,32 @@
+From e95bcc9828991239a870698c708357ab7d24c017 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 13 Jun 2022 11:33:52 +0200
+Subject: [PATCH] nrt: Always load the legacy dtb
+
+Let's always load the legacy dtb
+because we know it's based on the
+Customboard v1.4, regardless of the
+eeprom contents.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index 90d64e5012..3d6eb24b11 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -130,7 +130,7 @@
+ 					"if test $carrier_rev = legacy; then " \
+ 						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+ 					"else " \
+-						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+ 					"fi; " \
+ 				"fi; " \
+ 			"fi; " \
+-- 
+2.17.1
+

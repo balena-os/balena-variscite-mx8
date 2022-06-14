@@ -1,0 +1,57 @@
+From 51b2b4d6e92104516d0d79137caf3953290b8e92 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 10 Jun 2022 18:03:56 +0200
+Subject: [PATCH] imx8m_var_dart:  Use custom_fdt_file if defined
+
+his assumes the Supervisor adds the custom device tree name
+to extra_uEnv.txt. The extra_uEnv.txt contents would be
+custom_fdt_file=custom_device_tree.dtb.
+
+If unset, the board continues to load the default device-tree.
+
+Upstream-status: Inaproppriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mq_var_dart.h | 24 ++++++++++++++----------
+ 1 file changed, 14 insertions(+), 10 deletions(-)
+
+diff --git a/include/configs/imx8mq_var_dart.h b/include/configs/imx8mq_var_dart.h
+index 5dbbe2a258..dc296bb938 100644
+--- a/include/configs/imx8mq_var_dart.h
++++ b/include/configs/imx8mq_var_dart.h
+@@ -116,18 +116,22 @@
+ 		"fi;\0" \
+ 	"findfdt=" \
+ 		"if test $fdt_file = undefined; then " \
+-			"if test $carrier_rev = legacy; then " \
+-				"if test ${mmcdev} = 0; then " \
+-					"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-legacy-wifi-hdmi.dtb; " \
+-				"else " \
+-					"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-legacy-sd-hdmi.dtb; " \
+-				"fi; " \
++			"if test -n ${custom_fdt_file}; then " \
++				"setenv fdt_file ${custom_fdt_file}; " \
+ 			"else " \
+-				"if test ${mmcdev} = 0; then " \
+-					"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-wifi-hdmi.dtb; " \
++				"if test $carrier_rev = legacy; then " \
++					"if test ${mmcdev} = 0; then " \
++						"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-legacy-wifi-hdmi.dtb; " \
++					"else " \
++						"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-legacy-sd-hdmi.dtb; " \
++					"fi; " \
+ 				"else " \
+-					"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-sd-hdmi.dtb; " \
+-                                "fi; " \
++					"if test ${mmcdev} = 0; then " \
++						"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-wifi-hdmi.dtb; " \
++					"else " \
++						"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-sd-hdmi.dtb; " \
++        	                        "fi; " \
++				"fi; " \
+ 			"fi; " \
+ 		"fi; \0" \
+ 	"loadfdt=run findfdt; " \
+-- 
+2.17.1
+

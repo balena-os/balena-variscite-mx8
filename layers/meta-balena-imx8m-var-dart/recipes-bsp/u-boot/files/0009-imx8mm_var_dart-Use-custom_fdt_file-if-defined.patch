@@ -1,0 +1,55 @@
+From d7de323ca6ee4ffdf37f12027606a42e92c6701f Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 10 Jun 2022 15:04:00 +0200
+Subject: [PATCH] imx8mm_var_dart: Use custom_fdt_file if defined
+
+This assumes the Supervisor adds the custom device tree name
+to extra_uEnv.txt. The extra_uEnv.txt contents would be
+custom_fdt_file=custom_device_tree.dtb.
+
+If unset, the board continues to load the default device-tree.
+
+Upstream-status: Inaproppriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 22 +++++++++++++---------
+ 1 file changed, 13 insertions(+), 9 deletions(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index 530e5557b4..d9079196ea 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -109,17 +109,21 @@
+ 		"unzip ${img_addr} ${loadaddr}\0" \
+ 	"findfdt=" \
+ 		"if test $fdt_file = undefined; then " \
+-			"if test $board_name = VAR-SOM-MX8M-MINI; then " \
+-				"if test $carrier_rev = legacy; then " \
+-					"setenv fdt_file imx8mm-var-som-symphony-legacy.dtb; " \
+-				"else " \
+-					"setenv fdt_file imx8mm-var-som-symphony.dtb; " \
+-				"fi; " \
++			"if test -n ${custom_fdt_file}; then " \
++				"setenv fdt_file ${custom_fdt_file}; " \
+ 			"else " \
+-				"if test $carrier_rev = legacy; then " \
+-					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
++				"if test $board_name = VAR-SOM-MX8M-MINI; then " \
++					"if test $carrier_rev = legacy; then " \
++						"setenv fdt_file imx8mm-var-som-symphony-legacy.dtb; " \
++					"else " \
++						"setenv fdt_file imx8mm-var-som-symphony.dtb; " \
++					"fi; " \
+ 				"else " \
+-					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++					"if test $carrier_rev = legacy; then " \
++						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
++					"else " \
++						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++					"fi; " \
+ 				"fi; " \
+ 			"fi; " \
+ 		"fi; \0" \
+-- 
+2.17.1
+
