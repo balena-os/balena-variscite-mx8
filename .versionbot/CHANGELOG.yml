@@ -1,4 +1,23 @@
 - commits:
+    - subject: "u-boot: Add support for custom device-tree loading on imx8mm-var-dart"
+      hash: 82a128899db777cd3287cad9b1c22a27264e2b59
+      body: |
+        extra_uEnv.txt should specify the device-tree to be loaded
+        in this format, identical to the one used for the Jetson
+        boards that support u-boot.
+
+        custom_fdt_file=imx8mm-var-dart-dt8mcustomboard-legacy.dtb
+      footer:
+        Changelog-entry: "u-boot: Add support for custom device-tree loading on imx8mm-var-dart"
+        changelog-entry: "u-boot: Add support for custom device-tree loading on imx8mm-var-dart"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.98.12+rev6
+  title: "'u-boot: Add support for custom device-tree loading on imx8mm-var-dart'"
+  date: 2022-06-14T08:51:10.383Z
+- commits:
     - subject: Add build and deploy workflow
       hash: dadbc877992293fd6a8b462c50cbd99615b82214
       body: >

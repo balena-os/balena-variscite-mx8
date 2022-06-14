@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.98.12+rev6
+## (2022-06-14)
+
+* u-boot: Add support for custom device-tree loading on imx8mm-var-dart [Alexandru Costache]
+
 # v2.98.12+rev5
 ## (2022-06-08)
 
