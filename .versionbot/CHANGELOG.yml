@@ -1,4 +1,1307 @@
 - commits:
+    - subject: Update layers/meta-balena to ee8110bd257ff145acba793720ea739f14f2429a
+      hash: 7ef4342137299fe949900d91f19268311c13a10c
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to ee8110bd257ff145acba793720ea739f14f2429a
+        changelog-entry: Update layers/meta-balena to ee8110bd257ff145acba793720ea739f14f2429a
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: "tests: os: chrony: reduce retry interval"
+              hash: 99ef89af348902008fd3370c968013afc0990f15
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.99.2
+          title: "'tests: os: chrony: reduce retry interval'"
+          date: 2022-06-13T22:56:55.782Z
+        - commits:
+            - subject: "tests: hup: gzip hostapp before transfer to DUT"
+              hash: cac92a4d5e884110ae5caaf807c2c5685a88237e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.99.1
+          title: "'tests: hup: gzip hostapp before transfer to DUT'"
+          date: 2022-06-11T12:01:27.278Z
+        - commits:
+            - subject: "chronyd: Add time synchronization healthcheck"
+              hash: e2a0fb8ebd45400789ab466dbbe0e70da7fa6165
+              body: >
+                Add a healthcheck that will check that the NTP sources are
+                reachable
+
+                and the system time does not skew.
+
+
+                The healthcheck will command a burst sync if there is no selected
+
+                reachable source, and will restart chronyd if the system clock skews.
+
+
+                Fixes #2314
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.99.0
+          title: "'chronyd: Add time synchronization healthcheck'"
+          date: 2022-06-10T08:04:29.339Z
+        - commits:
+            - subject: "tests: os: chrony: fix formatting of this.worker"
+              hash: c79e4b2b470f726e8099702cfeaea6da18e7e286
+              body: >
+                Test context is now accessible from self, remove verbose
+
+                this.context.get() syntax when calling worker.executeCommandInHostOS.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "tests: os: chrony: reduce delays and retries"
+              hash: 1064fd20a474af3aac8253f34cf543fb78725f9f
+              body: >
+                When calling waitUntil(), reduce calling intervals and the total
+                number
+
+                of retries. This effectively halves the runtime for these tests, as the
+
+                latency for detecting success is much lower.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.45
+          title: "'Reduce chrony timeouts'"
+          date: 2022-06-09T23:03:44.828Z
+        - commits:
+            - subject: Update tests/leviathan digest to ea72650
+              hash: 264147110d2517cb7929cdf709de1cd228f20dae
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: catch error in executeCommandInhostOs
+                      hash: db1677995f1cf2f93284dcd35bb173d1cb3e08ca
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                  version: leviathan-2.4.1
+                  title: "'catch error in executeCommandInhostOs'"
+                  date: 2022-06-09T13:28:01.544Z
+                - commits:
+                    - subject: get ssh to work with ed25519 algorithm
+                      hash: 6bdaedab27c0a919eddd74cb784bddfd8281d90b
+                      body: ""
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                  version: leviathan-2.4.0
+                  title: "'get ssh to work with ed25519 algorithm'"
+                  date: 2022-06-07T11:26:55.354Z
+          version: meta-balena-2.98.44
+          title: "'Update tests/leviathan digest to ea72650'"
+          date: 2022-06-09T21:46:58.389Z
+        - commits:
+            - subject: "tests: cloud: update container names"
+              hash: 8b85216ea886c77788ceaf377ee775e9c48913df
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.98.43
+          title: "'tests: cloud: update container names'"
+          date: 2022-06-09T11:03:45.627Z
+        - commits:
+            - subject: "tests:cloud: Register teardown only when DUT is reachable"
+              hash: fd822dabb42b2a45b1e77f262159bee192022d80
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-2.98.42
+          title: "'tests:cloud: Register teardown only when DUT is reachable'"
+          date: 2022-06-05T21:57:22.077Z
+        - commits:
+            - subject: Update tests/leviathan digest to 4fbc1b8
+              hash: 47aef0c5ec7b76cc50a00e1cca6c7d1397ba3a36
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: "worker: Expose additional QEMU runtime args via docker-compose"
+                      hash: ee574bb798cafa3e4a0504d2dde72079f8db8eeb
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.3.10
+                  title: "'worker: Expose additional QEMU runtime args via docker-compose'"
+                  date: 2022-06-05T16:58:48.060Z
+          version: meta-balena-2.98.41
+          title: "'Update tests/leviathan digest to 4fbc1b8'"
+          date: 2022-06-05T18:58:18.622Z
+        - commits:
+            - subject: "tests: hup: reduce delay between retries"
+              hash: cb48541fa98093f6ce97419b8304469a4b3bb7ab
+              body: >
+                Reduce delay between retries when using waitUntil, reducing
+                latency and
+
+                test runtime.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.40
+          title: "'tests: hup: reduce delay between retries'"
+          date: 2022-06-04T16:25:23.750Z
+        - commits:
+            - subject: "tests: cloud: reduce waitUntil interval"
+              hash: 34f77b125c97d82e182bca1cee94fddc49ad5b07
+              body: >
+                When the promise called in waitUntil fails, the function
+                defaults to a
+
+                30s interval before trying again. Reduce this to a 5s interval w/
+
+                maximum 5m retry window in the cloud suite.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.39
+          title: "'tests: cloud: reduce waitUntil interval'"
+          date: 2022-06-04T12:43:32.134Z
+        - commits:
+            - subject: Added all device support options
+              hash: 5d29b6d1e0808d87103897f8210a75342f7f898f
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Hampton (@rhampt) rhampt@balena.io
+                signed-off-by: Ryan Hampton (@rhampt) rhampt@balena.io
+              author: Ryan H
+              nested: []
+          version: meta-balena-2.98.38
+          title: "'Added all device support options'"
+          date: 2022-06-03T22:19:04.182Z
+        - commits:
+            - subject: Update tests/leviathan digest to 8976bdb
+              hash: de94a30c1fb3b82ab45da049870c21abd48067c0
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: "core: bump node 12 -> 14"
+                      hash: e40a9484c760fb0292da80c6fe6da46eb4373eec
+                      body: |
+                        Bump Node 12.19.1 to 14.19.3 in core
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                  version: leviathan-2.3.9
+                  title: "'core: bump node 12 -> 14'"
+                  date: 2022-06-02T19:29:24.315Z
+                - commits:
+                    - subject: "core: suiteSubprocess: replace this.state.log w/ console.log"
+                      hash: c5fd5673c41b9ad48c818a4895712d8ee6c22729
+                      body: |
+                        This fixes the error:
+                          TypeError: Cannot read property 'state' of undefined
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                  version: leviathan-2.3.8
+                  title: "'core: suiteSubprocess: replace this.state.log w/ console.log'"
+                  date: 2022-06-02T16:35:18.359Z
+          version: meta-balena-2.98.37
+          title: "'Update tests/leviathan digest to 8976bdb'"
+          date: 2022-06-03T18:25:50.520Z
+        - commits:
+            - subject: "os: waitForServiceState: fix missing rejectionFail"
+              hash: 6bd43901e2d460c4e3df2a83734213ab62523689
+              body: >
+                utils.waitUntil expects rejectionFail before _times and _delay,
+                include
+
+                this argument to ensure the later arguments have the intended effect
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.36
+          title: "'os: waitForServiceState: fix missing rejectionFail'"
+          date: 2022-06-03T13:24:28.082Z
+        - commits:
+            - subject: "tests: os: udev: improve formatting"
+              hash: bab6ca92bdbd7c7b30bbb96ea1ed4319e489e832
+              body: |
+                Improve formatting of long command
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "tests: os: udev: use systemd.waitForServiceState"
+              hash: 82bfff92ab1dc431032f95cd3c3409210089d167
+              body: >
+                Use systemd.waitForServiceState instead of waitUntil. This
+                improves
+
+                readability, and reduces the time taken in the case that the test fails
+
+                and the default interval of waitUntil causes an excessive wait.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.35
+          title: "'Cleanup udev tests'"
+          date: 2022-06-02T18:04:49.177Z
+        - commits:
+            - subject: Update tests/leviathan digest to b3b1b48
+              hash: e5281f46702ec32213e8242de5d9ece58146246d
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: "worker: qemu: remove debug print statements"
+                      hash: c4f0b0c37fc7a7102f292db61a5271d7c3e23855
+                      body: >
+                        Log statements for powerOn/powerOff were added for
+                        debugging when
+
+                        refactoring the QEMU worker to operate w/out libvirt. Remove these.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                  version: leviathan-2.3.7
+                  title: "'worker: qemu: remove debug print statements'"
+                  date: 2022-05-31T23:32:38.579Z
+                - commits:
+                    - subject: "core: worker: shorten getDutIp interval"
+                      hash: 37b7347bf63a1acb1b4efd7965e5b764a8f6ce84
+                      body: >
+                        Waiting ten seconds between retries is onerous, shorten
+                        to one second
+
+                        interval with more retries.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                    - subject: "worker: helpers: memoize resolveLocalTarget"
+                      hash: eff95325a566502e522f7106053fab6d860c93e7
+                      body: >
+                        Device addresses likely won't change during a single
+                        test run, and mDNS
+
+                        queries can be time consuming. Memoize the result of the query to save
+
+                        some time.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                    - subject: "worker: helpers: resolveLocalTarget: increase timeout"
+                      hash: 56cf5bb6b8a95b61c9143d6ddaa4edcd6bca852a
+                      body: >
+                        mDNS resolution can take some time, increase the timeout
+                        from 4s -> 15s
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                  version: leviathan-2.3.6
+                  title: "'Optimize mdns resolver'"
+                  date: 2022-05-26T23:44:13.510Z
+          version: meta-balena-2.98.34
+          title: "'Update tests/leviathan digest to b3b1b48'"
+          date: 2022-06-01T00:23:18.092Z
+        - commits:
+            - subject: Update tests/leviathan digest to 95649fb
+              hash: 4216f127f4935cb6e0adeccaf7c20daec55fcff7
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: "workers: qemu: fix vars path for x86_64"
+                      hash: b34b92dde6b9b55e9e8393f61787de6895a6e339
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                  version: leviathan-2.3.5
+                  title: "'workers: qemu: fix vars path for x86_64'"
+                  date: 2022-05-25T21:12:24.421Z
+          version: meta-balena-2.98.33
+          title: "'Update tests/leviathan digest to 95649fb'"
+          date: 2022-05-27T20:39:54.151Z
+        - commits:
+            - subject: "supervisor: Update balena-supervisor to v13.1.11"
+              hash: 1f1266bd0893b963528e88dfd7fd08f232088cb9
+              body: ""
+              footer:
+                Relates-to: https://github.com/balena-os/balena-supervisor/pull/1944
+                relates-to: https://github.com/balena-os/balena-supervisor/pull/1944
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Felipe Lalanne <felipe@balena.io>
+                signed-off-by: Felipe Lalanne <felipe@balena.io>
+              author: Felipe Lalanne
+              nested: []
+          version: meta-balena-2.98.32
+          title: "'supervisor: Update balena-supervisor to v13.1.11'"
+          date: 2022-05-27T15:22:00.185Z
+        - commits:
+            - subject: "tests: os: config-json: fix race by waiting for InvocationID change"
+              hash: a8303039013b6252680eb48a139e46a358506949
+              body: >
+                When tests execute quicker, a race condition can occur where
+                config.json
+
+                is edited to remove the dnsServers property, but /run/dnsmasq.servers is
+
+                not changed yet. This causes the test to fail, as the file is not empty.
+
+                    not ok 1 - We should have an empty /run/dnsmasq.servers file.
+                      ---
+                      found: |-
+                	server=1.1.1.1
+                	server=1.1.1.1
+                      pattern: !re /^\s?$/
+                      diff: |
+                	--- expected
+                	+++ actual
+                	-/^\s?$/
+                	+"server=1.1.1.1\nserver=1.1.1.1"
+
+                Fix this by waiting until the InvocationID of dnsmasq.service changes.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+            - subject: "tests: os: reformat config-json tests"
+              hash: 440b799974eaf237664db1813d1ebc0bff3a46b9
+              body: >
+                Reformat config-json tests w/ await where variables aren't
+                passed to
+
+                chained promises.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.31
+          title: "'Fix config json race'"
+          date: 2022-05-26T17:59:23.238Z
+        - commits:
+            - subject: Remove localMode setting from standalone image configuration
+              hash: 26aa3caf4e4d649d323e57c21f818ca83a9b9b13
+              body: >
+                The `localMode` variable in `config.json` is not longer used and
+                it can
+
+                be removed
+
+
+                Fixes #2041
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Remove localMode setting from standalone image configuration
+                changelog-entry: Remove localMode setting from standalone image configuration
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.98.30
+          title: "'image-balena: Remove localMode from standalone image configuration'"
+          date: 2022-05-24T10:09:17.695Z
+        - commits:
+            - subject: Update balena-engine to v20.10.17
+              hash: 8a7b24d38f67749b5d979ce12a0fafe5626190bb
+              body: |
+                Update balena-engine from 20.10.16 to 20.10.17
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                Changelog-entry: Update balena-engine to v20.10.17
+                changelog-entry: Update balena-engine to v20.10.17
+              author: Leandro Motta Barros
+              nested:
+                - commits:
+                    - subject: Fix "slice bounds out of range" while applying deltas
+                      hash: 6f12d0abb3e438f26a18eee9bbaeca9c4702f7e7
+                      body: >
+                        The root cause of this issue was an integer overflow in
+                        32-bit platforms
+
+                        -- specifically, when explicitly converting `io.Reader` offsets
+
+                        (`int64`) to slice indices (`int`, which is only 32-bit long on 32-bit
+
+                        platforms).
+
+
+                        We already had in place the checks supposed to ensure slice bounds where
+
+                        always within the expected bounds. So, in a way, this commit just
+
+                        re-organizes the code so that we perform safely this required `int64` to
+
+                        `int` type conversion.
+                      footer:
+                        Signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        Change-type: patch
+                        change-type: patch
+                      author: Leandro Motta Barros
+                      nested: []
+                  version: balena-engine-20.10.17
+                  title: "'Lmb/fix oob slice'"
+                  date: 2022-05-17T20:01:47.266Z
+          version: meta-balena-2.98.29
+          title: "'balena-engine: Update to 20.10.17'"
+          date: 2022-05-23T17:18:04.355Z
+        - commits:
+            - subject: Update tests/leviathan digest to 727ba9f
+              hash: b9b9847a3c0bc6082eec319bcac1439ca0752aac
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: "worker: qemu: add new qemu firmware paths"
+                      hash: b19831d5209962eb729ffa55851b593e632a70d8
+                      body: >
+                        Search for firmware shipped as part of QEMU package to
+                        enable
+
+                        cross-platform emulation with UEFI.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                    - subject: "worker: install edk2 firmware for aarch64"
+                      hash: 514069e45c814e7f6051ea41ba9da0852f765976
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Joseph Kogut <joseph@balena.io>
+                        signed-off-by: Joseph Kogut <joseph@balena.io>
+                      author: Joseph Kogut
+                      nested: []
+                    - subject: "worker: Change default qemu memory from 2G to 512M"
+                      hash: 0820094150876d67ce9203d641fe5c41d1afcef4
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                    - subject: "make: Do not assume qemu DUT arch will match the host"
+                      hash: 4aac404ff5e221eecef289d07339532335532543
+                      body: >
+                        When KVM is not used we can easily emulate
+                        generic-aarch64
+
+                        on x86_64 hosts so avoid tying the host and target architectures
+
+                        together in the Makefile.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                    - subject: "make: Allow passed env vars to replace any .env values"
+                      hash: 4b71f90615c68c90fa8b0bf4c2068f089784ea00
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.3.4
+                  title: "'Do not assume qemu DUT arch will match the host'"
+                  date: 2022-05-20T14:09:51.819Z
+          version: meta-balena-2.98.28
+          title: "'Update tests/leviathan digest to 727ba9f'"
+          date: 2022-05-20T15:17:40.870Z
+        - commits:
+            - subject: "patch: Fix heading anchor links in CDS doc index"
+              hash: 0886fe3323fa2431a780fc701d45ac601b5b0980
+              body: ""
+              footer: {}
+              author: Vipul Gupta
+              nested: []
+          version: meta-balena-2.98.27
+          title: "'patch: Fix heading anchor links in CDS doc index'"
+          date: 2022-05-18T12:53:30.139Z
+        - commits:
+            - subject: "balena-supervisor: Randomize the updater timer period"
+              hash: 5c402bc9a449c4f6d6cefe9aa44b7cdacb8ae4c8
+              body: |
+                To avoid fleets updating the supervisor at the same time,
+                distribute the timer adding a random time between 0 and 1 hour.
+
+                Fixes #2631
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.98.26
+          title: "'balena-supervisor: Randomize the updater timer period'"
+          date: 2022-05-17T16:20:39.324Z
+        - commits:
+            - subject: "patch: Get CDS doc ready for docs sync"
+              hash: f15dc2055e78af9966ac5166061e49bc401c6647
+              body: ""
+              footer: {}
+              author: Vipul Gupta
+              nested: []
+            - subject: "test: os-config: Use common code to wait for service state"
+              hash: 1ccf232c9f2676b0631d71870b2556cddfb69dd6
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.98.25
+          title: "'patch: Get CDS doc ready for docs sync'"
+          date: 2022-05-16T20:59:22.889Z
+        - commits:
+            - subject: "os-config: Randomize the timer period"
+              hash: 6a9a456869ac37367058ea56bbf24d33a2cf42f2
+              body: >
+                To avoid all devices fetching configuration settings at the same
+                time,
+
+                distribute the timer adding a random time between 0 and 6 hours.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.98.24
+          title: "'Randomize os-config timer service'"
+          date: 2022-05-15T17:05:46.782Z
+        - commits:
+            - subject: "linux-firmware: Fix quz-a0-hr-b0 and quz-a0-jf-b0 packaging for
+                compression"
+              hash: 9e9d8986d31d449a9c317d44f9a2b6c0cddf2123
+              body: >
+                Add a missing asterisk to FILES for iwlwifi-quz-a0-hr-b0
+
+                and iwlwifi-quz-a0-jf-b0 to include compressed firmware files. Without it
+
+                the packages end up empty as we have compression enabled.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.98.23
+          title: "'linux-firmware: Fix quz-a0-hr-b0 and quz-a0-jf-b0 packaging for
+            compression'"
+          date: 2022-05-11T11:10:57.896Z
+        - commits:
+            - subject: Update tests/leviathan digest to 01719b5
+              hash: de0657c7635b175b7c94b85c06875f4da2d66520
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Renovate Bot
+              nested:
+                - commits:
+                    - subject: Fixes spelling and grammar in e2e
+                      hash: dc2ad10263c5b04c58964fe2f37e06a1589092c0
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Alex Bucknall <alex.bucknall@gmail.com>
+                        signed-off-by: Alex Bucknall <alex.bucknall@gmail.com>
+                      author: Alex
+                      nested: []
+                  version: leviathan-2.3.3
+                  title: "'Fixes spelling and grammar in e2e'"
+                  date: 2022-05-09T08:48:11.177Z
+                - commits:
+                    - subject: Record environment variables to file for client env
+                      hash: 86edddf6879686028733cb87dc14110d1cca0ee1
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.3.2
+                  title: "'Record environment variables to file for client env'"
+                  date: 2022-05-02T16:35:04.137Z
+                - commits:
+                    - subject: "patch: Remove development shortcuts"
+                      hash: f9d593a1a92568e8341666be4a6f6c00ecb24552
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.3.1
+                  title: "'patch: Remove development shortcuts'"
+                  date: 2022-05-02T13:39:59.588Z
+                - commits:
+                    - subject: "minor: Add support for debug object"
+                      hash: 0b58fa94f68868c5f296adcb5eda5ca69efedd2e
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.3.0
+                  title: "'Add Debug object for debugging'"
+                  date: 2022-04-29T23:54:29.594Z
+                - commits:
+                    - subject: "patch: Remove Express server port config"
+                      hash: 117d32df99b6704e71e3da39d9456aeb752e1bb1
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.2.14
+                  title: "'patch: Remove Express server port config'"
+                  date: 2022-04-29T21:42:58.975Z
+          version: meta-balena-2.98.22
+          title: "'Update tests/leviathan digest to 01719b5'"
+          date: 2022-05-11T05:34:46.375Z
+        - commits:
+            - subject: "contributing-device-support.md: Enhance device contribution guide"
+              hash: e5d87b1ffa4cd86d4b133ba241f52fb820833cfb
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-2.98.21
+          title: "'contributing-device-support.md: Enhance device contribution guide'"
+          date: 2022-05-11T04:48:12.298Z
+        - commits:
+            - subject: "renovate: Override commit body for meta-balena to Change-type"
+              hash: 27be3bc8d27915a6fd9b2f6e13b754b4976a14d8
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "renovate: Remove extra leviathan package rules"
+              hash: 50c0ede0a045bf3073d14b6ade3aeb810a36a251
+              body: |
+                The upstream balena-os/renovate-config package rules were
+                matched before the leviathan exception could be matched so
+                these rules were not effective.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.98.20
+          title: "'renovate: Override commit body for meta-balena to Change-type'"
+          date: 2022-05-10T22:05:08.508Z
+        - commits:
+            - subject: "tests/connectivity: Force proxy tests to use IPv4"
+              hash: df6db848d3729b2200200ce3fcb493b3381deca0
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+            - subject: "tests/connectivity: Fix compose warnings for expected string"
+              hash: d6882eeb070686642b0fd685257fce109f50297c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.98.19
+          title: "'tests/connectivity: Force proxy tests to use IPv4'"
+          date: 2022-05-10T19:34:34.822Z
+        - commits:
+            - subject: "supervisor: Update balena-supervisor to v13.1.6"
+              hash: 541eeeb25dcb928f23a920df27d30fa213c5df14
+              body: |
+                Update balena-supervisor from 13.1.4 to 13.1.6
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested:
+                - commits:
+                    - subject: Avoid splash image failures if image is corrupt
+                      hash: a5ede01b18abd5e079361d24f2f8f5368d23da6d
+                      body: >
+                        Splash image backend would throw if the image is not a
+                        valid png during
+
+                        the write step. This could prevent the device from provisioning if some
+
+                        corruption happens at some point.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-13.1.6
+                  title: "'Avoid splash image failures if image is corrupt'"
+                  date: 2022-05-06T18:46:18.641Z
+                - commits:
+                    - subject: Use write + sync when writing configs to /mnt/boot
+                      hash: c04955354a76ab32ab5dc52062fdf72d668f7c3b
+                      body: >
+                        This commit updates all backends that write to /mnt/boot
+                        to do it
+
+                        through a new `lib/host-utils` module. Writes are now done using write +
+
+                        sync as rename is not an atomic operation in vfat.
+
+
+                        The change also applies for writes through the `/v1/host-config`
+
+                        endpoint.
+
+
+                        Finally this change includes some improvements on tests.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-13.1.5
+                  title: "'Use write+sync when writing to '"
+                  date: 2022-05-03T15:28:52.610Z
+          version: meta-balena-2.98.18
+          title: "'supervisor: Update balena-supervisor to v13.1.6'"
+          date: 2022-05-10T12:02:12.200Z
+        - commits:
+            - subject: "renovate: Override default package rules to enable leviathan"
+              hash: a711a1f59bd241fc25fe04b086d1bf22b05441ee
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.98.17
+          title: "'renovate: Override default package rules to enable leviathan'"
+          date: 2022-05-06T13:07:35.911Z
+        - commits:
+            - subject: "renovate: Replace tests with tests/suites in default ignorePaths"
+              hash: c354fded7c56960b69ae9c0ede362e90e0d71a46
+              body: |
+                This way renovate can operate on tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.98.16
+          title: "'renovate: Replace tests with tests/suites in default ignorePaths'"
+          date: 2022-05-05T16:33:33.391Z
+        - commits:
+            - subject: Rename renovate config
+              hash: 11070330e7ef2a22e38fe341c4098df478300127
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.98.15
+          title: "'Rename renovate config to json'"
+          date: 2022-05-04T17:13:58.711Z
+        - commits:
+            - subject: "supervisor: Update balena-supervisor to v13.1.4"
+              hash: f4a10db5608fa3d4822e8a5fde166078bbc44c7b
+              body: |
+                Update balena-supervisor from 12.11.38 to 13.1.4
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested:
+                - commits:
+                    - subject: Use delay instead of interval to recursively report state
+                      hash: 2e81a7328e6ff01c397bb1bced73010470520657
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-13.1.4
+                  title: "'Use delay instead of interval to recursively report state'"
+                  date: 2022-04-28T03:19:33.567Z
+                - commits:
+                    - subject: Remove in memory storage of started/stopped containers
+                      hash: 5437aea786e6be4a908e2cb0c24faeca3282c37e
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                    - subject: Only start a container once in its lifetime This will ensure the
+                        restart policy specified is not violated
+                      hash: ca9945bdfb716e1b14b24d3f3069f48cc7aff493
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Closes: "#1668"
+                        closes: "#1668"
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-13.1.3
+                  title: "'Prevent restart policy violation'"
+                  date: 2022-04-20T03:29:57.844Z
+                - commits:
+                    - subject: Explain /v2/state/status's status field in its response
+                      hash: 27249c278555c46154d1e917e769dd3fb9d2dcfc
+                      body: >
+                        The status field does not indicate the current state of
+                        the Engine on the device.
+
+                        Rather, it only indicates whether the HTTP response returned successfully or not.
+
+
+                        To get the current state of the device, i.e. whether it has applied target state or not,
+
+                        use the `appState` field in the response.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Christina Wang <christina@balena.io>
+                        signed-off-by: Christina Wang <christina@balena.io>
+                      author: Christina Wang
+                      nested: []
+                  version: balena-supervisor-13.1.2
+                  title: "'Explain /v2/state/status's status field in its response'"
+                  date: 2022-04-18T20:20:06.946Z
+                - commits:
+                    - subject: Do not fail lockfile cleanup if files do not exist
+                      hash: 8681d6b5808142613931b4e9fe63fa94f04c65bc
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-13.1.1
+                  title: "'Do not fail lockfile cleanup if files do not exist'"
+                  date: 2022-04-13T17:08:20.101Z
+                - commits:
+                    - subject: Add lockfile binary and internal lib for interfacing with it
+                      hash: 51e63ea22b876580de276808eca891ff6ab2a6c5
+                      body: >
+                        The linked issue describes the Supervisor not cleaning
+                        up locks it creates due
+
+                        to crashing at just the wrong time. After internal discussion we decided to
+
+                        differentiate Supervisor-created lockfiles from user-created lockfiles by using
+
+                        the `nobody` UID (65534) for Supervisor-created lockfiles.
+
+
+                        As the existing NPM lockfile lib does not allow creating lockfiles atomically
+
+                        with different UIDs, we move to using the lockfile binary, which is part of the
+
+                        procmail package. To allow nonroot users to write to lock directories, permissions
+
+                        are changed to allow write access by nonroot users.
+                      footer:
+                        See: https://www.flowdock.com/app/rulemotion/r-resinos/threads/gWMgK5hmR26TzWGHux62NpgJtVl
+                        see: https://www.flowdock.com/app/rulemotion/r-resinos/threads/gWMgK5hmR26TzWGHux62NpgJtVl
+                        Change-type: minor
+                        change-type: minor
+                        Closes: "#1758"
+                        closes: "#1758"
+                        Signed-off-by: Christina Wang <christina@balena.io>
+                        signed-off-by: Christina Wang <christina@balena.io>
+                      author: Christina Wang
+                      nested: []
+                  version: balena-supervisor-13.1.0
+                  title: "'Differentiate Supervisor-created lockfiles from userapp-created
+                    lockfiles'"
+                  date: 2022-04-12T19:07:17.817Z
+                - commits:
+                    - subject: Add system id/model support for Compulab IOT-gate
+                      hash: e6fa22306b9e2b55480772560e62bb8e8988b529
+                      body: >
+                        dmidecode for alpine 3.11 doesn't work in this device
+                        type. This change
+
+                        moves to using `/proc/device-tree/product-sn` and
+
+                        `/proc/device-tree/product-name` for these devices.
+                      footer:
+                        Resolves: "#1916"
+                        resolves: "#1916"
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-13.0.3
+                  title: "'Add system id/model support for Compulab IOT-gate'"
+                  date: 2022-04-08T16:06:29.933Z
+                - commits:
+                    - subject: Correctly evaluate downloadProgress when computing current state
+                      hash: c1b5e58ebd7a1c01c985f75c9a84ac22f7f090f0
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Closes: "#1918"
+                        closes: "#1918"
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-13.0.2
+                  title: "'Correctly evaluate downloadProgress when computing current state'"
+                  date: 2022-04-08T01:24:44.461Z
+                - commits:
+                    - subject: Fix database migration for legacyApps
+                      hash: eee24604459440569dee455db918d6901ea86645
+                      body: >
+                        Migration `M00008` had a bug with the check for legacy
+                        apps, which
+
+                        resulted in devices that had at some point been updated from a single
+
+                        container supervisor to get the error
+
+
+                        ```
+
+                        Undefined binding(s) detected when compiling UPDATE. Undefined column(s): [appUuid] query
+
+                        ```
+
+
+                        This adds a new migration with the fix to ensure broken fix the
+
+                        inconsistent database state.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Closes: "#1913"
+                        closes: "#1913"
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-13.0.1
+                  title: "'Fix database migration for legacyApps'"
+                  date: 2022-04-01T21:09:42.303Z
+                - commits:
+                    - subject: Add support for GET v3 target state
+                      hash: 7425d1110b719dffd132c681c6e0c28fcc218dea
+                      body: >
+                        This change updates types and database format in order
+                        to allow
+
+                        receiving the new format of the target state from the cloud and allow
+
+                        applications to keep working.
+
+
+                        This change also updates metadata in the containers, meaning services
+
+                        will need to be restarted on supervisor update
+                      footer:
+                        Change-type: major
+                        change-type: major
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-13.0.0
+                  title: "'Update supervisor to use new v3 target state format'"
+                  date: 2022-03-23T18:15:27.194Z
+                - commits:
+                    - subject: Always add status to image download report
+                      hash: 21c1c006f7b8dfcf566f3e4a8e853e5e9978edf4
+                      body: >
+                        It seems that in some cases the supervisor can report
+
+                        an image without a `status` field leading to a cloud side 401 response.
+
+                        See #1905 for more details.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-12.11.43
+                  title: "'Always add status to image download report'"
+                  date: 2022-03-21T17:55:39.079Z
+                - commits:
+                    - subject: Moved test setup into file included for all tests
+                      hash: b068c209b0cd8cff4c2fb5218bd1d4c2116451e6
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-12.11.42
+                  title: "'Moved test setup into file included for all tests'"
+                  date: 2022-03-18T22:22:27.948Z
+                - commits:
+                    - subject: Added PR template doc
+                      hash: edcbb622d84bc1290cc5ce0ef7929a9ef9195df4
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-12.11.41
+                  title: "'Added PR template doc'"
+                  date: 2022-03-16T20:56:50.062Z
+                - commits:
+                    - subject: Only count report connectivity errors for healthcheck
+                      hash: e217ff9027dad3e2ab092d16290b2eca0ecf6c25
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                    - subject: update packages for vulnerabilities
+                      hash: b5a2b8b7510860ba926f2e015e9294c824c700e1
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-12.11.40
+                  title: "'Only count report connectivity errors for healthcheck'"
+                  date: 2022-03-16T19:01:20.454Z
+                - commits:
+                    - subject: Move report throttle out of reporting logic
+                      hash: 2fdb83839c2262b398deb77eb0fa4ae2c16c374a
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                    - subject: Update npm dep sinon to v11.1.2
+                      hash: 5e5f1fb305d06399af37f1ce490a27f6e0289140
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                        signed-off-by: 20k-ultra <3946250+20k-ultra@users.noreply.github.com>
+                      author: 20k-ultra
+                      nested: []
+                  version: balena-supervisor-12.11.39
+                  title: "'Move report throttle out of reporting logic'"
+                  date: 2022-03-16T02:57:26.149Z
+          version: meta-balena-2.98.14
+          title: "'supervisor: Update balena-supervisor to v13.1.4'"
+          date: 2022-05-04T13:42:13.540Z
+        - commits:
+            - subject: "os: tests: optimize connectivity tests"
+              hash: fdfa61579dff1a1aaf3aea1318d16cb9f4fc3f50
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.98.13
+          title: "'os: tests: optimize connectivity tests'"
+          date: 2022-05-03T15:52:26.943Z
+  version: 2.99.2
+  title: "'Update layers/meta-balena digest to ee8110b'"
+  date: 2022-06-16T12:29:23.056Z
+- commits:
     - subject: Update balena-yocto-scripts to 8cce34e9763389eb59e4e375c532c81eb592fc1e
       hash: 4e76cf14549f60e26ba4c0af6646eb1a5e9a4db3
       body: Update balena-yocto-scripts

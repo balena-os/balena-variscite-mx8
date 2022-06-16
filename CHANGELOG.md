@@ -1,6 +1,415 @@
 Change log
 -----------
 
+# v2.99.2
+## (2022-06-16)
+
+
+<details>
+<summary> Update layers/meta-balena to ee8110bd257ff145acba793720ea739f14f2429a [Renovate Bot] </summary>
+
+> ## meta-balena-2.99.2
+> ### (2022-06-13)
+> 
+> * tests: os: chrony: reduce retry interval [Joseph Kogut]
+> 
+> ## meta-balena-2.99.1
+> ### (2022-06-11)
+> 
+> * tests: hup: gzip hostapp before transfer to DUT [rcooke-warwick]
+> 
+> ## meta-balena-2.99.0
+> ### (2022-06-10)
+> 
+> * chronyd: Add time synchronization healthcheck [Alex Gonzalez]
+> 
+> ## meta-balena-2.98.45
+> ### (2022-06-09)
+> 
+> * tests: os: chrony: fix formatting of this.worker [Joseph Kogut]
+> * tests: os: chrony: reduce delays and retries [Joseph Kogut]
+> 
+> ## meta-balena-2.98.44
+> ### (2022-06-09)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to ea72650 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.4.1
+>> #### (2022-06-09)
+>> 
+>> * catch error in executeCommandInhostOs [rcooke-warwick]
+>> 
+>> ### leviathan-2.4.0
+>> #### (2022-06-07)
+>> 
+>> * get ssh to work with ed25519 algorithm [rcooke-warwick]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.43
+> ### (2022-06-09)
+> 
+> * tests: cloud: update container names [rcooke-warwick]
+> 
+> ## meta-balena-2.98.42
+> ### (2022-06-05)
+> 
+> * tests:cloud: Register teardown only when DUT is reachable [Florin Sarbu]
+> 
+> ## meta-balena-2.98.41
+> ### (2022-06-05)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 4fbc1b8 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.10
+>> #### (2022-06-05)
+>> 
+>> * worker: Expose additional QEMU runtime args via docker-compose [Kyle Harding]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.40
+> ### (2022-06-04)
+> 
+> * tests: hup: reduce delay between retries [Joseph Kogut]
+> 
+> ## meta-balena-2.98.39
+> ### (2022-06-04)
+> 
+> * tests: cloud: reduce waitUntil interval [Joseph Kogut]
+> 
+> ## meta-balena-2.98.38
+> ### (2022-06-03)
+> 
+> * Added all device support options [Ryan H]
+> 
+> ## meta-balena-2.98.37
+> ### (2022-06-03)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 8976bdb [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.9
+>> #### (2022-06-02)
+>> 
+>> * core: bump node 12 -> 14 [Joseph Kogut]
+>> 
+>> ### leviathan-2.3.8
+>> #### (2022-06-02)
+>> 
+>> * core: suiteSubprocess: replace this.state.log w/ console.log [Joseph Kogut]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.36
+> ### (2022-06-03)
+> 
+> * os: waitForServiceState: fix missing rejectionFail [Joseph Kogut]
+> 
+> ## meta-balena-2.98.35
+> ### (2022-06-02)
+> 
+> * tests: os: udev: improve formatting [Joseph Kogut]
+> * tests: os: udev: use systemd.waitForServiceState [Joseph Kogut]
+> 
+> ## meta-balena-2.98.34
+> ### (2022-06-01)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to b3b1b48 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.7
+>> #### (2022-06-01)
+>> 
+>> * worker: qemu: remove debug print statements [Joseph Kogut]
+>> 
+>> ### leviathan-2.3.6
+>> #### (2022-05-26)
+>> 
+>> * core: worker: shorten getDutIp interval [Joseph Kogut]
+>> * worker: helpers: memoize resolveLocalTarget [Joseph Kogut]
+>> * worker: helpers: resolveLocalTarget: increase timeout [Joseph Kogut]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.33
+> ### (2022-05-27)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 95649fb [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.5
+>> #### (2022-05-25)
+>> 
+>> * workers: qemu: fix vars path for x86_64 [Joseph Kogut]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.32
+> ### (2022-05-27)
+> 
+> * supervisor: Update balena-supervisor to v13.1.11 [Felipe Lalanne]
+> 
+> ## meta-balena-2.98.31
+> ### (2022-05-26)
+> 
+> * tests: os: config-json: fix race by waiting for InvocationID change [Joseph Kogut]
+> * tests: os: reformat config-json tests [Joseph Kogut]
+> 
+> ## meta-balena-2.98.30
+> ### (2022-05-24)
+> 
+> * Remove localMode setting from standalone image configuration [Alex Gonzalez]
+> 
+> ## meta-balena-2.98.29
+> ### (2022-05-23)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v20.10.17 [Leandro Motta Barros] </summary>
+> 
+>> ### balena-engine-20.10.17
+>> #### (2022-05-17)
+>> 
+>> * Fix "slice bounds out of range" while applying deltas [Leandro Motta Barros]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.28
+> ### (2022-05-20)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 727ba9f [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.4
+>> #### (2022-05-20)
+>> 
+>> * worker: qemu: add new qemu firmware paths [Joseph Kogut]
+>> * worker: install edk2 firmware for aarch64 [Joseph Kogut]
+>> * worker: Change default qemu memory from 2G to 512M [Kyle Harding]
+>> * make: Do not assume qemu DUT arch will match the host [Kyle Harding]
+>> * make: Allow passed env vars to replace any .env values [Kyle Harding]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.27
+> ### (2022-05-18)
+> 
+> * patch: Fix heading anchor links in CDS doc index [Vipul Gupta]
+> 
+> ## meta-balena-2.98.26
+> ### (2022-05-17)
+> 
+> * balena-supervisor: Randomize the updater timer period [Alex Gonzalez]
+> 
+> ## meta-balena-2.98.25
+> ### (2022-05-16)
+> 
+> * patch: Get CDS doc ready for docs sync [Vipul Gupta]
+> * test: os-config: Use common code to wait for service state [Alex Gonzalez]
+> 
+> ## meta-balena-2.98.24
+> ### (2022-05-15)
+> 
+> * os-config: Randomize the timer period [Alex Gonzalez]
+> 
+> ## meta-balena-2.98.23
+> ### (2022-05-11)
+> 
+> * linux-firmware: Fix quz-a0-hr-b0 and quz-a0-jf-b0 packaging for compression [Michal Toman]
+> 
+> ## meta-balena-2.98.22
+> ### (2022-05-11)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 01719b5 [Renovate Bot] </summary>
+> 
+>> ### leviathan-2.3.3
+>> #### (2022-05-09)
+>> 
+>> * Fixes spelling and grammar in e2e [Alex]
+>> 
+>> ### leviathan-2.3.2
+>> #### (2022-05-02)
+>> 
+>> * Record environment variables to file for client env [Kyle Harding]
+>> 
+>> ### leviathan-2.3.1
+>> #### (2022-05-02)
+>> 
+>> * patch: Remove development shortcuts [Vipul Gupta (@vipulgupta2048)]
+>> 
+>> ### leviathan-2.3.0
+>> #### (2022-04-29)
+>> 
+>> * minor: Add support for debug object [Vipul Gupta (@vipulgupta2048)]
+>> 
+>> ### leviathan-2.2.14
+>> #### (2022-04-29)
+>> 
+>> * patch: Remove Express server port config [Vipul Gupta (@vipulgupta2048)]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.21
+> ### (2022-05-11)
+> 
+> * contributing-device-support.md: Enhance device contribution guide [Florin Sarbu]
+> 
+> ## meta-balena-2.98.20
+> ### (2022-05-10)
+> 
+> * renovate: Override commit body for meta-balena to Change-type [Kyle Harding]
+> * renovate: Remove extra leviathan package rules [Kyle Harding]
+> 
+> ## meta-balena-2.98.19
+> ### (2022-05-10)
+> 
+> * tests/connectivity: Force proxy tests to use IPv4 [Kyle Harding]
+> * tests/connectivity: Fix compose warnings for expected string [Kyle Harding]
+> 
+> ## meta-balena-2.98.18
+> ### (2022-05-10)
+> 
+> 
+> <details>
+> <summary> supervisor: Update balena-supervisor to v13.1.6 [Alex Gonzalez] </summary>
+> 
+>> ### balena-supervisor-13.1.6
+>> #### (2022-05-06)
+>> 
+>> * Avoid splash image failures if image is corrupt [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-13.1.5
+>> #### (2022-05-03)
+>> 
+>> * Use write + sync when writing configs to /mnt/boot [Felipe Lalanne]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.17
+> ### (2022-05-06)
+> 
+> * renovate: Override default package rules to enable leviathan [Kyle Harding]
+> 
+> ## meta-balena-2.98.16
+> ### (2022-05-05)
+> 
+> * renovate: Replace tests with tests/suites in default ignorePaths [Kyle Harding]
+> 
+> ## meta-balena-2.98.15
+> ### (2022-05-04)
+> 
+> * Rename renovate config [Kyle Harding]
+> 
+> ## meta-balena-2.98.14
+> ### (2022-05-04)
+> 
+> 
+> <details>
+> <summary> supervisor: Update balena-supervisor to v13.1.4 [Kyle Harding] </summary>
+> 
+>> ### balena-supervisor-13.1.4
+>> #### (2022-04-28)
+>> 
+>> * Use delay instead of interval to recursively report state [20k-ultra]
+>> 
+>> ### balena-supervisor-13.1.3
+>> #### (2022-04-20)
+>> 
+>> * Remove in memory storage of started/stopped containers [20k-ultra]
+>> * Only start a container once in its lifetime This will ensure the restart policy specified is not violated [20k-ultra]
+>> 
+>> ### balena-supervisor-13.1.2
+>> #### (2022-04-18)
+>> 
+>> * Explain /v2/state/status's status field in its response [Christina Wang]
+>> 
+>> ### balena-supervisor-13.1.1
+>> #### (2022-04-13)
+>> 
+>> * Do not fail lockfile cleanup if files do not exist [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-13.1.0
+>> #### (2022-04-12)
+>> 
+>> * Add lockfile binary and internal lib for interfacing with it [Christina Wang]
+>> 
+>> ### balena-supervisor-13.0.3
+>> #### (2022-04-08)
+>> 
+>> * Add system id/model support for Compulab IOT-gate [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-13.0.2
+>> #### (2022-04-08)
+>> 
+>> * Correctly evaluate downloadProgress when computing current state [20k-ultra]
+>> 
+>> ### balena-supervisor-13.0.1
+>> #### (2022-04-01)
+>> 
+>> * Fix database migration for legacyApps [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-13.0.0
+>> #### (2022-03-23)
+>> 
+>> * Add support for GET v3 target state [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-12.11.43
+>> #### (2022-03-21)
+>> 
+>> * Always add status to image download report [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-12.11.42
+>> #### (2022-03-18)
+>> 
+>> * Moved test setup into file included for all tests [20k-ultra]
+>> 
+>> ### balena-supervisor-12.11.41
+>> #### (2022-03-16)
+>> 
+>> * Added PR template doc [20k-ultra]
+>> 
+>> ### balena-supervisor-12.11.40
+>> #### (2022-03-16)
+>> 
+>> * Only count report connectivity errors for healthcheck [Felipe Lalanne]
+>> * update packages for vulnerabilities [20k-ultra]
+>> 
+>> ### balena-supervisor-12.11.39
+>> #### (2022-03-16)
+>> 
+>> * Move report throttle out of reporting logic [20k-ultra]
+>> * Update npm dep sinon to v11.1.2 [20k-ultra]
+>> 
+> </details>
+> 
+> 
+> ## meta-balena-2.98.13
+> ### (2022-05-03)
+> 
+> * os: tests: optimize connectivity tests [Joseph Kogut]
+> 
+</details>
+
 # v2.98.12+rev8
 ## (2022-06-16)
 
