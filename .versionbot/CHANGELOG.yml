@@ -1,4 +1,163 @@
 - commits:
+    - subject: Update contracts to b2bddbdc896e6c628231512b363e5c93d16f5b15
+      hash: af1ee5f06813dc9df9feb99552cc39bd34a00467
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to b2bddbdc896e6c628231512b363e5c93d16f5b15
+        changelog-entry: Update contracts to b2bddbdc896e6c628231512b363e5c93d16f5b15
+      author: Renovate Bot
+      nested:
+        - commits:
+            - subject: Add Python v3.10.5 and v3.9.13
+              hash: 971223d30b9bf7391ffe57b36182c4857bf4c3aa
+              body: >
+                Update checksum for v3.8.13 and v3.7.13 since they were rebuilt
+                to add tkinter modules
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add support for Alpine Linux 3.16
+              hash: 49617527cd147d2013158786ee22f8489340143c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add support for Ubuntu Jammy and Kinetic
+              hash: 143ad01883d861aba4f6359a4386634eb9592684
+              body: |
+                Drop support for Ubuntu Hirsute
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.3
+          title: "'Few base images updates'"
+          date: 2022-06-13T20:38:36.573Z
+        - commits:
+            - subject: "sw.os - hw.device-type: Update Xavier NX SD and Xavier NX eMMC to
+                32.7.1"
+              hash: 5550fdff88e0f6c4c93af3ceec5936f937791dd7
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.2
+          title: "'sw.os - hw.device-type: Update Xavier NX SD and Xavier NX eMMC to L4T
+            32.7.1'"
+          date: 2022-06-05T12:34:53.567Z
+        - commits:
+            - subject: Update QEMU to v7.0.0+balena1
+              hash: 09da1dcdad42b7ea6aba665549e022029bb2860b
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Remove the wrapper shim that base images have around sh on first run
+              hash: cb3c0138081af7b73498e22f201af71277ec532c
+              body: >
+                The wrapper will potentially break other packages that expect sh
+                to be a real shell (In case the real sh shell binary is not
+                restored yet)
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add golang v1.18.3 and v1.17.11
+              hash: 08afe67fa031ac33c9bb5f5e6031f15347a4efe9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add node v18.3.0 v17.9.1 and v16.15.1
+              hash: f04cb9eda01595742b964a4a3e9eab7289cbc2ac
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.1
+          title: "'Few base images update'"
+          date: 2022-06-03T09:11:15.593Z
+        - commits:
+            - subject: Clean up installation method and add instruction partials
+              hash: 62794cb042ab3dc70628d81fca0b1903b78c1f06
+              body: ""
+              footer:
+                Change-type: major
+                change-type: major
+                Signed-off-by: Micah Halter <micah@balena.io>
+                signed-off-by: Micah Halter <micah@balena.io>
+              author: Micah Halter
+          version: contracts-2.0.0
+          title: "'Add instruction partials to etcher supported device types'"
+          date: 2022-05-27T15:01:39.154Z
+        - commits:
+            - subject: "sw.os-image: Add balena-image software image"
+              hash: 4473a99902a3793a33b63300778ad0118b8366cf
+              body: >
+                This is used by the OS builders to deploy releases. This
+                contract contains
+
+                details related to the balena-image artifact generated in the balenaOS
+
+                build.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+            - subject: "sw.os: Add balenaOS contract"
+              hash: 29b697e2a05e026d9b92ee67cdf6dc47f8cc2488
+              body: |
+                This is uded by the OS builder to deploy balenaOS.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+          version: contracts-1.13.76
+          title: "'Add sw.os and sw.os-image contracts'"
+          date: 2022-05-23T11:09:26.128Z
+        - commits:
+            - subject: "jetson-xavier-agx: Update L4T in base images"
+              hash: 029d39073ebc6136c5797526fbcdfe1525f5d950
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-1.13.75
+          title: "'jetson-xavier-agx: Update L4T in base images'"
+          date: 2022-05-21T10:51:21.212Z
+  version: 2.98.12+rev7
+  title: "'Update contracts digest to b2bddbd'"
+  date: 2022-06-14T15:33:56.626Z
+- commits:
     - subject: "u-boot: Add support for custom device-tree loading on imx8mm-var-dart"
       hash: 82a128899db777cd3287cad9b1c22a27264e2b59
       body: |

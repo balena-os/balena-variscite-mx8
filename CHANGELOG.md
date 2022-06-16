@@ -1,6 +1,51 @@
 Change log
 -----------
 
+# v2.98.12+rev7
+## (2022-06-14)
+
+
+<details>
+<summary> Update contracts to b2bddbdc896e6c628231512b363e5c93d16f5b15 [Renovate Bot] </summary>
+
+> ## contracts-2.0.3
+> ### (2022-06-13)
+> 
+> * Add Python v3.10.5 and v3.9.13 [Trong Nghia Nguyen]
+> * Add support for Alpine Linux 3.16 [Trong Nghia Nguyen]
+> * Add support for Ubuntu Jammy and Kinetic [Trong Nghia Nguyen]
+> 
+> ## contracts-2.0.2
+> ### (2022-06-05)
+> 
+> * sw.os - hw.device-type: Update Xavier NX SD and Xavier NX eMMC to 32.7.1 [Alexandru Costache]
+> 
+> ## contracts-2.0.1
+> ### (2022-06-03)
+> 
+> * Update QEMU to v7.0.0+balena1 [Trong Nghia Nguyen]
+> * Remove the wrapper shim that base images have around sh on first run [Trong Nghia Nguyen]
+> * Add golang v1.18.3 and v1.17.11 [Trong Nghia Nguyen]
+> * Add node v18.3.0 v17.9.1 and v16.15.1 [Trong Nghia Nguyen]
+> 
+> ## contracts-2.0.0
+> ### (2022-05-27)
+> 
+> * Clean up installation method and add instruction partials [Micah Halter]
+> 
+> ## contracts-1.13.76
+> ### (2022-05-23)
+> 
+> * sw.os-image: Add balena-image software image [Alex Gonzalez]
+> * sw.os: Add balenaOS contract [Alex Gonzalez]
+> 
+> ## contracts-1.13.75
+> ### (2022-05-21)
+> 
+> * jetson-xavier-agx: Update L4T in base images [Alexandru Costache]
+> 
+</details>
+
 # v2.98.12+rev6
 ## (2022-06-14)
 
