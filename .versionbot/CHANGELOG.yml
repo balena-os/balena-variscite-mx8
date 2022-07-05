@@ -1,4 +1,21 @@
 - commits:
+    - subject: "linux-variscite: Fix gpio3 on imx8mm-var-dart-plt"
+      hash: 75a83658a83d72fb3a270971c80a1e1b420441be
+      body: |
+        This fixes the issue where gpio3 could not be exported
+        in the image 2.98 due to a device-tree patch that
+        wasn't applied starting with a previous BSP update.
+      footer:
+        Changelog-entry: "linux-variscite: Fix gpio3 on imx8mm-var-dart-plt"
+        changelog-entry: "linux-variscite: Fix gpio3 on imx8mm-var-dart-plt"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.99.27+rev1
+  title: "'linux-variscite: Fix gpio3 on imx8mm-var-dart-plt'"
+  date: 2022-07-05T14:26:10.145Z
+- commits:
     - subject: Update layers/meta-balena to d748c184c7348683378b4e8f0dbc2cfc014b65de
       hash: 03baaa382f78027b682351e34bc009ee374c0837
       body: Update layers/meta-balena

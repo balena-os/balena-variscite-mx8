@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.99.27+rev1
+## (2022-07-05)
+
+* linux-variscite: Fix gpio3 on imx8mm-var-dart-plt [Alexandru Costache]
+
 # v2.99.27
 ## (2022-07-01)
 
