@@ -1,4 +1,22 @@
 - commits:
+    - subject: fix extra_uEnv.txt not included due to undefined UBOOT_MACHINE
+      hash: b732ca4ee1cf1578b108ebefa5c12dc9c8f03d70
+      body: |
+        The BSP does not define UBOOT_MACHINE, instead
+        it uses UBOOT_CONFIG. We will extend the check
+        for UBOOT_CONFIG in meta-balena, until then
+        we add this workaround in the device repository.
+      footer:
+        Changelog-entry: fix extra_uEnv.txt not included due to undefined UBOOT_MACHINE
+        changelog-entry: fix extra_uEnv.txt not included due to undefined UBOOT_MACHINE
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.99.27+rev2
+  title: "'balena-image: fix extra_uEnv.txt not included due to undefined UBOOT_…'"
+  date: 2022-07-08T14:10:08.496Z
+- commits:
     - subject: "linux-variscite: Fix gpio3 on imx8mm-var-dart-plt"
       hash: 75a83658a83d72fb3a270971c80a1e1b420441be
       body: |

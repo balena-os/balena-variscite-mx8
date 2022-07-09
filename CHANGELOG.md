@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.99.27+rev2
+## (2022-07-08)
+
+* fix extra_uEnv.txt not included due to undefined UBOOT_MACHINE [Alexandru Costache]
+
 # v2.99.27+rev1
 ## (2022-07-05)
 
