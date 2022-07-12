@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update build and deploy workflow to support ESR tags
+      hash: 5f2f4a605946dad3f683cee5cf9a893076d38a34
+      body: |
+        This adds support for build and deploy of ESR tags.
+      footer:
+        Changelog-entry: Update build and deploy workflow to support ESR tags
+        changelog-entry: Update build and deploy workflow to support ESR tags
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.99.27+rev3
+  title: "'workflows: Update build and deploy to 0.0.6'"
+  date: 2022-07-12T10:43:06.291Z
+- commits:
     - subject: fix extra_uEnv.txt not included due to undefined UBOOT_MACHINE
       hash: b732ca4ee1cf1578b108ebefa5c12dc9c8f03d70
       body: |
