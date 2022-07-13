@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.99.27+rev4
+## (2022-07-13)
+
+* Remove battery profile from bluetooth daemon [Alex Gonzalez]
+
 # v2.99.27+rev3
 ## (2022-07-12)
 

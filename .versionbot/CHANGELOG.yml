@@ -1,4 +1,20 @@
 - commits:
+    - subject: Remove battery profile from bluetooth daemon
+      hash: 34dfe5e9c7b880c51b5bd0c2daf4fc4d70f11377
+      body: |
+        Some devices have trouble authenticating when the battery profile is
+        enabled, see https://github.com/bluez/bluez/issues/38
+      footer:
+        Changelog-entry: Remove battery profile from bluetooth daemon
+        changelog-entry: Remove battery profile from bluetooth daemon
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.99.27+rev4
+  title: "'[DO NOT MERGE] bluez: Remove battery profile'"
+  date: 2022-07-13T21:03:35.343Z
+- commits:
     - subject: Update build and deploy workflow to support ESR tags
       hash: 5f2f4a605946dad3f683cee5cf9a893076d38a34
       body: |
