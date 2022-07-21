@@ -1,4 +1,33 @@
 - commits:
+    - subject: Update layers/meta-balena to c34abd0168622b7766004de8a27f0e96f556b035
+      hash: e5b8c502e372d6430152c28e087600053a455c64
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to c34abd0168622b7766004de8a27f0e96f556b035
+        changelog-entry: Update layers/meta-balena to c34abd0168622b7766004de8a27f0e96f556b035
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests: ssh-auth: Rework to prevent race conditions"
+              hash: a54368b0c2f52e17242117ec59313ce8d0fec88c
+              body: |
+                Use a common function to apply settings in config.json to avoid
+                code duplication. It also provides timed results so we know
+                how long it took to apply a setting.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-2.100.3
+          title: "'tests: ssh-auth: Rework to prevent race conditions'"
+          date: 2022-07-20T20:33:49.443Z
+  version: 2.100.3
+  title: "'Update layers/meta-balena digest to c34abd0'"
+  date: 2022-07-21T00:02:58.727Z
+- commits:
     - subject: Update contracts to 4df6bf241e40b34e4d7051c97ba4f9cf1945c45f
       hash: 58bae07cb070adf6d464d50449fc45f7d22eee01
       body: Update contracts
