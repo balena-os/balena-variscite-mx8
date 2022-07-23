@@ -1,4 +1,33 @@
 - commits:
+    - subject: Update layers/meta-balena to 9b7bbeaffe87b8dab49eb98163188c77c1934f8e
+      hash: edf530ffc64bd3c0d79c42f1ab169da94ec5c396
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 9b7bbeaffe87b8dab49eb98163188c77c1934f8e
+        changelog-entry: Update layers/meta-balena to 9b7bbeaffe87b8dab49eb98163188c77c1934f8e
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests/os: Add 243390 unmanged Wifi HATs tests from testLodge"
+              hash: d02baf51d053124059aae911eb1e0e75f92d62d7
+              body: |
+                This covers the unmanaged part of the tests for the CUS
+                and EUS wifi chipsets on this DT: TC50, TC51, TC52, TC53,
+                TC55, TC56.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-2.100.8
+          title: "'tests: Add 243390 unmanged Wifi HATs tests from testLodge'"
+          date: 2022-07-21T23:48:56.244Z
+  version: 2.100.8
+  title: "'Update layers/meta-balena digest to 9b7bbea'"
+  date: 2022-07-22T20:44:56.660Z
+- commits:
     - subject: Update layers/meta-balena to 39681bd5d8a584784c385a042a707bf1c35b2369
       hash: daa01fb17fcc4fc1377ba7ff05d98c242ee2c860
       body: Update layers/meta-balena
