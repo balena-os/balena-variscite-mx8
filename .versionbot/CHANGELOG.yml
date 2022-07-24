@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update layers/meta-balena to a2ed558c6d2d8362da0b8242ca3b54d1b49acb9c
+      hash: 9bfe4a1afc851b1bda6218e2fbc9ba506abfb0a0
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to a2ed558c6d2d8362da0b8242ca3b54d1b49acb9c
+        changelog-entry: Update layers/meta-balena to a2ed558c6d2d8362da0b8242ca3b54d1b49acb9c
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "tests: os: engine-socket - wait for response"
+              hash: 61b32c0d36e2c2af387b77bdc398d3294ffedbda
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.100.9
+          title: "'tests: os: engine-socket - wait for response before continuing test'"
+          date: 2022-07-22T19:35:54.404Z
+  version: 2.100.9
+  title: "'Update layers/meta-balena digest to a2ed558'"
+  date: 2022-07-24T01:51:58.069Z
+- commits:
     - subject: Update layers/meta-balena to 9b7bbeaffe87b8dab49eb98163188c77c1934f8e
       hash: edf530ffc64bd3c0d79c42f1ab169da94ec5c396
       body: Update layers/meta-balena

@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.100.9
+## (2022-07-24)
+
+
+<details>
+<summary> Update layers/meta-balena to a2ed558c6d2d8362da0b8242ca3b54d1b49acb9c [renovate[bot]] </summary>
+
+> ## meta-balena-2.100.9
+> ### (2022-07-22)
+> 
+> * tests: os: engine-socket - wait for response [rcooke-warwick]
+> 
+</details>
+
 # v2.100.8
 ## (2022-07-22)
 
