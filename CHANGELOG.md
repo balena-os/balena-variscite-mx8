@@ -1,6 +1,24 @@
 Change log
 -----------
 
+# v2.100.11
+## (2022-07-27)
+
+
+<details>
+<summary> Update layers/meta-balena to e646204762ac7abb2407a0e1dba8689aeade70f4 [renovate[bot]] </summary>
+
+> ## meta-balena-2.100.11
+> ### (2022-07-25)
+> 
+> * test: os: chrony: Double the wait for time skew test [Kyle Harding]
+> * os: tests: chrony: Wrap disable/enable NTP in test conditions [Kyle Harding]
+> * tests: os: Add helper to write or remove properties in config.json [Kyle Harding]
+> 
+</details>
+
+* Update contracts to 9db49d2fbb34542f53bf496135c32cccf5df487c [renovate[bot]]
+
 # v2.100.10
 ## (2022-07-24)
 
