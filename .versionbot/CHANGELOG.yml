@@ -1,4 +1,39 @@
 - commits:
+    - subject: Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e
+      hash: 2a712d8a1e9acf7c1787540a78f6b28eab5a4bbf
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e
+        changelog-entry: Update layers/meta-balena to 771593f49920c4ae0ef101d2328f03f033449a9e
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "meta-balena-rust: Link to meta-rust"
+              hash: 83bd38733af9063c5d29d90fc0695838e4b718d3
+              body: >
+                This is a temporary way that will allow to update the
+                bblayers.conf of
+
+                device type repositories to include meta-balena/meta-balena-rust while
+
+                still building.
+
+
+                This change will be reverted with the meta-balena-rust layer.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-2.101.5
+          title: "'meta-balena-rust: Link to meta-rust'"
+          date: 2022-08-12T08:01:52.474Z
+  version: 2.101.5
+  title: "'Update layers/meta-balena digest to 771593f'"
+  date: 2022-08-15T12:30:48.592Z
+- commits:
     - subject: Update balena-yocto-scripts to 99807501efffc8c5034c88361049650a02511a78
       hash: bc5333afdf1fc9c63f3821ddf48da106e15a41ad
       body: Update balena-yocto-scripts
