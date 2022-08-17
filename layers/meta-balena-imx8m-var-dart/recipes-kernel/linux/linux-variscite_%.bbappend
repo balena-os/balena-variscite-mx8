@@ -40,6 +40,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
 	file://0001-lp55xx-Add-support-for-default-startup-brightness-fr.patch \
 	file://0001-lp55231-Don-t-reset-chip-during-initialization.patch \
+	file://nrt-drivers-backport-cw2015-battery-driver.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
@@ -53,6 +54,11 @@ BALENA_CONFIGS[preempt_rt] = " \
     CONFIG_ARCH_SUPPORTS_RT=y \
     CONFIG_EXPERT=y \
     CONFIG_PREEMPT_RT=y \
+"
+
+BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " cw2015"
+BALENA_CONFIGS[cw2015] = " \
+    CONFIG_BATTERY_CW2015=m \
 "
 
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " lp55231"
