@@ -42,6 +42,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://0001-lp55231-Don-t-reset-chip-during-initialization.patch \
 	file://nrt-drivers-backport-cw2015-battery-driver.patch \
 	file://nrt-cw2015-fix-build-for-nrt.patch \
+	file://nrt-Add-CW2015-in-device-tree.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \
