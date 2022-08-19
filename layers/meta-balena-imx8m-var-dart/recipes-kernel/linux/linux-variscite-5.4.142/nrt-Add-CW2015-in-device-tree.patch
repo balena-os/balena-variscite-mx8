@@ -1,0 +1,49 @@
+From 2725a3426fddfe8d94ede67c8b3fdbf78caf8375 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 19 Aug 2022 12:54:43 +0200
+Subject: [PATCH] nrt: Add CW2015 in device-tree
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi | 9 +++++++--
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi          | 5 +++++
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
+index 0083f2bfe304..3d265fb463a4 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
+@@ -577,8 +577,13 @@
+ 		};
+ 	};
+ 
+-
+-
++	cw2015@62 {
++		compatible = "cellwise,cw2015";
++		reg = <0x62>;
++		cellwise,monitor-interval-ms = <5000>;
++		monitored-battery = <&bat>;
++		status = "okay";
++       };
+ };
+ 
+ &lcdif {
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index 6f1c3e1db665..f8eca02134fc 100755
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -1487,4 +1487,9 @@
+ 
+ 		status = "disabled";
+ 	};
++
++	bat: battery {
++		compatible = "simple-battery";
++	};
++
+ };
+-- 
+2.37.2
+
