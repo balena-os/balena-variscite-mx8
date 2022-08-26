@@ -1,4 +1,18 @@
 - commits:
+    - subject: "imx8mm-var-som: Add coffee file"
+      hash: 081347eb7683740dd0756d74f94a09b791f37858
+      body: ""
+      footer:
+        Changelog-entry: "imx8mm-var-som: Add coffee file"
+        changelog-entry: "imx8mm-var-som: Add coffee file"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.101.11+rev1
+  title: "'Add imx8mm-var-som'"
+  date: 2022-08-26T11:11:42.609Z
+- commits:
     - subject: Update layers/meta-balena to 094cc1766365844e9e4dcf46f4f247cad0231715
       hash: 0d7a56ea2adf57d5e1cde03b07bc800042f211b4
       body: Update layers/meta-balena

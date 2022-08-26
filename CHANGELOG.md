@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.101.11+rev1
+## (2022-08-26)
+
+* imx8mm-var-som: Add coffee file [Alexandru Costache]
+
 # v2.101.11
 ## (2022-08-25)
 
