@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update layers/meta-balena to 81b94e873538faf4684977bafc501d3565288751
+      hash: 97a41817ab4d85e4fb8b47b3fe5acfdc84eac0f5
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 81b94e873538faf4684977bafc501d3565288751
+        changelog-entry: Update layers/meta-balena to 81b94e873538faf4684977bafc501d3565288751
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "mobynit: allow compile task to use network"
+              hash: 307a7ecbd1e803a901738d5eecda69e15ea2340c
+              body: |
+                Mobynit requires network access to fetch dependencies.
+              footer:
+                Signed-off-by: Joseph Kogut <joseph@balena.io>
+                signed-off-by: Joseph Kogut <joseph@balena.io>
+                Change-type: patch
+                change-type: patch
+              author: Joseph Kogut
+              nested: []
+          version: meta-balena-2.103.2
+          title: "'mobynit: allow compile task to use network'"
+          date: 2022-09-14T16:17:30.163Z
+  version: 2.103.2
+  title: "'Update layers/meta-balena digest to 81b94e8'"
+  date: 2022-09-15T13:02:47.313Z
+- commits:
     - subject: Update contracts to 7ea918011dc38f509a7ae3bce30c3391bc839dd9
       hash: 9e95290c30f7254165063c2ceae09efccbe24423
       body: Update contracts
