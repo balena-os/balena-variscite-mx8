@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v2.104.0
+## (2022-09-20)
+
+* linux-variscite: Add CW2015 battery driver for NRT [Alexandru Costache]
+* Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5 [renovate[bot]]
+
 # v2.103.3
 ## (2022-09-17)
 

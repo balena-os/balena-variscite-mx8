@@ -1,4 +1,26 @@
 - commits:
+    - subject: "linux-variscite: Add CW2015 battery driver for NRT"
+      hash: ccdb63eb093251e24687c7af55bc824326fc6c90
+      body: ""
+      footer:
+        Changelog-entry: "linux-variscite: Add CW2015 battery driver for NRT"
+        changelog-entry: "linux-variscite: Add CW2015 battery driver for NRT"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5
+      hash: 98b54c6c7d3f3ee8a8bd9493bd005d7ea59eddf1
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5
+        changelog-entry: Update layers/meta-balena to 09435bc8b96abc8fcd245eaa5e1ead0fe626cae5
+      author: renovate[bot]
+      nested: []
+  version: 2.104.0
+  title: "'linux-variscite: Add CW2015 battery driver for NRT'"
+  date: 2022-09-20T14:38:03.113Z
+- commits:
     - subject: Update layers/meta-balena to a17b3251407b74e424a6bcf7850783975c366cf0
       hash: 9505ae23674bca04312472e65c0878e4be49f946
       body: Update layers/meta-balena
