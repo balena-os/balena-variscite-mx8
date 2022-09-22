@@ -1,4 +1,30 @@
 - commits:
+    - subject: Update layers/meta-balena to d17b08668a56aa67c7b55594c3c910e66fbd4baf
+      hash: d9d53b0980cb451db68abfa99abb9e0f9f0917c3
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to d17b08668a56aa67c7b55594c3c910e66fbd4baf
+        changelog-entry: Update layers/meta-balena to d17b08668a56aa67c7b55594c3c910e66fbd4baf
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "contributing-device-support.md: Clarify repo set-up in balenaOS org"
+              hash: ef51c09db6b72bed58d4662f11717c7835611eee
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+              nested: []
+          version: meta-balena-2.105.2
+          title: "'contributing-device-support.md: Clarify repo set-up in balenaOS org'"
+          date: 2022-09-22T14:00:38.365Z
+  version: 2.105.2
+  title: "'Update layers/meta-balena digest to d17b086'"
+  date: 2022-09-22T15:01:21.641Z
+- commits:
     - subject: Update layers/meta-balena to ce91b3f1807f5dc1d1ee861a164957215757d8a0
       hash: 692229ed24ce964d4f70dd03f3e4caad925b90e6
       body: Update layers/meta-balena
