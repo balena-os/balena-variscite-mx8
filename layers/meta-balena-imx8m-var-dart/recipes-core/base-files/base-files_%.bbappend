@@ -1,4 +1,10 @@
+FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+
+SRC_URI += " \
+	file://variscite-blacklist.conf \
+"
+
 do_install_append() {
-	echo "" > ${D}${sysconfdir}/issue
-	echo "" > ${D}${sysconfdir}/issue.net
+	install -m 0755 -d ${D}${sysconfdir}/modprobe.d
+	install -m 0644 ${WORKDIR}/variscite-blacklist.conf ${D}${sysconfdir}/modprobe.d
 }
