@@ -1,4 +1,23 @@
 - commits:
+    - subject: "base-files: Remove append, mask Variscite issue file"
+      hash: ca06ca9d67c041e06713508c7cf0f8eca3f4832d
+      body: |
+        The /etc/issue file should not be empty for the
+        tests to pass. However, only recipes and recipe
+        appends can be masked, therefore we bring in the
+        append from Variscite BSP to include the blacklist
+        file.
+      footer:
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+        Changelog-entry: "base-files: Remove append, mask Variscite issue file"
+        changelog-entry: "base-files: Remove append, mask Variscite issue file"
+      author: Alexandru Costache
+      nested: []
+  version: 2.105.2+rev2
+  title: "'base-files: Remove append, mask Variscite issue file'"
+  date: 2022-09-28T13:12:44.908Z
+- commits:
     - subject: Update contracts to 766eb7591fe2b2f2cbc36af68d58627057f38193
       hash: 0b420958921e647ebedd626bb43d72bada485934
       body: Update contracts

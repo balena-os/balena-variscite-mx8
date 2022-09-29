@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.105.2+rev2
+## (2022-09-28)
+
+* base-files: Remove append, mask Variscite issue file [Alexandru Costache]
+
 # v2.105.2+rev1
 ## (2022-09-27)
 
