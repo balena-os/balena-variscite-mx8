@@ -1,4 +1,62 @@
 - commits:
+    - subject: Update contracts to 6f3ccc3060c64de164d6fd60a0bc65b2d8ceb5d3
+      hash: cc15d0a2c080c0ca37aee42627fe9f76d880eed2
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 6f3ccc3060c64de164d6fd60a0bc65b2d8ceb5d3
+        changelog-entry: Update contracts to 6f3ccc3060c64de164d6fd60a0bc65b2d8ceb5d3
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: Update dotnet 6.0 and 3.1 to latest version
+              hash: e6e9c6d41b73dbbf15ea777d7fb54761389c16d8
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add Python v3.10.7 v3.9.14 v3.8.14 and v3.7.14
+              hash: 238cdd69f9e48dd1b8192ec90dc9bca37a97f2a6
+              body: |
+                Update pip to v22.2.2
+                Update setuptools to v65.4.1
+                Update dbus-python to v1.3.2
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.19
+          title: ""
+          date: 2022-10-05T09:13:06.785Z
+        - commits:
+            - subject: Switch from balenaCI to flowzone
+              hash: 9e06ba17acf1c3333c6c2ef7f0ba6a7b7bf088f9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.18
+          title: ""
+          date: 2022-10-05T09:07:08.310Z
+    - subject: Update layers/meta-balena to cf01401eff54d9fd3a4fd1247f4d3f059619c2d3
+      hash: e6768ffbe4805a809601828c379e1ed9065e6575
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to cf01401eff54d9fd3a4fd1247f4d3f059619c2d3
+        changelog-entry: Update layers/meta-balena to cf01401eff54d9fd3a4fd1247f4d3f059619c2d3
+      author: renovate[bot]
+      nested: []
+  version: 2.105.9
+  title: "'Update contracts digest to 6f3ccc3'"
+  date: 2022-10-12T02:42:54.791Z
+- commits:
     - subject: "base-files: Remove append, mask Variscite issue file"
       hash: ca06ca9d67c041e06713508c7cf0f8eca3f4832d
       body: |
