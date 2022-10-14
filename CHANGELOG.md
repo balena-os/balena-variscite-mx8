@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.105.9+rev1
+## (2022-10-14)
+
+* Switch from balenaCI to flowzone [Alex Gonzalez]
+
 # v2.105.9
 ## (2022-10-12)
 
