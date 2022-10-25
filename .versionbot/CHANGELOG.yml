@@ -1,4 +1,40 @@
 - commits:
+    - subject: Update layers/meta-balena to ad75f015f985b1dff097568475d80c05924bfdae
+      hash: 2d3ff3800c1bfb363b7e7ebd448c4515b37c2833
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to ad75f015f985b1dff097568475d80c05924bfdae
+        changelog-entry: Update layers/meta-balena to ad75f015f985b1dff097568475d80c05924bfdae
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: Update tests/leviathan digest to f83df7d
+              hash: fb3a49ca995fb2553f1b635cdf06559a239f92ed
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested:
+                - commits:
+                    - subject: "minor: Add @balena/leviathan-test-helpers package"
+                      hash: 47f061bef9a6bc73782599ad8ab0add43d10883b
+                      body: ""
+                      footer:
+                        Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                        signed-off-by: Vipul Gupta (@vipulgupta2048) <vipul@balena.io>
+                      author: Vipul Gupta (@vipulgupta2048)
+                      nested: []
+                  version: leviathan-2.10.0
+                  title: ""
+                  date: 2022-10-25T13:23:40.230Z
+          version: meta-balena-2.105.18
+          title: ""
+          date: 2022-10-25T16:35:47.720Z
+  version: 2.105.18
+  title: ""
+  date: 2022-10-25T22:21:22.176Z
+- commits:
     - subject: Update balena-yocto-scripts to 7c5b9c44fbd4039c3387c8b74e8efae8fa9f37d6
       hash: a5ea31c9d53b08295311b7299cce9b56615ab628
       body: Update balena-yocto-scripts
