@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.105.19
+## (2022-10-26)
+
+
+<details>
+<summary> Update layers/meta-balena to 38055be70d9113801797d97ddeac00012c5b151c [renovate[bot]] </summary>
+
+> ## meta-balena-2.105.19
+> ### (2022-10-26)
+> 
+> * meta-resin-sumo: keep tpm2-tools in 5.0 [Alex Gonzalez]
+> 
+</details>
+
 # v2.105.18+rev1
 ## (2022-10-26)
 
