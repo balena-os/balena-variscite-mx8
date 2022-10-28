@@ -1,6 +1,20 @@
 Change log
 -----------
 
+# v2.105.21+rev2
+## (2022-10-28)
+
+
+<details>
+<summary> Update contracts to 3690dee624859ed23f2ee9afaa112638cda5cee3 [renovate[bot]] </summary>
+
+> ## contracts-2.0.25
+> ### (2022-10-27)
+> 
+> * Fix incorrect partials in device type contracts [Micah Halter]
+> 
+</details>
+
 # v2.105.21+rev1
 ## (2022-10-27)
 
