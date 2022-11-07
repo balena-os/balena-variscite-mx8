@@ -1,4 +1,38 @@
 - commits:
+    - subject: Update contracts to 29ecc3f3077027524ea9540cbaa81a12b265d42c
+      hash: 010ab5e06fb95eac45888f78c04615f059cfe9c0
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 29ecc3f3077027524ea9540cbaa81a12b265d42c
+        changelog-entry: Update contracts to 29ecc3f3077027524ea9540cbaa81a12b265d42c
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: Add go v1.19.3 and v1.18.8
+              hash: 7c66a3e29c17db2ac969d4f26b35eba4284aca8d
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+            - subject: Add node v19.0.1 v16.18.1 and v14.21.1
+              hash: 731e93e6d60858850265f0619aa30ca35c897585
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.27
+          title: ""
+          date: 2022-11-07T11:10:43.480Z
+  version: 2.105.27+rev1
+  title: ""
+  date: 2022-11-07T15:10:33.544Z
+- commits:
     - subject: Update layers/meta-balena to 4f26a52c25bd3b246cc623b271873891da2fd737
       hash: 109d98b0634cb6d3f9f6a0a6468accff2dbd5665
       body: Update layers/meta-balena
