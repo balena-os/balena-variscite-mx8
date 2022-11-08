@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.105.29+rev1
+## (2022-11-08)
+
+* linux-variscite: Add CW2015 battery driver for NRT [Alexandru Costache]
+
 # v2.105.29
 ## (2022-11-07)
 
