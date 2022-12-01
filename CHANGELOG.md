@@ -1,6 +1,47 @@
 Change log
 -----------
 
+# v2.107.14
+## (2022-12-01)
+
+
+<details>
+<summary> Update layers/meta-balena to 8ea20f929eeb3f52b23874c3bd951c961329ad29 [renovate[bot]] </summary>
+
+> ## meta-balena-2.107.14
+> ### (Invalid date)
+> 
+> * test: os: fix search for active interface [rcooke-warwick]
+> 
+> ## meta-balena-2.107.13
+> ### (2022-11-29)
+> 
+> * balena-image-flasher: Include LUKS variant of GRUB config with FDE in place [Michal Toman]
+> 
+> ## meta-balena-2.107.12
+> ### (2022-11-28)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 61016ad [renovate[bot]] </summary>
+> 
+>> ### leviathan-2.10.4
+>> #### (2022-11-25)
+>> 
+>> * bump contracts to 2.0.27 [rcooke-warwick]
+>> 
+>> ### leviathan-2.10.3
+>> #### (2022-11-24)
+>> 
+>> * On Apple Silicon we should install balena CLI via npm [Kyle Harding]
+>> 
+> </details>
+> 
+> 
+</details>
+
+* Update contracts to 5d83fa7ad3a0c95db49ee465c9a77845611f3a3b [renovate[bot]]
+
 # v2.107.11
 ## (2022-11-26)
 

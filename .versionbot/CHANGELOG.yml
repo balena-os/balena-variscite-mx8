@@ -1,4 +1,99 @@
 - commits:
+    - subject: Update layers/meta-balena to 8ea20f929eeb3f52b23874c3bd951c961329ad29
+      hash: ef5d21bdc4f1672c784b5b4f45c62c7e5d0fd261
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 8ea20f929eeb3f52b23874c3bd951c961329ad29
+        changelog-entry: Update layers/meta-balena to 8ea20f929eeb3f52b23874c3bd951c961329ad29
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "test: os: fix search for active interface"
+              hash: 45c5fd9850e5cdcf5360d6910b3fde253b9629a9
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-2.107.14
+          title: ""
+          date: 2022-11-30T09:07:27.223Z
+        - commits:
+            - subject: "balena-image-flasher: Include LUKS variant of GRUB config with FDE in
+                place"
+              hash: 87b65de7f8506b0a7796d007145a230228b5ae06
+              body: >
+                There are two GRUB config variants - one for regular devices and one
+
+                for devices with FDE enabled. This commit makes flasher include the latter
+
+                in the boot partition when secure boot and FDE is included in the image.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+          version: meta-balena-2.107.13
+          title: ""
+          date: 2022-11-29T13:54:47.975Z
+        - commits:
+            - subject: Update tests/leviathan digest to 61016ad
+              hash: a40308833e556d9d5c0a8db88ca17c6376e6caab
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: renovate[bot]
+              nested:
+                - commits:
+                    - subject: bump contracts to 2.0.27
+                      hash: 3ff1c8e5bf93d185b2f048579ad86539abbfd420
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                  version: leviathan-2.10.4
+                  title: ""
+                  date: 2022-11-25T12:20:52.662Z
+                - commits:
+                    - subject: On Apple Silicon we should install balena CLI via npm
+                      hash: ccdd4ff5b3255738f24e91ea3202fbf43706acfa
+                      body: >
+                        On x86 we should use the standalone package to save time.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Kyle Harding <kyle@balena.io>
+                        signed-off-by: Kyle Harding <kyle@balena.io>
+                      author: Kyle Harding
+                      nested: []
+                  version: leviathan-2.10.3
+                  title: ""
+                  date: 2022-11-24T14:41:23.842Z
+          version: meta-balena-2.107.12
+          title: ""
+          date: 2022-11-28T12:47:31.350Z
+    - subject: Update contracts to 5d83fa7ad3a0c95db49ee465c9a77845611f3a3b
+      hash: 6814d5f73dbc1cf4d4e3116e2457588b0a962963
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 5d83fa7ad3a0c95db49ee465c9a77845611f3a3b
+        changelog-entry: Update contracts to 5d83fa7ad3a0c95db49ee465c9a77845611f3a3b
+      author: renovate[bot]
+      nested: []
+  version: 2.107.14
+  title: ""
+  date: 2022-12-01T01:39:20.639Z
+- commits:
     - subject: Update layers/meta-balena to a539a5fb1d5c036bf513e52e243634722344d4c7
       hash: 21d38348e25737e5c4ec8b18db61d1780f28bf72
       body: Update layers/meta-balena
