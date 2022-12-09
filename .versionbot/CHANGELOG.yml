@@ -1,4 +1,19 @@
 - commits:
+    - subject: "conf/layer: Enable firmware compression for imx8m-var-dart"
+      hash: 2f371057c4d64f0524d47791b3441fe843b74f98
+      body: |
+        ... to save some space
+      footer:
+        Changelog-entry: "conf/layer: Enable firmware compression for imx8m-var-dart"
+        changelog-entry: "conf/layer: Enable firmware compression for imx8m-var-dart"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.107.14+rev1
+  title: ""
+  date: 2022-12-09T19:47:28.687Z
+- commits:
     - subject: Update layers/meta-balena to 8ea20f929eeb3f52b23874c3bd951c961329ad29
       hash: ef5d21bdc4f1672c784b5b4f45c62c7e5d0fd261
       body: Update layers/meta-balena

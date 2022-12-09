@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.107.14+rev1
+## (2022-12-09)
+
+* conf/layer: Enable firmware compression for imx8m-var-dart [Alexandru Costache]
+
 # v2.107.14
 ## (2022-12-01)
 
