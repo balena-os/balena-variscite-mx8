@@ -1,4 +1,4 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 DESCRIPTION = "Systemd services used for powering down/up wifi & bt when suspending to RAM"
 LICENSE = "MIT"
@@ -10,7 +10,7 @@ SRC_URI = "file://imx-suspend.service \
            file://imx-resume.service \
 "
 
-RDEPENDS_${PN} = " bash systemd"
+RDEPENDS:${PN} = " bash systemd"
 
 do_install () {
    install -d ${D}/${systemd_unitdir}/system
@@ -18,4 +18,4 @@ do_install () {
    install -m 644 ${WORKDIR}/imx-resume.service  ${D}/${systemd_unitdir}/system/imx-resume.service
 }
 
-SYSTEMD_SERVICE_${PN} = "imx-suspend.service imx-resume.service"
+SYSTEMD_SERVICE:${PN} = "imx-suspend.service imx-resume.service"
