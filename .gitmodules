@@ -20,10 +20,6 @@
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/balena-os/poky
-	branch = dunfell
-[submodule "layers/meta-laird-cp"]
-	path = layers/meta-laird-cp
-	url = https://github.com/LairdCP/meta-laird-cp.git
 [submodule "contracts"]
 	path = contracts
 	url = https://github.com/balena-io/contracts.git
