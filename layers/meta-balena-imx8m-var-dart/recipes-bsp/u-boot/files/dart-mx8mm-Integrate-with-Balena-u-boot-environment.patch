@@ -1,32 +1,27 @@
-From 6fa3fc7924750f971d9f1932377e23480bc87d32 Mon Sep 17 00:00:00 2001
+From b18cca7036c7cb342a22611e78e1ba91019f91f3 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 25 May 2021 11:56:49 +0200
-Subject: [PATCH] dart-mx8mm: Integrate with Balena u-boot environment
+Date: Mon, 12 Dec 2022 16:38:55 +0100
+Subject: [PATCH] imx8mm-var-dart: Integrate iMX8MM DART and SOM with balenaOS
 
-Upstream-Status: Inappropriate [configuration]
-Signed-off-by: Alexandru Costache <alexandru@resin.io>
+This includes custom dtb support in u-boot
+and is adapted to the updated u-boot 2021
+provided with kernel 5.10+
+
+Upstream-status: Inaproppriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- configs/imx8mm_var_dart_defconfig | 11 ++++++++++-
- include/configs/imx8mm_var_dart.h | 14 +++++++++-----
- 2 files changed, 19 insertions(+), 6 deletions(-)
+ configs/imx8mm_var_dart_defconfig |  9 +++++++++
+ include/configs/imx8mm_var_dart.h | 32 +++++++++++++++++++++----------
+ 2 files changed, 31 insertions(+), 10 deletions(-)
 
 diff --git a/configs/imx8mm_var_dart_defconfig b/configs/imx8mm_var_dart_defconfig
-index 7adfa26926..5043f6ad2e 100644
+index 599eaf5c4e..22e4e0f11b 100644
 --- a/configs/imx8mm_var_dart_defconfig
 +++ b/configs/imx8mm_var_dart_defconfig
-@@ -10,7 +10,7 @@ CONFIG_SYS_I2C_MXC_I2C1=y
- CONFIG_SYS_I2C_MXC_I2C2=y
- CONFIG_SYS_I2C_MXC_I2C3=y
- CONFIG_SYS_I2C_MXC_I2C4=y
--CONFIG_ENV_SIZE=0x1000
-+CONFIG_ENV_SIZE=0x4000
- CONFIG_ENV_OFFSET=0x400000
- CONFIG_DM_GPIO=y
- CONFIG_TARGET_IMX8MM_VAR_DART=y
-@@ -109,3 +109,12 @@ CONFIG_USB_GADGET_PRODUCT_NUM=0xa4a5
- CONFIG_CI_UDC=y
- CONFIG_SDP_LOADADDR=0x40400000
- CONFIG_OF_LIBFDT_OVERLAY=y
+@@ -154,3 +154,12 @@ CONFIG_EFI_IGNORE_OSINDICATIONS=y
+ CONFIG_EFI_CAPSULE_FIRMWARE_RAW=y
+ CONFIG_EFI_SECURE_BOOT=y
+ # CONFIG_OPTEE_LIB is not set
 +CONFIG_CMD_IMPORTENV=y
 +CONFIG_FS_UUID=y
 +CONFIG_CMD_PART=y
@@ -37,27 +32,48 @@ index 7adfa26926..5043f6ad2e 100644
 +CONFIG_CMD_EXPORTENV=y
 +CONFIG_PARTITION_UUIDS=y
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index 0045663f33..b00e8ba245 100644
+index 9368674a36..54fc7aefb6 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -100,12 +100,12 @@
- 				"setenv console ttymxc0,115200; " \
- 			"fi; " \
- 		"fi; \0" \
--	"mmcargs=run setconsole; setenv bootargs console=${console} " \
--		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size}\0 " \
--	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${script};\0" \
-+        "mmcargs=setenv bootargs console=${console} ${resin_kernel_root} rootwait rw ${os_cmdline} " \
-+                " ${cma_size}\0 " \
-+        "loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
+@@ -109,28 +109,36 @@
+ 		"fi; " \
+ 		"bootaux ${m4_addr};\0" \
+ 	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
+-	"mmcargs=setenv bootargs console=${console} " \
+-		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size} cma_name=linux,cma\0 " \
+-	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${bsp_script};\0" \
++	"mmcargs=setenv bootargs console=${console} ${resin_kernel_root} rootwait rw ${os_cmdline} " \
++		" ${cma_size}\0 " \
++	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
 -	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${bootdir}/${image};" \
-+        "loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
++	"loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
  		"unzip ${img_addr} ${loadaddr}\0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
-@@ -125,7 +125,7 @@
+-			"if test $board_name = VAR-SOM-MX8M-MINI; then " \
+-				"setenv fdt_file imx8mm-var-som-symphony.dtb; " \
++			"if test -n ${custom_fdt_file}; then " \
++				"setenv fdt_file ${custom_fdt_file}; " \
+ 			"else " \
+-				"if test $carrier_rev = legacy; then " \
+-					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
++				"if test $board_name = VAR-SOM-MX8M-MINI; then " \
++					"if test $carrier_rev = legacy; then " \
++						"setenv fdt_file imx8mm-var-som-symphony-legacy.dtb; " \
++					"else " \
++						"setenv fdt_file imx8mm-var-som-symphony.dtb; " \
++					"fi; " \
+ 				"else " \
+-					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++					"if test $carrier_rev = legacy; then " \
++						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
++					"else " \
++						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++					"fi; " \
+ 				"fi; " \
+ 			"fi; " \
  		"fi; \0" \
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
@@ -66,9 +82,9 @@ index 0045663f33..b00e8ba245 100644
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
  			"setenv cma_size cma=320M; " \
-@@ -170,6 +170,10 @@
- 
- #define CONFIG_BOOTCOMMAND \
+@@ -178,6 +186,10 @@
+ 		"fi;\0" \
+ 	"bsp_bootcmd=echo Running BSP bootcmd ...; " \
  	"run ramsize_check; " \
 +        "setenv resin_kernel_load_addr ${loadaddr};" \
 +        "run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
@@ -78,5 +94,5 @@ index 0045663f33..b00e8ba245 100644
  	"if mmc rescan; then " \
  		"if test ${use_m4} = yes && run loadm4bin; then " \
 -- 
-2.17.1
+2.37.2
 
