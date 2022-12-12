@@ -43,7 +43,7 @@ DISTRO ?= "resin-systemd"
 RM_OLD_IMAGE = "1"
 
 # Additional image features
-USER_CLASSES ?= "buildstats image-mklibs image-prelink"
+USER_CLASSES ?= "buildstats"
 
 # By default disable interactive patch resolution (tasks will just fail instead):
 PATCHRESOLVE = "noop"
@@ -57,11 +57,11 @@ BB_DISKMON_DIRS = "\
     ABORT,${DL_DIR},100M,1K \
     ABORT,${SSTATE_DIR},100M,1K"
 
-CONF_VERSION = "1"
+CONF_VERSION = "2"
 
 # the BSP layer (meta-variscite-fslc) now introduces the need for cc as a host tool (the gcc package)
 # we remove it as we don't use it and we have no need for the gcc suite to be installed in the build env
-HOSTTOOLS_remove = "cc"
+HOSTTOOLS:remove = "cc"
 
 # Allow use of host docker from recipes
 HOSTTOOLS += "docker iptables"
