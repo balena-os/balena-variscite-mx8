@@ -1,6 +1,6 @@
 
 # Like for the coral board, remove these patches are already present
-SRC_URI_remove = " \
+SRC_URI:remove = " \
     file://0009-Sync-with-mac80211-next.git-include-uapi-linux-nl802.patch \
     file://0010-Sync-with-mac80211-next.git-include-uapi-linux-nl802.patch \
     file://0011-Sync-with-mac80211-next.git-include-uapi-linux-nl802.patch \
