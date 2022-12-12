@@ -21,8 +21,9 @@ BALENA_CONFIGS[imx-sdma] = " \
 #file://0001-Add-identification-led.patch 
 
 SRC_URI:append:imx8mm-var-dart = " \
+	file://0001-Avoid-hang-at-boot-if-pcie-oscillator-not-present.patch \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.142.patch \
-	file://0001-imx8mm-test-avoid-pci-hang-no-oscillator.patch \
+	file://0001-Enable-spidev0.0-on-kernel-5.10-for-iMX8M-Mini-VAR-S.patch \
 "
 
 # RT patch patch-5.4.82-rt46.patch taken from
