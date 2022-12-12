@@ -13,10 +13,6 @@
 [submodule "layers/meta-balena"]
 	path = layers/meta-balena
 	url = https://github.com/balena-os/meta-balena.git
-	branch = master
-[submodule "layers/meta-rust"]
-	path = layers/meta-rust
-	url = https://github.com/meta-rust/meta-rust.git
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/balena-os/poky
