@@ -1,6 +1,6 @@
-From 51b2b4d6e92104516d0d79137caf3953290b8e92 Mon Sep 17 00:00:00 2001
+From f936515a3b4d76b1da25102cc1079d29d670ae65 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Fri, 10 Jun 2022 18:03:56 +0200
+Date: Wed, 14 Dec 2022 12:20:12 +0100
 Subject: [PATCH] imx8m_var_dart:  Use custom_fdt_file if defined
 
 his assumes the Supervisor adds the custom device tree name
@@ -16,10 +16,10 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 14 insertions(+), 10 deletions(-)
 
 diff --git a/include/configs/imx8mq_var_dart.h b/include/configs/imx8mq_var_dart.h
-index 5dbbe2a258..dc296bb938 100644
+index f02ac2ce09..36f0b11cf7 100644
 --- a/include/configs/imx8mq_var_dart.h
 +++ b/include/configs/imx8mq_var_dart.h
-@@ -116,18 +116,22 @@
+@@ -132,18 +132,22 @@
  		"fi;\0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
@@ -47,11 +47,11 @@ index 5dbbe2a258..dc296bb938 100644
 +						"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-wifi-hdmi.dtb; " \
 +					"else " \
 +						"setenv fdt_file imx8mq-var-dart-dt8mcustomboard-sd-hdmi.dtb; " \
-+        	                        "fi; " \
++					"fi; " \
 +				"fi; " \
  			"fi; " \
  		"fi; \0" \
  	"loadfdt=run findfdt; " \
 -- 
-2.17.1
+2.37.2
 
