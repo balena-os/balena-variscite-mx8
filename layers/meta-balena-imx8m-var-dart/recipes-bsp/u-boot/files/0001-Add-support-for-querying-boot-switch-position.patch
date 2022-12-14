@@ -122,7 +122,7 @@ index 0000000000..8e0c66809f
 +
 +int is_boot_switch(const char*);
 +
-+static int do_bootswitchpos(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
++static int do_bootswitchpos(struct cmd_tbl *cmdtp, int flag, int argc, char * const argv[])
 +{
 +       if (argc < 2) {
 +               printf(USAGE);
