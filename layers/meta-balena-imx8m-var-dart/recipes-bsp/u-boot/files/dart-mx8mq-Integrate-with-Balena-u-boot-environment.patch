@@ -1,41 +1,50 @@
-From ecb37d0a929bc1e38141cde04353943d7ea90d41 Mon Sep 17 00:00:00 2001
+From c3902b135f880a268c9b97b16ea09fc6d1f05e20 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 1 Jun 2021 09:31:42 +0200
+Date: Wed, 14 Dec 2022 12:16:05 +0100
 Subject: [PATCH] dart-mx8m: Integrate with Balena u-boot environment
 
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- configs/imx8mq_var_dart_defconfig | 12 ++++++++++--
+ configs/imx8mq_var_dart_defconfig | 28 ++++++++++++++++++----------
  include/configs/imx8mq_var_dart.h | 25 +++++++++++++++++++------
- 2 files changed, 29 insertions(+), 8 deletions(-)
+ 2 files changed, 37 insertions(+), 16 deletions(-)
 
 diff --git a/configs/imx8mq_var_dart_defconfig b/configs/imx8mq_var_dart_defconfig
-index 774f82711c..1a123d3c41 100644
+index 77f7dfeb64..45449cee5d 100644
 --- a/configs/imx8mq_var_dart_defconfig
 +++ b/configs/imx8mq_var_dart_defconfig
-@@ -9,7 +9,7 @@ CONFIG_SPL_LIBGENERIC_SUPPORT=y
- CONFIG_SYS_I2C_MXC_I2C1=y
- CONFIG_SYS_I2C_MXC_I2C2=y
- CONFIG_SYS_I2C_MXC_I2C3=y
--CONFIG_ENV_SIZE=0x1000
-+CONFIG_ENV_SIZE=0x4000
- CONFIG_ENV_OFFSET=0x400000
- CONFIG_DM_GPIO=y
- CONFIG_TARGET_IMX8MQ_VAR_DART=y
-@@ -64,7 +64,7 @@ CONFIG_CMD_FAT=y
- CONFIG_CMD_FS_GENERIC=y
+@@ -75,7 +75,7 @@ CONFIG_CMD_REGULATOR=y
+ CONFIG_CMD_EXT4_WRITE=y
  CONFIG_OF_CONTROL=y
- CONFIG_DEFAULT_DEVICE_TREE="imx8mq-var-dart-customboard"
+ CONFIG_ENV_OVERWRITE=y
 -CONFIG_ENV_IS_IN_MMC=y
-+CONFIG_ENV_IS_IN_MMC=n
++CONFIG_ENV_IS_IN_MMC=y
  CONFIG_SYS_RELOC_GD_ENV_ADDR=y
+ CONFIG_SYS_MMC_ENV_DEV=1
  CONFIG_ENV_VARS_UBOOT_RUNTIME_CONFIG=y
- CONFIG_NET_RANDOM_ETHADDR=y
-@@ -114,3 +114,11 @@ CONFIG_VIDEO_IMX8M_DCSS=y
- CONFIG_VIDEO_IMX8M_HDMI=y
+@@ -156,12 +156,20 @@ CONFIG_SHA384=y
+ CONFIG_LZO=y
+ CONFIG_BZIP2=y
  CONFIG_OF_LIBFDT_OVERLAY=y
- # CONFIG_EFI_LOADER is not set
+-CONFIG_EFI_MM_COMM_TEE=y
+-CONFIG_EFI_VAR_BUF_SIZE=139264
+-CONFIG_EFI_SET_TIME=y
+-CONFIG_EFI_RUNTIME_UPDATE_CAPSULE=y
+-CONFIG_EFI_CAPSULE_ON_DISK=y
+-CONFIG_EFI_IGNORE_OSINDICATIONS=y
+-CONFIG_EFI_CAPSULE_FIRMWARE_RAW=y
+-CONFIG_EFI_CAPSULE_AUTHENTICATE=y
+-CONFIG_EFI_SECURE_BOOT=y
++#CONFIG_EFI_MM_COMM_TEE=y
++#CONFIG_EFI_VAR_BUF_SIZE=139264
++#CONFIG_EFI_SET_TIME=y
++#CONFIG_EFI_RUNTIME_UPDATE_CAPSULE=y
++#CONFIG_EFI_CAPSULE_ON_DISK=y
++#CONFIG_EFI_IGNORE_OSINDICATIONS=y
++#CONFIG_EFI_CAPSULE_FIRMWARE_RAW=y
++#CONFIG_EFI_CAPSULE_AUTHENTICATE=y
++#CONFIG_EFI_SECURE_BOOT=y
 +CONFIG_CMD_EXPORTENV=y
 +CONFIG_CMD_IMPORTENV=y
 +CONFIG_CMD_FS_UUID=y
@@ -45,15 +54,15 @@ index 774f82711c..1a123d3c41 100644
 +CONFIG_CMD_EXT4=y
 +CONFIG_CMD_FAT=y
 diff --git a/include/configs/imx8mq_var_dart.h b/include/configs/imx8mq_var_dart.h
-index 84794069cf..5dbbe2a258 100644
+index 701fd2debe..f02ac2ce09 100644
 --- a/include/configs/imx8mq_var_dart.h
 +++ b/include/configs/imx8mq_var_dart.h
-@@ -94,11 +94,11 @@
+@@ -106,11 +106,11 @@
  		"bootaux ${m4_addr};\0" \
  	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
  	"mmcargs=setenv bootargs console=${console} " \
--		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size}\0" \
--	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${script};\0" \
+-		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size} cma_name=linux,cma\0" \
+-	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${bsp_script};\0" \
 +		"${resin_kernel_root} rootwait rw ${cma_size} ${os_cmdline}\0" \
 +	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr}\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
@@ -63,7 +72,7 @@ index 84794069cf..5dbbe2a258 100644
  		"unzip ${img_addr} ${loadaddr}\0" \
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
-@@ -117,14 +117,22 @@
+@@ -133,14 +133,22 @@
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
  			"if test $carrier_rev = legacy; then " \
@@ -84,23 +93,23 @@ index 84794069cf..5dbbe2a258 100644
  		"fi; \0" \
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
--		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${bootdir}/${fdt_file}\0" \
+-		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr_r} ${bootdir}/${fdt_file}\0" \
 +		"load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}\0" \
  	"mmcboot=echo Booting from mmc ...; " \
  		"run mmcargs; " \
  		"run optargs; " \
-@@ -169,6 +177,11 @@
- 
- #define CONFIG_BOOTCOMMAND \
- 	   "run ramsize_check; " \
-+	   "setenv resin_kernel_load_addr ${loadaddr};" \
-+	   "run resin_set_kernel_root; run set_os_cmdline;" \
-+	   "setenv mmcdev ${resin_dev_index};" \
-+	   "setenv mmcbootpart ${resin_boot_part};" \
-+	   "gpio set 137; " \
- 	   "mmc dev ${mmcdev}; if mmc rescan; then " \
- 		   "if test ${use_m4} = yes && run loadm4bin; then " \
- 			   "run runm4bin; " \
+@@ -184,6 +192,11 @@
+ 	"splashdisable=setenv splashfile; setenv splashimage\0" \
+ 	"bsp_bootcmd=echo Running BSP bootcmd ...; " \
+ 	"run ramsize_check; " \
++	"setenv resin_kernel_load_addr ${loadaddr};" \
++	"run resin_set_kernel_root; run set_os_cmdline;" \
++	"setenv mmcdev ${resin_dev_index};" \
++	"setenv mmcbootpart ${resin_boot_part};" \
++	"gpio set 137; " \
+ 	"mmc dev ${mmcdev}; "\
+ 	"if mmc rescan; then " \
+ 		"if test ${use_m4} = yes && run loadm4bin; then " \
 -- 
-2.17.1
+2.37.2
 
