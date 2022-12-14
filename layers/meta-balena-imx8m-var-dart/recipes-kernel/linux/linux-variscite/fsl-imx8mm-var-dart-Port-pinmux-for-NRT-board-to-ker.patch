@@ -1,25 +1,26 @@
-From 12d19fff5135857e80e5b56d1aae7fb8c3bed56a Mon Sep 17 00:00:00 2001
+From 8e03ab6a121b4f280f26412b42a532ee14df265b Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 18 May 2022 15:58:25 +0200
+Date: Wed, 14 Dec 2022 16:05:01 +0100
 Subject: [PATCH] fsl-imx8mm-var-dart: Port pinmux for NRT board to kernel 
- 5.4.142
+ 5.15.60
 
 Changes are according to "New OS ... 1 - v1.2.0.pdf"
+visible in Front
 
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
  ...imx8mm-var-dart-dt8mcustomboard-legacy.dts |  12 --
- .../imx8mm-var-dart-dt8mcustomboard.dts       |  36 +-----
- .../boot/dts/freescale/imx8mm-var-dart.dtsi   | 118 ++++--------------
- 3 files changed, 26 insertions(+), 140 deletions(-)
+ .../imx8mm-var-dart-dt8mcustomboard.dts       |  38 +----
+ .../boot/dts/freescale/imx8mm-var-dart.dtsi   | 136 ++++--------------
+ 3 files changed, 26 insertions(+), 160 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts
-index f960d3b1da2b..b3c4544de647 100644
+index b1a6fe56c92a..edd6466fd809 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts
-@@ -48,10 +48,6 @@
- 	/delete-property/ microchip,rx-int-gpios;
+@@ -46,10 +46,6 @@ &can0 {
+ 	/delete-property/ microchip,rx-interrupt;
  };
  
 -&ft5x06_ts {
@@ -29,7 +30,7 @@ index f960d3b1da2b..b3c4544de647 100644
  &ov5640_mipi1 {
  	pinctrl-names = "default";
  	pinctrl-0 = <&pinctrl_csi1>;
-@@ -80,14 +76,6 @@
+@@ -76,14 +72,6 @@ pinctrl_can: cangrp {
  			MX8MM_IOMUXC_GPIO1_IO06_GPIO1_IO6		0x16
  		>;
  	};
@@ -45,16 +46,15 @@ index f960d3b1da2b..b3c4544de647 100644
  		fsl,pins = <
  			MX8MM_IOMUXC_SAI1_TXD3_GPIO4_IO15		0x1c6
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
-index 5c8213235681..78bfe667bf22 100644
+index 76472e922bb9..9bfce231d0d9 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
-@@ -158,23 +158,6 @@
- 	sda-gpios = <&gpio5 17 GPIO_ACTIVE_HIGH>;
- 	status = "okay";
+@@ -129,23 +129,6 @@ typec1_dr_sw: endpoint {
+ 		};
+ 	};
  
 -	/* Capacitive touch controller */
 -	ft5x06_ts: ft5x06_ts@38 {
--		status = "okay";
 -		compatible = "edt,edt-ft5206";
 -		reg = <0x38>;
 -		pinctrl-names = "default";
@@ -67,26 +67,28 @@ index 5c8213235681..78bfe667bf22 100644
 -		touchscreen-inverted-x;
 -		touchscreen-inverted-y;
 -		wakeup-source;
+-		status = "okay";
 -	};
 -
  	ov5640_mipi1: ov5640_mipi1@3c {
- 		status = "okay";
  		compatible = "ovti,ov5640_mipi";
-@@ -312,12 +295,8 @@
+ 		reg = <0x3c>;
+@@ -327,13 +310,7 @@ &uart2 {
+ 	status = "okay";
  };
  
- /* Header */
+-/* Header */
 -&uart3 {
 -	pinctrl-names = "default";
 -	pinctrl-0 = <&pinctrl_uart3>;
 -	status = "okay";
 -};
- 
+-
 +/* uart3 TXD used by gpio5 27 */
  &usbotg1 {
  	dr_mode = "otg";
- 	picophy,pre-emp-curr-control = <3>;
-@@ -414,13 +393,6 @@
+ 	hnp-disable;
+@@ -462,13 +439,6 @@ MX8MM_IOMUXC_UART2_TXD_UART2_DCE_TX		0x140
  		>;
  	};
  
@@ -97,10 +99,10 @@ index 5c8213235681..78bfe667bf22 100644
 -		>;
 -	};
 -
- 	pinctrl_usdhc2: usdhc2grp {
+ 	pinctrl_reg_usdhc2_vmmc: regusdhc2vmmc {
  		fsl,pins = <
- 			MX8MM_IOMUXC_SD2_CLK_USDHC2_CLK			0x190
-@@ -470,12 +442,6 @@
+ 			MX8MM_IOMUXC_SD2_RESET_B_GPIO2_IO19		0xc1
+@@ -523,12 +493,6 @@ MX8MM_IOMUXC_GPIO1_IO01_PWM1_OUT		0x06
  		>;
  	};
  
@@ -110,17 +112,45 @@ index 5c8213235681..78bfe667bf22 100644
 -		>;
 -	};
 -
- 	pinctrl_leds: ledgrp {
+ 	pinctrl_extcon: extcongrp {
  		fsl,pins = <
- 			MX8MM_IOMUXC_SAI1_TXD6_GPIO4_IO18		0x1c6
+ 			MX8MM_IOMUXC_GPIO1_IO10_GPIO1_IO10		0x19
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
-index fb1ee4a20a5f..19f95ab8f2e4 100644
+index 23dba5d939f1..551903e24b29 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
-@@ -34,38 +34,6 @@
+@@ -50,55 +50,6 @@ reserved-memory {
  		/* cma region is provided by kernel command line as cma=<size>M */
  		/delete-node/ linux,cma;
  	};
+-
+-	sound-wm8904 {
+-		compatible = "simple-audio-card";
+-		simple-audio-card,bitclock-master = <&dailink_master>;
+-		simple-audio-card,format = "i2s";
+-		simple-audio-card,frame-master = <&dailink_master>;
+-		simple-audio-card,name = "wm8904-audio";
+-		simple-audio-card,routing =
+-			"Headphone Jack", "HPOUTL",
+-			"Headphone Jack", "HPOUTR",
+-			"IN2L", "Line In Jack",
+-			"IN2R", "Line In Jack",
+-			"IN1L", "Microphone Jack",
+-			"IN1R", "Microphone Jack";
+-		simple-audio-card,widgets =
+-			"Microphone", "Microphone Jack",
+-			"Headphone", "Headphone Jack",
+-			"Line", "Line In Jack";
+-		simple-audio-card,mclk-fs = <256>;
+-
+-		dailink_master: simple-audio-card,codec {
+-			sound-dai = <&wm8904>;
+-		};
+-
+-		simple-audio-card,cpu {
+-			sound-dai = <&sai3>;
+-		};
+-	};
 -
 -	sound-spdif {
 -		compatible = "fsl,imx-audio-spdif";
@@ -132,43 +162,73 @@ index fb1ee4a20a5f..19f95ab8f2e4 100644
 -	};
 -
 -	sound-micfil {
--		compatible = "fsl,imx-audio-micfil";
+-		compatible = "fsl,imx-audio-card";
 -		model = "imx-audio-micfil";
--		cpu-dai = <&micfil>;
--		status = "disabled";
--	};
--
--	sound-wm8904 {
--		compatible = "fsl,imx-audio-wm8904";
--		model = "imx-wm8904";
--		audio-cpu = <&sai3>;
--		audio-codec = <&wm8904>;
--		audio-routing =
--			"Headphone Jack", "HPOUTL",
--			"Headphone Jack", "HPOUTR",
--			"IN2L", "Line In Jack",
--			"IN2R", "Line In Jack",
--			"IN1L", "Mic Jack",
--			"Playback", "CPU-Playback",
--			"CPU-Capture", "Capture";
--		status = "okay";
+-		pri-dai-link {
+-			link-name = "micfil hifi";
+-			format = "i2s";
+-			cpu {
+-				sound-dai = <&micfil>;
+-			};
+-		};
 -	};
  };
  
  &A53_0 {
-@@ -83,7 +51,7 @@
- 	phy-reset-duration = <10>;
- 	phy-reset-post-delay = <20>;
- 	phy-reset-on-resume;
+@@ -331,49 +282,6 @@ &i2c3 {
+ 	scl-gpios = <&gpio5 18 GPIO_ACTIVE_HIGH>;
+ 	sda-gpios = <&gpio5 19 GPIO_ACTIVE_HIGH>;
+ 	status = "okay";
+-
+-	wm8904: audio-codec@1a {
+-		compatible = "wlf,wm8904";
+-		#sound-dai-cells = <0>;
+-		reg = <0x1a>;
+-		clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
+-		clock-names = "mclk";
+-		DBVDD-supply = <&reg_audio>;
+-		DCVDD-supply = <&ldo5_reg>;
+-		AVDD-supply = <&ldo5_reg>;
+-		CPVDD-supply = <&ldo5_reg>;
+-		MICVDD-supply = <&ldo5_reg>;
+-		num-drc-cfgs = <5>;
+-		drc-cfg-names = "default", "peaklimiter", "tradition", "soft", "music";
+-		drc-cfg-regs =
+-			/* coded default: KNEE_IP = KNEE_OP = 0, HI_COMP = LO_COMP = 1  */
+-			<0x01af 0x3248 0x0000 0x0000>,
+-			/* coded default: KNEE_IP = -24, KNEE_OP = -6, HI_COMP = 1/4, LO_COMP = 1 */
+-			<0x04af 0x324b 0x0010 0x0408>,
+-			/* coded default: KNEE_IP = -42, KNEE_OP = -3, HI_COMP = 0, LO_COMP = 1 */
+-			<0x04af 0x324b 0x0028 0x0704>,
+-			/* coded default: KNEE_IP = -45, KNEE_OP = -9, HI_COMP = 1/8, LO_COMP = 1 */
+-			<0x04af 0x324b 0x0018 0x078c>,
+-			/* coded default: KNEE_IP = -30, KNEE_OP = -10.5, HI_COMP = 1/4, LO_COMP = 1 */
+-			<0x04af 0x324b 0x0010 0x050e>;
+-		gpio-cfg = <
+-			0x0018 /* GPIO1 => DMIC_CLK */
+-			0xffff /* GPIO2 => don't touch */
+-			0xffff /* GPIO3 => don't touch */
+-			0xffff /* GPIO4 => don't touch */
+-		>;
+-		status = "okay";
+-	};
+-};
+-
+-&sai3 {
+-	#sound-dai-cells = <0>;
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pinctrl_sai3>;
+-	assigned-clocks = <&clk IMX8MM_CLK_SAI3>;
+-	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
+-	assigned-clock-rates = <1536000>;
 -	status = "okay";
-+	status = "disabled";
+ };
  
- 	mdio {
- 		#address-cells = <1>;
-@@ -111,6 +79,30 @@
+ &spdif1 {
+@@ -496,10 +404,33 @@ &vpu_v4l2 {
+ };
  
  &iomuxc {
- 	pinctrl-names = "default";
 +	pinctrl-0 = <&pinctrl_gpios>;
 +
 +	pinctrl_gpios: gpiosgrp {
@@ -193,11 +253,7 @@ index fb1ee4a20a5f..19f95ab8f2e4 100644
 +			MX8MM_IOMUXC_GPIO1_IO14_GPIO1_IO14             0x140
 +		>;
 +	};
- 
- 	pinctrl_bt: btgrp {
- 		fsl,pins = <
-@@ -121,8 +113,6 @@
- 
++
  	pinctrl_fec1: fec1grp {
  		fsl,pins = <
 -			MX8MM_IOMUXC_ENET_MDC_ENET1_MDC			0x3
@@ -205,7 +261,7 @@ index fb1ee4a20a5f..19f95ab8f2e4 100644
  			MX8MM_IOMUXC_ENET_TD3_ENET1_RGMII_TD3		0x1f
  			MX8MM_IOMUXC_ENET_TD2_ENET1_RGMII_TD2		0x1f
  			MX8MM_IOMUXC_ENET_TD1_ENET1_RGMII_TD1		0x1f
-@@ -134,7 +124,6 @@
+@@ -511,7 +442,6 @@ MX8MM_IOMUXC_ENET_RD0_ENET1_RGMII_RD0		0x91
  			MX8MM_IOMUXC_ENET_TXC_ENET1_RGMII_TXC		0x1f
  			MX8MM_IOMUXC_ENET_RXC_ENET1_RGMII_RXC		0x91
  			MX8MM_IOMUXC_ENET_RX_CTL_ENET1_RGMII_RX_CTL	0x91
@@ -213,25 +269,7 @@ index fb1ee4a20a5f..19f95ab8f2e4 100644
  			MX8MM_IOMUXC_GPIO1_IO09_GPIO1_IO9		0x19
  		>;
  	};
-@@ -163,9 +152,7 @@
- 		fsl,pins = <
- 			MX8MM_IOMUXC_NAND_ALE_QSPI_A_SCLK		0x1c2
- 			MX8MM_IOMUXC_NAND_CE0_B_QSPI_A_SS0_B		0x82
--			MX8MM_IOMUXC_NAND_DATA00_QSPI_A_DATA0		0x82
- 			MX8MM_IOMUXC_NAND_DATA01_QSPI_A_DATA1		0x82
--			MX8MM_IOMUXC_NAND_DATA02_QSPI_A_DATA2		0x82
- 			MX8MM_IOMUXC_NAND_DATA03_QSPI_A_DATA3		0x82
- 		>;
- 	};
-@@ -212,7 +199,6 @@
- 
- 	pinctrl_pdm: pdmgrp {
- 		fsl,pins = <
--			MX8MM_IOMUXC_SAI5_MCLK_SAI5_MCLK		0xd6
- 			MX8MM_IOMUXC_SAI5_RXC_PDM_CLK			0xd6
- 			MX8MM_IOMUXC_SAI5_RXFS_SAI5_RX_SYNC		0xd6
- 			MX8MM_IOMUXC_SAI5_RXD0_PDM_DATA0		0xd6
-@@ -240,22 +226,9 @@
+@@ -582,22 +512,9 @@ MX8MM_IOMUXC_GPIO1_IO07_GPIO1_IO7		0x41
  		>;
  	};
  
@@ -254,61 +292,23 @@ index fb1ee4a20a5f..19f95ab8f2e4 100644
  		>;
  	};
  
-@@ -542,38 +515,6 @@
- 	scl-gpios = <&gpio5 18 GPIO_ACTIVE_HIGH>;
- 	sda-gpios = <&gpio5 19 GPIO_ACTIVE_HIGH>;
- 	status = "okay";
--
--	wm8904: audio-codec@1a {
--		compatible = "wlf,wm8904";
--		reg = <0x1a>;
--		clocks = <&clk IMX8MM_CLK_SAI3_ROOT>;
--		clock-names = "mclk";
--		DCVDD-supply = <&ldo5_reg>;
--		DBVDD-supply = <&reg_audio>;
--		AVDD-supply = <&ldo5_reg>;
--		CPVDD-supply = <&ldo5_reg>;
--		MICVDD-supply = <&ldo5_reg>;
--		status = "okay";
--		num-drc-cfgs = <5>;
--		drc-cfg-names = "default", "peaklimiter", "tradition", "soft", "music";
--		drc-cfg-regs =
--				/* coded default: KNEE_IP = KNEE_OP = 0, HI_COMP = LO_COMP = 1  */
--				<0x01af 0x3248 0x0000 0x0000>,
--				/* coded default: KNEE_IP = -24, KNEE_OP = -6, HI_COMP = 1/4, LO_COMP = 1 */
--				<0x04af 0x324b 0x0010 0x0408>,
--				/* coded default: KNEE_IP = -42, KNEE_OP = -3, HI_COMP = 0, LO_COMP = 1 */
--				<0x04af 0x324b 0x0028 0x0704>,
--				/* coded default: KNEE_IP = -45, KNEE_OP = -9, HI_COMP = 1/8, LO_COMP = 1 */
--				<0x04af 0x324b 0x0018 0x078c>,
--				/* coded default: KNEE_IP = -30, KNEE_OP = -10.5, HI_COMP = 1/4, LO_COMP = 1 */
--				<0x04af 0x324b 0x0010 0x050e>;
--		gpio-cfg = <
--			0x0018 /* GPIO1 => DMIC_CLK */
--			0xffff /* GPIO2 => don't touch */
--			0xffff /* GPIO3 => don't touch */
--			0xffff /* GPIO4 => don't touch */
--		>;
--	};
- };
+@@ -716,16 +633,13 @@ pinctrl_flexspi0: flexspi0grp {
+ 		fsl,pins = <
+ 			MX8MM_IOMUXC_NAND_ALE_QSPI_A_SCLK		0x1c2
+ 			MX8MM_IOMUXC_NAND_CE0_B_QSPI_A_SS0_B		0x82
+-			MX8MM_IOMUXC_NAND_DATA00_QSPI_A_DATA0		0x82
+ 			MX8MM_IOMUXC_NAND_DATA01_QSPI_A_DATA1		0x82
+-			MX8MM_IOMUXC_NAND_DATA02_QSPI_A_DATA2		0x82
+ 			MX8MM_IOMUXC_NAND_DATA03_QSPI_A_DATA3		0x82
+ 		>;
+ 	};
  
- &lcdif {
-@@ -604,15 +545,6 @@
- 	status = "okay";
- };
- 
--&sai3 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&pinctrl_sai3>;
--	assigned-clocks = <&clk IMX8MM_CLK_SAI3>;
--	assigned-clock-parents = <&clk IMX8MM_AUDIO_PLL1_OUT>;
--	assigned-clock-rates = <1536000>;
--	status = "okay";
--};
--
- &spdif1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_spdif1>;
+ 	pinctrl_pdm: pdmgrp {
+ 		fsl,pins = <
+-			MX8MM_IOMUXC_SAI5_MCLK_SAI5_MCLK		0xd6
+ 			MX8MM_IOMUXC_SAI5_RXC_PDM_CLK			0xd6
+ 			MX8MM_IOMUXC_SAI5_RXFS_SAI5_RX_SYNC		0xd6
+ 			MX8MM_IOMUXC_SAI5_RXD0_PDM_DATA0		0xd6
 -- 
-2.17.1
+2.37.2
 

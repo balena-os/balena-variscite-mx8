@@ -29,19 +29,19 @@ SRC_URI:append:imx8mm-var-dart = " \
 # RT patch patch-5.4.82-rt46.patch taken from
 # https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/5.4/older/
 SRC_URI:append:imx8mm-var-dart-nrt = " \
-	file://0001-Apply-kernel-5.4.143-rt64.patch \
+	file://0001-Rebase-kernel-5.15.55-rt48-on-kernel-5.15.60-imx_var.patch \
 	file://0007-mmc-core-Disable-CQE.patch \
 	file://0008-dts-fsl-imx8mm-var-dart-Disable-GPU.patch \
-	file://fsl-imx8mm-var-dart-nrt-Port-pinmux-for-NRT-board-to-ker-5-4-142.patch \
+	file://fsl-imx8mm-var-dart-Port-pinmux-for-NRT-board-to-ker.patch \
 	file://fsl-imx8mm-var-dart-nrt-pinmux-legacy-nrt.patch \
 	file://imx8mm-var-dart-nrt-Add-LP55231-to-the-device-tree.patch \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
 	file://0001-lp55xx-Add-support-for-default-startup-brightness-fr.patch \
 	file://0001-lp55231-Don-t-reset-chip-during-initialization.patch \
-	file://nrt-drivers-backport-cw2015-battery-driver.patch \
-	file://nrt-cw2015-fix-build-for-nrt.patch \
 	file://nrt-Add-CW2015-in-device-tree.patch \
 	file://nrt-add-cw2015-profile-to-imx8mm-var-dart.dtsi.patch \
+	file://0001-nrt-Fix-build-after-applying-realtime-patch.patch \
+	file://0009-freescale-Remove-touch-controller-node-from-dts.patch \
 "
 
 SRC_URI:append:imx8mm-var-dart-plt = " \

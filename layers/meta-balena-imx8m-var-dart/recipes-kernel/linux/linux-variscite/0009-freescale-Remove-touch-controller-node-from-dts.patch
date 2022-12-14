@@ -1,0 +1,233 @@
+From 55a8bd4117d1c392495b70b7f55becb5aafbe375 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 14 Dec 2022 20:24:11 +0100
+Subject: [PATCH] freescale: Remove touch controller node from dts
+
+---
+ .../imx8mm-var-dart-dt8mcustomboard-m4.dts      |  8 --------
+ .../dts/freescale/imx8mm-var-som-symphony.dts   | 16 ----------------
+ .../dts/freescale/imx8mn-var-som-symphony.dts   | 15 ---------------
+ .../imx8mp-var-dart-dt8mcustomboard-legacy.dts  |  4 ----
+ .../imx8mp-var-dart-dt8mcustomboard.dts         | 17 -----------------
+ .../dts/freescale/imx8mp-var-som-symphony.dts   | 16 ----------------
+ .../imx8mq-var-dart-dt8mcustomboard-legacy.dtsi |  4 ----
+ ...x8mq-var-dart-dt8mcustomboard-lvds-dcss.dtsi |  4 ----
+ ...8mq-var-dart-dt8mcustomboard-lvds-lcdif.dtsi |  4 ----
+ .../imx8mq-var-dart-dt8mcustomboard.dtsi        | 17 -----------------
+ 10 files changed, 105 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-m4.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-m4.dts
+index 75c31c3d5b52..0777fd74dbfd 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-m4.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-m4.dts
+@@ -31,11 +31,3 @@ &pwm3 {
+ &uart3 {
+ 	status = "disabled";
+ };
+-
+-/*
+- * For dt8mcustomboard >= 2.0, reset-gpios is connected to pca6408_2
+- * on i2c4, which is disabled above for the m4 example
+- */
+-&ft5x06_ts {
+-	/delete-property/reset-gpios;
+-};
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-som-symphony.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-som-symphony.dts
+index 5c75d986eea7..922d6efe8234 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-som-symphony.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-som-symphony.dts
+@@ -198,22 +198,6 @@ enet_sel_hog {
+ };
+ 
+ &i2c3 {
+-	/* Capacitive touch controller */
+-	ft5x06_ts: ft5x06_ts@38 {
+-		compatible = "edt,edt-ft5206";
+-		reg = <0x38>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pinctrl_captouch>;
+-		interrupt-parent = <&gpio5>;
+-		interrupts = <4 IRQ_TYPE_EDGE_FALLING>;
+-		touchscreen-size-x = <800>;
+-		touchscreen-size-y = <480>;
+-		touchscreen-inverted-x;
+-		touchscreen-inverted-y;
+-		wakeup-source;
+-		status = "okay";
+-	};
+-
+ 	/* DS1337 RTC module */
+ 	rtc@68 {
+ 		compatible = "dallas,ds1337";
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts b/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts
+index f61c48776cf3..085a017bfc9f 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts
+@@ -112,21 +112,6 @@ extcon_usbotg1: typec@3d {
+ };
+ 
+ &i2c3 {
+-	/* Capacitive touch controller */
+-	ft5x06_ts: touchscreen@38 {
+-		compatible = "edt,edt-ft5406";
+-		reg = <0x38>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pinctrl_captouch>;
+-		interrupt-parent = <&gpio5>;
+-		interrupts = <4 IRQ_TYPE_LEVEL_HIGH>;
+-
+-		touchscreen-size-x = <800>;
+-		touchscreen-size-y = <480>;
+-		touchscreen-inverted-x;
+-		touchscreen-inverted-y;
+-	};
+-
+ 	rtc@68 {
+ 		compatible = "dallas,ds1337";
+ 		reg = <0x68>;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts b/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts
+index 534bb3bdbd0b..dbe228dacb55 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts
+@@ -49,10 +49,6 @@ ov5640_mipi0: ov5640_mipi@3c {
+ 		powerdown-gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>;
+ 		reset-gpios = <&gpio5 28 GPIO_ACTIVE_LOW>;
+ 	};
+-
+-	ft5x06_ts: ft5x06_ts@38 {
+-		reset-gpios = <&gpio4 5 GPIO_ACTIVE_LOW>;
+-	};
+ };
+ 
+ &i2c4 {
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard.dts b/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard.dts
+index 11becaad7d22..50ae48056d6d 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard.dts
+@@ -253,23 +253,6 @@ rtc@68 {
+ 		wakeup-source;
+ 		status = "okay";
+ 	};
+-
+-	/* Capacitive touch controller */
+-	ft5x06_ts: ft5x06_ts@38 {
+-		compatible = "edt,edt-ft5206";
+-		reg = <0x38>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pinctrl_captouch>;
+-		reset-gpios = <&pca6408_2 4 GPIO_ACTIVE_LOW>;
+-		interrupt-parent = <&gpio1>;
+-		interrupts = <14 IRQ_TYPE_EDGE_FALLING>;
+-		touchscreen-size-x = <800>;
+-		touchscreen-size-y = <480>;
+-		touchscreen-inverted-x;
+-		touchscreen-inverted-y;
+-		wakeup-source;
+-		status = "okay";
+-	};
+ };
+ 
+ &i2c3 {
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp-var-som-symphony.dts b/arch/arm64/boot/dts/freescale/imx8mp-var-som-symphony.dts
+index a2b732a0283f..6cd7fe1f91a5 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp-var-som-symphony.dts
++++ b/arch/arm64/boot/dts/freescale/imx8mp-var-som-symphony.dts
+@@ -301,22 +301,6 @@ rtc@68 {
+ 		reg = <0x68>;
+ 		status = "okay";
+ 	};
+-
+-	/* Capacitive touch controller */
+-	ft5x06_ts: ft5x06_ts@38 {
+-		compatible = "edt,edt-ft5206";
+-		reg = <0x38>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pinctrl_captouch>;
+-		interrupt-parent = <&gpio5>;
+-		interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
+-		touchscreen-size-x = <800>;
+-		touchscreen-size-y = <480>;
+-		touchscreen-inverted-x;
+-		touchscreen-inverted-y;
+-		wakeup-source;
+-		status = "okay";
+-	};
+ };
+ 
+ &flexcan2 {
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-legacy.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-legacy.dtsi
+index a8a1e013abf2..fab615b991d8 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-legacy.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-legacy.dtsi
+@@ -66,10 +66,6 @@ ov5640_mipi1: ov5640_mipi1@3c {
+ 		pwn-gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>;
+ 		rst-gpios = <&gpio5 28 GPIO_ACTIVE_HIGH>;
+ 	};
+-
+-	ft5x06_ts: ft5x06_ts@38 {
+-		reset-gpios = <&gpio4 5 GPIO_ACTIVE_LOW>;
+-	};
+ };
+ 
+ &i2c4 {
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-dcss.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-dcss.dtsi
+index e46d399f2402..df56114b2872 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-dcss.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-dcss.dtsi
+@@ -59,10 +59,6 @@ bridge_out_panel: endpoint {
+ 	};
+ };
+ 
+-&ft5x06_ts {
+-	status = "okay";
+-};
+-
+ &lcdif {
+ 	status = "disabled";
+ };
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-lcdif.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-lcdif.dtsi
+index d517ba1070a7..1d228e9685b5 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-lcdif.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard-lvds-lcdif.dtsi
+@@ -27,10 +27,6 @@ bridge_out_panel: endpoint {
+ 	};
+ };
+ 
+-&ft5x06_ts {
+-	status = "okay";
+-};
+-
+ &lcdif {
+ 	status = "okay";
+ 	max-memory-bandwidth = <314676293>; /* 1280x1024-32@60 */
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard.dtsi b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard.dtsi
+index 9736bab0ccd3..abcc1aae0b9c 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq-var-dart-dt8mcustomboard.dtsi
+@@ -341,23 +341,6 @@ &i2c2 {
+ 	sda-gpios = <&gpio5 17 GPIO_ACTIVE_HIGH>;
+ 	status = "okay";
+ 
+-	/* Capacitive touch controller */
+-	ft5x06_ts: ft5x06_ts@38 {
+-		status = "disabled";
+-		compatible = "edt,edt-ft5x06";
+-		reg = <0x38>;
+-		reset-gpios = <&pca6408_2 4 GPIO_ACTIVE_LOW>;
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pinctrl_captouch>;
+-		interrupt-parent = <&gpio1>;
+-		interrupts = <14 IRQ_TYPE_EDGE_FALLING>;
+-		touchscreen-size-x = <800>;
+-		touchscreen-size-y = <480>;
+-		touchscreen-inverted-x;
+-		touchscreen-inverted-y;
+-		wakeup-source;
+-	};
+-
+ 	/* DS1337 RTC module */
+ 	rtc@68 {
+ 		status = "okay";
+-- 
+2.37.2
+
