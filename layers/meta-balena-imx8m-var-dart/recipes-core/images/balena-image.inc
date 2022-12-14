@@ -92,3 +92,5 @@ MACHINE_EXTRA_RDEPENDS += " \
 # Fixes error: packages already installed
 # by kernel-image-initramfs
 IMAGE_INSTALL_remove = " kernel-image"
+
+IMAGE_ROOTFS_SIZE_imx8mm-var-som="487424"
