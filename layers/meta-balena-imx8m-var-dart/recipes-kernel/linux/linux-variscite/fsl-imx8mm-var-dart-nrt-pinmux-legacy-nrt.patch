@@ -1,6 +1,6 @@
-From 7e1e74010a60650e80a6cfb7ff59b4de25f06e52 Mon Sep 17 00:00:00 2001
+From 4f33c2c515406a6a5518424d154ef8dda14e994b Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Thu, 1 Jul 2021 14:43:19 +0200
+Date: Wed, 14 Dec 2022 16:09:47 +0100
 Subject: [PATCH] Remove unnecessary nodes on the NRT board
 
 Do so because some of these nodes trigger
@@ -10,14 +10,14 @@ aren't used on the NRT custom hardware anyway.
 Upstream-status: Inappropriate[configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- ...imx8mm-var-dart-dt8mcustomboard-legacy.dts | 96 -------------------
- 1 file changed, 96 deletions(-)
+ ...imx8mm-var-dart-dt8mcustomboard-legacy.dts | 93 -------------------
+ 1 file changed, 93 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts
-index b3c4544de647..9764b18690ca 100644
+index edd6466fd809..bc7ecff70594 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-legacy.dts
-@@ -9,101 +9,5 @@
+@@ -9,97 +9,4 @@
  / {
  	model = "Variscite DART-MX8M-MINI on DT8MCustomBoard 1.x";
  
@@ -42,7 +42,7 @@ index b3c4544de647..9764b18690ca 100644
 -		};
 -	};
 -
--	leds {
+-	gpio-leds {
 -		emmc {
 -			gpios = <&gpio4 17 GPIO_ACTIVE_HIGH>;
 -		};
@@ -51,13 +51,11 @@ index b3c4544de647..9764b18690ca 100644
 -	can0_osc: can0_osc {
 -		clock-frequency = <20000000>;
 -	};
--
--	/delete-node/ extcon_usb1;
 -};
 -
 -&can0 {
 -	spi-max-frequency = <10000000>;
--	/delete-property/ microchip,rx-int-gpios;
+-	/delete-property/ microchip,rx-interrupt;
 -};
 -
 -&ov5640_mipi1 {
@@ -65,24 +63,22 @@ index b3c4544de647..9764b18690ca 100644
 -	pinctrl-0 = <&pinctrl_csi1>;
 -	pwn-gpios = <&gpio4 8 GPIO_ACTIVE_HIGH>;
 -	rst-gpios = <&gpio5 28 GPIO_ACTIVE_HIGH>;
- };
- 
+-};
+-
+-&i2c4 {
+-	/delete-node/ gpio@20;
+-	/delete-node/ gpio@21;
+-};
+-
 -&pcie0 {
 -	pinctrl-names = "default";
 -	pinctrl-0 = <&pinctrl_pcie0>;
 -	reset-gpio = <&gpio4 7 GPIO_ACTIVE_LOW>;
 -};
 -
--&i2c4 {
--	/delete-node/ pca6408_1;
--	/delete-node/ pca6408_2;
--};
--
--&usbotg1 {
--	/delete-property/ extcon;
--};
--
 -&iomuxc {
+-	/delete-node/ pca6408grp;
+-
 -	pinctrl_can: cangrp {
 -		fsl,pins = <
 -			MX8MM_IOMUXC_GPIO1_IO06_GPIO1_IO6		0x16
@@ -118,7 +114,7 @@ index b3c4544de647..9764b18690ca 100644
 -			MX8MM_IOMUXC_UART4_RXD_GPIO5_IO28		0x19
 -		>;
 -	};
--};
+ };
 -- 
-2.17.1
+2.37.2
 

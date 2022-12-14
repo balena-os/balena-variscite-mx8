@@ -1,40 +1,39 @@
-From 2725a3426fddfe8d94ede67c8b3fdbf78caf8375 Mon Sep 17 00:00:00 2001
+From a07b75b99e67225549eea341b7a3ba0eecde2bd7 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Fri, 19 Aug 2022 12:54:43 +0200
+Date: Wed, 14 Dec 2022 17:52:23 +0100
 Subject: [PATCH] nrt: Add CW2015 in device-tree
 
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi | 9 +++++++--
+ arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi | 8 ++++++++
  arch/arm64/boot/dts/freescale/imx8mm.dtsi          | 5 +++++
- 2 files changed, 12 insertions(+), 2 deletions(-)
+ 2 files changed, 13 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
-index 0083f2bfe304..3d265fb463a4 100644
+index edc924067c70..e93629a3e9a5 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
-@@ -577,8 +577,13 @@
+@@ -344,6 +344,14 @@ chan8 {
  		};
  	};
  
--
--
 +	cw2015@62 {
 +		compatible = "cellwise,cw2015";
 +		reg = <0x62>;
 +		cellwise,monitor-interval-ms = <5000>;
 +		monitored-battery = <&bat>;
 +		status = "okay";
-+       };
++        };
++
  };
  
- &lcdif {
+ &spdif1 {
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-index 6f1c3e1db665..f8eca02134fc 100755
+index e8f48b6b6653..db7684c3891c 100755
 --- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
-@@ -1487,4 +1487,9 @@
+@@ -1565,4 +1565,9 @@ gpu: gpu@38000000 {
  
  		status = "disabled";
  	};
