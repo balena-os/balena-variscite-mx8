@@ -1,6 +1,6 @@
-From f3e0945cd065e9e39ce804106e4e06063a856697 Mon Sep 17 00:00:00 2001
+From 59e0d935effe4b20e81342fe0d1f5d1070b1c80c Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 30 Jun 2021 10:12:25 +0200
+Date: Wed, 14 Dec 2022 22:22:43 +0100
 Subject: [PATCH] plt: Always load the legacy dtb
 
 We enabled dm for i2c leds and this causes the
@@ -15,18 +15,18 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index 0589d0d134..6ff154e4e6 100644
+index dd24fb38ca..9b3dfb255e 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -128,7 +128,7 @@
- 				"if test $carrier_rev = legacy; then " \
- 					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
- 				"else " \
--					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
-+					"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+@@ -140,7 +140,7 @@
+ 					"if test $carrier_rev = legacy; then " \
+ 						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+ 					"else " \
+-						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard.dtb; " \
++						"setenv fdt_file imx8mm-var-dart-dt8mcustomboard-legacy.dtb; " \
+ 					"fi; " \
  				"fi; " \
  			"fi; " \
- 		"fi; \0" \
 -- 
-2.17.1
+2.37.2
 
