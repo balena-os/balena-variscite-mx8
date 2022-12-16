@@ -67,3 +67,10 @@ BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " lp55231"
 BALENA_CONFIGS[lp55231] = " \
     CONFIG_LEDS_LP5523=m \
 "
+
+
+
+BALENA_CONFIGS_append = " optimize-size"
+BALENA_CONFIGS[optimize-size] = " \
+    CONFIG_CC_OPTIMIZE_FOR_SIZE=y \
+"
