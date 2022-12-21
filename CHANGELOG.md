@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.107.14+rev2
+## (2022-12-21)
+
+* linux-variscite: Enable kernel size optimization [Alexandru Costache]
+
 # v2.107.14+rev1
 ## (2022-12-09)
 
