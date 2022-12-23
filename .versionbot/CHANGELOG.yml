@@ -1,4 +1,21 @@
 - commits:
+    - subject: "u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som patches
+        for Kirkstone"
+      hash: ad5730cbaf4489a8b6a95d2ee4d6a24d49fa5552
+      body: ""
+      footer:
+        Changelog-entry: "u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som
+          patches for Kirkstone"
+        changelog-entry: "u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som
+          patches for Kirkstone"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.107.14+rev3
+  title: ""
+  date: 2022-12-23T09:37:35.612Z
+- commits:
     - subject: "linux-variscite: Enable kernel size optimization"
       hash: 3dcd5b203f2d67438ed35d309595b5f03b574197
       body: ""

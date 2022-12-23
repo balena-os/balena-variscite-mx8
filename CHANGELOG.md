@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.107.14+rev3
+## (2022-12-23)
+
+* u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som patches for Kirkstone [Alexandru Costache]
+
 # v2.107.14+rev2
 ## (2022-12-21)
 
