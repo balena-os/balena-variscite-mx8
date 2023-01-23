@@ -1,4 +1,111 @@
 - commits:
+    - subject: Update balena-yocto-scripts to a30795acce48c90b23fcac273fe0cbcc7497c779
+      hash: 381391a21ce3704da1a549305904b5ea33308e29
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to a30795acce48c90b23fcac273fe0cbcc7497c779
+        changelog-entry: Update balena-yocto-scripts to a30795acce48c90b23fcac273fe0cbcc7497c779
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: "balene-generate-ami: remove key name"
+              hash: cebc5f30447785bdbad8260f0975bd1f9f261a9b
+              body: >
+                No need to provide a key name as the instance only needs to be accessible
+
+                via balenaCloud.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.19.21
+          title: ""
+          date: 2023-01-19T12:37:05.534Z
+        - commits:
+            - subject: "jenkins_generate_ami: default to pull cloud-config apps from
+                balena_os"
+              hash: 0e3f9ca33265d1fc84244a4e3e86b9e7a7c85715
+              body: >
+                These applications have been moved to the `balena_os` organization.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.19.20
+          title: ""
+          date: 2023-01-18T08:56:44.815Z
+        - commits:
+            - subject: "balena-generate-ami: do not remove AMI snapshot"
+              hash: 7022aa4933c5134d22b1f9f7e60c9e76fecca36a
+              body: >
+                This snapshot is attached to the AMI and can only be removed after
+
+                de-registering the AMI.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "jenkins_generate_ami: use balena_os tokens instead of org specific
+                token"
+              hash: 526fe49137cd619162d4e1307b977d1aa85401b0
+              body: >
+                No need to complicate the job configuration with two tokens if we can do
+
+                with one.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "jenkins_build: respect the preserve build flag"
+              hash: 30ff6dc19dafe9f7860df65c5552e4a25061a37b
+              body: >
+                Do not remove the build directory if the preserve build flag is set.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "balena-generate-ami: cleanup images after deployment"
+              hash: 9c9d16e927a472aa06ef7e08ae63d3167747b166
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+            - subject: "balena-generate-ami: test image before making it public"
+              hash: 561d67921c0f4251dc4ccdbe41864bc0a565524c
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.19.19
+          title: ""
+          date: 2023-01-14T17:40:18.215Z
+  version: 2.107.14+rev5
+  title: ""
+  date: 2023-01-23T14:45:33.195Z
+- commits:
     - subject: Update contracts to cbc450a40296e716e50344b3d625fb9a9b6975f6
       hash: e3c021e1e3549c41884f703d5d161647fb79d717
       body: Update contracts

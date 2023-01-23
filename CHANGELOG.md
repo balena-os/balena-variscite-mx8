@@ -1,6 +1,35 @@
 Change log
 -----------
 
+# v2.107.14+rev5
+## (2023-01-23)
+
+
+<details>
+<summary> Update balena-yocto-scripts to a30795acce48c90b23fcac273fe0cbcc7497c779 [renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.19.21
+> ### (2023-01-19)
+> 
+> * balene-generate-ami: remove key name [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.20
+> ### (2023-01-18)
+> 
+> * jenkins_generate_ami: default to pull cloud-config apps from balena_os [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.19
+> ### (2023-01-14)
+> 
+> * balena-generate-ami: do not remove AMI snapshot [Alex Gonzalez]
+> * jenkins_generate_ami: use balena_os tokens instead of org specific token [Alex Gonzalez]
+> * jenkins_build: respect the preserve build flag [Alex Gonzalez]
+> * balena-generate-ami: cleanup images after deployment [Alex Gonzalez]
+> * balena-generate-ami: test image before making it public [Alex Gonzalez]
+> 
+
+</details>
+
 # v2.107.14+rev4
 ## (2023-01-09)
 
