@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.107.14+rev6
+## (2023-01-26)
+
+* do not set ROOTFS_SIZE in machine configurations [Alex Gonzalez]
+
 # v2.107.14+rev5
 ## (2023-01-23)
 
