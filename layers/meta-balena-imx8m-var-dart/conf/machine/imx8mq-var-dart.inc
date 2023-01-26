@@ -1,0 +1,74 @@
+#@TYPE: Machine
+#@NAME: Variscite DART-MX8M
+#@SOC: i.MX8MQ
+#@DESCRIPTION: Machine configuration for Variscite DART-MX8M
+#@MAINTAINER: Felix Radensky <felix.r@variscite.com>
+#
+# http://www.variscite.com
+
+MACHINEOVERRIDES =. "mx8:mx8m:mx8mq:"
+require conf/machine/include/imx-base.inc
+require conf/machine/include/tune-cortexa53.inc
+
+require conf/machine/variscite.inc
+require conf/machine/variscite_bcm43xx.inc
+
+KERNEL_DEVICETREE = " \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-sd-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-sd-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-wifi-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-wifi-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds-dp.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-m4-sd-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-m4-sd-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-m4-sd-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-m4-wifi-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-m4-wifi-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-m4-wifi-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-sd-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-sd-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-sd-lvds-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-wifi-hdmi.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-wifi-lvds.dtb \
+	freescale/imx8mq-var-dart-dt8mcustomboard-wifi-lvds-hdmi.dtb \
+"
+
+IMAGE_BOOTFILES_DEPENDS += "imx-m4-demos:do_deploy"
+IMAGE_BOOTFILES += "imx8mq_m4_TCM_hello_world.bin imx8mq_m4_TCM_rpmsg_lite_pingpong_rtos_linux_remote.bin imx8mq_m4_TCM_rpmsg_lite_str_echo_rtos.bin"
+
+UBOOT_CONFIG ??= "sd"
+UBOOT_CONFIG[sd] = "imx8mq_var_dart_config,sdcard"
+SPL_BINARY = "spl/u-boot-spl.bin"
+
+# Set DDR FIRMWARE
+DDR_FIRMWARE_NAME = "lpddr4_pmu_train_1d_imem.bin lpddr4_pmu_train_1d_dmem.bin lpddr4_pmu_train_2d_imem.bin lpddr4_pmu_train_2d_dmem.bin"
+
+# Set U-Boot DTB
+UBOOT_DTB_NAME = "imx8mq-var-dart-customboard.dtb"
+
+# Set imx-mkimage boot target
+IMXBOOT_TARGETS = "flash_evk flash_evk_no_hdmi flash_dp_evk"
+
+SERIAL_CONSOLES = "115200;ttymxc0"
+
+IMAGE_BOOTLOADER = "imx-boot"
+
+LOADADDR = ""
+UBOOT_SUFFIX = "bin"
+UBOOT_MAKE_TARGET = ""
+IMX_BOOT_SEEK = "33"
