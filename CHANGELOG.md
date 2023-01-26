@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.107.14+rev7
+## (2023-01-26)
+
+* Add ESR workflow [Alex Gonzalez]
+
 # v2.107.14+rev6
 ## (2023-01-26)
 
