@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v2.107.14+rev10
+## (2023-02-01)
+
+* linux-variscite: Add cw2015 battery profile for NRT [Alexandru Costache]
+
 # v2.107.14+rev9
 ## (2023-02-01)
 

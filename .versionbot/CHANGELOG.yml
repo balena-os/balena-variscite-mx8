@@ -1,4 +1,20 @@
 - commits:
+    - subject: "linux-variscite: Add cw2015 battery profile for NRT"
+      hash: ae1023adc50953f9c129255661ada2cca961f8a7
+      body: |
+        Profile has been provided by customer.
+        See patch for internal thread link.
+      footer:
+        Changelog-entry: "linux-variscite: Add cw2015 battery profile for NRT"
+        changelog-entry: "linux-variscite: Add cw2015 battery profile for NRT"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.107.14+rev10
+  title: ""
+  date: 2023-02-01T22:23:24.532Z
+- commits:
     - subject: Update contracts to 8392bb27f12919d33534f01c28c8ece7c49a7975
       hash: d4099e9cac16a89542ecec1e722c1cc55562cef6
       body: Update contracts
