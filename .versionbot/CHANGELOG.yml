@@ -1,4 +1,43 @@
 - commits:
+    - subject: Update contracts to 8392bb27f12919d33534f01c28c8ece7c49a7975
+      hash: d4099e9cac16a89542ecec1e722c1cc55562cef6
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 8392bb27f12919d33534f01c28c8ece7c49a7975
+        changelog-entry: Update contracts to 8392bb27f12919d33534f01c28c8ece7c49a7975
+      author: renovate[bot]
+      nested:
+        - commits:
+            - subject: Add golang v1.19.5 and v1.18.10
+              hash: 367a8d6f1782238ab4895b8a626256f8d5ae9f88
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+                signed-off-by: Trong Nghia Nguyen <nghiant2710@gmail.com>
+              author: Trong Nghia Nguyen
+          version: contracts-2.0.40
+          title: ""
+          date: 2023-01-18T04:50:10.276Z
+        - commits:
+            - subject: "hw.device-type: Add Radxa CM3 on Raspberry Pi Compute Module 4 IO
+                Board"
+              hash: 8672125211a475b2f4742fff0d64273c25bf8421
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Florin Sarbu <florin@balena.io>
+                signed-off-by: Florin Sarbu <florin@balena.io>
+              author: Florin Sarbu
+          version: contracts-2.0.39
+          title: ""
+          date: 2023-01-12T21:09:27.997Z
+  version: 2.107.14+rev9
+  title: ""
+  date: 2023-02-01T16:14:12.008Z
+- commits:
     - subject: add meta-perl to bblayers.conf
       hash: 51dc7025b2b4927c6bfabd7d4be5daa690d766b0
       body: |

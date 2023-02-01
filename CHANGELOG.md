@@ -1,6 +1,26 @@
 Change log
 -----------
 
+# v2.107.14+rev9
+## (2023-02-01)
+
+
+<details>
+<summary> Update contracts to 8392bb27f12919d33534f01c28c8ece7c49a7975 [renovate[bot]] </summary>
+
+> ## contracts-2.0.40
+> ### (2023-01-18)
+> 
+> * Add golang v1.19.5 and v1.18.10 [Trong Nghia Nguyen]
+> 
+> ## contracts-2.0.39
+> ### (2023-01-12)
+> 
+> * hw.device-type: Add Radxa CM3 on Raspberry Pi Compute Module 4 IO Board [Florin Sarbu]
+> 
+
+</details>
+
 # v2.107.14+rev8
 ## (2023-01-28)
 
