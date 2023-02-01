@@ -43,6 +43,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://nrt-drivers-backport-cw2015-battery-driver.patch \
 	file://nrt-cw2015-fix-build-for-nrt.patch \
 	file://nrt-Add-CW2015-in-device-tree.patch \
+	file://nrt-add-cw2015-profile-to-imx8mm-var-dart.dtsi.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-plt = " \

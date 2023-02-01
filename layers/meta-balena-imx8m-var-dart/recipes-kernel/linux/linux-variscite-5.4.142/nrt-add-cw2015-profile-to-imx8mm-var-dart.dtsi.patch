@@ -1,0 +1,38 @@
+From 66097d860dec4cf396d0254ff157430d120843e3 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 30 Jan 2023 11:00:29 +0100
+Subject: [PATCH] nrt: add cw2015 profile to imx8mm-var-dart.dtsi
+
+Patch has been provided in internal thread https://jel.ly.fish/inbox/0ea7bedb-b82a-4de2-8e17-1f0168750573
+on Jan 26th 2023.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
+index 3d265fb463a4..e47edc1bafda 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart.dtsi
+@@ -580,6 +580,16 @@
+ 	cw2015@62 {
+ 		compatible = "cellwise,cw2015";
+ 		reg = <0x62>;
++		cellwise,battery-profile = /bits/ 8 <
++		    0x15 0x7E 0x83 0x71 0x6D 0x6B 0x69 0x67
++		    0x65 0x61 0x5B 0x57 0x52 0x50 0x43 0x31
++		    0x28 0x24 0x25 0x29 0x33 0x46 0x53 0x5E
++		    0x51 0x4D 0x08 0xF6 0x03 0x07 0x38 0x5C
++		    0x68 0x6E 0x75 0x78 0x3D 0x18 0x83 0x20
++		    0x06 0x4D 0x25 0x60 0x86 0x93 0x96 0x3D
++		    0x5D 0x84 0x94 0xA0 0x80 0x9A 0xBC 0xCB
++		    0x2F 0x00 0x64 0xA5 0xB5 0xC1 0x46 0xAE
++		>;
+ 		cellwise,monitor-interval-ms = <5000>;
+ 		monitored-battery = <&bat>;
+ 		status = "okay";
+-- 
+2.37.2
+
