@@ -1,4 +1,19 @@
 - commits:
+    - subject: Update meta-balena from v2.108.27 to v2.108.35
+      hash: fdb692b59625e951f39a0da68d3d52def6eacfa2
+      body: |
+        Update meta-balena from 2.108.27 to 2.108.35
+      footer:
+        Changelog-entry: Update meta-balena from v2.108.27 to v2.108.35
+        changelog-entry: Update meta-balena from v2.108.27 to v2.108.35
+        Signed-off-by: Alex Gonzalez <alexg@balena.io>
+        signed-off-by: Alex Gonzalez <alexg@balena.io>
+      author: Alex Gonzalez
+      nested: []
+  version: 2.108.35
+  title: ""
+  date: 2023-02-03T20:20:03.513Z
+- commits:
     - subject: Update layers/meta-balena to 73bc1884cad100723ee16dd08c1abd5796260cc2
       hash: cbb9419b05b798487d14907af73733cb8941e87c
       body: Update layers/meta-balena
