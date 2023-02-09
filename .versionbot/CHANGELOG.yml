@@ -1,4 +1,19 @@
 - commits:
+    - subject: "layers/meta-balena: Update to v2.110.0"
+      hash: d3e57b261d9357aef7710cf6e18d15ecc8722c44
+      body: |
+        Update meta-balena submodule to 2.110.0
+      footer:
+        Changelog-entry: "layers/meta-balena: Update to v2.110.0"
+        changelog-entry: "layers/meta-balena: Update to v2.110.0"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 2.110.0
+  title: ""
+  date: 2023-02-09T14:54:08.464Z
+- commits:
     - subject: Update meta-balena from v2.108.27 to v2.108.35
       hash: fdb692b59625e951f39a0da68d3d52def6eacfa2
       body: |
