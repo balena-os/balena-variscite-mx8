@@ -1,14 +1,9 @@
-UBOOT_KCONFIG_SUPPORT = "1"
-
 inherit resin-u-boot
 
 FILESEXTRAPATHS_append := ":${THISDIR}/files"
 
 LICENSE = "GPLv2+"
 LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
-# meta-balena patch does not apply cleanly, so we refactor it
-SRC_URI_remove = " file://resin-specific-env-integration-kconfig.patch "
-SRC_URI_append = " file://local-resin-specific-env-integration-kconfig.patch "
 
 SRC_URI_append_imx8m-var-dart = " \
 	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch \
