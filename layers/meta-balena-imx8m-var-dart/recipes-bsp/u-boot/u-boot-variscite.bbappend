@@ -32,6 +32,7 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 SRC_URI_append_imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
 	file://nrt-Always-load-the-legacy-dtb.patch \
+	file://nrt-Run-CRC32-checks.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
