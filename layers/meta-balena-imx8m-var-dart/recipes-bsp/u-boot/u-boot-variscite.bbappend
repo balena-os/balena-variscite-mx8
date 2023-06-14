@@ -26,6 +26,7 @@ SRC_URI_append_imx8mm-var-dart-plt = " \
 	file://plt-Always-load-the-legacy-dtb.patch \
 	file://Use-old-device-tree-on-altboot.patch \
 	file://0009-mx8mm_var_dart-plt-Use-custom_fdt_file-if-defined.patch \
+	file://plt-Run-CRC32-checks.patch \
 "
 
 SRC_URI_append_imx8mm-var-dart-nrt = " \
