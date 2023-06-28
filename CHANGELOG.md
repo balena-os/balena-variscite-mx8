@@ -1,6 +1,13 @@
 Change log
 -----------
 
+# v2.115.8
+## (2023-06-28)
+
+* u-boot: Increase ENV size for imx8m and imx8mm DTs [Alexandru Costache]
+* u-boot: Remove kconfig patches [Alexandru Costache]
+* Remove pull_request_target event run for ESR targets [Alex Gonzalez]
+
 # v2.112.14+rev2
 ## (2023-03-16)
 
