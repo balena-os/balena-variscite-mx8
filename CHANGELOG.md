@@ -1,6 +1,79 @@
 Change log
 -----------
 
+# v2.115.8+rev3
+## (2023-06-28)
+
+
+<details>
+<summary> Update contracts to 6c4386a7b918796f26b7e06e8ee5585403330e4f [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.62
+> ### (2023-06-27)
+> 
+> * hw.device-type: Add Jetson Orin Nano Devkit 8GB (SD) module [Alexandru Costache]
+> 
+> ## contracts-2.0.61
+> ### (2023-06-14)
+> 
+> * hw/device-type: Update contract.json for iot-gate-imx8 [Alexandru Costache]
+> 
+> ## contracts-2.0.60
+> ### (2023-05-04)
+> 
+> * Fix LED support for ISG-503 [Alexandru Costache]
+> 
+> ## contracts-2.0.59
+> ### (2023-05-03)
+> 
+> * hw.device-type: Add revpi-connect-s [Obaid Ch]
+> 
+> ## contracts-2.0.58
+> ### (2023-04-27)
+> 
+> * jetson-agx-orin-devkit: Mention the RAM configuration in the device name [Alexandru Costache]
+> 
+> ## contracts-2.0.57
+> ### (2023-04-07)
+> 
+> * debian/ubuntu jetson-orin-nx-xavier-nx-devkit: Add distro configs [Alexandru Costache]
+> * Orin NX: Update flashing steps [Alexandru Costache]
+> 
+> ## contracts-2.0.56
+> ### (2023-04-04)
+> 
+> * jetson-orin-nx-xavier-nx-devkit: Add contract for device type [Alexandru Costache]
+> 
+> ## contracts-2.0.55
+> ### (2023-03-29)
+> 
+> * iot-gate-imx8plus: Update provisioning instructions [Alexandru]
+> 
+> ## contracts-2.0.54
+> ### (2023-03-16)
+> 
+> * patch: Remove CircleCI in favor of Flowzone [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## contracts-2.0.53
+> ### (2023-03-16)
+> 
+> * patch: Fix fluid tags for revpi-core-3 [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## contracts-2.0.52
+> ### (2023-03-16)
+> 
+> * patch: Fix punctuation in partials [Vipul Gupta (@vipulgupta2048)]
+> * patch: Fix spelling of eMMC [Vipul Gupta (@vipulgupta2048)]
+> * patch: Fix spelling of while [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## contracts-2.0.51
+> ### (2023-02-24)
+> 
+> * node: do not set unsafe-perm with npm 9 and newer [Michal Toman]
+> 
+
+</details>
+
 # v2.115.8+rev2
 ## (2023-06-28)
 
