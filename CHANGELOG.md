@@ -1,6 +1,52 @@
 Change log
 -----------
 
+# v2.115.8+rev1
+## (2023-06-28)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 91474e62b74d6390c285d1033b34f77092fe1824 [Self-hosted Renovate Bot] </summary>
+
+> ## balena-yocto-scripts-1.19.32
+> ### (2023-06-19)
+> 
+> * balena-deploy: Newer meta-balena do not create a kernel_source tarball [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.31
+> ### (2023-06-05)
+> 
+> * balena-deploy: add a compressed licenses tarball to the deploy artifacts [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.30
+> ### (2023-05-23)
+> 
+> * generate_ami: opt-in secure boot when using signed images [Alex Gonzalez]
+> * balena-generate-ami: comply with default AMI quotas [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.29
+> ### (2023-05-19)
+> 
+> * balena-deploy: add secureBoot feature into contract [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.28
+> ### (2023-05-06)
+> 
+> * jenkins_build: accept bitbake extra arguments [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.19.27
+> ### (2023-04-21)
+> 
+> * barys: fix removal of equals sign from argval [Joseph Kogut]
+> 
+> ## balena-yocto-scripts-1.19.26
+> ### (2023-04-12)
+> 
+> * balena-lib: Do not return error if no balena user token is available [Alex Gonzalez]
+> 
+
+</details>
+
 # v2.115.8
 ## (2023-06-28)
 
