@@ -36,7 +36,7 @@ SRC_URI_append_imx8mm-var-dart-nrt = " \
 "
 
 # Fixes SPL crash with CRC32 checks PR in meta-balena.
-# CRC32 checks on kernel image and fdt run fine with the above.
+# CRC32 checks on kernel image and fdt run fine with the above
 UBOOT_VARS_remove = "CONFIG_CMD_HASH"
 
 SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
