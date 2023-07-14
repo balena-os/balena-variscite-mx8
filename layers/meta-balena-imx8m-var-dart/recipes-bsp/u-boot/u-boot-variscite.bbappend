@@ -43,3 +43,6 @@ SRC_URI_append_imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'd
 
 OS_KERNEL_CMDLINE_remove_imx8mm-var-dart-nrt = "console=null"
 
+do_deploy_append() {
+    echo "resin_flasher_skip=0" > ${DEPLOYDIR}/extra_uEnv.txt
+}
