@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.0.11+rev2
+## (2023-07-15)
+
+* linux-variscite: Remove lp55231 driver for NRT DT [Alexandru Costache]
+
 # v3.0.11+rev1
 ## (2023-07-14)
 
