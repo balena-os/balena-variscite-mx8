@@ -64,12 +64,12 @@ BALENA_CONFIGS[cw2015] = " \
     CONFIG_BATTERY_CW2015=m \
 "
 
+# Removed as requested by user, who will switch to a custom
+# userspace driver
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " lp55231"
 BALENA_CONFIGS[lp55231] = " \
-    CONFIG_LEDS_LP5523=m \
+    CONFIG_LEDS_LP5523=n \
 "
-
-
 
 BALENA_CONFIGS_append = " optimize-size"
 BALENA_CONFIGS[optimize-size] = " \
