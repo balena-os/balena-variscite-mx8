@@ -19,8 +19,8 @@ index b3df0981b2..0688540aed 100644
  		"source\0" \
 -        "loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
 -		"unzip ${img_addr} ${loadaddr}\0" \
-+        "loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image}; " \
-+		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; \0" \
++        "loadimage=if load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image}; then " \
++		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; else false; fi; \0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
  			"if test -n ${custom_fdt_file}; then " \

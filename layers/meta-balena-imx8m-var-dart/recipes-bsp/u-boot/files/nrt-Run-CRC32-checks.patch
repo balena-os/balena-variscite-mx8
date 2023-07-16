@@ -1,4 +1,4 @@
-From 702937e8bcfed9838a75409daaeb6c7d40975f5a Mon Sep 17 00:00:00 2001
+From 7a392302fd7614cf5038d2f00f55e335750a783a Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Wed, 14 Jun 2023 16:41:05 +0200
 Subject: [PATCH] nrt: Run CRC32 checks
@@ -6,19 +6,21 @@ Subject: [PATCH] nrt: Run CRC32 checks
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- include/configs/imx8mm_var_dart.h | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+ include/configs/imx8mm_var_dart.h | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index 3d6eb24b11..5e0a6bb2ce 100644
+index 3d6eb24b11..f5d2079200 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -114,7 +114,7 @@
+@@ -113,8 +113,8 @@
+         "loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
-         "loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
+-        "loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
 -		"unzip ${img_addr} ${loadaddr}\0" \
-+		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; \0" \
++        "loadimage=if load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image}; then " \
++		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; else false; fi; \0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
  			"if test -n ${custom_fdt_file}; then " \
@@ -27,7 +29,7 @@ index 3d6eb24b11..5e0a6bb2ce 100644
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
 -		"load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}\0" \
-+		"load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; run balena_fdt_load_crc_save; \0" \
++		"if load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; then run balena_fdt_load_crc_save; else false; fi; \0" \
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
  			"setenv cma_size cma=320M; " \
