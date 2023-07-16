@@ -69,7 +69,14 @@ BALENA_CONFIGS[cw2015] = " \
 BALENA_CONFIGS_append_imx8mm-var-dart-nrt = " lp55231"
 BALENA_CONFIGS[lp55231] = " \
     CONFIG_LEDS_LP5523=n \
+    CONFIG_LEDS_LP55XX_COMMON=n \
 "
+
+KERNEL_MODULE_PROBECONF_imx8mm-var-dart-nrt += " leds_lp5523 "
+module_conf_leds_lp5523 = "blacklist leds_lp5523"
+
+KERNEL_MODULE_PROBECONF_imx8mm-var-dart-nrt += " leds_lp55xx_common "
+module_conf_leds_lp55xx_common = "blacklist leds_lp55xx_common"
 
 BALENA_CONFIGS_append = " optimize-size"
 BALENA_CONFIGS[optimize-size] = " \
