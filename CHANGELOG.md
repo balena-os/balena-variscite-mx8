@@ -1,6 +1,21 @@
 Change log
 -----------
 
+# v3.0.12
+## (2023-07-16)
+
+
+<details>
+<summary> Update layers/meta-balena to 31843b108269c3147c8ae14b75ec533ea1b52ca5 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-3.0.12
+> ### (2023-07-16)
+> 
+> * tests/os: skip boot switch during provisioning [Alexandru Costache]
+> 
+
+</details>
+
 # v3.0.11+rev3
 ## (2023-07-16)
 

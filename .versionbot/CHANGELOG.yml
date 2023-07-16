@@ -1,4 +1,34 @@
 - commits:
+    - subject: Update layers/meta-balena to 31843b108269c3147c8ae14b75ec533ea1b52ca5
+      hash: fe738678e1dff383598d5e1cf4c6d503e7ba498b
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 31843b108269c3147c8ae14b75ec533ea1b52ca5
+        changelog-entry: Update layers/meta-balena to 31843b108269c3147c8ae14b75ec533ea1b52ca5
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "tests/os: skip boot switch during provisioning"
+              hash: 7320af76d0a64561ff563384e5710f37c27a5852
+              body: |
+                The imx8mm-var-dart-plt also uses a custom implementation
+                for detecting the boot switch, so let's make use of the
+                existing support in meta-balena for the testbot provisioning
+                use-case and add this DT in the Autokit.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io
+                signed-off-by: Alexandru Costache <alexandru@balena.io
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-3.0.12
+          title: ""
+          date: 2023-07-16T10:42:23.885Z
+  version: 3.0.12
+  title: ""
+  date: 2023-07-16T14:46:56.940Z
+- commits:
     - subject: "linux-variscite: Do not load lp55xx led drivers"
       hash: 48f94b3b25145c9ab994ebfa907948b859ea9341
       body: ""
