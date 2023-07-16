@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.0.11+rev3
+## (2023-07-16)
+
+* linux-variscite: Do not load lp55xx led drivers [Alexandru Costache]
+
 # v3.0.11+rev2
 ## (2023-07-15)
 

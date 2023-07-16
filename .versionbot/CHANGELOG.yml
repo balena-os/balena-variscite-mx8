@@ -1,4 +1,18 @@
 - commits:
+    - subject: "linux-variscite: Do not load lp55xx led drivers"
+      hash: 48f94b3b25145c9ab994ebfa907948b859ea9341
+      body: ""
+      footer:
+        Changelog-entry: "linux-variscite: Do not load lp55xx led drivers"
+        changelog-entry: "linux-variscite: Do not load lp55xx led drivers"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.0.11+rev3
+  title: ""
+  date: 2023-07-16T13:43:58.610Z
+- commits:
     - subject: "linux-variscite: Remove lp55231 driver for NRT DT"
       hash: 64d3a742245e5bb811cebd7cef932f7baaea5b90
       body: |
