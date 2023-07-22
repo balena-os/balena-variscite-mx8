@@ -41,10 +41,6 @@ BALENA_BOOT_PARTITION_FILES_imx8mm-var-dart = " \
     imx8mm-var-dart-dt8mcustomboard-m4.dtb:/imx8mm-var-dart-dt8mcustomboard-m4.dtb \
 "
 
-BALENA_BOOT_PARTITION_FILES_append = " \
-    extra_uEnv.txt:/extra_uEnv.txt \
-"
-
 IMAGE_INSTALL_append = " \
 	imx-boot \
 	bcm43xx-utils \
