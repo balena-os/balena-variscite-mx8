@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.0.16+rev1
+## (2023-07-22)
+
+* recipes-core/images: Don't install extra_uEnv.txt in flasher image [Alexandru Costache]
+
 # v3.0.16
 ## (2023-07-22)
 

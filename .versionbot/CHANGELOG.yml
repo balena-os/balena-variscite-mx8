@@ -1,4 +1,26 @@
 - commits:
+    - subject: "recipes-core/images: Don't install extra_uEnv.txt in flasher image"
+      hash: 80d3bbcfd5ec88f50fa7f6887c97d039efdb512c
+      body: |
+        The extra_uEnv.txt file is installed by meta-balena in the non-flasher
+        image so that it can be manipulated by the supervisor, but there's
+        no other reason for including it in the flasher by the yocto build.
+
+        This was a leftover from testing the custom dtbs during provisioning,
+        let's remove it because it causes problems for the nodejs file
+        manipulation library during provisioning of boards which use a
+        button for toggling boot from sd-cards.
+      footer:
+        Changelog-entry: "recipes-core/images: Don't install extra_uEnv.txt in flasher image"
+        changelog-entry: "recipes-core/images: Don't install extra_uEnv.txt in flasher image"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.0.16+rev1
+  title: ""
+  date: 2023-07-22T11:56:17.037Z
+- commits:
     - subject: Update layers/meta-balena to e1f474a9b8d28d5b0a0b993dd52108c214a376ea
       hash: 88c42286a55d684c3ac47b79eecf16bb589b4dbc
       body: Update layers/meta-balena
