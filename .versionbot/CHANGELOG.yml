@@ -1,4 +1,35 @@
 - commits:
+    - subject: Update layers/meta-balena to 424c259104716586e450738c7de6fb7ef3472a02
+      hash: 56e16c9b5bbe7a885ead159ebc1647cba48cc550
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 424c259104716586e450738c7de6fb7ef3472a02
+        changelog-entry: Update layers/meta-balena to 424c259104716586e450738c7de6fb7ef3472a02
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "balena-image: Install extra_uEnv for all boards that use u-boot"
+              hash: c9d665f0c2a0454a84d9890d56e4d93f57bf93ad
+              body: >
+                Some board BSPs may define UBOOT_MACHINE, others UBOOT_CONFIG,
+
+                let's make sure we include the extra_uEnv.txt file in the non-flasher
+
+                image for both cases.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-3.0.17
+          title: ""
+          date: 2023-07-25T13:45:11.862Z
+  version: 3.0.17
+  title: ""
+  date: 2023-07-25T16:09:15.891Z
+- commits:
     - subject: "recipes-core/images: Don't install extra_uEnv.txt in flasher image"
       hash: 80d3bbcfd5ec88f50fa7f6887c97d039efdb512c
       body: |
