@@ -1,4 +1,36 @@
 - commits:
+    - subject: Update layers/meta-balena to e390695280de65b7e451afe624daaeea31dde595
+      hash: fd214d79a5a251170f368ab2bd14337b116f1644
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to e390695280de65b7e451afe624daaeea31dde595
+        changelog-entry: Update layers/meta-balena to e390695280de65b7e451afe624daaeea31dde595
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "resin-u-boot.class: Fix for older u-boot versions"
+              hash: 8da86ebc124eacda1a1bf22d183f13a112c22158
+              body: |
+                The env_get() function was renamed from getenv() in commit
+                00caae6d47645e68d6e5277aceb69592b49381a6
+                env: Rename getenv/_f() to env_get()
+
+                Fix the balena_check_crc32 function to build for those older
+                u-boots too.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-3.2.6
+          title: ""
+          date: 2023-08-23T19:20:53.089Z
+  version: 3.2.6
+  title: ""
+  date: 2023-08-23T22:12:20.535Z
+- commits:
     - subject: Update contracts to d61d9118688241409d15a3ba10e963f9a202e347
       hash: c0ee9ab61a31be7c880bd6897867e448217f9ddd
       body: Update contracts
