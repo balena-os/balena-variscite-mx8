@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.2.11+rev1
+## (2023-09-03)
+
+* balena-image-initramfs: Add back migrate initramfs module [Alexandru Costache]
+
 # v3.2.11
 ## (2023-09-01)
 

@@ -1,4 +1,24 @@
 - commits:
+    - subject: "balena-image-initramfs: Add back migrate initramfs module"
+      hash: 3b9e64951eb3f47aab05bce245af5ef5c7ba0d12
+      body: >
+        On other devices we noticed that the mnt-sysroot-inactive.mount
+
+        unit cannot activate during first boot after provisioning, unless it is restarted. The automount hangs only during the first boot, upon reboot starts working normally.
+
+
+        We add back the migrate module to avoid potential cases like this.
+      footer:
+        Changelog-entry: "balena-image-initramfs: Add back migrate initramfs module"
+        changelog-entry: "balena-image-initramfs: Add back migrate initramfs module"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.2.11+rev1
+  title: ""
+  date: 2023-09-03T07:54:27.018Z
+- commits:
     - subject: Update layers/meta-balena to c1fb1e6bc532507ed9084ba613a481a6a7dbd466
       hash: bd63bac37d72c49c72a892907fc394795372b3b3
       body: Update layers/meta-balena
