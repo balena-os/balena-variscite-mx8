@@ -1,6 +1,21 @@
 Change log
 -----------
 
+# v3.2.11+rev5
+## (2023-09-28)
+
+
+<details>
+<summary> Update contracts to 27ea28be5e65c06cac559ab5bddeccf77d13830f [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.73
+> ### (2023-09-28)
+> 
+> * raspberrypi5: Add new device type [Florin Sarbu]
+> 
+
+</details>
+
 # v3.2.11+rev4
 ## (2023-09-19)
 
