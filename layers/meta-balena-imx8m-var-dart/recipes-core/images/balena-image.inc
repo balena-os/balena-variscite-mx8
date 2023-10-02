@@ -1,5 +1,4 @@
 BALENA_BOOT_PARTITION_FILES:imx8m-var-dart = " \
-    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
         imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-dp.dtb:/ \
         imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-hdmi.dtb:/ \
         imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-dp.dtb:/ \
@@ -35,7 +34,6 @@ BALENA_BOOT_PARTITION_FILES:imx8m-var-dart = " \
 "
 
 BALENA_BOOT_PARTITION_FILES:imx8mm-var-dart = " \
-    ${KERNEL_IMAGETYPE}${KERNEL_INITRAMFS}-${MACHINE}.bin:/Image.gz \
     imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
     imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
     imx8mm-var-dart-dt8mcustomboard-m4.dtb:/imx8mm-var-dart-dt8mcustomboard-m4.dtb \
@@ -55,6 +53,7 @@ IMAGE_INSTALL:append = " \
 	kernel-image-initramfs \
 	kernel-devicetree \
 	firmware-imx-sdma-imx7d \
+	libgpiod \
 "
 
 IMAGE_INSTALL:remove:imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
