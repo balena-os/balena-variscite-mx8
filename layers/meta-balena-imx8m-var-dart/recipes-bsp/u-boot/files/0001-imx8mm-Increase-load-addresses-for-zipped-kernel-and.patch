@@ -1,0 +1,33 @@
+From 2615cc5a953a8dc5274e94fbf900e55f552c3736 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 2 Oct 2023 10:06:05 +0200
+Subject: [PATCH] imx8mm: Increase load addresses for zipped kernel and dtb
+
+to allow for newer kernels provided by Kirkstone to boot with the old u-boot
+without toggling the hardware boot switch. This is useful for Automated testing
+in Autokit.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index f5d2079200..d8c1e5e495 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -68,8 +68,8 @@
+ 	"script=boot.scr\0" \
+ 	"image=Image.gz\0" \
+ 	"console=undefined\0" \
+-	"img_addr=0x42000000\0"			\
+-	"fdt_addr=0x43000000\0"			\
++	"img_addr=0x436B5300\0"			\
++	"fdt_addr=0x44B4E200\0"			\
+ 	"fdt_high=0xffffffffffffffff\0"		\
+ 	"boot_fdt=try\0" \
+ 	"ip_dyn=yes\0" \
+-- 
+2.37.2
+
