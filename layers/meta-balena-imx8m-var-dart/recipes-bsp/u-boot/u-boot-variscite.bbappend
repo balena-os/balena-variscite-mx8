@@ -8,9 +8,11 @@ LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a
 SRC_URI:append:imx8m-var-dart = " \
 	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch \
 	file://imx8m_var_dart-Use-custom_fdt_file-if-defined.patch \
+	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
 "
 
 SRC_URI:append:imx8mm-var-dart = " \
+	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
 	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
 "
 
@@ -21,8 +23,9 @@ SRC_URI:append:imx8mm-var-dart-plt = " \
 	file://plt-Always-load-the-legacy-dtb.patch \
 	file://Use-old-device-tree-on-altboot.patch \
 	file://0009-mx8mm_var_dart-plt-Use-custom_fdt_file-if-defined.patch \
-	file://plt-Run-CRC32-checks.patch \
 "
+#	file://plt-Run-CRC32-checks.patch 
+#"
 
 SRC_URI:append:imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
