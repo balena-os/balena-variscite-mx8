@@ -1,12 +1,15 @@
-From 55a8bd4117d1c392495b70b7f55becb5aafbe375 Mon Sep 17 00:00:00 2001
+From 717ca2c9c2c53bd7726111220341abcd17a167a9 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 14 Dec 2022 20:24:11 +0100
-Subject: [PATCH] freescale: Remove touch controller node from dts
+Date: Sat, 30 Sep 2023 14:34:08 +0200
+Subject: [PATCH] From 55a8bd4117d1c392495b70b7f55becb5aafbe375 Mon Sep 17
+ 00:00:00 2001 From: Alexandru Costache <alexandru@balena.io> Date: Wed, 14
+ Dec 2022 20:24:11 +0100 Subject: [PATCH] freescale: Remove touch controller
+ node from dts
 
 ---
  .../imx8mm-var-dart-dt8mcustomboard-m4.dts      |  8 --------
  .../dts/freescale/imx8mm-var-som-symphony.dts   | 16 ----------------
- .../dts/freescale/imx8mn-var-som-symphony.dts   | 15 ---------------
+ .../dts/freescale/imx8mn-var-som-symphony.dts   | 16 ----------------
  .../imx8mp-var-dart-dt8mcustomboard-legacy.dts  |  4 ----
  .../imx8mp-var-dart-dt8mcustomboard.dts         | 17 -----------------
  .../dts/freescale/imx8mp-var-som-symphony.dts   | 16 ----------------
@@ -14,7 +17,7 @@ Subject: [PATCH] freescale: Remove touch controller node from dts
  ...x8mq-var-dart-dt8mcustomboard-lvds-dcss.dtsi |  4 ----
  ...8mq-var-dart-dt8mcustomboard-lvds-lcdif.dtsi |  4 ----
  .../imx8mq-var-dart-dt8mcustomboard.dtsi        | 17 -----------------
- 10 files changed, 105 deletions(-)
+ 10 files changed, 106 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-m4.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard-m4.dts
 index 75c31c3d5b52..0777fd74dbfd 100644
@@ -60,33 +63,34 @@ index 5c75d986eea7..922d6efe8234 100644
  	rtc@68 {
  		compatible = "dallas,ds1337";
 diff --git a/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts b/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts
-index f61c48776cf3..085a017bfc9f 100644
+index a4056b0155d4..09968c59c27b 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mn-var-som-symphony.dts
-@@ -112,21 +112,6 @@ extcon_usbotg1: typec@3d {
+@@ -322,22 +322,6 @@ enet_sel_hog {
  };
  
  &i2c3 {
 -	/* Capacitive touch controller */
--	ft5x06_ts: touchscreen@38 {
--		compatible = "edt,edt-ft5406";
+-	ft5x06_ts: ft5x06_ts@38 {
+-		status = "okay";
+-		compatible = "edt,edt-ft5206";
 -		reg = <0x38>;
 -		pinctrl-names = "default";
 -		pinctrl-0 = <&pinctrl_captouch>;
 -		interrupt-parent = <&gpio5>;
--		interrupts = <4 IRQ_TYPE_LEVEL_HIGH>;
--
+-		interrupts = <4 IRQ_TYPE_EDGE_FALLING>;
 -		touchscreen-size-x = <800>;
 -		touchscreen-size-y = <480>;
 -		touchscreen-inverted-x;
 -		touchscreen-inverted-y;
+-		wakeup-source;
 -	};
 -
+ 	/* DS1337 RTC module */
  	rtc@68 {
- 		compatible = "dallas,ds1337";
- 		reg = <0x68>;
+ 		status = "okay";
 diff --git a/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts b/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts
-index 534bb3bdbd0b..dbe228dacb55 100644
+index b624847b57d5..e1e93f25ca1a 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mp-var-dart-dt8mcustomboard-legacy.dts
 @@ -49,10 +49,6 @@ ov5640_mipi0: ov5640_mipi@3c {
