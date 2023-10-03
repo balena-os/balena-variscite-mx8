@@ -13,6 +13,7 @@ SRC_URI_append_imx8m-var-dart = " \
 SRC_URI_append_imx8mm-var-dart = " \
 	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
 	file://0009-imx8mm_var_dart-Use-custom_fdt_file-if-defined.patch \
+	file://0001-imx8mm-Increase-load-addresses-for-zipped-kernel-and.patch \
 "
 
 SRC_URI_remove_imx8mm-var-dart-plt = " \
