@@ -1,4 +1,18 @@
 - commits:
+    - subject: "imx-boot: ensure boot binary is not reused from sstate"
+      hash: efb75b2da2b3c72c9b84ad44d277a4d3f17caefb
+      body: ""
+      footer:
+        Changelog-entry: "imx-boot: ensure boot binary is not reused from sstate"
+        changelog-entry: "imx-boot: ensure boot binary is not reused from sstate"
+        Signed-of-by: Alexandru Costache <alexandru@balena.io>
+        signed-of-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.2.12+rev1
+  title: ""
+  date: 2023-10-03T14:32:41.172Z
+- commits:
     - subject: "layers/meta-balena: Update to v3.2.12"
       hash: c058b491d799e34e9c86fd244d1f8cf4eb8ef034
       body: ""

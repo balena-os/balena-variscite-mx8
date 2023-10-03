@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.2.12+rev1
+## (2023-10-03)
+
+* imx-boot: ensure boot binary is not reused from sstate [Alexandru Costache]
+
 # v3.2.12
 ## (2023-10-03)
 
