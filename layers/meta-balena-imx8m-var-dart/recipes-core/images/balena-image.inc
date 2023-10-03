@@ -54,6 +54,7 @@ IMAGE_INSTALL:append = " \
 	kernel-devicetree \
 	firmware-imx-sdma-imx7d \
 	libgpiod \
+	linux-firmware-bcm4339 \
 "
 
 IMAGE_INSTALL:remove:imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
