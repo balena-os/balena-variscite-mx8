@@ -22,10 +22,8 @@ SRC_URI:append:imx8mm-var-dart-plt = " \
 	file://mx8mm-plt-turn-on-yellow-led-at-boot.patch \
 	file://plt-Always-load-the-legacy-dtb.patch \
 	file://Use-old-device-tree-on-altboot.patch \
-	file://0009-mx8mm_var_dart-plt-Use-custom_fdt_file-if-defined.patch \
+	file://plt-Run-CRC32-checks.patch \ 
 "
-#	file://plt-Run-CRC32-checks.patch 
-#"
 
 SRC_URI:append:imx8mm-var-dart-nrt = " \
 	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
