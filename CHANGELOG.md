@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v3.2.11+rev7
+## (2023-10-03)
+
+* Update balena-os/github-workflows to v0.0.24 [Self-hosted Renovate Bot]
+
 # v3.2.11+rev6
 ## (2023-09-28)
 
