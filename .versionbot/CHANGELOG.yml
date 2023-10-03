@@ -1,4 +1,34 @@
 - commits:
+    - subject: "layers/meta-balena: Update to v3.2.12"
+      hash: c058b491d799e34e9c86fd244d1f8cf4eb8ef034
+      body: ""
+      footer:
+        Changelog-entry: "layers/meta-balena: Update to v3.2.12"
+        changelog-entry: "layers/meta-balena: Update to v3.2.12"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: "u-boot: Increase load addresses for zipped kernel and dtb on imx8mm"
+      hash: 12f07bae5d287215b536683438e2a441d914bec2
+      body: >
+        to allow for newer kernels provided by Kirkstone to boot with the old
+        u-boot
+
+        without toggling the hardware boot switch. This is useful for Automated testing
+
+        in Autokit.
+      footer:
+        Changelog-entry: "u-boot: Increase load addresses for zipped kernel and dtb on imx8mm"
+        changelog-entry: "u-boot: Increase load addresses for zipped kernel and dtb on imx8mm"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.2.12
+  title: ""
+  date: 2023-10-03T10:34:16.938Z
+- commits:
     - subject: Update balena-os/github-workflows to v0.0.24
       hash: bbe1b309e44dbdf9c265f621d2fa26cc256b999a
       body: Update balena-os/github-workflows

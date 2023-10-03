@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v3.2.12
+## (2023-10-03)
+
+* layers/meta-balena: Update to v3.2.12 [Alexandru Costache]
+* u-boot: Increase load addresses for zipped kernel and dtb on imx8mm [Alexandru Costache]
+
 # v3.2.11+rev7
 ## (2023-10-03)
 
