@@ -1,4 +1,4 @@
-DEPENDS_append = " \
+DEPENDS:append = " \
     virtual/bootloader \
 "
 do_configure[nostamp] = "1"
