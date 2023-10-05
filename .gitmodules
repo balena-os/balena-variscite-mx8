@@ -13,22 +13,12 @@
 [submodule "layers/meta-balena"]
 	path = layers/meta-balena
 	url = https://github.com/balena-os/meta-balena.git
-	branch = master
-[submodule "layers/meta-rust"]
-	path = layers/meta-rust
-	url = https://github.com/meta-rust/meta-rust.git
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/balena-os/poky
-	branch = dunfell
-[submodule "layers/meta-laird-cp"]
-	path = layers/meta-laird-cp
-	url = https://github.com/LairdCP/meta-laird-cp.git
-[submodule "layers/meta-variscite-fslc"]
-	path = layers/meta-variscite-fslc
-	url = https://github.com/varigit/meta-variscite-fslc.git
-	branch = dunfell
 [submodule "contracts"]
 	path = contracts
 	url = https://github.com/balena-io/contracts.git
-	branch = master
+[submodule "layers/meta-variscite-bsp"]
+	path = layers/meta-variscite-bsp
+	url = https://github.com/varigit/meta-variscite-bsp.git

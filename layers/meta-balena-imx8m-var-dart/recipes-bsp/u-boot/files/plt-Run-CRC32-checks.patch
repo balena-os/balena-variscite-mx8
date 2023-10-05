@@ -1,30 +1,44 @@
-From b9fe2a30b8b3eb4c54766d87290e311bf66f833a Mon Sep 17 00:00:00 2001
+From 952126da69eabb5368e9a438107137c30a0990b3 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 14 Jun 2023 15:07:47 +0200
+Date: Mon, 2 Oct 2023 15:55:14 +0200
 Subject: [PATCH] plt: Run CRC32 checks
 
 Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
- include/configs/imx8mm_var_dart.h | 10 ++++++----
- 1 file changed, 6 insertions(+), 4 deletions(-)
+ include/configs/imx8mm_var_dart.h | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index b3df0981b2..0688540aed 100644
+index 95f1041195..9a8990f793 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -114,8 +114,8 @@
-         "loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
+@@ -79,10 +79,10 @@
+ 	"kernel_addr_r=" __stringify(CONFIG_SYS_LOAD_ADDR) "\0" \
+ 	"bsp_script=boot.scr\0" \
+ 	"image=Image.gz\0" \
+-	"img_addr=0x42000000\0"			\
++	"img_addr=0x436B5300\0"			\
+ 	"console=ttymxc0,115200\0" \
+-	"fdt_addr_r=0x43000000\0" \
+-	"fdt_addr=0x43000000\0"			\
++	"fdt_addr_r=0x44B4E200\0" \
++	"fdt_addr=0x44B4E200\0"			\
+ 	"fdt_high=0xffffffffffffffff\0"		\
+ 	"boot_fdt=try\0" \
+ 	"boot_fit=no\0" \
+@@ -123,8 +123,8 @@
+ 	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
--        "loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
+-	"loadimage=load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image};" \
 -		"unzip ${img_addr} ${loadaddr}\0" \
 +        "loadimage=if load mmc ${mmcdev}:${resin_root_part} ${img_addr} boot/${image}; then " \
 +		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; else false; fi; \0" \
  	"findfdt=" \
  		"if test $fdt_file = undefined; then " \
  			"if test -n ${custom_fdt_file}; then " \
-@@ -142,8 +142,8 @@
+@@ -151,8 +151,8 @@
                         "run set_num_blocks; mmc write ${loadaddr} 0x42 ${imx_boot_num_blocks}; reset; \0" \
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; setenv old_fdt imx8mm-var-dart-legacy.dtb; " \
@@ -35,13 +49,13 @@ index b3df0981b2..0688540aed 100644
  		"else if test ${mmcdev} = 2; then echo Will revert imx-boot for compatibility; run revert_imx_boot; fi; fi; fi; \0" \
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
-@@ -156,6 +156,8 @@
- 		"run optargs; " \
- 		"if test ${boot_fdt} = yes || test ${boot_fdt} = try; then " \
+@@ -171,6 +171,8 @@
+ 			"bootm ${loadaddr}; " \
+ 		"else " \
  			"if run loadfdt; then " \
 +				"run balena_kernel_load_crc_check; " \
 +				"run balena_fdt_load_crc_check; " \
- 				"booti ${loadaddr} - ${fdt_addr}; " \
+ 				"booti ${loadaddr} - ${fdt_addr_r}; " \
  			"else " \
  				"echo WARN: Cannot load the DT; " \
 -- 

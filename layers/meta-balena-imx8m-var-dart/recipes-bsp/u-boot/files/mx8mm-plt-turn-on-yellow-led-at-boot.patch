@@ -1,6 +1,6 @@
-From bc60b8c2049f602df05bd9f6dfebf93c24100974 Mon Sep 17 00:00:00 2001
+From 49d754bce23338961ee1fed6a1d051929ef9f2d8 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 1 Jun 2021 13:25:30 +0200
+Date: Wed, 14 Dec 2022 22:20:12 +0100
 Subject: [PATCH] Turn on led at boot
 
 Upstream-status: Inappropriate[configuration]
@@ -10,12 +10,12 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 10 insertions(+), 1 deletion(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index 138cfadba0..8044ce9c11 100644
+index b11a3ffe88..dd24fb38ca 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -78,6 +78,15 @@
+@@ -91,6 +91,15 @@
+ 	"mmcdev="__stringify(CONFIG_SYS_MMC_ENV_DEV)"\0" \
  	"mmcblk=1\0" \
- 	"mmcautodetect=yes\0" \
  	"mmcpart=1\0" \
 +	"led_ctrl_1=0x30\0" \
 +	"led_ctrl_2=0x31\0" \
@@ -26,18 +26,18 @@ index 138cfadba0..8044ce9c11 100644
 +	"light_yellow=run light_red_led; run light_green_led;\0" \
 +	"led_enable=i2c mw ${led_ctrl_1} 0x0 0x40; i2c mw ${led_ctrl_1} 0x70 0x0; i2c mw ${led_ctrl_1} 0x8 0x1;\0" \
 +	"start_led=run select_i2c_bus_3; run led_enable; run light_yellow;\0" \
+ 	"mmcautodetect=yes\0" \
  	"m4_addr=0x7e0000\0" \
  	"m4_bin=hello_world.bin\0" \
- 	"use_m4=no\0" \
-@@ -168,7 +177,7 @@
+@@ -188,7 +197,7 @@
  	"run ramsize_check; " \
  	"if bootswitchpos EXT; then setenv resin_flasher_skip 0; else setenv resin_flasher_skip 1; fi; "\
          "setenv resin_kernel_load_addr ${loadaddr};" \
 -        "run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
-+        "run resin_set_kernel_root; run start_led; run set_os_cmdline; gpio set 137; " \
++	"run resin_set_kernel_root; run start_led; run set_os_cmdline; gpio set 137; " \
          "setenv mmcdev ${resin_dev_index};" \
-         "setenv mmcbootpart ${resin_boot_part};" \
+         "setenv mmcbootpart ${resin_boot_part}; run setconsole;" \
  	"mmc dev ${mmcdev}; "\
 -- 
-2.17.1
+2.37.2
 

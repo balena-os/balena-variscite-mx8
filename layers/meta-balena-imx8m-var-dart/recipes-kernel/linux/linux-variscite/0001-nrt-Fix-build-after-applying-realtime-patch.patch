@@ -1,0 +1,82 @@
+From 24d4a923936762b4a291714c970c07c83e693bcd Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Wed, 14 Dec 2022 18:18:15 +0100
+Subject: [PATCH] nrt: Fix build after applying realtime patch
+
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.c   | 2 +-
+ drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.h   | 2 +-
+ drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.c | 2 +-
+ drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.h | 2 +-
+ kernel/sched/deadline.c                                  | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.c b/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.c
+index 13255617c9f2..b11221bdc657 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.c
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.c
+@@ -1051,7 +1051,7 @@ static int dpaa2_ceetm_cls_dump_stats(struct Qdisc *sch, unsigned long arg,
+ 				      struct gnet_dump *d)
+ {
+ 	struct dpaa2_ceetm_class *cl = (struct dpaa2_ceetm_class *)arg;
+-	struct gnet_stats_basic_packed tmp_bstats;
++	struct gnet_stats_basic_sync tmp_bstats;
+ 	struct dpaa2_ceetm_tc_xstats xstats;
+ 	union dpni_statistics dpni_stats;
+ 	struct net_device *dev = qdisc_dev(sch);
+diff --git a/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.h b/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.h
+index 0f914ef44d01..b660e70b4424 100644
+--- a/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.h
++++ b/drivers/net/ethernet/freescale/dpaa2/dpaa2-eth-ceetm.h
+@@ -168,7 +168,7 @@ struct dpaa2_ceetm_qdisc_stats {
+ 
+ struct dpaa2_ceetm_class_stats {
+ 	/* Software counters */
+-	struct gnet_stats_basic_packed bstats;
++	struct gnet_stats_basic_sync bstats;
+ 	__u32 ern_drop_count;
+ };
+ 
+diff --git a/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.c b/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.c
+index aa24fb769c4e..b872ff197a65 100644
+--- a/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.c
++++ b/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.c
+@@ -1822,7 +1822,7 @@ static int ceetm_cls_dump_stats(struct Qdisc *sch, unsigned long arg,
+ 				struct gnet_dump *d)
+ {
+ 	struct ceetm_class *cl = (struct ceetm_class *)arg;
+-	struct gnet_stats_basic_packed tmp_bstats;
++	struct gnet_stats_basic_sync tmp_bstats;
+ 	struct ceetm_class_stats *cstats = NULL;
+ 	struct qm_ceetm_cq *cq = NULL;
+ 	struct tc_ceetm_xstats xstats;
+diff --git a/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.h b/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.h
+index 66edc82da8c2..b9bb3f1d34c0 100644
+--- a/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.h
++++ b/drivers/net/ethernet/freescale/sdk_dpaa/dpaa_eth_ceetm.h
+@@ -224,7 +224,7 @@ struct ceetm_qdisc_stats {
+ 
+ struct ceetm_class_stats {
+ 	/* Software counters */
+-	struct gnet_stats_basic_packed bstats;
++	struct gnet_stats_basic_sync bstats;
+ 	__u32 ern_drop_count;
+ 	__u32 congested_count;
+ };
+diff --git a/kernel/sched/deadline.c b/kernel/sched/deadline.c
+index c9dc1bc06431..405068560975 100644
+--- a/kernel/sched/deadline.c
++++ b/kernel/sched/deadline.c
+@@ -1562,7 +1562,7 @@ static void enqueue_task_dl(struct rq *rq, struct task_struct *p, int flags)
+ 		 */
+ 		p->dl.dl_throttled = 0;
+ 		if (!(flags & ENQUEUE_REPLENISH))
+-			printk_deferred_once("sched: DL de-boosted task PID %d: REPLENISH flag missing\n",
++			printk_once("sched: DL de-boosted task PID %d: REPLENISH flag missing\n",
+ 					     task_pid_nr(p));
+ 
+ 		return;
+-- 
+2.37.2
+

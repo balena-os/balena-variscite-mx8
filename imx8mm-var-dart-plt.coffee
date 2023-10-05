@@ -38,7 +38,7 @@ module.exports =
                 machine: 'imx8mm-var-dart-plt'
                 image: 'balena-image-flasher'
                 fstype: 'balenaos-img'
-                version: 'yocto-dunfell'
+                version: 'yocto-kirkstone'
                 deployArtifact: 'balena-image-flasher-imx8mm-var-dart-plt.balenaos-img'
                 compressed: true
 

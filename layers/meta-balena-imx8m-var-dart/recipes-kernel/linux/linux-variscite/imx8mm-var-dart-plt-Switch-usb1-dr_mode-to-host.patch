@@ -1,6 +1,6 @@
-From 5ee967e803a9548cb80d83ca9cc26e607a080848 Mon Sep 17 00:00:00 2001
+From 646290364835a7fad2a9a32dc320735bb098bb41 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 29 Jun 2021 16:49:33 +0200
+Date: Wed, 14 Dec 2022 22:47:08 +0100
 Subject: [PATCH] imx8mm-var-dart: Switch usb1 dr_mode to host
 
 This is needed for usb devices to work correctly.
@@ -16,18 +16,18 @@ Signed-off-by: Alexandru Costache <alexandru@balena.io>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
-index 1615d2ec6ebf..b96ed3848379 100644
+index 76472e922bb9..fcb9283c18b2 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
-@@ -334,7 +334,7 @@
+@@ -335,7 +335,7 @@ &uart3 {
  };
  
  &usbotg1 {
 -	dr_mode = "otg";
 +	dr_mode = "host";
- 	picophy,pre-emp-curr-control = <3>;
- 	picophy,dc-vol-level-adjust = <7>;
- 	extcon = <&extcon_usb1>;
+ 	hnp-disable;
+ 	srp-disable;
+ 	adp-disable;
 -- 
-2.17.1
+2.37.2
 

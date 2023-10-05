@@ -1,0 +1,64 @@
+From 198c931736a5da5c57837ec37fba1004dc3473e5 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Mon, 5 Sep 2022 10:35:04 +0200
+Subject: [PATCH] Enable spidev0.0 on kernel 5.10 for iMX8M Mini VAR SOM
+
+Upstream-Status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io
+---
+ .../boot/dts/freescale/imx8mm-var-som.dtsi    | 29 +++++--------------
+ 1 file changed, 7 insertions(+), 22 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-som.dtsi b/arch/arm64/boot/dts/freescale/imx8mm-var-som.dtsi
+index 330f604dcad7..b148750e5dc0 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm-var-som.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm-var-som.dtsi
+@@ -418,6 +418,9 @@ &wdog1 {
+ };
+ 
+ &ecspi1 {
++        #address-cells = <1>;
++        #size-cells = <0>;
++
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_ecspi1>;
+ 	cs-gpios = <&gpio1 14 GPIO_ACTIVE_LOW>,
+@@ -425,31 +428,13 @@ &ecspi1 {
+ 		   <&gpio2 19 GPIO_ACTIVE_LOW>;
+ 	status = "okay";
+ 
+-	/* Resistive touch controller */
+-	ads7846@0 {
++	spidev@0 {
++		compatible = "var,spidev";
++		spi-max-frequency = <12000000>;
+ 		reg = <0>;
+-		compatible = "ti,ads7846";
+-		pinctrl-names = "default";
+-		pinctrl-0 = <&pinctrl_restouch>;
+-		interrupt-parent = <&gpio1>;
+-		interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
+-		spi-max-frequency = <1500000>;
+-		pendown-gpio = <&gpio1 3 GPIO_ACTIVE_LOW>;
+-		ti,x-min = /bits/ 16 <125>;
+-		ti,x-max = /bits/ 16 <4008>;
+-		ti,y-min = /bits/ 16 <282>;
+-		ti,y-max = /bits/ 16 <3864>;
+-		ti,x-plate-ohms = /bits/ 16 <180>;
+-		ti,pressure-max = /bits/ 16 <255>;
+-		ti,debounce-max = /bits/ 16 <10>;
+-		ti,debounce-tol = /bits/ 16 <3>;
+-		ti,debounce-rep = /bits/ 16 <1>;
+-		ti,settle-delay-usec = /bits/ 16 <150>;
+-		ti,keep-vref-on;
+-		wakeup-source;
+-		status = "okay";
+ 	};
+ 
++
+ 	/* CAN controller */
+ 	can0: can@1 {
+ 		reg = <1>;
+-- 
+2.37.2
+

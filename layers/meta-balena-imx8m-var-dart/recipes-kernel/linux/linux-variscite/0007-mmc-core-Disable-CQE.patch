@@ -1,4 +1,4 @@
-From d45f80bcf706f4a13734135be020a21d8b174777 Mon Sep 17 00:00:00 2001
+From baff3d131686ad5783ed1e1d841a0021cc537962 Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
 Date: Thu, 1 Jul 2021 11:21:35 +0200
 Subject: [PATCH] mmc: core: Disable CQE
@@ -12,35 +12,36 @@ So let's disable CQE for now.
 Upstream-Status: Inappropriate [configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
 ---
- drivers/mmc/core/mmc.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/mmc/core/mmc.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/mmc/core/mmc.c b/drivers/mmc/core/mmc.c
-index de14b5845f52..0c54c77c1589 100644
+index d805f8450719..2e3949728351 100644
 --- a/drivers/mmc/core/mmc.c
 +++ b/drivers/mmc/core/mmc.c
-@@ -1833,6 +1833,12 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+@@ -1,4 +1,4 @@
+-// SPDX-License-Identifier: GPL-2.0-only
++
+ /*
+  *  linux/drivers/mmc/core/mmc.c
+  *
+@@ -1864,7 +1864,7 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+ 	 * be used with Command Queue.
  	 */
  	card->ext_csd.cmdq_en = false;
- 	if (card->ext_csd.cmdq_support && host->caps2 & MMC_CAP2_CQE) {
-+/*
-+ * We get a lot of
-+ * mmc2: running CQE recovery
-+ * so let's just disable CQE for now
-+ */
-+#if 0
+-	if (card->ext_csd.cmdq_support && host->caps2 & MMC_CAP2_CQE) {
++	if (0 ) {
  		err = mmc_cmdq_enable(card);
  		if (err && err != -EBADMSG)
  			goto free_card;
-@@ -1843,6 +1849,8 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
+@@ -1875,6 +1875,7 @@ static int mmc_init_card(struct mmc_host *host, u32 ocr,
  			card->ext_csd.cmdq_depth = 0;
- 			err = 0;
  		}
-+#endif
-+	pr_info("%s: CMDQ support disabled in kernel\n", mmc_hostname(host));
  	}
++
  	/*
  	 * In some cases (e.g. RPMB or mmc_test), the Command Queue must be
+ 	 * disabled for a time, so a flag is needed to indicate to re-enable the
 -- 
-2.17.1
+2.37.2
 

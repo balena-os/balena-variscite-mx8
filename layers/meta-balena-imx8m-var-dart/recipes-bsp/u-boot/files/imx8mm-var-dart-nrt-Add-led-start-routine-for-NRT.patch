@@ -1,6 +1,6 @@
-From c99028f88a63c19e71e0d46e6e846e40ba1e7820 Mon Sep 17 00:00:00 2001
+From d0f5e057a27aba95e4c3dd1109bdec41785ff66c Mon Sep 17 00:00:00 2001
 From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 29 Jun 2021 14:10:33 +0200
+Date: Wed, 14 Dec 2022 15:44:40 +0100
 Subject: [PATCH] imx8mm-var-dart-nrt: Add led start routine for NRT
 
 The gpio and i2c commands are provided in New OS for C 1 6-3-21 pdf
@@ -9,13 +9,13 @@ Upstream-status: Inappropriate [configuration]
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
  include/configs/imx8mm_var_dart.h | 10 +++++++++-
- 1 file changed, 9 insertions(+), 1 deletion(-)
+ 1 file changed, 10 insertions(+), 1 deletion(-)
 
 diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
-index c8f6ac299e..15da1ec940 100644
+index 54fc7aefb6..9cb3badebb 100644
 --- a/include/configs/imx8mm_var_dart.h
 +++ b/include/configs/imx8mm_var_dart.h
-@@ -81,6 +81,14 @@
+@@ -95,6 +95,14 @@
  	"m4_addr=0x7e0000\0" \
  	"m4_bin=hello_world.bin\0" \
  	"use_m4=no\0" \
@@ -27,11 +27,11 @@ index c8f6ac299e..15da1ec940 100644
 +		"for reg_addr in ${nrt_led_addrs2}; do i2c mw ${led_ctrl} ${reg_addr} 0x0A; done; " \
 +		"for reg_addr in ${nrt_led_addrs1}; do i2c mw ${led_ctrl} ${reg_addr} 0xFF; done;\0" \
 +	"start_led=run nrt_led_init; run nrt_led_start;\0" \
+ 	"dfu_alt_info=mmc 2=1 raw 0x42 0x1000 mmcpart\0" \
  	"loadm4bin=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${m4_bin}; " \
- 		"cp.b ${loadaddr} ${m4_addr} ${filesize}\0" \
- 	"runm4bin=" \
-@@ -171,7 +179,7 @@
- #define CONFIG_BOOTCOMMAND \
+ 		"cp.b ${loadaddr} ${m4_addr} ${filesize}; " \
+@@ -187,7 +196,7 @@
+ 	"bsp_bootcmd=echo Running BSP bootcmd ...; " \
  	"run ramsize_check; " \
          "setenv resin_kernel_load_addr ${loadaddr};" \
 -        "run resin_set_kernel_root; run set_os_cmdline; gpio set 137; " \
@@ -40,5 +40,5 @@ index c8f6ac299e..15da1ec940 100644
          "setenv mmcbootpart ${resin_boot_part}; run setconsole;" \
  	"mmc dev ${mmcdev}; "\
 -- 
-2.17.1
+2.37.2
 
