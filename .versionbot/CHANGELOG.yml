@@ -1,4 +1,31 @@
 - commits:
+    - subject: "imx-boot: switch to Honister syntax"
+      hash: 299090e57ae99720cafc289f272c2dd5b0657bba
+      body: ""
+      footer:
+        Changelog-entry: "imx-boot: switch to Honister syntax"
+        changelog-entry: "imx-boot: switch to Honister syntax"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: "u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som patches
+        for Kirkstone"
+      hash: 2d9a988bb71f77f7a9d9fc0f546a59ee490d0d62
+      body: ""
+      footer:
+        Changelog-entry: "u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som
+          patches for Kirkstone"
+        changelog-entry: "u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som
+          patches for Kirkstone"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 3.2.12+rev2
+  title: ""
+  date: 2023-10-05T14:02:55.378Z
+- commits:
     - subject: "imx-boot: ensure boot binary is not reused from sstate"
       hash: efb75b2da2b3c72c9b84ad44d277a4d3f17caefb
       body: ""

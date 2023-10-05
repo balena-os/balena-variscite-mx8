@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v3.2.12+rev2
+## (2023-10-05)
+
+* imx-boot: switch to Honister syntax [Alexandru Costache]
+* u-boot-variscite: Rework imx8mm-var-dart and imx8mm-var-som patches for Kirkstone [Alexandru Costache]
+
 # v3.2.12+rev1
 ## (2023-10-03)
 
