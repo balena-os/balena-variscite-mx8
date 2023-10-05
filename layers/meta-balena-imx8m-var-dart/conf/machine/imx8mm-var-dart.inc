@@ -60,7 +60,7 @@ IMX_BOOT_SOC_TARGET = "iMX8MM"
 # Extra firmware package name, that is required to build boot container for fslc bsp
 IMX_EXTRA_FIRMWARE = "firmware-imx-8m"
 
-SERIAL_CONSOLES = "115200;ttymxc0 115200;ttymxc3"
+SERIAL_CONSOLES = "115200;ttymxc0"
 
 IMAGE_BOOTLOADER = "imx-boot"
 
