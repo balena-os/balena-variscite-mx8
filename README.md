@@ -98,7 +98,7 @@ layers/meta-balena: Update to v2.30.0
 
 Update meta-balena from 2.29.2 to 2.30.0
 
-Changelog-entry: Update the meta-balena submodule from v2.29.2 to v2.30.0
+Changelog-entry: Update the meta-balena submodule from v2.29.2 to v2.31.0
 ```
 
 Make sure you mention the issue addressed by a PR. See:
