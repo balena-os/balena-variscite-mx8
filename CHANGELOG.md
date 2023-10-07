@@ -1,6 +1,258 @@
 Change log
 -----------
 
+# v4.0.20
+## (2023-10-07)
+
+
+<details>
+<summary> Update layers/meta-balena to dda681a93a1e2459925d36fabcb8bd4c6f68363a [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-4.0.20
+> ### (2023-10-05)
+> 
+> * balena-net-config: Ensure NM dispatcher scripts are executable [Alexandru Costache]
+> 
+> ## meta-balena-4.0.19
+> ### (2023-10-03)
+> 
+> * flowzone: meta-balena-esr: add weekly run to keep workflow enabled [Alex Gonzalez]
+> 
+> ## meta-balena-4.0.18
+> ### (2023-10-03)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.13.4 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.13.4
+>> #### (2023-10-02)
+>> 
+>> * Add tmpfs for /mnt/root/tmp in test env [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-14.13.3
+>> #### (2023-10-02)
+>> 
+>> * Use `~=` to specify alpine package versions [Felipe Lalanne]
+>> 
+>> ### balena-supervisor-14.13.2
+>> #### (Invalid date)
+>> 
+>> * Use native structuredClone instead of _.cloneDeep [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-14.13.1
+>> #### (2023-09-28)
+>> 
+>> * Update balena-io/deploy-to-balena-action to v1.0.3 [Self-hosted Renovate Bot]
+>> 
+>> ### balena-supervisor-14.13.0
+>> #### (2023-09-28)
+>> 
+>> * Update runtime-base image to alpine:3.18 [Christina Ying Wang]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.17
+> ### (2023-10-02)
+> 
+> * workflows: Switch to balenaOS ESR [bot] for authentication [Kyle Harding]
+> 
+> ## meta-balena-4.0.16
+> ### (2023-09-28)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 04a53d3 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.31
+>> #### (2023-09-28)
+>> 
+>> * Update core/contracts digest to 27ea28b [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.15
+> ### (2023-09-27)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to b4e68c8 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.30
+>> #### (2023-09-25)
+>> 
+>> * Update actions/checkout action to v4 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.14
+> ### (2023-09-27)
+> 
+> * patch: Add custom build docs [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## meta-balena-4.0.13
+> ### (2023-09-26)
+> 
+> * balena-rollback: Add support for balena bootloader [Michal Toman]
+> * hostapp-update-hooks: Add hook for balena bootloader [Michal Toman]
+> * initrdscripts: add a script that switches between rootA and rootB [Michal Toman]
+> * initrdscripts: make kexec script more robust [Michal Toman]
+> * initrdscripts: add missing dependencies to rootfs script [Michal Toman]
+> * balena-image-bootloader-initramfs: Add balena bootloader [Alex Gonzalez]
+> 
+> ## meta-balena-4.0.12
+> ### (2023-09-25)
+> 
+> * Check if SUPERVISOR_OVERRIDE_LOCK is set [jaomaloy]
+> * Check and get service lockfiles on HUP reboot [jaomaloy]
+> 
+> ## meta-balena-4.0.11
+> ### (2023-09-21)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v20.10.40 [Leandro Motta Barros] </summary>
+> 
+>> ### balena-engine-20.10.40
+>> #### (2023-09-11)
+>> 
+>> * Re-vendor to get the containerd-shim-runc-v2 sources [Leandro Motta Barros]
+>> * Default to io.containerd.runc.v2 [Robert Günzler]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.10
+> ### (2023-09-20)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.12.2 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.12.2
+>> #### (2023-09-15)
+>> 
+>> * Dump target-state to hostOS tmp dir [jaomaloy]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.9
+> ### (2023-09-15)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 397a10f [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.29
+>> #### (2023-09-14)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.23 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.28.28
+>> #### (2023-09-12)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.22 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.8
+> ### (2023-09-15)
+> 
+> * Enable back ModemManager AT commands through D-Bus and	mmcli [Zahari Petkov]
+> 
+> ## meta-balena-4.0.7
+> ### (2023-09-14)
+> 
+> * Update tibdex/github-app-token action to v2 [Self-hosted Renovate Bot]
+> 
+> ## meta-balena-4.0.6
+> ### (2023-09-13)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v14.12.1 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-supervisor-14.12.1
+>> #### (2023-08-21)
+>> 
+>> * Bump sqlite3 to 5.1.6 [Felipe Lalanne]
+>> * Bump knex to v2.5.1 [Felipe Lalanne]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.5
+> ### (2023-09-13)
+> 
+> * tests: os: retry healthcheck disable [rcooke-warwick]
+> 
+> ## meta-balena-4.0.4
+> ### (2023-09-11)
+> 
+> * renovate updates patch only [ab77]
+> 
+> ## meta-balena-4.0.3
+> ### (2023-09-09)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 0acfe61 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.28.27
+>> #### (2023-09-06)
+>> 
+>> * Update actions/upload-artifact digest to a8a3f3a [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.28.26
+>> #### (2023-09-04)
+>> 
+>> * Update core/contracts digest to 518a1d4 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.2
+> ### (2023-09-08)
+> 
+> 
+> <details>
+> <summary> Update balena-engine to v20.10.39 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### balena-engine-20.10.39
+>> #### (Invalid date)
+>> 
+>> * Don't enable AppArmor if `apparmor_parser` is not present [Leandro Motta Barros]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.1
+> ### (2023-09-08)
+> 
+> * classes: sign: add a retry to the signing call [Alex Gonzalez]
+> 
+> ## meta-balena-4.0.0
+> ### (2023-09-06)
+> 
+> * Update actions/checkout action to v4 [Self-hosted Renovate Bot]
+> 
+
+</details>
+
 # v3.2.12+rev2
 ## (2023-10-05)
 

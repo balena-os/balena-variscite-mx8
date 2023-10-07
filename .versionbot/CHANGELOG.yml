@@ -1,4 +1,659 @@
 - commits:
+    - subject: Update layers/meta-balena to dda681a93a1e2459925d36fabcb8bd4c6f68363a
+      hash: a472d661cc7f070f611fde6d6171786b0d4972ba
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to dda681a93a1e2459925d36fabcb8bd4c6f68363a
+        changelog-entry: Update layers/meta-balena to dda681a93a1e2459925d36fabcb8bd4c6f68363a
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "balena-net-config: Ensure NM dispatcher scripts are executable"
+              hash: ee6083ce3c690aff7c617af1455e19144d3048fc
+              body: >
+                This commit fixes the following error:
+                    nm-dispatcher[4209]: req:1 hostname: find-scripts:
+                        Cannot execute ... 50-example-script.sh: not executable by owner.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-4.0.20
+          title: ""
+          date: 2023-10-05T14:41:28.636Z
+        - commits:
+            - subject: "flowzone: meta-balena-esr: add weekly run to keep workflow enabled"
+              hash: 858161349540531fb1554be2ca3bcf1468f57dea
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-4.0.19
+          title: ""
+          date: 2023-10-03T10:42:46.377Z
+        - commits:
+            - subject: Update balena-supervisor to v14.13.4
+              hash: 5d0cd299c2ee51c73e4165df5681ab9ef9fcba81
+              body: |
+                Update balena-supervisor from 14.12.2 to 14.13.4
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Add tmpfs for /mnt/root/tmp in test env
+                      hash: 5564a51acf4897c7981808d8bdd28e1c016caca1
+                      body: >
+                        This is to prevent the target state cache from getting
+                        written to host
+
+                        during tests.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-14.13.4
+                  title: ""
+                  date: 2023-10-02T21:38:10.350Z
+                - commits:
+                    - subject: Use `~=` to specify alpine package versions
+                      hash: 4a4a8a59bfd664e9683f60d4681a0c6583c68dd1
+                      body: >
+                        Alpine allows the `~=` syntax to match a part of the
+                        package version
+
+                        when installing. In this case we want to use it to specify node and
+
+                        npm major versions
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-14.13.3
+                  title: ""
+                  date: 2023-10-02T14:22:18.491Z
+                - commits:
+                    - subject: Use native structuredClone instead of _.cloneDeep
+                      hash: 06d4775178af40264d0dfe476ee11815235fc52e
+                      body: >
+                        Memory tests have shown performance improvements to
+                        using the native method.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-14.13.2
+                  title: ""
+                  date: 2023-09-30T00:37:03.496Z
+                - commits:
+                    - subject: Update balena-io/deploy-to-balena-action to v1.0.3
+                      hash: aa07a160e9fb7b94576b428064ff61b6de193170
+                      body: Update balena-io/deploy-to-balena-action
+                      footer:
+                        Changelog-entry: Update balena-io/deploy-to-balena-action to v1.0.3
+                        changelog-entry: Update balena-io/deploy-to-balena-action to v1.0.3
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: balena-supervisor-14.13.1
+                  title: ""
+                  date: 2023-09-28T20:17:05.922Z
+                - commits:
+                    - subject: Update runtime-base image to alpine:3.18
+                      hash: 3766013cbdbb8864abf2f353332b27713c357818
+                      body: |
+                        We were still on 3.16, where the nodejs package was
+                        pointed at Node 16. 3.18 moves the pointer to Node 18.
+                      footer:
+                        Change-type: minor
+                        change-type: minor
+                        Signed-off-by: Christina Ying Wang <christina@balena.io>
+                        signed-off-by: Christina Ying Wang <christina@balena.io>
+                      author: Christina Ying Wang
+                      nested: []
+                  version: balena-supervisor-14.13.0
+                  title: ""
+                  date: 2023-09-28T18:13:11.954Z
+          version: meta-balena-4.0.18
+          title: ""
+          date: 2023-10-03T10:09:53.629Z
+        - commits:
+            - subject: "workflows: Switch to balenaOS ESR [bot] for authentication"
+              hash: 6cb9379a3055da7811215ad6572f2205658ec986
+              body: >
+                Flowzone App no longer has workflow:write permissions for
+                security reasons.
+
+
+                This new balenaOS ESR bot has contents:write and workflows:write permissions
+
+                but is only available on balenaOS repositories.
+              footer:
+                See: https://github.com/apps/balenaos-esr
+                see: https://github.com/apps/balenaos-esr
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: meta-balena-4.0.17
+          title: ""
+          date: 2023-10-02T20:32:23.925Z
+        - commits:
+            - subject: Update tests/leviathan digest to 04a53d3
+              hash: 0be7bf36487912ce1c82aa8ec53013f849bf4463
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update core/contracts digest to 27ea28b
+                      hash: f0c4b6939f15d10dd359589f52066ecd0b55711d
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.31
+                  title: ""
+                  date: 2023-09-28T07:41:51.643Z
+          version: meta-balena-4.0.16
+          title: ""
+          date: 2023-09-28T11:16:09.515Z
+        - commits:
+            - subject: Update tests/leviathan digest to b4e68c8
+              hash: f772b9dde29bd43c1baf88edc0abc954a32040af
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update actions/checkout action to v4
+                      hash: eb892035fb8c34e2a87ebf37f2b7f8bd8b00a61c
+                      body: |
+                        Update actions/checkout from 3 to 4
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.30
+                  title: ""
+                  date: 2023-09-25T14:25:17.184Z
+          version: meta-balena-4.0.15
+          title: ""
+          date: 2023-09-27T20:13:31.640Z
+        - commits:
+            - subject: "patch: Add custom build docs"
+              hash: 1d5f8ba92d5bd5b7a1fd26fa25473febc8e097d2
+              body: ""
+              footer:
+                Signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+                signed-off-by: Vipul Gupta (@vipulgupta2048) <vipulgupta2048@gmail.com>
+              author: Vipul Gupta (@vipulgupta2048)
+              nested: []
+          version: meta-balena-4.0.14
+          title: ""
+          date: 2023-09-27T13:13:37.324Z
+        - commits:
+            - subject: "balena-rollback: Add support for balena bootloader"
+              hash: 3175beaa5cc1e8685bc56e528f3b74f6974e3384
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "hostapp-update-hooks: Add hook for balena bootloader"
+              hash: c0a1e5f003ea49455056e11d480357bdb028c8c6
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "initrdscripts: add a script that switches between rootA and rootB"
+              hash: 7aa14b6887da279c0b7bb6f665eebb83e2ec12df
+              body: >
+                This is done by the bootloader (uboot/grub) at this moment but
+                as we
+
+                are moving towards the balena 2nd stage bootloader, it needs to be
+
+                moved into the initramfs.
+
+
+                This adds a standalone recipe - by default yocto tries to build all
+
+                modules defined in the initramfs-framework recipe, which breaks
+
+                on armv7 when abroot is defined there. This is because it depends
+
+                on grub-editenv which is not supported on armv7.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "initrdscripts: make kexec script more robust"
+              hash: a075c7b89e888edb7575fc72b56d29be8eecfa09
+              body: |
+                * Do not hardcode bzImage kernel type
+                * Do not assume root=XXX kernel parameter is always defined
+                * Remove maxcpus=0 kernel parameter if defined for compatibility
+                * Add missing dependency on os-helpers-logging
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "initrdscripts: add missing dependencies to rootfs script"
+              hash: 6be16523780ef5d0eedccd5a6f3f75c53748c5f5
+              body: >
+                The rootfs script uses both os-helpers-fs and os-helpers-logging
+
+                though the package depends on neither. This seems to work now because
+
+                in most cases something else pulls in the dependencies or the code
+
+                on a particular device does not fall under the branches that use
+
+                the missing functions.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Michal Toman
+              nested: []
+            - subject: "balena-image-bootloader-initramfs: Add balena bootloader"
+              hash: 32982ff3e2958dd17b27b06b1b847f1b40ce0617
+              body: >
+                This minimal image is executed by a vendor provided bootloader
+                and will
+
+                kexec into BalenaOS.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Michal Toman <michalt@balena.io>
+                signed-off-by: Michal Toman <michalt@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-4.0.13
+          title: ""
+          date: 2023-09-26T12:05:37.168Z
+        - commits:
+            - subject: Check if SUPERVISOR_OVERRIDE_LOCK is set
+              hash: 02c52347758feb3214990ef6d83be5d804b6e6f2
+              body: |
+                This is so that we respect user's decision
+                to skip update locks on HUP as well.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: jaomaloy <jaomaloy@balena.io>
+                signed-off-by: jaomaloy <jaomaloy@balena.io>
+              author: jaomaloy
+              nested: []
+            - subject: Check and get service lockfiles on HUP reboot
+              hash: 0ab1230d19f4f60cb780d9d1495eb9062b5ec5e0
+              body: |
+                This is so that the HUP reboot doesn't interrupt
+                any user service processes.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: jaomaloy <jao.maloy@balena.io>
+                signed-off-by: jaomaloy <jao.maloy@balena.io>
+              author: jaomaloy
+              nested: []
+          version: meta-balena-4.0.12
+          title: ""
+          date: 2023-09-25T12:04:56.750Z
+        - commits:
+            - subject: Update balena-engine to v20.10.40
+              hash: aae06988f0dcfda16c63f62521ed63bbcf757ae2
+              body: |
+                Update balena-engine from 20.10.39 to 20.10.40
+              footer:
+                Signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                Change-type: patch
+                change-type: patch
+              author: Leandro Motta Barros
+              nested:
+                - commits:
+                    - subject: Re-vendor to get the containerd-shim-runc-v2 sources
+                      hash: 155b7771ff14a9dc9abf65f34bdf716baac04481
+                      body: >
+                        Including changes we did to make it work with
+                        balenaEngine's amalgamated
+
+                        binary.
+                      footer:
+                        Signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        Change-type: patch
+                        change-type: patch
+                      author: Leandro Motta Barros
+                      nested: []
+                    - subject: Default to io.containerd.runc.v2
+                      hash: cd0ca50fe417e59f2e2345e12b9ba43a694bf74e
+                      body: >
+                        runc.v1 was deprecated with the 20.10 major release of
+                        moby
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Robert Günzler <robertg@balena.io>
+                        signed-off-by: Robert Günzler <robertg@balena.io>
+                      author: Robert Günzler
+                      nested: []
+                  version: balena-engine-20.10.40
+                  title: ""
+                  date: 2023-09-11T19:02:17.939Z
+          version: meta-balena-4.0.11
+          title: ""
+          date: 2023-09-21T15:09:12.808Z
+        - commits:
+            - subject: Update balena-supervisor to v14.12.2
+              hash: 3a0ac5e503021781f9b9af8c5cd592cecc9e4ea1
+              body: |
+                Update balena-supervisor from 14.12.1 to 14.12.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Dump target-state to hostOS tmp dir
+                      hash: ab513cc021d90b1337bd79b58e6bb9e0c91e11d0
+                      body: |
+                        This change is mainly for the hostOS
+                        to know if update locks should be ignored
+                        when updating to a newer version.
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: jaomaloy <jao.maloy@balena.io>
+                        signed-off-by: jaomaloy <jao.maloy@balena.io>
+                      author: jaomaloy
+                      nested: []
+                  version: balena-supervisor-14.12.2
+                  title: ""
+                  date: 2023-09-15T01:57:40.718Z
+          version: meta-balena-4.0.10
+          title: ""
+          date: 2023-09-20T14:01:36.751Z
+        - commits:
+            - subject: Update tests/leviathan digest to 397a10f
+              hash: b8421872d45f16e654fde0e1d1e240968c475422
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.23
+                      hash: 7c2d1e6651350949eafa17fd038018bae40df8d7
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.22 to 2.9.23
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.29
+                  title: ""
+                  date: 2023-09-14T10:54:52.758Z
+                - commits:
+                    - subject: Update balena-os/leviathan-worker to v2.9.22
+                      hash: 3d8c8a9c5c8e3d9d8b09300a4d65af8bb42db05c
+                      body: |
+                        Update balena-os/leviathan-worker from 2.9.21 to 2.9.22
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.28
+                  title: ""
+                  date: 2023-09-12T16:58:45.014Z
+          version: meta-balena-4.0.9
+          title: ""
+          date: 2023-09-15T23:27:58.821Z
+        - commits:
+            - subject: Enable back ModemManager AT commands through D-Bus and	mmcli
+              hash: da1a6c0dd2e74fc8b98aafb109eed5aed7e95c43
+              body: >
+                That feature was lost when transitioning from autotools to meson.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Changelog-entry: Enable back ModemManager AT commands through D-Bus and	mmcli
+                changelog-entry: Enable back ModemManager AT commands through D-Bus and	mmcli
+                Signed-off-by: Zahari Petkov <zahari@balena.io>
+                signed-off-by: Zahari Petkov <zahari@balena.io>
+              author: Zahari Petkov
+              nested: []
+          version: meta-balena-4.0.8
+          title: ""
+          date: 2023-09-15T17:27:00.202Z
+        - commits:
+            - subject: Update tibdex/github-app-token action to v2
+              hash: c0ba7aaea9cd960d9066822d5319cafac93b57d0
+              body: |
+                Update tibdex/github-app-token from v1.8.2 to v2.0.0
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: meta-balena-4.0.7
+          title: ""
+          date: 2023-09-14T01:20:50.000Z
+        - commits:
+            - subject: Update balena-supervisor to v14.12.1
+              hash: e24c7a84c64b4fe1465303987c898268a22cb73f
+              body: |
+                Update balena-supervisor from 14.12.0 to 14.12.1
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Bump sqlite3 to 5.1.6
+                      hash: 99962dc94f2356008c063ede08a2a71b4ef21630
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                    - subject: Bump knex to v2.5.1
+                      hash: 06e258ecad2e91f40c2b1602a59b0120bc5639c3
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Felipe Lalanne
+                      nested: []
+                  version: balena-supervisor-14.12.1
+                  title: ""
+                  date: 2023-08-21T16:17:32.755Z
+          version: meta-balena-4.0.6
+          title: ""
+          date: 2023-09-13T20:19:59.968Z
+        - commits:
+            - subject: "tests: os: retry healthcheck disable"
+              hash: 19e9d67b642ca815b5da5315fcab84701a54c985
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: rcooke-warwick
+              nested: []
+          version: meta-balena-4.0.5
+          title: ""
+          date: 2023-09-13T14:15:00.133Z
+        - commits:
+            - subject: renovate updates patch only
+              hash: 1a0b95602763304669ddaffe1cb67cc026723244
+              body: ""
+              footer:
+                change-type: patch
+              author: ab77
+              nested: []
+          version: meta-balena-4.0.4
+          title: ""
+          date: 2023-09-11T18:49:51.206Z
+        - commits:
+            - subject: Update tests/leviathan digest to 0acfe61
+              hash: 411e0b19183a2d6177872ac56623c9a509a584bf
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update actions/upload-artifact digest to a8a3f3a
+                      hash: a0872927995592524673167c1bc33ad587ff50a6
+                      body: |
+                        Update actions/upload-artifact
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.27
+                  title: ""
+                  date: 2023-09-06T19:51:32.877Z
+                - commits:
+                    - subject: Update core/contracts digest to 518a1d4
+                      hash: 10a961344aeff9113d7674cd7a98a0e493f115e5
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.28.26
+                  title: ""
+                  date: 2023-09-04T07:57:26.710Z
+          version: meta-balena-4.0.3
+          title: ""
+          date: 2023-09-09T03:01:22.296Z
+        - commits:
+            - subject: Update balena-engine to v20.10.39
+              hash: ebfeada3a7dcb52e19d7dcbea6ca2acca8e61edb
+              body: |
+                Update balena-engine from 20.10.38 to 20.10.39
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Don't enable AppArmor if `apparmor_parser` is not present
+                      hash: ed8ba18e8776a7bf37b3326baeca8196b4ea76b0
+                      body: >
+                        This commit updates balena-containerd to a new version
+                        in which we
+
+                        cherry-picked the change from here: https://github.com/containerd/containerd/pull/8086
+
+
+                        This change avoids enabling AppArmor if the `/sbin/apparmor_parser`
+
+                        binary is not found in the system.
+                      footer:
+                        Signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        signed-off-by: Leandro Motta Barros <leandro@balena.io>
+                        Change-type: patch
+                        change-type: patch
+                      author: Leandro Motta Barros
+                      nested: []
+                  version: balena-engine-20.10.39
+                  title: ""
+                  date: 2023-08-30T20:39:38.647Z
+          version: meta-balena-4.0.2
+          title: ""
+          date: 2023-09-08T20:00:23.639Z
+        - commits:
+            - subject: "classes: sign: add a retry to the signing call"
+              hash: 0f6d0ccf27f9a356fef918bccf8d328d42af0859
+              body: >
+                When the signed artifacts are big we see closed connections
+                because
+
+                of timeouts in the front caches. A retry should help.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-4.0.1
+          title: ""
+          date: 2023-09-08T12:59:39.384Z
+        - commits:
+            - subject: Update actions/checkout action to v4
+              hash: 9b6169bbff3de4d637969f1305bf88ad23d86c09
+              body: |
+                Update actions/checkout from v3 to v4
+              footer:
+                Change-type: major
+                change-type: major
+              author: Self-hosted Renovate Bot
+              nested: []
+          version: meta-balena-4.0.0
+          title: ""
+          date: 2023-09-06T14:51:51.368Z
+  version: 4.0.20
+  title: ""
+  date: 2023-10-07T14:50:06.314Z
+- commits:
     - subject: "imx-boot: switch to Honister syntax"
       hash: 299090e57ae99720cafc289f272c2dd5b0657bba
       body: ""
