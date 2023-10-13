@@ -1,4 +1,21 @@
 - commits:
+    - subject: Increase BT scan length, flush caches on PLT
+      hash: 0aa89f324a89cfa3acea2e49005793ba1c0b49d5
+      body: |
+        The scan appears to work fine outside autokit on the PLT
+        device and this could be caused by interferences and
+        caching.
+      footer:
+        Changelog-entry: Increase BT scan length, flush caches on PLT
+        changelog-entry: Increase BT scan length, flush caches on PLT
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 4.0.25+rev1
+  title: ""
+  date: 2023-10-13T15:35:33.703Z
+- commits:
     - subject: Update layers/meta-balena to 4b47f04ece3742de572dd04180e1e30744ed3980
       hash: 254b5312cd984f2de972d70a3b83d34e204ed712
       body: Update layers/meta-balena

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v4.0.25+rev1
+## (2023-10-13)
+
+* Increase BT scan length, flush caches on PLT [Alexandru Costache]
+
 # v4.0.25
 ## (2023-10-12)
 
