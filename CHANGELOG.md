@@ -1,6 +1,68 @@
 Change log
 -----------
 
+# v4.0.30
+## (2023-10-24)
+
+
+<details>
+<summary> Update layers/meta-balena to ff47baf219489312903ecbfe52f6f16a2cb284bb [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-4.0.30
+> ### (2023-10-23)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 5a3ce72 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.5
+>> #### (2023-10-23)
+>> 
+>> * Update Lock file maintenance [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-4.0.29
+> ### (2023-10-23)
+> 
+> * resin-device-progress: Add status code check and error reporting [Alex Gonzalez]
+> 
+> ## meta-balena-4.0.28
+> ### (2023-10-20)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to cd38f4a [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.4
+>> #### (2023-10-20)
+>> 
+>> * Update core/contracts digest to 42e712d [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.29.3
+>> #### (2023-10-19)
+>> 
+>> * Update core/contracts digest to 2d44c9c [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.29.2
+>> #### (2023-10-19)
+>> 
+>> * Update actions/checkout digest to b4ffde6 [Self-hosted Renovate Bot]
+>> 
+>> ### leviathan-2.29.1
+>> #### (2023-10-19)
+>> 
+>> * Update core/contracts digest to 97f176d [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v4.0.27+rev2
 ## (2023-10-20)
 

@@ -1,4 +1,125 @@
 - commits:
+    - subject: Update layers/meta-balena to ff47baf219489312903ecbfe52f6f16a2cb284bb
+      hash: 75ce08dce8db2644b9fcd7e626d868ba72143349
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to ff47baf219489312903ecbfe52f6f16a2cb284bb
+        changelog-entry: Update layers/meta-balena to ff47baf219489312903ecbfe52f6f16a2cb284bb
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: Update tests/leviathan digest to 5a3ce72
+              hash: 0216b1316a6d264dbea12fa127f46b53eaa4e020
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update Lock file maintenance
+                      hash: 1cc18146582d9f526999e96e421d9112674a6eee
+                      body: |
+                        Update
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.29.5
+                  title: ""
+                  date: 2023-10-23T00:52:28.730Z
+          version: meta-balena-4.0.30
+          title: ""
+          date: 2023-10-23T19:50:24.069Z
+        - commits:
+            - subject: "resin-device-progress: Add status code check and error reporting"
+              hash: 43ad69ed6a770c90e43a9ea844a32d7308a8ad45
+              body: >
+                This script is used by balenaHup to report provisioning failures
+                to
+
+                the cloud. Adding retries, return status code check and error output
+
+                should make it more resilient and easier to debug.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: meta-balena-4.0.29
+          title: ""
+          date: 2023-10-23T13:07:12.186Z
+        - commits:
+            - subject: Update tests/leviathan digest to cd38f4a
+              hash: 9850216225e8c140b710e8a5f8454b5a7b2264c4
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: Update core/contracts digest to 42e712d
+                      hash: 1853c343fcb27ff2a287880dcf4906a1012a7ae3
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.29.4
+                  title: ""
+                  date: 2023-10-20T07:21:37.849Z
+                - commits:
+                    - subject: Update core/contracts digest to 2d44c9c
+                      hash: bffd6dae100a692c10ec1afcef775d908e57ed11
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.29.3
+                  title: ""
+                  date: 2023-10-19T13:43:36.969Z
+                - commits:
+                    - subject: Update actions/checkout digest to b4ffde6
+                      hash: d04f4cc5cc497173cae45b5538abbc1e21cb7564
+                      body: |
+                        Update actions/checkout
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.29.2
+                  title: ""
+                  date: 2023-10-19T11:21:08.816Z
+                - commits:
+                    - subject: Update core/contracts digest to 97f176d
+                      hash: 72ad2ce2a67767be53aa94b920fc6314e2ae86b5
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.29.1
+                  title: ""
+                  date: 2023-10-19T08:49:38.251Z
+          version: meta-balena-4.0.28
+          title: ""
+          date: 2023-10-20T11:37:25.753Z
+  version: 4.0.30
+  title: ""
+  date: 2023-10-24T01:51:54.736Z
+- commits:
     - subject: Update contracts to 42e712dfe54929870e1ef51fc95cff10f760ab08
       hash: c49edb0a9c32b10db7764295e9e93b2d1345cc43
       body: Update contracts
