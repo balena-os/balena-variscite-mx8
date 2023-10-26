@@ -1,6 +1,29 @@
 Change log
 -----------
 
+# v4.1.1
+## (2023-10-26)
+
+
+<details>
+<summary> Update layers/meta-balena to 0608f561a79e1b4b2ba5e83a10c4b9d2010a00cd [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-4.1.1
+> ### (2023-10-25)
+> 
+> * plymouth: Remove --retain-splash flag from plymouth quit [Kyle Harding]
+> 
+> ## meta-balena-4.1.0
+> ### (2023-10-25)
+> 
+> * tests: add safe reboot checks [Alex Gonzalez]
+> * hostapp-update: move lock checking to helper function [Alex Gonzalez]
+> * os-helpers-logging: output script logging to journald [Alex Gonzalez]
+> * os-helpers: add safe_reboot function [Alex Gonzalez]
+> 
+
+</details>
+
 # v4.0.31+rev2
 ## (2023-10-26)
 
