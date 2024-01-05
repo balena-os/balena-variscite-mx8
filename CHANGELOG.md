@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v4.1.4+rev4
+## (2024-01-05)
+
+* Add support for Variscite DART-MX8M-PLUS devkit [Florin Sarbu]
+* Remove old device type logo icon files because we now use them from the contracts repos [Florin Sarbu]
+
 # v4.1.4+rev3
 ## (2023-11-24)
 

@@ -1,4 +1,33 @@
 - commits:
+    - subject: Add support for Variscite DART-MX8M-PLUS devkit
+      hash: c4d003f25b96dbe14a60151b901fb171c9fecfb3
+      body: |
+        This is the Variscite DART-MX8M-PLUS devkit
+      footer:
+        Changelog-entry: Add support for Variscite DART-MX8M-PLUS devkit
+        changelog-entry: Add support for Variscite DART-MX8M-PLUS devkit
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: Remove old device type logo icon files because we now use them from the
+        contracts repos
+      hash: c8b36c0f0fdf6ebbde44e19d8878ae2e5aed710a
+      body: |
+        These files are now used from the contracts repos
+      footer:
+        Changelog-entry: Remove old device type logo icon files because we now use them
+          from the contracts repos
+        changelog-entry: Remove old device type logo icon files because we now use them
+          from the contracts repos
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 4.1.4+rev4
+  title: ""
+  date: 2024-01-05T12:33:49.530Z
+- commits:
     - subject: Update balena-yocto-scripts to 84d8d394f158be4490628d7ca65a50e90667fa4b
       hash: e2f82fed53aa5aaefe55275a822d0b285d81a7d9
       body: Update balena-yocto-scripts
