@@ -57,6 +57,10 @@ IMAGE_INSTALL:append = " \
 	linux-firmware-bcm4339 \
 "
 
+IMAGE_INSTALL:append:imx8mp-var-dart = " \
+	linux-firmware-bcm43430 \
+"
+
 IMAGE_INSTALL:remove:imx8mm-var-dart-nrt = "kernel-module-imx-gpu-viv"
 IMAGE_INSTALL:remove:imx8mm-var-dart-plt = "kernel-module-imx-gpu-viv"
 
@@ -69,6 +73,12 @@ IMAGE_CMD:balenaos-img:append:imx8m-var-dart () {
 IMAGE_CMD:balenaos-img:append:imx8mm-var-dart () {
     dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_lpddr4_ddr4_evk of=${BALENA_RAW_IMG} conv=notrunc seek=33 bs=1K
 }
+
+# Flash signed bootloader to raw image
+IMAGE_CMD:balenaos-img:append:imx8mp-var-dart () {
+    dd if=${DEPLOY_DIR_IMAGE}/imx-boot-${MACHINE}-sd.bin-flash_evk of=${BALENA_RAW_IMG} conv=notrunc seek=32 bs=1K
+}
+
 
 MACHINE_EXTRA_RDEPENDS += " \
                            linux-firmware-bcm4339 \
@@ -90,4 +100,4 @@ MACHINE_EXTRA_RDEPENDS += " \
 IMAGE_INSTALL:remove = " kernel-image"
 
 IMAGE_ROOTFS_SIZE:imx8mm-var-som="487424"
-
+IMAGE_ROOTFS_SIZE:imx8mp-var-dart="430080"

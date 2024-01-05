@@ -31,6 +31,11 @@ SRC_URI:append:imx8mm-var-dart-nrt = " \
 	file://nrt-Run-CRC32-checks.patch \
 "
 
+SRC_URI:append:imx8mp-var-dart = " \
+	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
+	file://imx8mp-var-dart_Integrate-with-balenaOS.patch \
+"
+
 # Fixes SPL crash with CRC32 checks PR in meta-balena.
 # CRC32 checks on kernel image and fdt run fine with the above.
 UBOOT_VARS:remove = "CONFIG_CMD_HASH"
