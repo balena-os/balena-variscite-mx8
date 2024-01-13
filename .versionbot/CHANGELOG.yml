@@ -1,4 +1,100 @@
 - commits:
+    - subject: Update layers/meta-balena to d4e80942c09f500b3f6272395b29f8b13faa9253
+      hash: d8323992763094102171658414433c0119e1d63d
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to d4e80942c09f500b3f6272395b29f8b13faa9253
+        changelog-entry: Update layers/meta-balena to d4e80942c09f500b3f6272395b29f8b13faa9253
+      author: Self-hosted Renovate Bot
+      nested:
+        - commits:
+            - subject: "tests/bluetooth: Leave Autokit host discoverable on BT for a longer
+                period of time"
+              hash: a4f57877b7582b0e36672269471c178a7511d18f
+              body: >
+                We've noticed that leaving the host discoverable indefinitely on
+                Pi3 Autokit hosts solves sporadic scan failures. Thus, leaving
+                the host discoverable for 20 minutes should be sufficient to
+                prevent these cases.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+              nested: []
+          version: meta-balena-5.1.10
+          title: ""
+          date: 2024-01-12T15:29:12.742Z
+        - commits:
+            - subject: Update tests/leviathan digest to 0210c02
+              hash: 50e34dfc6013518a459c1be749804fbf837803d9
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: change to ssh tunnel
+                      hash: c15d5183a61e4ed9d437642560c2db071b1d7672
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                  version: leviathan-2.29.35
+                  title: ""
+                  date: 2024-01-11T12:51:52.503Z
+                - commits:
+                    - subject: Update core/contracts digest to 14a10d9
+                      hash: bd5f29abd2bbe194df6f7657b69b860f435b1ef7
+                      body: |
+                        Update core/contracts
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                      author: Self-hosted Renovate Bot
+                      nested: []
+                  version: leviathan-2.29.34
+                  title: ""
+                  date: 2024-01-10T11:32:06.062Z
+          version: meta-balena-5.1.9
+          title: ""
+          date: 2024-01-11T18:57:27.371Z
+        - commits:
+            - subject: Update tests/leviathan digest to dbcacdb
+              hash: 708458487d1cb01362ca28310b4b67ca847f4a0f
+              body: Update tests/leviathan
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: Self-hosted Renovate Bot
+              nested:
+                - commits:
+                    - subject: timeout netcat process
+                      hash: 3eee636c92fb352101b62cf6cc04dd799f5c6ae9
+                      body: ""
+                      footer:
+                        Change-type: patch
+                        change-type: patch
+                        Signed-off-by: Ryan Cooke <ryan@balena.io>
+                        signed-off-by: Ryan Cooke <ryan@balena.io>
+                      author: rcooke-warwick
+                      nested: []
+                  version: leviathan-2.29.33
+                  title: ""
+                  date: 2024-01-09T17:35:20.372Z
+          version: meta-balena-5.1.8
+          title: ""
+          date: 2024-01-09T21:50:27.806Z
+  version: 5.1.10
+  title: ""
+  date: 2024-01-13T11:12:18.472Z
+- commits:
     - subject: Update layers/meta-balena to e1c602542c6fa2f51ea6e2ff0e6d60e0e3d5beb3
       hash: 9a4ea6ccc1f1d21159f54ddd7ea737fab527a6c0
       body: Update layers/meta-balena

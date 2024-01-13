@@ -1,6 +1,58 @@
 Change log
 -----------
 
+# v5.1.10
+## (2024-01-13)
+
+
+<details>
+<summary> Update layers/meta-balena to d4e80942c09f500b3f6272395b29f8b13faa9253 [Self-hosted Renovate Bot] </summary>
+
+> ## meta-balena-5.1.10
+> ### (2024-01-12)
+> 
+> * tests/bluetooth: Leave Autokit host discoverable on BT for a longer period of time [Alexandru Costache]
+> 
+> ## meta-balena-5.1.9
+> ### (2024-01-11)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 0210c02 [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.35
+>> #### (2024-01-11)
+>> 
+>> * change to ssh tunnel [rcooke-warwick]
+>> 
+>> ### leviathan-2.29.34
+>> #### (2024-01-10)
+>> 
+>> * Update core/contracts digest to 14a10d9 [Self-hosted Renovate Bot]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-5.1.8
+> ### (2024-01-09)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to dbcacdb [Self-hosted Renovate Bot] </summary>
+> 
+>> ### leviathan-2.29.33
+>> #### (2024-01-09)
+>> 
+>> * timeout netcat process [rcooke-warwick]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v5.1.7
 ## (2024-01-09)
 
