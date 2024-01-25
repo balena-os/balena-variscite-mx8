@@ -1,6 +1,21 @@
 Change log
 -----------
 
+# v5.1.14+rev1
+## (2024-01-25)
+
+
+<details>
+<summary> Update contracts to 14a10d925b56660c59471447ca74ae324da68f79 [Self-hosted Renovate Bot] </summary>
+
+> ## contracts-2.0.90
+> ### (2024-01-10)
+> 
+> * hw.device-type: Update svg icon for seeed-j4012 [Alexandru Costache]
+> 
+
+</details>
+
 # v5.1.14
 ## (2024-01-24)
 
