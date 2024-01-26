@@ -1,17 +1,9 @@
-#@TYPE: Machine
-#@NAME: Variscite DART-MX8M-MINI
-#@SOC: i.MX8MM
-#@DESCRIPTION: Machine configuration for Variscite DART-MX8M-MINI and VAR-SOM-MX8M-MINI
-#@MAINTAINER: Nate Drude <nate.d@variscite.com>
-#
-# http://www.variscite.com
-
 MACHINEOVERRIDES =. "mx8mm:"
 require conf/machine/include/imx-base.inc
 require conf/machine/include/arm/armv8a/tune-cortexa53.inc
 
-require variscite.inc
-require variscite_bcm43xx.inc
+require conf/machine/variscite.inc
+require conf/machine/variscite_bcm43xx.inc
 
 # Variscite BSP default providers
 PREFERRED_PROVIDER_virtual/kernel:imx8mm-var-dart ?= "linux-variscite"
@@ -60,7 +52,7 @@ IMX_BOOT_SOC_TARGET = "iMX8MM"
 # Extra firmware package name, that is required to build boot container for fslc bsp
 IMX_EXTRA_FIRMWARE = "firmware-imx-8m"
 
-SERIAL_CONSOLES = "115200;ttymxc0"
+SERIAL_CONSOLES = "115200;ttymxc0 "
 
 IMAGE_BOOTLOADER = "imx-boot"
 
