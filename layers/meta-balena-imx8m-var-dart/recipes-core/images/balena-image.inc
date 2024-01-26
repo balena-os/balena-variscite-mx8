@@ -100,4 +100,4 @@ MACHINE_EXTRA_RDEPENDS += " \
 IMAGE_INSTALL:remove = " kernel-image"
 
 IMAGE_ROOTFS_SIZE:imx8mm-var-som="487424"
-IMAGE_ROOTFS_SIZE:imx8mp-var-dart="430080"
+IMAGE_ROOTFS_SIZE:imx8mp-var-dart="487424"
