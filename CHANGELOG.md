@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v5.1.14+rev2
+## (2024-01-26)
+
+* Increase the rootfs size for imx8mp-var-dart [Florin Sarbu]
+* Fix bluez patch appending for imx8mm-var-dart-plt [Florin Sarbu]
+
 # v5.1.14+rev1
 ## (2024-01-25)
 

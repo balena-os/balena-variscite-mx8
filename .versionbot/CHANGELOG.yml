@@ -1,4 +1,30 @@
 - commits:
+    - subject: Increase the rootfs size for imx8mp-var-dart
+      hash: 132cc99f57f81a30e9d24b4dea66d9d7d76646b8
+      body: >
+        Let's keep a higher size for the rootfs just in case for future BSP
+        updates.
+      footer:
+        Changelog-entry: Increase the rootfs size for imx8mp-var-dart
+        changelog-entry: Increase the rootfs size for imx8mp-var-dart
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: Fix bluez patch appending for imx8mm-var-dart-plt
+      hash: f85e2c000f24584f472747427068184146fc66da
+      body: ""
+      footer:
+        Changelog-entry: Fix bluez patch appending for imx8mm-var-dart-plt
+        changelog-entry: Fix bluez patch appending for imx8mm-var-dart-plt
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 5.1.14+rev2
+  title: ""
+  date: 2024-01-26T11:54:53.277Z
+- commits:
     - subject: Update contracts to 14a10d925b56660c59471447ca74ae324da68f79
       hash: 9e831b304bd7bb99b7c3bca5a6c5086d9910ea69
       body: Update contracts
