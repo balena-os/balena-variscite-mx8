@@ -1,4 +1,24 @@
 - commits:
+    - subject: "conf/machine: Remove machine includes"
+      hash: 5ae2fc68345f7e93faf2336130ba899e58972947
+      body: |
+        We unset ROOTFS_SIZE from the balena-image in PR #435
+        so we can cleanup the machine includes now.
+
+        imx8mm-var-dart.inc brought in in this commit
+        is imx8mm-var-dart.conf from meta-variscite-bsp
+        at 72250affb5f300e0891c4170e38a1071a6e6181b
+      footer:
+        Changelog-entry: "conf/machine: Remove machine includes"
+        changelog-entry: "conf/machine: Remove machine includes"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 5.1.15+rev1
+  title: ""
+  date: 2024-01-27T16:06:55.462Z
+- commits:
     - subject: Update layers/meta-balena to ce995ef6820181ce652fee2358913203e7a7b183
       hash: c37181fc41302521c2a7884b6476e047e09f9599
       body: Update layers/meta-balena

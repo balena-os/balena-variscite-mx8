@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v5.1.15+rev1
+## (2024-01-27)
+
+* conf/machine: Remove machine includes [Alexandru Costache]
+
 # v5.1.15
 ## (2024-01-27)
 
