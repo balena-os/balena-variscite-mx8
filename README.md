@@ -8,7 +8,7 @@ There are two ways of initializing this repository:
 or
 
 * Run "git clone" and then "git submodule update --init --recursive". This will
-bring in all the needed dependencies.
+bring in all the needed dependencies .
 
 ## Build information
 
