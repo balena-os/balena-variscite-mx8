@@ -5,20 +5,24 @@
 [submodule "layers/meta-freescale"]
 	path = layers/meta-freescale
 	url = https://git.yoctoproject.org/git/meta-freescale
-	branch = dunfell
+	branch = kirkstone
 [submodule "layers/meta-openembedded"]
 	path = layers/meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded.git
-	branch = dunfell
+	branch = kirkstone
 [submodule "layers/meta-balena"]
 	path = layers/meta-balena
 	url = https://github.com/balena-os/meta-balena.git
+	branch = master
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/balena-os/poky
+	branch = kirkstone
 [submodule "contracts"]
 	path = contracts
 	url = https://github.com/balena-io/contracts.git
+	branch = master
 [submodule "layers/meta-variscite-bsp"]
 	path = layers/meta-variscite-bsp
 	url = https://github.com/varigit/meta-variscite-bsp.git
+	branch = kirkstone
