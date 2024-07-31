@@ -1,6 +1,224 @@
 Change log
 -----------
 
+# v5.1.19+rev2
+## (2024-07-31)
+
+
+<details>
+<summary> Update balena-yocto-scripts to 7736d3807540afb6646b435117bffa2377ac0156 [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.25.16
+> ### (Invalid date)
+> 
+> * Update docker/login-action action to v3.3.0 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.15
+> ### (Invalid date)
+> 
+> * Update actions/upload-artifact action to v4.3.4 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.14
+> ### (2024-07-29)
+> 
+> * Update balena-os/leviathan digest to 36aafe0 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.13
+> ### (2024-07-29)
+> 
+> * Update actions/checkout action to v4.1.7 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.12
+> ### (2024-07-29)
+> 
+> * Update Pin dependencies [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.25.11
+> ### (2024-07-29)
+> 
+> * revovate: change config to use balena-io template [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.10
+> ### (2024-07-23)
+> 
+> * By default, deploy hostapp on push only [Leandro Motta Barros]
+> 
+> ## balena-yocto-scripts-1.25.9
+> ### (2024-07-22)
+> 
+> * use token to fetch private contracts [rcooke-warwick]
+> * unroll balena_lib_build_contract function [rcooke-warwick]
+> * unroll balena_api_is_dt_private function [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.8
+> ### (2024-07-17)
+> 
+> * Use env vars BALENA_HOST and BALENACLOUD_SSH_URL when provided [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.7
+> ### (2024-07-16)
+> 
+> * Fix handling of empty test matrix input [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.6
+> ### (2024-07-15)
+> 
+> * Use App Installation tokens so we can clone private submodules [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.5
+> ### (2024-07-08)
+> 
+> * only login to s3 if deploying to s3 [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.4
+> ### (2024-07-06)
+> 
+> * balena-deploy: deploy secure boot lock artifacts if available [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.25.3
+> ### (2024-07-05)
+> 
+> * use workflow run of PR head instead of statuses to determine test results [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.25.2
+> ### (2024-07-03)
+> 
+> * Remove dry-run flag from S3 upload [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.1
+> ### (2024-07-03)
+> 
+> * Fix actionlint errors and warnings in shell steps [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.25.0
+> ### (2024-07-03)
+> 
+> * Do not run any tests by default unless provided by calling workflow [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.24.3
+> ### (2024-07-02)
+> 
+> * patch: No upload to GH artifacts when PR is closed [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## balena-yocto-scripts-1.24.2
+> ### (2024-07-02)
+> 
+> * Fix quoting of $GITHUB_OUTPUT [Leandro Motta Barros]
+> 
+> ## balena-yocto-scripts-1.24.1
+> ### (2024-06-27)
+> 
+> * Simplify check for secure boot [Leandro Motta Barros]
+> 
+> ## balena-yocto-scripts-1.24.0
+> ### (2024-06-26)
+> 
+> * Support runner selection in the test matrix [Kyle Harding]
+> * Allow both combinatorial and include syntax for test_matrix [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.23.1
+> ### (2024-06-26)
+> 
+> * Refactor secrets and variables to use environments [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.23.0
+> ### (2024-06-19)
+> 
+> * Dockerfiles: update balenaCLI version to 18.2.2 [Joseph Kogut]
+> * Dockerfile_yocto-build-env: bump base image to 22.04 [Joseph Kogut]
+> 
+> ## balena-yocto-scripts-1.22.4
+> ### (2024-06-14)
+> 
+> * Update job conditions to allow non-PR events for internal branches [Kyle Harding]
+> * Hardcode environment paths at the job level [Kyle Harding]
+> * Replace test inputs with a single JSON matrix input [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.22.3
+> ### (2024-06-13)
+> 
+> * jenkins_generate_ami: pass yocto scripts version as an env var to helper container [rcooke-warwick]
+> 
+> ## balena-yocto-scripts-1.22.2
+> ### (2024-06-12)
+> 
+> * Update the triggers on the example test workflow [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.22.1
+> ### (2024-06-07)
+> 
+> * Prevent duplicate workflow runs for multiple triggers [Kyle Harding]
+> * Add catchall job to yocto-build-deploy for merge requirements [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.22.0
+> ### (2024-06-06)
+> 
+> * Create workflow to build and deploy balenaOS [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.10
+> ### (2024-05-02)
+> 
+> * balena-deploy: deploy usbboot if available [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.21.9
+> ### (Invalid date)
+> 
+> * balena-lib: improve base tag detection [Alex Gonzalez]
+> 
+> ## balena-yocto-scripts-1.21.8
+> ### (2024-04-29)
+> 
+> * Support commit tags when extracting version tag from git [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.7
+> ### (2024-04-19)
+> 
+> * Add missing $select for release_asset.asset_key [Thodoris Greasidis]
+> 
+> ## balena-yocto-scripts-1.21.6
+> ### (2024-03-25)
+> 
+> * Revert "balena-build: avoid using device-type as a prefix in yocto sstate" [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.5
+> ### (2024-03-14)
+> 
+> * Merge AMI publishing dependencies into yocto-build-env [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.4
+> ### (2024-03-13)
+> 
+> * balena-build: avoid using device-type as a prefix in yocto sstate [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.3
+> ### (2024-02-11)
+> 
+> * Enable S3 Server Side Encryption flags [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.21.2
+> ### (2024-02-08)
+> 
+> * automation/include: Pass helper image version [Florin Sarbu]
+> 
+> ## balena-yocto-scripts-1.21.1
+> ### (2024-02-07)
+> 
+> * balena-deploy: Remove docker.io when pulling image [Alexandru]
+> 
+> ## balena-yocto-scripts-1.21.0
+> ### (2024-02-02)
+> 
+> * Return image id after pulling helper images [Kyle Harding]
+> * Build and publish helper images with Flowzone [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.20.0
+> ### (2024-02-02)
+> 
+> * Remove unused block-build functions [Kyle Harding]
+> 
+
+</details>
+
 # v5.1.19+rev1
 ## (2024-03-06)
 
