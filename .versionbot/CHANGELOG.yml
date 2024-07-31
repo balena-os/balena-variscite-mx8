@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update .gitmodules with submodule branch information
+      hash: ed805228d16421b606f3ec88e01557c8ca62a7a3
+      body: ""
+      footer:
+        Changelog-entry: Update .gitmodules with submodule branch information
+        changelog-entry: Update .gitmodules with submodule branch information
+      author: Kyle Harding
+      nested: []
+  version: 5.1.19+rev4
+  title: ""
+  date: 2024-07-31T08:05:56.343Z
+- commits:
     - subject: Update contracts to 1d499fe7d33791e1ac6dccfe031e178b7d520bb4
       hash: 60201439341bb2ba1a1effba18e302eba2313502
       body: Update contracts
