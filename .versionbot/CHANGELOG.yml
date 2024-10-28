@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update balena-os/balena-yocto-scripts to
+      hash: 828e016e309c57fc65c6e5ba92caef18c132fd9c
+      body: Update balena-os/balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-os/balena-yocto-scripts to
+        changelog-entry: Update balena-os/balena-yocto-scripts to
+      author: balena-renovate[bot]
+      nested: []
+  version: 6.0.36+rev1
+  title: ""
+  date: 2024-10-28T13:41:33.497Z
+- commits:
     - subject: Add GHA Built Test Deploy workflows
       hash: 6d6a70a97de28dc967732f2fd954f400582f12b4
       body: ""
