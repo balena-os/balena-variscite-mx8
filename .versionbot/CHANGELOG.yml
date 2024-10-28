@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add GHA Built Test Deploy workflows
+      hash: 6d6a70a97de28dc967732f2fd954f400582f12b4
+      body: ""
+      footer:
+        Changelog-entry: Add GHA Built Test Deploy workflows
+        changelog-entry: Add GHA Built Test Deploy workflows
+        Signed-off-by: Ryan Cooke <ryan@balena.io>
+        signed-off-by: Ryan Cooke <ryan@balena.io>
+      author: rcooke-warwick
+      nested: []
+  version: 6.0.36
+  title: ""
+  date: 2024-10-28T09:30:35.302Z
+- commits:
     - subject: Update balena-os/github-workflows to v0.0.27
       hash: c29a7743d448abab22ae730762433cd52da7055d
       body: Update balena-os/github-workflows
