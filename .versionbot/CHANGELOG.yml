@@ -1,4 +1,18 @@
 - commits:
+    - subject: "imx8mm-var-dart-nrt: Discontinue device-type"
+      hash: 9605712c4fd0196deab8eca223ba970fa9735664
+      body: ""
+      footer:
+        Changelog-entry: "imx8mm-var-dart-nrt: Discontinue device-type"
+        changelog-entry: "imx8mm-var-dart-nrt: Discontinue device-type"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 6.0.36+rev2
+  title: ""
+  date: 2024-11-01T11:35:08.066Z
+- commits:
     - subject: Update balena-os/balena-yocto-scripts to
       hash: 828e016e309c57fc65c6e5ba92caef18c132fd9c
       body: Update balena-os/balena-yocto-scripts

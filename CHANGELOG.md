@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v6.0.36+rev2
+## (2024-11-01)
+
+* imx8mm-var-dart-nrt: Discontinue device-type [Alexandru Costache]
+
 # v6.0.36+rev1
 ## (2024-10-28)
 
