@@ -1,6 +1,57 @@
 Change log
 -----------
 
+# v6.1.13+rev2
+## (2024-11-23)
+
+
+<details>
+<summary> Update contracts to 88fb8adfa09a1a270d9cd5d59627255298e1684e [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.116
+> ### (2024-10-17)
+> 
+> * Add alpine 3.20 [Otavio Jacobi]
+> 
+> ## contracts-2.0.115
+> ### (2024-10-17)
+> 
+> * Add alpine 3.19 [Otavio Jacobi]
+> 
+> ## contracts-2.0.114
+> ### (2024-10-09)
+> 
+> * sw.os+hw.device-type: Update all Orin devices to r36.3 in sources.list [Alexandru Costache]
+> * hw.device-type: Remove superfluous instructions for beagleplay [Alexandru]
+> 
+> ## contracts-2.0.113
+> ### (2024-08-20)
+> 
+> * iotdin-imx8p: Update the devices contract [Valentin Raevsky]
+> 
+> ## contracts-2.0.112
+> ### (2024-08-19)
+> 
+> * Add support for Ubuntu Noble [ruffsl]
+> 
+> ## contracts-2.0.111
+> ### (2024-08-08)
+> 
+> * patch: Add versionList to OpenJDK [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## contracts-2.0.110
+> ### (2024-08-07)
+> 
+> * Add CompuLab iotdin-imx8p to harware contract. [Valentin Raevsky]
+> 
+> ## contracts-2.0.109
+> ### (2024-08-06)
+> 
+> * hw.device-type: Update provisioning instructions for AGX Orin 64GB [Alexandru]
+> 
+
+</details>
+
 # v6.1.13+rev1
 ## (2024-11-22)
 
