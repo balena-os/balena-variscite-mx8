@@ -1,4 +1,29 @@
 - commits:
+    - subject: Update contracts to 01757392e1088465b996fb9e92e1b6ab8a45d3b1
+      hash: ee7ddd4fe37a26a2e2861aa8cd010c32279ed76c
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 01757392e1088465b996fb9e92e1b6ab8a45d3b1
+        changelog-entry: Update contracts to 01757392e1088465b996fb9e92e1b6ab8a45d3b1
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "hw.device-type: Rename Seeed J3010 and J4012 to include module name"
+              hash: f803589c9885fb0d8cee7d9c674ec6bde235e7af
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.117
+          title: ""
+          date: 2024-11-25T15:38:04.848Z
+  version: 6.1.13+rev4
+  title: ""
+  date: 2024-11-25T20:19:22.859Z
+- commits:
     - subject: Update balena-os/balena-yocto-scripts to v1.27.14
       hash: d89b82819a0d2fcaf4102d5e77c4301815051003
       body: Update balena-os/balena-yocto-scripts
