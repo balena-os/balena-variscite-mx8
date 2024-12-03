@@ -1,4 +1,18 @@
 - commits:
+    - subject: Explicitly set GITHUB_TOKEN permissions for yocto workflow
+      hash: f4b100d4981e7112d2f73ce936a7f281ad61856f
+      body: ""
+      footer:
+        Changelog-entry: Explicitly set GITHUB_TOKEN permissions for yocto workflow
+        changelog-entry: Explicitly set GITHUB_TOKEN permissions for yocto workflow
+        Signed-off-by: Ryan Cooke <ryan@balena.io>
+        signed-off-by: Ryan Cooke <ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+  version: 6.1.13+rev5
+  title: ""
+  date: 2024-12-03T12:49:20.342Z
+- commits:
     - subject: Update contracts to 01757392e1088465b996fb9e92e1b6ab8a45d3b1
       hash: ee7ddd4fe37a26a2e2861aa8cd010c32279ed76c
       body: Update contracts
