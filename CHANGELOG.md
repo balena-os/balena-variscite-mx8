@@ -1,6 +1,81 @@
 Change log
 -----------
 
+# v6.1.20
+## (2024-12-04)
+
+
+<details>
+<summary> Update layers/meta-balena to f208cd6b57462d3a987b5f8c1a47c8b7dd7040d4 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-6.1.20
+> ### (2024-12-04)
+> 
+> * kernel-module-build: update to 3.0.1 [Alex Gonzalez]
+> * tests: secureboot: fix passing of kernel headers version [Alex Gonzalez]
+> * tests: secureboot: add dm devices support in FDE test [Alex Gonzalez]
+> * tests: secureboot: add imx specialization [Alex Gonzalez]
+> 
+> ## meta-balena-6.1.19
+> ### (2024-12-03)
+> 
+> * balena-image-initramfs: add zram module [Alex Gonzalez]
+> * initrdscripts: add zram module [Alex Gonzalez]
+> * resin-init-flasher: search /tmp explicitly [Joseph Kogut]
+> * kernel-balena: enable CRYPTO_ZSTD for zram [Joseph Kogut]
+> 
+> ## meta-balena-6.1.18
+> ### (2024-12-03)
+> 
+> * Explicitly set GITHUB_TOKEN permissions for yocto workflow [Ryan Cooke]
+> 
+> ## meta-balena-6.1.17
+> ### (2024-12-02)
+> 
+> * resin-init-flasher: adapt EFI snippets to non-LUKS devices support [Alex Gonzalez]
+> * balena-config-vars: adapt to flasher non-LUKS device support [Alex Gonzalez]
+> * resin-init-flasher: add default LUKS configuration [Alex Gonzalez]
+> * hostapp-update-hooks: replace the identification of encrypted partitions [Alex Gonzalez]
+> 
+> ## meta-balena-6.1.16
+> ### (2024-11-27)
+> 
+> * classes/kernel-balena: Add aufs patches for 6.1 kernels [Florin Sarbu]
+> 
+> ## meta-balena-6.1.15
+> ### (2024-11-26)
+> 
+> * initrdscripts/migrate: Allow overriding of target internal devices [Alexandru Costache]
+> 
+> ## meta-balena-6.1.14
+> ### (2024-11-23)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 64ba6a3 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.31.65
+>> #### (2024-11-23)
+>> 
+>> * Update balena-os/leviathan-worker to v2.9.50 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.31.64
+>> #### (2024-11-23)
+>> 
+>> * Update core/contracts digest to 88fb8ad [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.31.63
+>> #### (2024-11-23)
+>> 
+>> * Update balena-io/balena-cli to v20 [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v6.1.13+rev5
 ## (2024-12-03)
 
