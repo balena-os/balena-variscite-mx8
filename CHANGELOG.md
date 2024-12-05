@@ -1,6 +1,32 @@
 Change log
 -----------
 
+# v6.1.21
+## (2024-12-05)
+
+
+<details>
+<summary> Update layers/meta-balena to e6d699bfffea71667b9551a93f6ee40f56a8ad79 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-6.1.21
+> ### (2024-12-04)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 90d1685 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.31.66
+>> #### (2024-12-04)
+>> 
+>> * Update core/contracts digest to 474ab2d [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+
+</details>
+
 # v6.1.20
 ## (2024-12-04)
 
