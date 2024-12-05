@@ -1,4 +1,58 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 5e7e9611dc40a552070baf8a5b56621188e80715
+      hash: fe895d6d81f7697ad484be994eca8efafed8bc3c
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 5e7e9611dc40a552070baf8a5b56621188e80715
+        changelog-entry: Update balena-yocto-scripts to 5e7e9611dc40a552070baf8a5b56621188e80715
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update balena-os/leviathan action to v2.31.66
+              hash: d333c32569b0d33bb0e098d5245b6bcc3ca147af
+              body: |
+                Update balena-os/leviathan from 2.31.65 to 2.31.66
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.27.17
+          title: ""
+          date: 2024-12-04T21:45:07.416Z
+        - commits:
+            - subject: Set additional github token permissions
+              hash: 41cd691fdad8edfcb6664cd1a2cc8966da7e3475
+              body: >
+                THis is to allow the workflow to function under an org with
+                restricitve github token permissions
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+              nested: []
+          version: balena-yocto-scripts-1.27.16
+          title: ""
+          date: 2024-11-29T19:18:27.347Z
+        - commits:
+            - subject: Update balena-os/leviathan action to v2.31.65
+              hash: ae9f251d20e4f473318d92e22fa26866d0a7924d
+              body: |
+                Update balena-os/leviathan from 2.31.62 to 2.31.65
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.27.15
+          title: ""
+          date: 2024-11-23T22:39:50.484Z
+  version: 6.1.21+rev1
+  title: ""
+  date: 2024-12-05T08:21:18.218Z
+- commits:
     - subject: Update layers/meta-balena to e6d699bfffea71667b9551a93f6ee40f56a8ad79
       hash: 01371af966b21bf339a9e5329f7eaffb72a37eb2
       body: Update layers/meta-balena
