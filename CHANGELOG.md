@@ -1,6 +1,91 @@
 Change log
 -----------
 
+# v6.2.4+rev1
+## (2024-12-27)
+
+
+<details>
+<summary> Update balena-yocto-scripts to eaab5a2fccab6406d5f75a11d9a0575fd675c197 [balena-renovate[bot]] </summary>
+
+> ## balena-yocto-scripts-1.30.2
+> ### (2024-12-20)
+> 
+> * Update actions/upload-artifact action to v4.5.0 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.30.1
+> ### (2024-12-19)
+> 
+> * Update balena-os/leviathan action to v2.31.76 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.30.0
+> ### (2024-12-19)
+> 
+> * Append to MIRRORS instead of PREMIRRORS to limit egress [Kyle Harding]
+> * Use dedicated AWS S3 buckets for download mirrors [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.29.10
+> ### (2024-12-19)
+> 
+> * Update balena-os/leviathan action to v2.31.75 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.29.9
+> ### (2024-12-19)
+> 
+> * Update balena-os/leviathan action to v2.31.73 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.29.8
+> ### (2024-12-18)
+> 
+> * Update balena-os/leviathan action to v2.31.72 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.29.7
+> ### (2024-12-17)
+> 
+> * Unset AWS credentials to avoid overriding MinIO credentials [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.29.6
+> ### (2024-12-17)
+> 
+> * Update balena-os/leviathan action to v2.31.71 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.29.5
+> ### (2024-12-16)
+> 
+> * Remove hostapp creation step [Ryan Cooke]
+> 
+> ## balena-yocto-scripts-1.29.4
+> ### (2024-12-14)
+> 
+> * Compress artifacts with gzip and zstd before encrypting [Kyle Harding]
+> 
+> ## balena-yocto-scripts-1.29.3
+> ### (2024-12-13)
+> 
+> * Update Pin dependencies [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.29.2
+> ### (2024-12-13)
+> 
+> * Update balena-os/leviathan action to v2.31.70 [balena-renovate[bot]]
+> 
+> ## balena-yocto-scripts-1.29.1
+> ### (2024-12-13)
+> 
+> * re-enable AMI deploys [Ryan Cooke]
+> 
+> ## balena-yocto-scripts-1.29.0
+> ### (2024-12-13)
+> 
+> * Use S3 sstate cache on self-hosted runners [Kyle Harding]
+> * Sync shared downloads to S3 to use as a sources mirror [Kyle Harding]
+> * Sync the shared sstate to github actions cache [Kyle Harding]
+> * Use legacy yocto NFS cache as a source mirror [Kyle Harding]
+> * Enable mirror tarballs bitbake feature [Kyle Harding]
+> 
+
+</details>
+
 # v6.2.4
 ## (2024-12-26)
 
