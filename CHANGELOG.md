@@ -1,6 +1,36 @@
 Change log
 -----------
 
+# v6.2.4+rev2
+## (2024-12-27)
+
+
+<details>
+<summary> Update contracts to 8bd56512c375e2f39b532fdb3882a7b5243f7ece [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.122
+> ### (2024-12-23)
+> 
+> * hw.device-type: add Forecr DSB ORNX entries [Alex Suykov]
+> 
+> ## contracts-2.0.121
+> ### (2024-12-18)
+> 
+> * hw.device-type: Fix compatibility with existing sdk structure [Alexandru Costache]
+> 
+> ## contracts-2.0.120
+> ### (2024-12-18)
+> 
+> * add eg5120-imx8mp contract [Ryan Cooke]
+> 
+> ## contracts-2.0.119
+> ### (2024-12-16)
+> 
+> * contracts/hw.device-type: Update instructions for Orin flasher types [Alexandru Costache]
+> 
+
+</details>
+
 # v6.2.4+rev1
 ## (2024-12-27)
 

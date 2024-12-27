@@ -1,4 +1,68 @@
 - commits:
+    - subject: Update contracts to 8bd56512c375e2f39b532fdb3882a7b5243f7ece
+      hash: 415f0af36f1ef98628b523ac8708b77cda071bf6
+      body: Update contracts
+      footer:
+        Changelog-entry: Update contracts to 8bd56512c375e2f39b532fdb3882a7b5243f7ece
+        changelog-entry: Update contracts to 8bd56512c375e2f39b532fdb3882a7b5243f7ece
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: "hw.device-type: add Forecr DSB ORNX entries"
+              hash: aaacf7dde8997f5291da82aab537ca902a24267e
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Suykov <alex.suykov@sirinsoftware.com>
+                signed-off-by: Alex Suykov <alex.suykov@sirinsoftware.com>
+              author: Alex Suykov
+          version: contracts-2.0.122
+          title: ""
+          date: 2024-12-23T10:57:21.261Z
+        - commits:
+            - subject: "hw.device-type: Fix compatibility with existing sdk structure"
+              hash: e234b48207f0a7e82e56fb636d2791ba2a364a68
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.121
+          title: ""
+          date: 2024-12-18T20:31:37.211Z
+        - commits:
+            - subject: add eg5120-imx8mp contract
+              hash: 272015edab63d911b6a716b43d3ef52f3c577153
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Cooke <ryan@balena.io>
+                signed-off-by: Ryan Cooke <ryan@balena.io>
+              author: Ryan Cooke
+          version: contracts-2.0.120
+          title: ""
+          date: 2024-12-18T12:47:37.969Z
+        - commits:
+            - subject: "contracts/hw.device-type: Update instructions for Orin flasher types"
+              hash: 79b1757276a189f0b898903f5d85658e0b5c478a
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alexandru Costache <alexandru@balena.io>
+                signed-off-by: Alexandru Costache <alexandru@balena.io>
+              author: Alexandru Costache
+          version: contracts-2.0.119
+          title: ""
+          date: 2024-12-16T04:57:49.690Z
+  version: 6.2.4+rev2
+  title: ""
+  date: 2024-12-27T06:09:38.744Z
+- commits:
     - subject: Update balena-yocto-scripts to eaab5a2fccab6406d5f75a11d9a0575fd675c197
       hash: 0aaa79bfb2e2b94472e4b974f39fc2bca4710399
       body: Update balena-yocto-scripts
