@@ -19,4 +19,5 @@ BBLAYERS ?= " \
     ${TOPDIR}/../layers/meta-openembedded/meta-perl \
     ${TOPDIR}/../layers/meta-freescale \
     ${TOPDIR}/../layers/meta-variscite-bsp \
-"
+    ${TOPDIR}/../layers/meta-cyclonedx  \
+    "
