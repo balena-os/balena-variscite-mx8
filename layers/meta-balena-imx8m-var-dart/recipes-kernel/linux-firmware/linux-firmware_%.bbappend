@@ -11,6 +11,11 @@ BRCM_LWB5_SHA_RELEASE_VARISCITE = "a9731660ea05bc7625e37314d7f3fd3f70b266aa21a07
 SRC_URI[brcm_lwb.sha256sum] = "${BRCM_LWB_SHA_RELEASE_VARISCITE}"
 SRC_URI[brcm_lwb5.sha256sum] = "${BRCM_LWB5_SHA_RELEASE_VARISCITE}"
 
+SRC_URI:remove = "git://git.ti.com/git/wilink8-wlan/wl18xx_fw.git;protocol=https;branch=${BRANCH_tiwlan};destsuffix=tiwlan;name=tiwlan"
+SRC_URI:append = " \
+    git://git.ti.com/cgit/wilink8-wlan/wl18xx_fw;protocol=https;branch=${BRANCH_tiwlan};destsuffix=tiwlan;name=tiwlan \
+"
+
 do_firmware_compression:append() {
 if [ "${FIRMWARE_COMPRESSION}" = "1" ]; then
     bbnote "Decompressing BT firmware used by variscite bt script";
