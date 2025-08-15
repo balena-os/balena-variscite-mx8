@@ -1,6 +1,63 @@
 Change log
 -----------
 
+# v6.5.48+rev3
+## (2025-08-15)
+
+
+<details>
+<summary> Update contracts to fc76558c384c10bf228b10909eca346ee9d6b564 [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.137
+> ### (2025-07-02)
+> 
+> * hw.device-type: Update J4012 device type name [Alexandru]
+> 
+> ## contracts-2.0.136
+> ### (2025-05-14)
+> 
+> * patch: Add deprecation notice for balenalib base images [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## contracts-2.0.135
+> ### (2025-05-14)
+> 
+> * patch: Add deprecation notice to balenalib readme [Vipul Gupta (@vipulgupta2048)]
+> 
+> ## contracts-2.0.134
+> ### (2025-05-07)
+> 
+> * Remove Ubuntu Lunar 23.04 leftovers from dotnet & python contracts [Thodoris Greasidis]
+> 
+> ## contracts-2.0.133
+> ### (2025-05-07)
+> 
+> * Remove Ubuntu Xenial from supported distros [Kyle Harding]
+> * Remove Ubuntu Bionic from supported distros [Kyle Harding]
+> * Remove Ubuntu Focal from supported distros [Kyle Harding]
+> 
+> ## contracts-2.0.132
+> ### (Invalid date)
+> 
+> * imx6ul-var-dart: Update provisioning instructions [Alexandru]
+> 
+> ## contracts-2.0.131
+> ### (2025-04-03)
+> 
+> * Add EDATEC Sensing contract and logo [RayX123456]
+> 
+> ## contracts-2.0.130
+> ### (2025-03-28)
+> 
+> * hw.device-type: Update links to docs for UEFI version checking [Alexandru Costache]
+> 
+> ## contracts-2.0.129
+> ### (2025-03-14)
+> 
+> * Mark Bookworm as the default version for Debian [Thodoris Greasidis]
+> 
+
+</details>
+
 # v6.5.48+rev2
 ## (2025-08-15)
 
