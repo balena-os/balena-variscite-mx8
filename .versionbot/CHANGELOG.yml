@@ -1,4 +1,31 @@
 - commits:
+    - subject: Update layers/meta-balena to 5a73334fc661f78a2163d3c520b804f80890d480
+      hash: 3b35e7ac8871b10fc49d63e42d4fc25aa07caaad
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to 5a73334fc661f78a2163d3c520b804f80890d480
+        changelog-entry: Update layers/meta-balena to 5a73334fc661f78a2163d3c520b804f80890d480
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Updated contributing-device-support.md Part of
+                https://balena.fibery.io/Work/Project/Update-Device-Support-Docs-1641
+              hash: 9895bf9caa5c5c817c04321e2e6fd9e9ccf2c769
+              body: ""
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Ryan Hampton (@rhampt) <rhampt@balena.io>
+                signed-off-by: Ryan Hampton (@rhampt) <rhampt@balena.io>
+              author: Ryan
+              nested: []
+          version: meta-balena-6.5.51
+          title: ""
+          date: 2025-08-15T19:55:29.375Z
+  version: 6.5.51
+  title: ""
+  date: 2025-08-15T23:53:59.765Z
+- commits:
     - subject: Update layers/meta-balena to 1977d99e2bde7837606c3962a7f0620cb0297a95
       hash: 1d5939d671dbe9cc39951de3de2e79dc45368d66
       body: Update layers/meta-balena
