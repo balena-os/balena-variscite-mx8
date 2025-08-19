@@ -1,4 +1,70 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 75a9b5bfb8b4a4e2e305540ff39b28e7d9b41ff9
+      hash: 733ac11f012eadc5d078f6dffef251c489dcbd7f
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 75a9b5bfb8b4a4e2e305540ff39b28e7d9b41ff9
+        changelog-entry: Update balena-yocto-scripts to 75a9b5bfb8b4a4e2e305540ff39b28e7d9b41ff9
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update balena-io/balena-cli to v22.2.4
+              hash: 275c8114c340817ce3c2c70c89fcb3b21291396d
+              body: |
+                Update balena-io/balena-cli from 22.2.2 to 22.2.4
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.38.1
+          title: ""
+          date: 2025-08-18T21:00:05.077Z
+        - commits:
+            - subject: Split testing artifacts into individual files
+              hash: d682869435a2cc53bad572a8d11075d221c45cdc
+              body: >
+                This allows downstream jobs to only download the files
+
+                they need, and one at a time, avoiding issues with large
+                artifact
+
+                download timeouts.
+              footer:
+                Change-type: minor
+                change-type: minor
+                Signed-off-by: Kyle Harding <kyle@balena.io>
+                signed-off-by: Kyle Harding <kyle@balena.io>
+              author: Kyle Harding
+              nested: []
+          version: balena-yocto-scripts-1.38.0
+          title: ""
+          date: 2025-08-18T14:55:33.762Z
+        - commits:
+            - subject: "barys: default to highest priority layers for template paths"
+              hash: ed52c9ec2bf0e3727e019103abc272bfaf806eb4
+              body: >
+                When different layers contains template files and no
+                --template-path is
+
+                provided, use the highest priority layer.
+
+
+                This provides a default which is better for automation.
+              footer:
+                Change-type: patch
+                change-type: patch
+                Signed-off-by: Alex Gonzalez <alexg@balena.io>
+                signed-off-by: Alex Gonzalez <alexg@balena.io>
+              author: Alex Gonzalez
+              nested: []
+          version: balena-yocto-scripts-1.37.20
+          title: ""
+          date: 2025-08-18T09:22:08.388Z
+  version: 6.5.53+rev1
+  title: ""
+  date: 2025-08-19T01:53:30.498Z
+- commits:
     - subject: Update layers/meta-balena to b733ec53d2848f43056fe344498fad8349ce6c02
       hash: 8617a7162196cee517c0fbf072cad340d99ee51f
       body: Update layers/meta-balena
