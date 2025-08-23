@@ -1,6 +1,31 @@
 Change log
 -----------
 
+# v6.6.0
+## (2025-08-23)
+
+
+<details>
+<summary> Update layers/meta-balena to 950df971405c6cd326999aca420db5cd55878cb5 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-6.6.0
+> ### (2025-08-23)
+> 
+> * minor: remove ssh service from os-config.json [Edwin Joassart]
+> 
+> ## meta-balena-6.5.55
+> ### (2025-08-22)
+> 
+> * patch: add metadata to improve balena-engine cve tracking [Edwin Joassart]
+> 
+> ## meta-balena-6.5.54
+> ### (2025-08-21)
+> 
+> * recipes-connectivity/balena-proxy-config: Clean-up redsocks rules by index [Alexandru Costache]
+> 
+
+</details>
+
 # v6.5.53+rev1
 ## (2025-08-19)
 
