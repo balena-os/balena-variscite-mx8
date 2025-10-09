@@ -17,6 +17,11 @@ BALENA_CONFIGS[imx-sdma] = " \
 		CONFIG_IMX_SDMA=m \
 "
 
+BALENA_CONFIGS:append = " pps-client "
+BALENA_CONFIGS[pps-client] = " \
+    CONFIG_PPS_CLIENT_GPIO=m \
+"
+
 ## TODO: Rebase identification led for mx8m
 #file://0001-Add-identification-led.patch 
 
@@ -50,29 +55,6 @@ SRC_URI:append:imx8mm-var-dart-plt = " \
 	file://imx8mm-var-dart-plt-Disable-PCIe.patch \
 "
 
-BALENA_CONFIGS:append:imx8mm-var-dart-nrt = " preempt_rt"
-BALENA_CONFIGS[preempt_rt] = " \
-    CONFIG_ARCH_SUPPORTS_RT=y \
-    CONFIG_EXPERT=y \
-    CONFIG_PREEMPT_RT=y \
-"
-
-BALENA_CONFIGS:append:imx8mm-var-dart-nrt = " cw2015"
-BALENA_CONFIGS[cw2015] = " \
-    CONFIG_BATTERY_CW2015=m \
-"
-
-BALENA_CONFIGS:append:imx8mm-var-dart-nrt = " lp55231"
-BALENA_CONFIGS[lp55231] = " \
-    CONFIG_LEDS_LP5523=n \
-    CONFIG_LEDS_LP55XX_COMMON=n \
-"
-
-KERNEL_MODULE_PROBECONF:imx8mm-var-dart-nrt += " leds_lp5523 "
-module_conf_leds_lp5523 = "blacklist leds_lp5523"
-
-KERNEL_MODULE_PROBECONF:imx8mm-var-dart-nrt += " leds_lp55xx_common "
-module_conf_leds_lp55xx_common = "blacklist leds_lp55xx_common"
 
 BALENA_CONFIGS:append = " optimize-size"
 BALENA_CONFIGS[optimize-size] = " \
