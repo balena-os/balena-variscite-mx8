@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v6.6.10+rev2
+## (2025-10-10)
+
+* Generate SBOM and VEX (cycloneDX) [Alexandru Costache]
+* layers/meta-openembedded: Update to 96fbc156364fd78530d2bfbe1b8a77789f52997d [Alexandru Costache]
+
 # v6.6.10+rev1
 ## (2025-10-09)
 

@@ -1,4 +1,31 @@
 - commits:
+    - subject: Generate SBOM and VEX (cycloneDX)
+      hash: 697a510ad370df32836575a20f99e387115301cb
+      body: ""
+      footer:
+        Changelog-entry: Generate SBOM and VEX (cycloneDX)
+        changelog-entry: Generate SBOM and VEX (cycloneDX)
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+    - subject: "layers/meta-openembedded: Update to
+        96fbc156364fd78530d2bfbe1b8a77789f52997d"
+      hash: 4f2b2afd65a9f6ec5984041710501c407e71f2df
+      body: ""
+      footer:
+        Changelog-entry: "layers/meta-openembedded: Update to
+          96fbc156364fd78530d2bfbe1b8a77789f52997d"
+        changelog-entry: "layers/meta-openembedded: Update to
+          96fbc156364fd78530d2bfbe1b8a77789f52997d"
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+      author: Alexandru Costache
+      nested: []
+  version: 6.6.10+rev2
+  title: ""
+  date: 2025-10-10T13:25:55.261Z
+- commits:
     - subject: Update balena-yocto-scripts to 42a3124eae2ff7cb313e48163fa5f9dafbf74348
       hash: 5fbae0b90c18602056d0ccd7a6b441630571a847
       body: Update balena-yocto-scripts
