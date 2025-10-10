@@ -1,15 +1,16 @@
-From e02ca008b3c830a374cf352a87c848690da5e163 Mon Sep 17 00:00:00 2001
-From: Florin Sarbu <florin@balena.io>
-Date: Tue, 21 Mar 2023 14:37:58 +0100
-Subject: [PATCH] integrate with balenaOS
+From a34e35599f2b6ada2ab828462616a5afb3d2c34a Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Fri, 10 Oct 2025 08:58:12 +0000
+Subject: [PATCH] imx8mp-var-dart: integrate with balenaOS
 
+Upstream-status: Inappropriate[configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
 ---
- include/configs/imx8mp_var_dart.h | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
+ include/configs/imx8mp_var_dart.h | 20 +++++++++++++-------
+ 1 file changed, 13 insertions(+), 7 deletions(-)
 
 diff --git a/include/configs/imx8mp_var_dart.h b/include/configs/imx8mp_var_dart.h
-index 85b4eb6100..cd31c184dd 100644
+index 4f011007830..d3424256d26 100644
 --- a/include/configs/imx8mp_var_dart.h
 +++ b/include/configs/imx8mp_var_dart.h
 @@ -81,11 +81,11 @@
@@ -18,7 +19,7 @@ index 85b4eb6100..cd31c184dd 100644
  	"image=Image.gz\0" \
 -	"img_addr=0x42000000\0" \
 +	"img_addr=0x48440000\0" \
- 	"splashimage=0x50000000\0" \
+ 	"splashimage=0x4F600000\0" \
  	"console=ttymxc0,115200\0" \
 -	"fdt_addr_r=0x43000000\0" \
 -	"fdt_addr=0x43000000\0"			\
@@ -27,7 +28,7 @@ index 85b4eb6100..cd31c184dd 100644
  	"fdt_high=0xffffffffffffffff\0"		\
  	"boot_fdt=try\0" \
  	"boot_fit=no\0" \
-@@ -115,7 +115,7 @@
+@@ -115,12 +115,12 @@
  		"bootaux ${m7_addr};\0" \
  	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
  	"mmcargs=setenv bootargs console=${console} " \
@@ -36,7 +37,32 @@ index 85b4eb6100..cd31c184dd 100644
  	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${bsp_script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
  		"source\0" \
-@@ -182,6 +182,10 @@
+-	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${bootdir}/${image};" \
+-		"unzip ${img_addr} ${loadaddr}\0" \
++	"loadimage=if load mmc ${resin_dev_index}:${resin_root_part} ${img_addr} boot/${image}; then " \
++		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; else false; fi; \0" \
+ 	"findfdt=" \
+ 		"if test $fdt_file = undefined; then " \
+ 			"if test $board_name = VAR-SOM-MX8M-PLUS; then " \
+@@ -135,7 +135,7 @@
+ 		"fi; \0" \
+ 	"loadfdt=run findfdt; " \
+ 		"echo fdt_file=${fdt_file}; " \
+-		"load mmc ${mmcdev}:${mmcpart} ${fdt_addr} ${bootdir}/${fdt_file}\0" \
++		"if load mmc ${resin_dev_index}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; then echo Loaded ${fdt_file}; run balena_fdt_load_crc_save; else false; fi; \0" \
+ 	"ramsize_check="\
+ 		"if test $sdram_size -le 512; then " \
+ 			"setenv cma_size cma=320M; " \
+@@ -153,6 +153,8 @@
+ 			"bootm ${loadaddr}; " \
+ 		"else " \
+ 			"if run loadfdt; then " \
++				"run balena_kernel_load_crc_check; " \
++				"run balena_fdt_load_crc_check; " \
+ 				"booti ${loadaddr} - ${fdt_addr_r}; " \
+ 			"else " \
+ 				"echo WARN: Cannot load the DT; " \
+@@ -182,6 +184,10 @@
  			"fi; " \
  		"fi;\0" \
  	"bsp_bootcmd=echo Running BSP bootcmd ...; " \
@@ -48,5 +74,5 @@ index 85b4eb6100..cd31c184dd 100644
  		"mmc dev ${mmcdev}; " \
  		"if mmc rescan; then " \
 -- 
-2.37.2
+2.34.1
 

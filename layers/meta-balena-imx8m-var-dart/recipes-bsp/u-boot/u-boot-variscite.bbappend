@@ -14,6 +14,7 @@ SRC_URI:append:imx8m-var-dart = " \
 SRC_URI:append:imx8mm-var-dart = " \
 	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
 	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
+	file://0001-imx8mm-var-dart-Run-CRC32-checks-increase-kernel-and.patch \
 "
 
 SRC_URI:append:imx8mm-var-dart-plt = " \
@@ -25,11 +26,7 @@ SRC_URI:append:imx8mm-var-dart-plt = " \
 	file://plt-Run-CRC32-checks.patch \ 
 "
 
-SRC_URI:append:imx8mm-var-dart-nrt = " \
-	file://imx8mm-var-dart-nrt-Add-led-start-routine-for-NRT.patch \
-	file://nrt-Always-load-the-legacy-dtb.patch \
-	file://nrt-Run-CRC32-checks.patch \
-"
+SRC_URI:remove:imx8mm-var-dart-plt = "file://0001-imx8mm-var-dart-Run-CRC32-checks-increase-kernel-and.patch"
 
 SRC_URI:append:imx8mp-var-dart = " \
 	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
@@ -39,8 +36,4 @@ SRC_URI:append:imx8mp-var-dart = " \
 # Fixes SPL crash with CRC32 checks PR in meta-balena.
 # CRC32 checks on kernel image and fdt run fine with the above.
 UBOOT_VARS:remove = "CONFIG_CMD_HASH"
-
-SRC_URI:append:imx8mm-var-dart-nrt = "${@bb.utils.contains('DISTRO_FEATURES', 'development-image', '', 'file://imx8mm-var-dart-nrt-uart-workaround.patch', d)}"
-
-OS_KERNEL_CMDLINE:remove:imx8mm-var-dart-nrt = "console=null"
 
