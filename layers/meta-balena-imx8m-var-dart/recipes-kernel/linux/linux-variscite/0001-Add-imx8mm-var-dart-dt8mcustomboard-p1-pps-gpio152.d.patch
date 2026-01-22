@@ -1,0 +1,27 @@
+From 6fd58b1fa87036c61c4fb93e4061a9bad3e5b889 Mon Sep 17 00:00:00 2001
+From: Alexandru Costache <alexandru@balena.io>
+Date: Thu, 22 Jan 2026 10:33:35 +0000
+Subject: [PATCH] Add imx8mm-var-dart-dt8mcustomboard-p1-pps-gpio152.dts
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ arch/arm64/boot/dts/freescale/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index 2d59659d5583..2a63c372e313 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -103,7 +103,7 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mm-ab2.dtb imx8mm-ab2-m4.dtb imx8mm-ddr4-ab2.dtb i
+ 			  imx8mm-ddr4-ab2-revb.dtb imx8mm-ddr4-ab2-m4-revb.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mm-var-dart-dt8mcustomboard.dtb imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
+                           imx8mm-var-dart-dt8mcustomboard-m4.dtb imx8mm-var-dart-dt8mcustomboard-legacy-m4.dtb \
+-                          imx8mm-var-som-symphony.dtb imx8mm-var-som-symphony-m4.dtb
++                          imx8mm-var-som-symphony.dtb imx8mm-var-som-symphony-m4.dtb imx8mm-var-dart-dt8mcustomboard-p1-pps-gpio152.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mn-evk.dtb imx8mn-evk-rm67191.dtb imx8mn-evk-rpmsg.dtb imx8mn-evk-ak5558.dtb \
+ 			  imx8mn-evk-8mic-revE.dtb imx8mn-ddr3l-evk.dtb \
+ 			  imx8mn-evk-iqaudio-dacplus.dtb imx8mn-evk-iqaudio-dacpro.dtb imx8mn-evk-hifiberry-dacplus.dtb \
+-- 
+2.34.1
+

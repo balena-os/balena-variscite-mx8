@@ -29,6 +29,8 @@ SRC_URI:append:imx8mm-var-dart = " \
 	file://0001-Avoid-hang-at-boot-if-pcie-oscillator-not-present.patch \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.142.patch \
 	file://0001-Enable-spidev0.0-on-kernel-5.10-for-iMX8M-Mini-VAR-S.patch \
+	file://imx8mm-var-dart-dt8mcustomboard-p1-pps-gpio152.dts \
+	file://0001-Add-imx8mm-var-dart-dt8mcustomboard-p1-pps-gpio152.d.patch \
 "
 
 # RT patch patch-5.4.82-rt46.patch taken from
@@ -60,3 +62,7 @@ BALENA_CONFIGS:append = " optimize-size"
 BALENA_CONFIGS[optimize-size] = " \
     CONFIG_CC_OPTIMIZE_FOR_SIZE=y \
 "
+
+do_patch:append() {
+    cp ${WORKDIR}/imx8mm-var-dart-dt8mcustomboard-p1-pps-gpio152.dts ${S}/arch/arm64/boot/dts/freescale/
+}
