@@ -62,9 +62,7 @@ BALENA_CONFIGS[optimize-size] = " \
     CONFIG_CC_OPTIMIZE_FOR_SIZE=y \
 "
 
-do_configure:append() {
-    if [ -f ${WORKDIR}/imx8mm-var-dart-dt8mcustomboard-p1atlas-pps-v1.dts ]; then
-        cp ${WORKDIR}/imx8mm-var-dart-dt8mcustomboard-p1atlas-pps-v1.dts ${S}/arch/arm64/boot/dts/freescale/
-    fi
+do_configure:append:imx8mm-var-dart() {
+    cp ${WORKDIR}/imx8mm-var-dart-dt8mcustomboard-p1atlas-pps-v1.dts ${S}/arch/arm64/boot/dts/freescale/
 }
 
