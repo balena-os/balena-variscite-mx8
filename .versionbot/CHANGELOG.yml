@@ -1,4 +1,31 @@
 - commits:
+    - subject: Build P1 Atlas PPS device tree for imx8mm-var-dart
+      hash: ccf3af58019a85441290f386a27dd9877716ddd3
+      body: |
+        Enable building of imx8mm-var-dart-dt8mcustomboard-p1atlas-pps-v1.dtb
+      footer:
+        Changelog-entry: Build P1 Atlas PPS device tree for imx8mm-var-dart
+        changelog-entry: Build P1 Atlas PPS device tree for imx8mm-var-dart
+        Signed-off-by: Richard Lourette <richard.lourette@pointonenav.com>
+        signed-off-by: Richard Lourette <richard.lourette@pointonenav.com>
+      author: Rich Lourette
+      nested: []
+    - subject: Add device tree for P1 Atlas board with PPS support
+      hash: 21d897cac6c2e1ebf33d46bb20e29fdd24962b21
+      body: |
+        Add device tree for Point One Atlas board with PPS support based on
+        Variscite DART-MX8MM dt8mcustomboard.
+      footer:
+        Changelog-entry: Add device tree for P1 Atlas board with PPS support
+        changelog-entry: Add device tree for P1 Atlas board with PPS support
+        Signed-off-by: Richard Lourette <richard.lourette@pointonenav.com>
+        signed-off-by: Richard Lourette <richard.lourette@pointonenav.com>
+      author: Rich Lourette
+      nested: []
+  version: 6.10.18+rev1
+  title: ""
+  date: 2026-02-10T10:42:52.187Z
+- commits:
     - subject: "layers/meta-balena: Update to v6.10.18"
       hash: 67a51121ed540d552bc8423d61d3746c5abd33e2
       body: ""

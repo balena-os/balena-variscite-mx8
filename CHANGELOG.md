@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v6.10.18+rev1
+## (2026-02-10)
+
+* Build P1 Atlas PPS device tree for imx8mm-var-dart [Rich Lourette]
+* Add device tree for P1 Atlas board with PPS support [Rich Lourette]
+
 # v6.10.18
 ## (2026-01-25)
 
