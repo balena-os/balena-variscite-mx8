@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v6.10.18+rev2
+## (2026-03-03)
+
+* recipes-connectivity/bluez: Extend scan duration for all imx8mm-var-dart based boards [Alexandru]
+* workflows: workflows: Move testing to BC from BM [Ryan Cooke]
+
 # v6.10.18+rev1
 ## (2026-02-10)
 

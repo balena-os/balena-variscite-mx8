@@ -1,4 +1,31 @@
 - commits:
+    - subject: "recipes-connectivity/bluez: Extend scan duration for all
+        imx8mm-var-dart based boards"
+      hash: f2d1ec107b9cbaab9a0c98512276e1055ef96e22
+      body: ""
+      footer:
+        Signed-off-by: Alexandru Costache <alexandru@balena.io>
+        signed-off-by: Alexandru Costache <alexandru@balena.io>
+        Changelog-entry: "recipes-connectivity/bluez: Extend scan duration for all
+          imx8mm-var-dart based boards"
+        changelog-entry: "recipes-connectivity/bluez: Extend scan duration for all
+          imx8mm-var-dart based boards"
+      author: Alexandru
+      nested: []
+    - subject: "workflows: workflows: Move testing to BC from BM"
+      hash: b11de99a04565695571a1bd4aeb19628250c9311
+      body: ""
+      footer:
+        Changelog-entry: "workflows: workflows: Move testing to BC from BM"
+        changelog-entry: "workflows: workflows: Move testing to BC from BM"
+        Signed-off-by: Ryan Cooke<ryan@balena.io>
+        signed-off-by: Ryan Cooke<ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+  version: 6.10.18+rev2
+  title: ""
+  date: 2026-03-03T07:35:58.493Z
+- commits:
     - subject: Build P1 Atlas PPS device tree for imx8mm-var-dart
       hash: ccf3af58019a85441290f386a27dd9877716ddd3
       body: |
