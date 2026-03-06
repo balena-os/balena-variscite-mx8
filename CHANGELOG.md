@@ -1,6 +1,281 @@
 Change log
 -----------
 
+# v6.11.10
+## (2026-03-06)
+
+* recipes-kernel: Rename imx8mm-var-dart-dt8mcustomboard-p1atlas-pps-v1 device-tree [Rich Lourette]
+
+<details>
+<summary> Update layers/meta-balena to 1c606f58f07b6746f6548bcc7c9301482cdced64 [balena-renovate[bot]] </summary>
+
+> ## meta-balena-6.11.10
+> ### (2026-03-05)
+> 
+> * efitools: update to master [Michal Toman]
+> 
+> ## meta-balena-6.11.9
+> ### (2026-03-04)
+> 
+> * recipes-support/hostapp-update-hooks: Deploy blacklisted bootloader files [Alexandru Costache]
+> 
+> ## meta-balena-6.11.8
+> ### (2026-03-03)
+> 
+> * hostapp-update-hooks: allow GRUB downgrade during secure boot rollbacks [Michal Toman]
+> 
+> ## meta-balena-6.11.7
+> ### (2026-03-02)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v17.6.2 [balena-renovate[bot]] </summary>
+> 
+>> ### balena-supervisor-17.6.2
+>> #### (2026-02-25)
+>> 
+>> * Fix storage usage over-reporting caused by duplicate mount points [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.6.1
+>> #### (2026-02-19)
+>> 
+>> * Update systeminformation to v5.30.8 [SECURITY] [balena-renovate[bot]]
+>> 
+>> ### balena-supervisor-17.6.0
+>> #### (2026-02-17)
+>> 
+>> * Rewrite lock mechanism doc to include flock as well [Yann CARDAILLAC]
+>> 
+>> ### balena-supervisor-17.5.3
+>> #### (2026-02-15)
+>> 
+>> * Update webpack to v5.104.1 [SECURITY] [balena-renovate[bot]]
+>> 
+>> ### balena-supervisor-17.5.2
+>> #### (2026-02-10)
+>> 
+>> * Preserve unmanaged fields in extra_uEnv.txt [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.5.1
+>> #### (2026-02-10)
+>> 
+>> * Do not rely on container timestamps to check for dependency start [felipe]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-6.11.6
+> ### (2026-02-28)
+> 
+> 
+> <details>
+> <summary> Update tests/leviathan digest to 4ac50e6 [balena-renovate[bot]] </summary>
+> 
+>> ### leviathan-2.36.96
+>> #### (2026-02-28)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.29 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.95
+>> #### (2026-02-28)
+>> 
+>> * Update actions/upload-artifact action to v7 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.94
+>> #### (2026-02-25)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.27 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.93
+>> #### (2026-02-23)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.92
+>> #### (2026-02-16)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.91
+>> #### (2026-02-09)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.26 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.90
+>> #### (2026-02-09)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.25 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.89
+>> #### (2026-02-09)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.88
+>> #### (2026-02-07)
+>> 
+>> * Update actions/checkout digest to de0fac2 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.87
+>> #### (2026-02-02)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.24 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.86
+>> #### (2026-02-02)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.85
+>> #### (2026-01-27)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.23 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.84
+>> #### (2026-01-26)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.83
+>> #### (2026-01-20)
+>> 
+>> * Update balena-os/leviathan-worker to v2.10.22 [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.82
+>> #### (2026-01-19)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.81
+>> #### (2026-01-12)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+>> ### leviathan-2.36.80
+>> #### (2026-01-05)
+>> 
+>> * Update Lock file maintenance [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-6.11.5
+> ### (2026-02-25)
+> 
+> * kernel-balena.bbclass: Enable support for traditional iptables backends for newer kernels [Florin Sarbu]
+> 
+> ## meta-balena-6.11.4
+> ### (2026-02-23)
+> 
+> * tests/modem: Skip modem test on unsupported Orin device-type [Alexandru]
+> 
+> ## meta-balena-6.11.3
+> ### (2026-02-20)
+> 
+> * balena-bootloader.bbclass: disable more unnecessary drivers [Michal Toman]
+> * balena-bootloader.bbclass: add spaces to BALENA_CONFIGS appends [Michal Toman]
+> 
+> ## meta-balena-6.11.2
+> ### (2026-02-18)
+> 
+> * tests:modem: Disable for kontron-come-xelx [Florin Sarbu]
+> 
+> ## meta-balena-6.11.1
+> ### (2026-02-17)
+> 
+> * peak: Update to version 9.0 [Florin Sarbu]
+> 
+> ## meta-balena-6.11.0
+> ### (2026-02-11)
+> 
+> * openssh: Add sshd.socket burst protection recovery timer [Kyle Harding]
+> 
+> ## meta-balena-6.10.26
+> ### (2026-02-10)
+> 
+> * kernel-devsrc.bb: Use recipe from OpenEmbedded Core layer for 6.18+ kernels [Florin Sarbu]
+> 
+> ## meta-balena-6.10.25
+> ### (2026-02-03)
+> 
+> 
+> <details>
+> <summary> Update balena-supervisor to v17.5.0 [balena-renovate[bot]] </summary>
+> 
+>> ### balena-supervisor-17.5.0
+>> #### (2026-02-03)
+>> 
+>> * Make withExclusive always cancel pending and running calls [Christina Ying Wang]
+>> * Remove usingInferStepsLock [Christina Ying Wang]
+>> * Don't generate redundant kill steps for services already stopping [Christina Ying Wang]
+>> * Don't retry fetch if aborted [Christina Ying Wang]
+>> * Bump docker-progress to 5.4.1 [Christina Ying Wang]
+>> * Replace applyIntermediateTarget with ExclusiveRunner [Christina Ying Wang]
+>> * Use ExclusiveRunner for triggerApplyTarget [Christina Ying Wang]
+>> * ExclusiveRunner: Add pending call cancellation [Christina Ying Wang]
+>> * ExclusiveRunner: Add running call cancellation to trigger() [Christina Ying Wang]
+>> * Implement ExclusiveRunner class with mutual exclusion & priority [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.4.6
+>> #### (2026-02-03)
+>> 
+>> * Remove reference links in update-locking.md [Jonathan Berger]
+>> 
+>> ### balena-supervisor-17.4.5
+>> #### (2026-01-22)
+>> 
+>> * Remove object-capturing closure in triggerFetch abortSignal [Christina Ying Wang]
+>> 
+>> ### balena-supervisor-17.4.4
+>> #### (2026-01-22)
+>> 
+>> * Update lodash to v4.17.23 [SECURITY] [balena-renovate[bot]]
+>> 
+>> ### balena-supervisor-17.4.3
+>> #### (2026-01-22)
+>> 
+>> * Update @balena/sbvr-types to v11 [balena-renovate[bot]]
+>> 
+> 
+> </details>
+> 
+> 
+> ## meta-balena-6.10.24
+> ### (Invalid date)
+> 
+> * extra firmware test fix bbb kernel module [Yann CARDAILLAC]
+> 
+> ## meta-balena-6.10.23
+> ### (2026-01-29)
+> 
+> * Revert "packagegroup-resin: Add systemd-analyze to production images as well" [Kyle Harding]
+> 
+> ## meta-balena-6.10.22
+> ### (2026-01-27)
+> 
+> * tests: Update kernel-module-build submodule [Alexandru Costache]
+> 
+> ## meta-balena-6.10.21
+> ### (2026-01-26)
+> 
+> * classes/kernel-balena: Fix typo in kernel-balena.bbclass [Alexandru Costache]
+> * Fix type allSetConfigs -> allSetKernelConfigs [Christina Ying Wang]
+> 
+> ## meta-balena-6.10.20
+> ### (2026-01-26)
+> 
+> * Update actions/setup-python digest to a309ff8 [balena-renovate[bot]]
+> 
+> ## meta-balena-6.10.19
+> ### (2026-01-23)
+> 
+> * Further reduce the size of the balena bootloader by removing PTP clock support [Florin Sarbu]
+> 
+
+</details>
+
 # v6.10.18+rev2
 ## (2026-03-03)
 
