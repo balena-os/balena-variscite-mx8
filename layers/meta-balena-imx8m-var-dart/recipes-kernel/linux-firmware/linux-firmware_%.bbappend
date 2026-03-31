@@ -30,3 +30,8 @@ if [ "${FIRMWARE_COMPRESSION}" = "1" ]; then
     done
 fi
 }
+
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
+SRC_URI += " \
+    file://imx8-var_WHENCE \
+"
