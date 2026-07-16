@@ -29,6 +29,15 @@ SRC_URI:append = " \
     https://github.com/Ezurio/SonaIF-Release-Packages/releases/download/LRD-REL-${BRCM_REV}/laird-lwb5-fcc-firmware-${BRCM_REV}.tar.bz2;name=brcm_lwb5 \
 "
 
+# Remove duplicate packages introduced by both meta-balena & meta-variscite-bsp to avoid QA error
+python () {
+    pkgs = d.getVar('PACKAGES')
+    if pkgs:
+        # Deduplicate the fully expanded list while preserving order
+        deduped = list(dict.fromkeys(pkgs.split()))
+        d.setVar('PACKAGES', ' '.join(deduped))
+}
+
 do_firmware_compression:append() {
 if [ "${FIRMWARE_COMPRESSION}" = "1" ]; then
     bbnote "Decompressing BT firmware used by variscite bt script";
