@@ -63,6 +63,49 @@ BALENA_CONFIGS[optimize-size] = " \
     CONFIG_CC_OPTIMIZE_FOR_SIZE=y \
 "
 
+# Remove non-i.MX8M Silicon Architectures
+BALENA_CONFIGS:append = " strip-other-socs"
+BALENA_CONFIGS[strip-other-socs] = " \
+    CONFIG_ARCH_LAYERSCAPE=n \
+    CONFIG_ARCH_KEEMBAY=n \
+    CONFIG_ARCH_S32=n \
+    CONFIG_SOC_S32V234=n \
+    CONFIG_ARCH_S32_CLK=n \
+"
+
+# Remove NUMA for iMX8MQ modules
+BALENA_CONFIGS:append:imx8mq-var-dart = " numa"
+BALENA_CONFIGS[numa] = " \
+    CONFIG_NUMA=n \
+"
+
+# Strips non-existent hardware drivers and Xen (which requires them to function)
+BALENA_CONFIGS:append:imx8mq-var-dart = " iommu-smmu"
+BALENA_CONFIGS[iommu-smmu] = " \
+    CONFIG_ARM_SMMU=n \
+    CONFIG_ARM_SMMU_V3=n \
+    CONFIG_IOMMU_IO_PGTABLE=n \
+    CONFIG_IOMMU_IO_PGTABLE_LPAE=n \
+    CONFIG_XEN=n \
+"
+
+# Removes common clock routing trees compiled for alternative family chips (Plus, Nano, etc.)
+BALENA_CONFIGS:append:imx8mq-var-dart = " alternative-clocks"
+BALENA_CONFIGS[alternative-clocks] = " \
+    CONFIG_CLK_IMX8MN=n \
+    CONFIG_CLK_IMX8MP=n \
+    CONFIG_CLK_IMX8MM=n \
+    CONFIG_CLK_IMX8QXP=n \
+    CONFIG_CLK_IMX8ULP=n \
+"
+
+# Eliminates alternative video processing engines; the i.MX8MQ exclusively supports the Hantro VPU
+BALENA_CONFIGS:append:imx8mq-var-dart = " multimedia-vpu"
+BALENA_CONFIGS[multimedia-vpu] = " \
+    CONFIG_MXC_VPU_MALONE=n \
+    CONFIG_MXC_VPU_WINDSOR=n \
+"
+
 do_configure:append:imx8mm-var-dart() {
     cp ${WORKDIR}/imx8mm-var-dart-dt8mcustomboard_p1atlas-pps-v1.dts ${S}/arch/arm64/boot/dts/freescale/
     cp ${WORKDIR}/imx8mm-var-dart-dt8mcustomboard-legacy_p1atlas-pps-v1.dts ${S}/arch/arm64/boot/dts/freescale/
