@@ -13,8 +13,30 @@ SRC_URI[brcm_lwb5.sha256sum] = "${BRCM_LWB5_SHA_RELEASE_VARISCITE}"
 
 SRC_URI:remove = "git://git.ti.com/git/wilink8-wlan/wl18xx_fw.git;protocol=https;branch=${BRANCH_tiwlan};destsuffix=tiwlan;name=tiwlan"
 SRC_URI:append = " \
-    git://git.ti.com/cgit/wilink8-wlan/wl18xx_fw;protocol=https;branch=${BRANCH_tiwlan};destsuffix=tiwlan;name=tiwlan \
+    git://git.ti.com/git/wilink8-wlan/wl18xx_fw;protocol=https;branch=${BRANCH_tiwlan};destsuffix=tiwlan;name=tiwlan \
 "
+
+# Laird is now rebranded to Ezurio
+# Remove the unmanaged layer's outdated "summit-" URLs
+SRC_URI:remove = " \
+    https://github.com/LairdCP/Sterling-LWB-and-LWB5-Release-Packages/releases/download/LRD-REL-${BRCM_REV}/summit-lwb-fcc-firmware-${BRCM_REV}.tar.bz2;name=brcm_lwb \
+    https://github.com/LairdCP/Sterling-LWB-and-LWB5-Release-Packages/releases/download/LRD-REL-${BRCM_REV}/summit-lwb5-fcc-firmware-${BRCM_REV}.tar.bz2;name=brcm_lwb5 \
+"
+
+# Append the correct Ezurio "laird-" URLs
+SRC_URI:append = " \
+    https://github.com/Ezurio/SonaIF-Release-Packages/releases/download/LRD-REL-${BRCM_REV}/laird-lwb-fcc-firmware-${BRCM_REV}.tar.bz2;name=brcm_lwb \
+    https://github.com/Ezurio/SonaIF-Release-Packages/releases/download/LRD-REL-${BRCM_REV}/laird-lwb5-fcc-firmware-${BRCM_REV}.tar.bz2;name=brcm_lwb5 \
+"
+
+# Remove duplicate packages introduced by both meta-balena & meta-variscite-bsp to avoid QA error
+python () {
+    pkgs = d.getVar('PACKAGES')
+    if pkgs:
+        # Deduplicate the fully expanded list while preserving order
+        deduped = list(dict.fromkeys(pkgs.split()))
+        d.setVar('PACKAGES', ' '.join(deduped))
+}
 
 do_firmware_compression:append() {
 if [ "${FIRMWARE_COMPRESSION}" = "1" ]; then

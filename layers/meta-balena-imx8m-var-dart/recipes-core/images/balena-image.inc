@@ -102,4 +102,19 @@ IMAGE_INSTALL:remove = " kernel-image"
 IMAGE_ROOTFS_SIZE:imx8mm-var-som="487424"
 IMAGE_ROOTFS_SIZE:imx8mp-var-dart="487424"
 
+# Fix default sizes
+IMAGE_ROOTFS_SIZE:imx8m-var-dart = "327680"
+BALENA_BOOT_SIZE:imx8m-var-dart = "40960"
+BALENA_STATE_SIZE:imx8m-var-dart = "20480"
+IMAGE_ROOTFS_SIZE:imx8mm-var-dart-plt = "327680"
+BALENA_BOOT_SIZE:imx8mm-var-dart-plt = "40960"
+BALENA_STATE_SIZE:imx8mm-var-dart-plt = "20480"
+IMAGE_ROOTFS_SIZE:imx8mm-var-dart = "327680"
+BALENA_BOOT_SIZE:imx8mm-var-dart = "40960"
+BALENA_STATE_SIZE:imx8mm-var-dart = "20480"
+BALENA_BOOT_SIZE:imx8mm-var-som = "40960"
+BALENA_STATE_SIZE:imx8mm-var-som = "20480"
+BALENA_BOOT_SIZE:imx8mp-var-dart = "40960"
+BALENA_STATE_SIZE:imx8mp-var-dart = "20480"
+
 unset ROOTFS_SIZE
