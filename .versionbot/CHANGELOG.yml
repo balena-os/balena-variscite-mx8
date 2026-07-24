@@ -1,4 +1,55 @@
 - commits:
+    - subject: Update balena-yocto-scripts to 4c19733cad4cd1473d196d41ea7d2f4531913172
+      hash: 4bff16ab7ebf35789341fab8ceea4227f93c7330
+      body: Update balena-yocto-scripts
+      footer:
+        Changelog-entry: Update balena-yocto-scripts to 4c19733cad4cd1473d196d41ea7d2f4531913172
+        changelog-entry: Update balena-yocto-scripts to 4c19733cad4cd1473d196d41ea7d2f4531913172
+      author: balena-renovate[bot]
+      nested:
+        - commits:
+            - subject: Update GitHub Actions
+              hash: 4514bea4032abfdacbb32c4e0363d69249c3ca3b
+              body: |
+                Update aws-actions/configure-aws-credentials from 6.0.0 to 6.2.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.41.8
+          title: ""
+          date: 2026-07-15T14:03:30.093Z
+        - commits:
+            - subject: Update product-os/review-commit-action action to v0.3.2
+              hash: d60f358679df56824fd0a24bfb5959e029152ab1
+              body: |
+                Update product-os/review-commit-action from 0.3.0 to 0.3.2
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.41.7
+          title: ""
+          date: 2026-07-14T15:56:52.158Z
+        - commits:
+            - subject: Update balena-io/balena-cli to v25
+              hash: 8dd6bdbcf9024a7b9cdbbaa91ee4c2080a396b61
+              body: |
+                Update balena-io/balena-cli from 24.0.3 to 25.1.10
+              footer:
+                Change-type: patch
+                change-type: patch
+              author: balena-renovate[bot]
+              nested: []
+          version: balena-yocto-scripts-1.41.6
+          title: ""
+          date: 2026-07-13T13:20:06.104Z
+  version: 7.7.1+rev1
+  title: ""
+  date: 2026-07-24T08:12:55.631Z
+- commits:
     - subject: "linux-variscite: remove unused kernel options"
       hash: 45e127f14ce219b3e2b8fe62222c7c59d8941e33
       body: ""
