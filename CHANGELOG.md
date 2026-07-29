@@ -1,6 +1,61 @@
 Change log
 -----------
 
+# v7.7.1+rev3
+## (2026-07-29)
+
+
+<details>
+<summary> Update contracts to a4ab96e2b9f6f8c40f80072f7dd1d2369eb7466e [balena-renovate[bot]] </summary>
+
+> ## contracts-2.0.146
+> ### (2026-07-16)
+> 
+> * Modify existing device family and manufacturer metadata [Pranas Ziaukas]
+> 
+> ## contracts-2.0.145
+> ### (2026-07-01)
+> 
+> * hw/device-type: Add Jetson AGX Thor Devkit contract [Alexandru Costache]
+> 
+> ## contracts-2.0.144
+> ### (2026-05-19)
+> 
+> * hw.device-type/beaglebone-ai64: Add the beaglebone-ai-64 alias to align with its device repo definition [Thodoris Greasidis]
+> 
+> ## contracts-2.0.143
+> ### (2026-04-22)
+> 
+> * hw.device-type: Add new device-type Compulab IOT-LINK Gateway [Florin Sarbu]
+> 
+> ## contracts-2.0.142
+> ### (2026-04-09)
+> 
+> * Update iot-gate-imx8plus-d1d8 to remove Wifi and BT [Alexandru Costache]
+> 
+> ## contracts-2.0.141
+> ### (2026-03-16)
+> 
+> * iot-gate-imx8plus: replace dram size range with explicit dram sizes [Alex Gonzalez]
+> 
+> ## contracts-2.0.140
+> ### (2026-03-11)
+> 
+> * iot-gate-imx8plus-d1d8: Enable bluetooth and wifi [Florin Sarbu]
+> 
+> ## contracts-2.0.139
+> ### (2026-03-11)
+> 
+> * ucm-imx93: Set wifi and bt to false [Florin Sarbu]
+> 
+> ## contracts-2.0.138
+> ### (2026-03-09)
+> 
+> * contracts/raspberrypi5: Update device name to mention CM5 support [Alexandru]
+> 
+
+</details>
+
 # v7.7.1+rev2
 ## (2026-07-28)
 
