@@ -5,11 +5,11 @@
 [submodule "layers/meta-freescale"]
 	path = layers/meta-freescale
 	url = https://git.yoctoproject.org/meta-freescale
-	branch = kirkstone
+	branch = scarthgap
 [submodule "layers/meta-openembedded"]
 	path = layers/meta-openembedded
 	url = https://github.com/openembedded/meta-openembedded.git
-	branch = kirkstone
+	branch = scarthgap
 [submodule "layers/meta-balena"]
 	path = layers/meta-balena
 	url = https://github.com/balena-os/meta-balena.git
@@ -17,16 +17,24 @@
 [submodule "layers/poky"]
 	path = layers/poky
 	url = https://github.com/balena-os/poky
-	branch = kirkstone
+	branch = scarthgap
 [submodule "contracts"]
 	path = contracts
 	url = https://github.com/balena-io/contracts.git
 	branch = master
-[submodule "layers/meta-variscite-bsp"]
-	path = layers/meta-variscite-bsp
-	url = https://github.com/varigit/meta-variscite-bsp.git
-	branch = kirkstone
 [submodule "layers/meta-cyclonedx"]
 	path = layers/meta-cyclonedx
 	url = https://github.com/balena-os/meta-cyclonedx.git
-	branch = kirkstone
+	branch = scarthgap
+[submodule "layers/meta-variscite-bsp-imx"]
+	path = layers/meta-variscite-bsp-imx
+	url = https://github.com/varigit/meta-variscite-bsp-imx.git
+	branch = scarthgap_6.6.52-2.2.2_var01
+[submodule "layers/meta-variscite-bsp-common"]
+	path = layers/meta-variscite-bsp-common
+	url = https://github.com/varigit/meta-variscite-bsp-common.git
+	branch = scarthgap_6.6.52-2.2.2_var01
+[submodule "layers/meta-imx"]
+	path = layers/meta-imx
+	url = https://github.com/nxp-imx/meta-imx.git
+	branch = scarthgap-6.6.52-2.2.2

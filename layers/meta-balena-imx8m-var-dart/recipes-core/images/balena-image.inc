@@ -1,24 +1,4 @@
 BALENA_BOOT_PARTITION_FILES:imx8m-var-dart = " \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-sd-lvds-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-m4-wifi-lvds-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-sd-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-sd-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-sd-lvds-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-hdmi.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds-dp.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds.dtb:/ \
-        imx8mq-var-dart-dt8mcustomboard-legacy-wifi-lvds-hdmi.dtb:/ \
         imx8mq-var-dart-dt8mcustomboard-m4-sd-hdmi.dtb:/ \
         imx8mq-var-dart-dt8mcustomboard-m4-sd-lvds.dtb:/ \
         imx8mq-var-dart-dt8mcustomboard-m4-sd-lvds-hdmi.dtb:/ \
@@ -33,14 +13,7 @@ BALENA_BOOT_PARTITION_FILES:imx8m-var-dart = " \
         imx8mq-var-dart-dt8mcustomboard-wifi-lvds-hdmi.dtb:/ \
 "
 
-BALENA_BOOT_PARTITION_FILES:imx8mm-var-dart = " \
-    imx8mm-var-dart-dt8mcustomboard-legacy.dtb:/imx8mm-var-dart-dt8mcustomboard-legacy.dtb \
-    imx8mm-var-dart-dt8mcustomboard.dtb:/imx8mm-var-dart-dt8mcustomboard.dtb \
-    imx8mm-var-dart-dt8mcustomboard-m4.dtb:/imx8mm-var-dart-dt8mcustomboard-m4.dtb \
-"
-
 IMAGE_INSTALL:append = " \
-	imx-boot \
 	bcm43xx-utils \
 	brcm-patchram-plus \
 	kernel-modules \
@@ -51,7 +24,6 @@ IMAGE_INSTALL:append = " \
 	kernel-module-imx-gpu-viv \
 	i2c-tools \
 	kernel-image-initramfs \
-	kernel-devicetree \
 	firmware-imx-sdma-imx7d \
 	libgpiod \
 	linux-firmware-bcm4339 \
@@ -92,12 +64,7 @@ MACHINE_EXTRA_RDEPENDS += " \
                            firmware-imx \
                            kernel-module-imx-gpu-viv \
 			   kernel-image-initramfs \
-			   kernel-devicetree \
 "
-
-# Fixes error: packages already installed
-# by kernel-image-initramfs
-IMAGE_INSTALL:remove = " kernel-image"
 
 IMAGE_ROOTFS_SIZE:imx8mm-var-som="487424"
 IMAGE_ROOTFS_SIZE:imx8mp-var-dart="487424"
@@ -118,3 +85,17 @@ BALENA_BOOT_SIZE:imx8mp-var-dart = "40960"
 BALENA_STATE_SIZE:imx8mp-var-dart = "20480"
 
 unset ROOTFS_SIZE
+
+# we do not use some packages installed by the BSP
+IMAGE_INSTALL:remove = "packagegroup-security-tpm2"
+IMAGE_INSTALL:remove = "packagegroup-tools-bluetooth"
+IMAGE_INSTALL:remove = "packagegroup-variscite-devel"
+IMAGE_INSTALL:remove = "variscite-base-files"
+
+ROOTFS_POSTPROCESS_COMMAND += "remove_hwdb_bin; "
+
+remove_hwdb_bin() {
+    rm -f ${IMAGE_ROOTFS}/usr/lib/udev/hwdb.bin
+}
+
+do_resin_boot_dirgen_and_deploy[depends] += "imx-boot:do_deploy"
