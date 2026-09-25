@@ -1,5 +1,7 @@
-# This fixes circular dependency error
-IMAGE_FSTYPES:imx8m-var-dart  = "${INITRAMFS_FSTYPES}"
-IMAGE_FSTYPES:imx8mm-var-dart = "${INITRAMFS_FSTYPES}"
-PACKAGE_INSTALL:remove = " mdraid"
-PACKAGE_INSTALL:remove = " initramfs-module-recovery"
+# create some extra space for the Scarthgap update
+
+PACKAGE_INSTALL:remove = "initramfs-module-migrate"
+PACKAGE_INSTALL:remove = "mdraid"
+PACKAGE_INSTALL:remove = "initramfs-module-recovery"
+
+IMAGE_ROOTFS_MAXSIZE = "65536"

@@ -1,0 +1,36 @@
+From 3af01494672218895b849d613987bea9ad5b0ee4 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Fri, 16 Oct 2026 10:45:55 +0000
+Subject: [PATCH] Use old device tree on altboot
+
+Variscite renamed device trees again with kernel 6.6.144 release
+so let's load the old device tree name in case of a rollback.
+
+Upstream-status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
+Signed-off-by: Alexandru Costache <alexandru@balena.io>
+---
+ include/configs/imx8mm_var_dart.h | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/include/configs/imx8mm_var_dart.h b/include/configs/imx8mm_var_dart.h
+index c8013078c23..eed5aa98db0 100644
+--- a/include/configs/imx8mm_var_dart.h
++++ b/include/configs/imx8mm_var_dart.h
+@@ -125,8 +125,12 @@
+ 				"fi; " \
+ 			"fi; " \
+ 		"fi; \0" \
++	"imx_boot_bin=imx-boot-imx8mm-var-dart-plt-sd.bin-flash_lpddr4_ddr4_evk\0" \
++	"set_num_blocks=setexpr imx_boot_num_blocks ${filesize} / 0x200 ; setexpr imx_boot_num_blocks ${imx_boot_num_blocks} + 1; echo imx-boot has ${imx_boot_num_blocks} blocks; \0" \
++	"revert_imx_boot=load mmc ${mmcdev}:${resin_root_part} ${loadaddr} boot/${imx_boot_bin} ; " \
++		"run set_num_blocks; mmc dev 2; mmc write ${loadaddr} 0x42 ${imx_boot_num_blocks}; reset; \0" \
+ 	"loadfdt=run findfdt; " \
+-		"if load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; then echo Loaded ${fdt_file}; run balena_fdt_load_crc_save; else false; fi; \0" \
++		"if load mmc ${mmcdev}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; then echo Loaded ${fdt_file}; run balena_fdt_load_crc_save; else echo Will revert imx-boot for compatibility; run revert_imx_boot; fi; \0" \
+ 	"ramsize_check="\
+ 		"if test $sdram_size -le 512; then " \
+ 			"setenv cma_size cma=320M; " \
+-- 
+2.34.1
+
