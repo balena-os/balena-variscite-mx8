@@ -2,34 +2,21 @@ inherit resin-u-boot
 
 FILESEXTRAPATHS:append := ":${THISDIR}/files"
 
-LICENSE = "GPLv2+"
-LIC_FILES_CHKSUM = "file://Licenses/gpl-2.0.txt;md5=b234ee4d69f5fce4486a80fdaf4a4263"
-
 SRC_URI:append:imx8m-var-dart = " \
 	file://dart-mx8mq-Integrate-with-Balena-u-boot-environment.patch \
-	file://imx8m_var_dart-Use-custom_fdt_file-if-defined.patch \
-	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
 "
 
 SRC_URI:append:imx8mm-var-dart = " \
-	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
-	file://dart-mx8mm-Integrate-with-Balena-u-boot-environment.patch \
-	file://0001-imx8mm-var-dart-Run-CRC32-checks-increase-kernel-and.patch \
+	file://imx8mm-var-dart-Integrate-with-Balena-u-boot-environment.patch \
 "
 
 SRC_URI:append:imx8mm-var-dart-plt = " \
 	file://0001-Add-support-for-querying-boot-switch-position.patch \
 	file://0002-bootcmd-Flash-only-if-bootswitch-in-EXT-position.patch \
 	file://mx8mm-plt-turn-on-yellow-led-at-boot.patch \
-	file://plt-Always-load-the-legacy-dtb.patch \
-	file://Use-old-device-tree-on-altboot.patch \
-	file://plt-Run-CRC32-checks.patch \ 
 "
 
-SRC_URI:remove:imx8mm-var-dart-plt = "file://0001-imx8mm-var-dart-Run-CRC32-checks-increase-kernel-and.patch"
-
 SRC_URI:append:imx8mp-var-dart = " \
-	file://0001-Revert-env-add-ENV_ERASE_PTR-macro.patch \
 	file://imx8mp-var-dart_Integrate-with-balenaOS.patch \
 "
 

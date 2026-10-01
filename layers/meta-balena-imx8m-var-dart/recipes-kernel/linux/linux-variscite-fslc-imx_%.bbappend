@@ -1,6 +1,6 @@
 FILESEXTRAPATHS:append := ":${THISDIR}/${PN}"
 
-inherit kernel-resin
+inherit kernel-balena
 
 # This fixes invalid package name
 # error caused by SRCPV
@@ -26,7 +26,6 @@ BALENA_CONFIGS[pps-client] = " \
 #file://0001-Add-identification-led.patch 
 
 SRC_URI:append:imx8mm-var-dart = " \
-	file://0001-Avoid-hang-at-boot-if-pcie-oscillator-not-present.patch \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.142.patch \
 	file://0001-Enable-spidev0.0-on-kernel-5.10-for-iMX8M-Mini-VAR-S.patch \
 	file://imx8mm-var-dart-dt8mcustomboard_p1atlas-pps-v1.dts \
@@ -86,7 +85,6 @@ BALENA_CONFIGS[iommu-smmu] = " \
     CONFIG_ARM_SMMU_V3=n \
     CONFIG_IOMMU_IO_PGTABLE=n \
     CONFIG_IOMMU_IO_PGTABLE_LPAE=n \
-    CONFIG_XEN=n \
 "
 
 # Removes common clock routing trees compiled for alternative family chips (Plus, Nano, etc.)
@@ -99,11 +97,75 @@ BALENA_CONFIGS[alternative-clocks] = " \
     CONFIG_CLK_IMX8ULP=n \
 "
 
-# Eliminates alternative video processing engines; the i.MX8MQ exclusively supports the Hantro VPU
+BALENA_CONFIGS:append:imx8mm-var-dart = " non-imx8mm-soc"
+BALENA_CONFIGS:append:imx8mq-var-dart = " non-imx8mm-soc"
+BALENA_CONFIGS[non-imx8mm-soc] = " \
+    CONFIG_SOC_IMX9=n \
+    CONFIG_IMX9_BLK_CTRL=n \
+    CONFIG_CLK_IMX95_BLK_CTL=n \
+    CONFIG_IMX91_THERMAL=n \
+"
+
+BALENA_CONFIGS:append:imx8mm-var-dart = " disable-media-bloat"
+BALENA_CONFIGS:append:imx8mq-var-dart = " disable-media-bloat"
+BALENA_CONFIGS[disable-media-bloat] = " \
+    CONFIG_MEDIA_ANALOG_TV_SUPPORT=n \
+    CONFIG_MEDIA_DIGITAL_TV_SUPPORT=n \
+    CONFIG_MEDIA_SDR_SUPPORT=n \
+    CONFIG_DVB_CORE=n \
+    CONFIG_MEDIA_TUNER=n \
+    CONFIG_VIDEO_MX95MBCAM=n \
+    CONFIG_VIDEO_NXP_NEOISP=n \
+"
+
+BALENA_CONFIGS:append:imx8mm-var-dart = " disable-unused-fs"
+BALENA_CONFIGS:append:imx8mq-var-dart = " disable-unused-fs"
+BALENA_CONFIGS[disable-unused-fs] = " \
+    CONFIG_BTRFS_FS=n \
+    CONFIG_JFFS2_FS=n \
+    CONFIG_UBIFS_FS=n \
+    CONFIG_HFS_FS=n \
+    CONFIG_HFSPLUS_FS=n \
+"
+
+BALENA_CONFIGS:append:imx8mm-var-dart = " prune-debug-bloat"
+BALENA_CONFIGS:append:imx8mq-var-dart = " prune-debug-bloat"
+BALENA_CONFIGS[prune-debug-bloat] = " \
+    CONFIG_SLUB_DEBUG=n \
+    CONFIG_CORESIGHT=n \
+    CONFIG_CORESIGHT_LINKS_AND_SINKS=n \
+    CONFIG_CORESIGHT_LINK_AND_SINK_TMC=n \
+    CONFIG_CORESIGHT_SOURCE_ETM4X=n \
+    CONFIG_PROFILING=n \
+    CONFIG_TRACEPOINTS=n \
+    CONFIG_FTRACE=n \
+"
+
+BALENA_CONFIGS:append:imx8mm-var-dart = " virt-server-features"
+BALENA_CONFIGS:append:imx8mq-var-dart = " virt-server-features"
+BALENA_CONFIGS[virt-server-features] = " \
+    CONFIG_XEN=n \
+    CONFIG_KVM=n \
+    CONFIG_ACPI=n \
+    CONFIG_NUMA=n \
+    CONFIG_DRM_VIRTIO_GPU=n \
+    CONFIG_SND_VIRTIO=n \
+    CONFIG_9P_FS=n \
+    CONFIG_VIRTIO_VIDEO=n \
+    CONFIG_VIRTIO_VSOCKETS=n \
+    CONFIG_VIRTIO_BALLOON=n \
+    CONFIG_VIRTIO_IVSHMEM=n \
+    CONFIG_XEN_VIRTIO=n \
+    CONFIG_XEN_VIRTIO_FORCE_GRANT=n \
+"
+
+# Eliminates alternative video processing engines; the i.MX8MM, i.MX8MQ exclusively support the Hantro VPU
+BALENA_CONFIGS:append:imx8mm-var-dart = " multimedia-vpu"
 BALENA_CONFIGS:append:imx8mq-var-dart = " multimedia-vpu"
 BALENA_CONFIGS[multimedia-vpu] = " \
     CONFIG_MXC_VPU_MALONE=n \
     CONFIG_MXC_VPU_WINDSOR=n \
+    CONFIG_VIDEO_AMPHION_VPU=n \
 "
 
 do_configure:append:imx8mm-var-dart() {

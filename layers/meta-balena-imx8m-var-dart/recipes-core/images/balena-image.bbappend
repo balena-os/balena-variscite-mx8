@@ -11,8 +11,3 @@ BALENA_BOOT_PARTITION_FILES:append:imx8mm-var-dart = " \
 BALENA_BOOT_PARTITION_FILES:append:imx8mp-var-dart = " \
     imx-boot-${MACHINE}-sd.bin-flash_evk:/imx-boot.bin \
 "
-
-# With Kirstone the rootfs space has increased,
-# let's raise the image size values before
-# production to allow for future updates
-IMAGE_ROOTFS_SIZE:imx8mm-var-som="487424"
