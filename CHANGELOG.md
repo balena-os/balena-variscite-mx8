@@ -1,6 +1,12 @@
 Change log
 -----------
 
+# v8.0.13
+## (2026-10-16)
+
+* Update to Scarthgap BSP version scarthgap_6.6.52-2.2.2_var01 [Florin Sarbu]
+* Update layers/meta-balena to cb154545ef42d3f53209032a3228d64403ef0b5f [balena-renovate[bot]]
+
 # v7.9.3+rev1
 ## (2026-08-10)
 

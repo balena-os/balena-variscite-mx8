@@ -1,4 +1,28 @@
 - commits:
+    - subject: Update to Scarthgap BSP version scarthgap_6.6.52-2.2.2_var01
+      hash: 89a1e860fbee5c5a1101a5806259bfd23c8e4e34
+      body: |
+        Update to Variscite release scarthgap_6.6.52-2.2.2_var01 as per
+        https://github.com/varigit/variscite-bsp-platform/blob/scarthgap/imx-6.6.52-2.2.2.xml
+      footer:
+        Changelog-entry: Update to Scarthgap BSP version scarthgap_6.6.52-2.2.2_var01
+        changelog-entry: Update to Scarthgap BSP version scarthgap_6.6.52-2.2.2_var01
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+    - subject: Update layers/meta-balena to cb154545ef42d3f53209032a3228d64403ef0b5f
+      hash: 6f3fd1d0f4cdd0db787b91fd632eca666503a4c3
+      body: Update layers/meta-balena
+      footer:
+        Changelog-entry: Update layers/meta-balena to cb154545ef42d3f53209032a3228d64403ef0b5f
+        changelog-entry: Update layers/meta-balena to cb154545ef42d3f53209032a3228d64403ef0b5f
+      author: balena-renovate[bot]
+      nested: []
+  version: 8.0.13
+  title: ""
+  date: 2026-10-16T22:11:33.570Z
+- commits:
     - subject: Update layers/poky to 445a6223929b9a7a62b575093659e3d9e1aba982
       hash: c3f4c2fa77a6fd7c0771c134fd3eeff0a3c6478d
       body: Update layers/poky
