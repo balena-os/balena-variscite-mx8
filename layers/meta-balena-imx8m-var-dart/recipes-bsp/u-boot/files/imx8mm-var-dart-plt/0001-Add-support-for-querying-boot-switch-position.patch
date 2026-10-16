@@ -1,6 +1,6 @@
-From ee333738caac03a7364bea99f271fc862c315aec Mon Sep 17 00:00:00 2001
-From: Alexandru Costache <alexandru@balena.io>
-Date: Tue, 1 Jun 2021 12:46:23 +0200
+From 0bc7df6d10fd276860d0b0226e0340937bc4d349 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Tue, 29 Sep 2026 12:07:02 +0000
 Subject: [PATCH] Add support for querying boot switch position
 
 The imx8mm-var-dart has a boot switch that we can use
@@ -10,23 +10,24 @@ This patch adds support for querying it from
 the u-boot environment.
 
 Upstream-status: Inappropriate [configuration]
+Signed-off-by: Florin Sarbu <florin@balena.io>
 Signed-off-by: Alexandru Costache <alexandru@balena.io>
 ---
  .../imx8mm_var_dart/imx8mm_var_dart.c         | 32 +++++++++++++++++++
  cmd/Kconfig                                   |  5 +++
  cmd/Makefile                                  |  1 +
- cmd/bootswitch.c                              | 26 +++++++++++++++
+ cmd/bootswitch.c                              | 25 +++++++++++++++
  configs/imx8mm_var_dart_defconfig             |  1 +
- 5 files changed, 65 insertions(+)
+ 5 files changed, 64 insertions(+)
  create mode 100644 cmd/bootswitch.c
 
 diff --git a/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c b/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c
-index b78c675058..4c5c4556af 100644
+index 7e577a082c1..681067352ce 100644
 --- a/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c
 +++ b/board/variscite/imx8mm_var_dart/imx8mm_var_dart.c
-@@ -86,6 +86,17 @@ int var_get_som_rev(struct var_eeprom *ep)
- #define UART_PAD_CTRL	(PAD_CTL_DSE6 | PAD_CTL_FSEL1)
- #define WDOG_PAD_CTRL	(PAD_CTL_DSE6 | PAD_CTL_ODE | PAD_CTL_PUE | PAD_CTL_PE)
+@@ -34,6 +34,17 @@ extern int var_setup_mac(struct var_eeprom *eeprom);
+ 
+ #define GPIO_PAD_CTRL	(PAD_CTL_DSE6 | PAD_CTL_FSEL1 | PAD_CTL_PUE | PAD_CTL_PE)
  
 +/* 0x1c6 in kernel dts */
 +#define BOOT_PAD_CTRL    (PAD_CTL_DSE6 | PAD_CTL_HYS | PAD_CTL_PUE | PAD_CTL_PE)
@@ -35,35 +36,35 @@ index b78c675058..4c5c4556af 100644
 +#define BOOT_SWITCH_INT   IMX_GPIO_NR(4, 17)
 +
 +static iomux_v3_cfg_t const boot_switch_pads[] = {
-+       IMX8MM_PAD_SAI1_TXD2_GPIO4_IO14 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
-+       IMX8MM_PAD_SAI1_TXD5_GPIO4_IO17 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
++	IMX8MM_PAD_SAI1_TXD2_GPIO4_IO14 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
++	IMX8MM_PAD_SAI1_TXD5_GPIO4_IO17 | MUX_PAD_CTRL(BOOT_PAD_CTRL),
 +};
 +
- static iomux_v3_cfg_t const uart1_pads[] = {
- 	IMX8MM_PAD_UART1_RXD_UART1_RX | MUX_PAD_CTRL(UART_PAD_CTRL),
- 	IMX8MM_PAD_UART1_TXD_UART1_TX | MUX_PAD_CTRL(UART_PAD_CTRL),
-@@ -154,12 +165,33 @@ int board_usb_cleanup(int index, enum usb_init_type init)
- }
+ #ifdef CONFIG_SPL_BUILD
+ #define ID_GPIO		IMX_GPIO_NR(2, 11)
+ 
+@@ -168,12 +179,33 @@ int board_ehci_usb_phy_mode(struct udevice *dev)
+ #endif
  #endif
  
 +int is_boot_switch(const char *position)
 +{
-+       if (!strncmp(position, "INT", 3) && gpio_get_value(BOOT_SWITCH_INT)) {
-+               return 1;
-+       } else if (!strncmp(position, "EXT", 3) && gpio_get_value(BOOT_SWITCH_EXT)) {
-+               return 1;
-+       }
++	if (!strncmp(position, "INT", 3) && gpio_get_value(BOOT_SWITCH_INT)) {
++		return 1;
++	} else if (!strncmp(position, "EXT", 3) && gpio_get_value(BOOT_SWITCH_EXT)) {
++		return 1;
++	}
 +
-+       return 0;
++	return 0;
 +}
 +
 +static void setup_bootswitch_gpios(void)
 +{
-+       imx_iomux_v3_setup_multiple_pads(boot_switch_pads, ARRAY_SIZE(boot_switch_pads));
-+       gpio_request(BOOT_SWITCH_INT, "BOOT_INT");
-+       gpio_direction_input(BOOT_SWITCH_INT);
-+       gpio_request(BOOT_SWITCH_EXT, "BOOT_EXT");
-+       gpio_direction_input(BOOT_SWITCH_EXT);
++	imx_iomux_v3_setup_multiple_pads(boot_switch_pads, ARRAY_SIZE(boot_switch_pads));
++	gpio_request(BOOT_SWITCH_INT, "BOOT_INT");
++	gpio_direction_input(BOOT_SWITCH_INT);
++	gpio_request(BOOT_SWITCH_EXT, "BOOT_EXT");
++	gpio_direction_input(BOOT_SWITCH_EXT);
 +}
 +
  int board_init(void)
@@ -77,39 +78,39 @@ index b78c675058..4c5c4556af 100644
  }
  
 diff --git a/cmd/Kconfig b/cmd/Kconfig
-index 300d800e2f..d59c5e55c5 100644
+index 413051ac4a1..0f6a7c6f321 100644
 --- a/cmd/Kconfig
 +++ b/cmd/Kconfig
-@@ -1576,6 +1576,11 @@ endif
+@@ -2051,6 +2051,11 @@ endif
  
  menu "Misc commands"
  
-+config CMD_BOOTSWITCH_POS
-+        bool "Enable 'bootswitchpos' command"
-+        help
-+          This provides a way to determine boot switch position on the variscite imx8mm-var-dart
+++config CMD_BOOTSWITCH_POS
++	bool "Enable 'bootswitchpos' command"
++	help
++	  This provides a way to determine boot switch position on the variscite imx8mm-var-dart
 +
- config CMD_BMP
- 	bool "Enable 'bmp' command"
- 	depends on LCD || DM_VIDEO || VIDEO
+ config CMD_2048
+ 	bool "Play 2048"
+ 	help
 diff --git a/cmd/Makefile b/cmd/Makefile
-index 7c62e3becf..59df832789 100644
+index 87133cc27a8..dd6b948ced0 100644
 --- a/cmd/Makefile
 +++ b/cmd/Makefile
-@@ -167,6 +167,7 @@ obj-$(CONFIG_CMD_ZFS) += zfs.o
- obj-$(CONFIG_CMD_DFU) += dfu.o
+@@ -215,6 +215,7 @@ obj-$(CONFIG_CMD_DFU) += dfu.o
  obj-$(CONFIG_CMD_GPT) += gpt.o
+ obj-$(CONFIG_CMD_MBR) += mbr.o
  obj-$(CONFIG_CMD_ETHSW) += ethsw.o
 +obj-$(CONFIG_CMD_BOOTSWITCH_POS) += bootswitch.o
  obj-$(CONFIG_CMD_AXI) += axi.o
+ obj-$(CONFIG_CMD_PVBLOCK) += pvblock.o
  
- # Power
 diff --git a/cmd/bootswitch.c b/cmd/bootswitch.c
 new file mode 100644
-index 0000000000..8e0c66809f
+index 00000000000..ffbaf87a60f
 --- /dev/null
 +++ b/cmd/bootswitch.c
-@@ -0,0 +1,26 @@
+@@ -0,0 +1,25 @@
 +#include <common.h>
 +#include <config.h>
 +#include <command.h>
@@ -124,27 +125,26 @@ index 0000000000..8e0c66809f
 +
 +static int do_bootswitchpos(struct cmd_tbl *cmdtp, int flag, int argc, char * const argv[])
 +{
-+       if (argc < 2) {
-+               printf(USAGE);
-+               return 1;
-+       }
-+
-+       return !is_boot_switch(argv[1]);
++	if (argc < 2) {
++		printf(USAGE);
++		return 1;
++	}
++	return !is_boot_switch(argv[1]);
 +}
 +
-+U_BOOT_CMD(bootswitchpos, 2, 1, do_bootswitchpos, "", "")
++U_BOOT_CMD(bootswitchpos, 2, 1, do_bootswitchpos, "", "");
 +
 +#endif
 +#endif
 diff --git a/configs/imx8mm_var_dart_defconfig b/configs/imx8mm_var_dart_defconfig
-index 5043f6ad2e..376e417815 100644
+index b7a952be581..68af4bc1d30 100644
 --- a/configs/imx8mm_var_dart_defconfig
 +++ b/configs/imx8mm_var_dart_defconfig
-@@ -118,3 +118,4 @@ CONFIG_CMD_EXT4=y
- CONFIG_CMD_FAT=y
- CONFIG_CMD_EXPORTENV=y
- CONFIG_PARTITION_UUIDS=y
+@@ -173,3 +173,4 @@ CONFIG_LZO=y
+ CONFIG_BZIP2=y
+ # CONFIG_EFI_LOADER is not set
+ # CONFIG_OPTEE_LIB is not set
 +CONFIG_CMD_BOOTSWITCH_POS=y
 -- 
-2.17.1
+2.34.1
 

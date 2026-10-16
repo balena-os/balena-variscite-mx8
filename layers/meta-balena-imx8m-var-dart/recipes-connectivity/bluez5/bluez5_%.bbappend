@@ -8,3 +8,7 @@ FILESEXTRAPATHS:append := ":${THISDIR}/files"
 SRC_URI:append:imx8mm-var-dart = " \
     file://0005-scan_len.patch \
 "
+
+# Remove obex-profiles from bluez5's default PACKAGECONFIG
+# so we don't get the large libical and libicu in the rootfs
+PACKAGECONFIG:remove = "obex-profiles"

@@ -1,6 +1,6 @@
-From 87b378f47bcce059d8093cde4b3a4fe6a4d2837e Mon Sep 17 00:00:00 2001
-From: Alexandru Costache <alexandru@balena.io>
-Date: Wed, 14 Dec 2022 16:37:11 +0100
+From 6b6f31ac7e4379b6bd1ce6f5b1c64b62cf6e39a2 Mon Sep 17 00:00:00 2001
+From: Florin Sarbu <florin@balena.io>
+Date: Wed, 30 Sep 2026 07:37:21 +0000
 Subject: [PATCH] imx8mm-var-dart: Disable PCIe
 
 The hw vendor suggests we disable PCIe to have the new
@@ -13,18 +13,18 @@ Signed-off-by: Florin Sarbu <florin@balena.io>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
-index 9bfce231d0d9..e991ffc979ea 100644
+index 6f88f9d94905..73c81b3c2cac 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
 +++ b/arch/arm64/boot/dts/freescale/imx8mm-var-dart-dt8mcustomboard.dts
-@@ -270,7 +270,7 @@ &pcie0 {
+@@ -291,7 +291,7 @@ &pcie0 {
+ 	assigned-clock-rates = <10000000>, <250000000>;
+ 	assigned-clock-parents = <&clk IMX8MM_SYS_PLL2_50M>,
  				 <&clk IMX8MM_SYS_PLL2_250M>;
- 	ext_osc = <1>;
- 	l1ss-disabled;
 -	status = "okay";
 +	status = "disabled";
  };
  
- &pcie0_ep {
+ &pwm1 {
 -- 
-2.37.2
+2.34.1
 
