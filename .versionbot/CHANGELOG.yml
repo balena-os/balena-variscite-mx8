@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update layers/meta-freescale to 114dda1a7639cac34e4e63c352e433d2d011a39c
+      hash: 2a25d6b92ad015f3b44cac2c371f9b0e6afcb357
+      body: Update layers/meta-freescale
+      footer:
+        Changelog-entry: Update layers/meta-freescale to
+          114dda1a7639cac34e4e63c352e433d2d011a39c
+        changelog-entry: Update layers/meta-freescale to
+          114dda1a7639cac34e4e63c352e433d2d011a39c
+      author: balena-renovate[bot]
+      nested: []
+  version: 8.0.13+rev1
+  title: ""
+  date: 2026-10-17T11:44:51.853Z
+- commits:
     - subject: Update to Scarthgap BSP version scarthgap_6.6.52-2.2.2_var01
       hash: 89a1e860fbee5c5a1101a5806259bfd23c8e4e34
       body: |
