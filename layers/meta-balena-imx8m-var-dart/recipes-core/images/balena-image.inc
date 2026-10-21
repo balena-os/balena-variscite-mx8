@@ -13,6 +13,8 @@ BALENA_BOOT_PARTITION_FILES:imx8m-var-dart = " \
         imx8mq-var-dart-dt8mcustomboard-wifi-lvds-hdmi.dtb:/ \
 "
 
+IMAGE_INSTALL:append = " ${@bb.utils.contains('MACHINE_FEATURES', 'nxpiw612-sdio', 'firmware-nxp-wifi-nxpiw612-sdio iw612-utils kernel-module-nxp-wlan', '', d)}"
+
 IMAGE_INSTALL:append = " \
 	imx-boot \
 	bcm43xx-utils \
