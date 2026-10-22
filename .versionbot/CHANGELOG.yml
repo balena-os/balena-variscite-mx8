@@ -1,4 +1,18 @@
 - commits:
+    - subject: Add NXP IW61x firmware and driver for machines needing it
+      hash: 8ede6b81279a2938a74878e5550b104ea39f6537
+      body: ""
+      footer:
+        Changelog-entry: Add NXP IW61x firmware and driver for machines needing it
+        changelog-entry: Add NXP IW61x firmware and driver for machines needing it
+        Signed-off-by: Florin Sarbu <florin@balena.io>
+        signed-off-by: Florin Sarbu <florin@balena.io>
+      author: Florin Sarbu
+      nested: []
+  version: 9.0.3+rev1
+  title: ""
+  date: 2026-10-22T10:35:49.398Z
+- commits:
     - subject: Update layers/meta-balena to 7f1a0e5c983a45cea4a4aad23c56134e3a3cea2f
       hash: 3d607699b967cf523a652bc7f9b8a58e6475a8f8
       body: Update layers/meta-balena

@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v9.0.3+rev1
+## (2026-10-22)
+
+* Add NXP IW61x firmware and driver for machines needing it [Florin Sarbu]
+
 # v9.0.3
 ## (2026-10-22)
 
