@@ -1,4 +1,16 @@
 - commits:
+    - subject: Update flowzonify to 0.4.22
+      hash: 57cfb1fd68f01f241b681ec90e5ccb908f42bf03
+      body: Update flowzonify
+      footer:
+        Changelog-entry: Update flowzonify to 0.4.22
+        changelog-entry: Update flowzonify to 0.4.22
+      author: balena-renovate[bot]
+      nested: []
+  version: 9.0.3+rev2
+  title: ""
+  date: 2026-10-23T16:11:10.534Z
+- commits:
     - subject: Add NXP IW61x firmware and driver for machines needing it
       hash: 8ede6b81279a2938a74878e5550b104ea39f6537
       body: ""
