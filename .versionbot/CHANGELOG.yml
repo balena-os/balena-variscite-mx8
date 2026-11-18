@@ -1,4 +1,21 @@
 - commits:
+    - subject: Add custom device trees for P1 Atlas R2 units using IMX8 1.x or 2.0
+        modules
+      hash: eff8013c7e92a2217edf00d7e5508fdb7dafa808
+      body: ""
+      footer:
+        Changelog-entry: Add custom device trees for P1 Atlas R2 units using IMX8 1.x or
+          2.0 modules
+        changelog-entry: Add custom device trees for P1 Atlas R2 units using IMX8 1.x or
+          2.0 modules
+        Signed-off-by: David Leskowicz <dave@pointonenav.com>
+        signed-off-by: David Leskowicz <dave@pointonenav.com>
+      author: David Leskowicz
+      nested: []
+  version: 9.1.0+rev2
+  title: ""
+  date: 2026-11-18T09:13:13.102Z
+- commits:
     - subject: Update balena-yocto-scripts to 6396c352087dfb8e51878aac70a59b5806eafebf
       hash: a306b3fa6cd7f8353ce121c9a218c1f40497a7d1
       body: Update balena-yocto-scripts

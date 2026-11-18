@@ -1,6 +1,11 @@
 Change log
 -----------
 
+# v9.1.0+rev2
+## (2026-11-18)
+
+* Add custom device trees for P1 Atlas R2 units using IMX8 1.x or 2.0 modules [David Leskowicz]
+
 # v9.1.0+rev1
 ## (2026-11-14)
 
