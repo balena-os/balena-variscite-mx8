@@ -1,4 +1,32 @@
 - commits:
+    - subject: Backport fix for CVE-2026-98432
+      hash: 980771a28bdf7ecc748667a98357e953e39a4d34
+      body: |
+        Backport the upstream stable fix "ipv4: free inet_opt and ireq_opt after
+        an RCU grace period" to the pinned Variscite 6.6.157 kernel.
+
+        CVE-2026-98432 is a use-after-free in the IPv4 TCP path: the child
+        socket's inet_opt can be freed with a plain kfree() while a concurrent
+        SYNACK is still reading it under rcu_read_lock(). The fix is in stable
+        6.6.159. No Variscite branch is at or above that release (the head of
+        6.6-2.2.x-imx_var01 is still 6.6.157), so apply the patch here until
+        Variscite ships one.
+
+        The patch applies cleanly to the pinned SRCREV and to the branch head.
+        the CVE: tag lets
+        cve-check see it as patched. Drop the patch when the kernel moves to
+        6.6.159 or later.
+      footer:
+        Changelog-entry: Backport fix for CVE-2026-98432
+        changelog-entry: Backport fix for CVE-2026-98432
+        Signed-off-by: Ryan Cooke<ryan@balena.io>
+        signed-off-by: Ryan Cooke<ryan@balena.io>
+      author: Ryan Cooke
+      nested: []
+  version: 9.1.1+rev2
+  title: ""
+  date: 2026-11-25T14:41:29.661Z
+- commits:
     - subject: Update balena-yocto-scripts to ac62fde95212b8eb2c40b385b530fefbd765846f
       hash: 35e7eb639684445d9996835e30f08315d7b112b7
       body: Update balena-yocto-scripts
