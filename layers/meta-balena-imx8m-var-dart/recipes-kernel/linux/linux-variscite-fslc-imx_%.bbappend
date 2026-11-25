@@ -25,6 +25,11 @@ BALENA_CONFIGS[pps-client] = " \
 ## TODO: Rebase identification led for mx8m
 #file://0001-Add-identification-led.patch 
 
+# Backport of the stable fix for CVE-2026-98432 (IPv4 TCP use-after-free) to the
+# pinned 6.6.157 kernel; the fixed release is 6.6.159. Remove once the Variscite
+# branch moves to 6.6.159 or later.
+SRC_URI:append = " file://0001-ipv4-free-inet_opt-and-ireq_opt-after-an-RCU-grace-period.patch"
+
 SRC_URI:append:imx8mm-var-dart = " \
 	file://mx8mm-fsl-imx8mm-var-dart-Enable-SPIDEV_5.4.142.patch \
 	file://0001-Enable-spidev0.0-on-kernel-5.10-for-iMX8M-Mini-VAR-S.patch \

@@ -6,14 +6,14 @@ Subject: [PATCH] imx8mp-var-dart: integrate with balenaOS
 Upstream-status: Inappropriate[configuration]
 Signed-off-by: Florin Sarbu <florin@balena.io>
 ---
- include/configs/imx8mp_var_dart.h | 20 +++++++++++++-------
+ include/configs/imx8mp_var_dart.h | 20 +++++++---
  1 file changed, 13 insertions(+), 7 deletions(-)
 
 diff --git a/include/configs/imx8mp_var_dart.h b/include/configs/imx8mp_var_dart.h
-index 4f011007830..d3424256d26 100644
+index 3fe595d..d50dfc0 100644
 --- a/include/configs/imx8mp_var_dart.h
 +++ b/include/configs/imx8mp_var_dart.h
-@@ -81,11 +81,11 @@
+@@ -58,11 +58,11 @@
  	"kernel_addr_r=" __stringify(CONFIG_SYS_LOAD_ADDR) "\0" \
  	"bsp_script=boot.scr\0" \
  	"image=Image.gz\0" \
@@ -28,23 +28,27 @@ index 4f011007830..d3424256d26 100644
  	"fdt_high=0xffffffffffffffff\0"		\
  	"boot_fdt=try\0" \
  	"boot_fit=no\0" \
-@@ -115,12 +115,12 @@
+@@ -92,7 +92,7 @@
  		"bootaux ${m7_addr};\0" \
  	"optargs=setenv bootargs ${bootargs} ${kernelargs};\0" \
- 	"mmcargs=setenv bootargs console=${console} " \
+ 	"mmcargs=setenv bootargs ${mcore_clk} console=${console} " \
 -		"root=/dev/mmcblk${mmcblk}p${mmcpart} rootwait rw ${cma_size} cma_name=linux,cma\0 " \
 +		"${resin_kernel_root} ${os_cmdline} rootwait rw ${cma_size} cma_name=linux,cma\0 " \
+ 	"bootenv=uEnv.txt\0" \
  	"loadbootscript=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${bsp_script};\0" \
  	"bootscript=echo Running bootscript from mmc ...; " \
- 		"source\0" \
+@@ -100,8 +100,8 @@
+ 	"loadbootenv=load mmc ${mmcdev}:${mmcpart} ${loadaddr} ${bootdir}/${bootenv}\0" \
+ 	"importbootenv=echo Importing environment from mmc ...; " \
+ 		"env import -t -r $loadaddr $filesize\0" \
 -	"loadimage=load mmc ${mmcdev}:${mmcpart} ${img_addr} ${bootdir}/${image};" \
 -		"unzip ${img_addr} ${loadaddr}\0" \
 +	"loadimage=if load mmc ${resin_dev_index}:${resin_root_part} ${img_addr} boot/${image}; then " \
 +		"unzip ${img_addr} ${loadaddr}; run balena_kernel_load_crc_save; else false; fi; \0" \
  	"findfdt=" \
- 		"if test $fdt_file = undefined; then " \
- 			"if test $board_name = VAR-SOM-MX8M-PLUS; then " \
-@@ -135,7 +135,7 @@
+ 		"if test ${fdt_file} = undefined; then " \
+ 			"if test ${board_name} = VAR-SOM-MX8M-PLUS; then " \
+@@ -134,7 +134,7 @@
  		"fi; \0" \
  	"loadfdt=run findfdt; " \
  		"echo fdt_file=${fdt_file}; " \
@@ -52,7 +56,7 @@ index 4f011007830..d3424256d26 100644
 +		"if load mmc ${resin_dev_index}:${resin_root_part} ${fdt_addr} boot/${fdt_file}; then echo Loaded ${fdt_file}; run balena_fdt_load_crc_save; else false; fi; \0" \
  	"ramsize_check="\
  		"if test $sdram_size -le 512; then " \
- 			"setenv cma_size cma=320M; " \
+ 			"setenv cma_size cma=64M; " \
 @@ -153,6 +153,8 @@
  			"bootm ${loadaddr}; " \
  		"else " \
@@ -62,7 +66,7 @@ index 4f011007830..d3424256d26 100644
  				"booti ${loadaddr} - ${fdt_addr_r}; " \
  			"else " \
  				"echo WARN: Cannot load the DT; " \
-@@ -182,6 +184,10 @@
+@@ -184,6 +186,10 @@
  			"fi; " \
  		"fi;\0" \
  	"bsp_bootcmd=echo Running BSP bootcmd ...; " \
@@ -70,9 +74,9 @@ index 4f011007830..d3424256d26 100644
 +		"run resin_set_kernel_root; run set_os_cmdline; " \
 +		"setenv mmcdev ${resin_dev_index}; " \
 +		"setenv mmcpart ${resin_root_part}; " \
- 		"run ramsize_check; " \
- 		"mmc dev ${mmcdev}; " \
- 		"if mmc rescan; then " \
+ 		"if env exists mender_setup; then " \
+ 			"run mender_setup; " \
+ 		"fi; " \
 -- 
 2.34.1
 
